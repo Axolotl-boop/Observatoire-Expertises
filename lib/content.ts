@@ -64,9 +64,21 @@ function readRaw(slug: string): { data: Record<string, unknown>; body: string; m
   const filePath = path.join(CONTENT_DIR, `${slug}.md`);
   if (!fs.existsSync(filePath)) return null;
   const raw = fs.readFileSync(filePath, "utf8");
-  const { data, content } = matter(raw);
   const stat = fs.statSync(filePath);
-  return { data: data as Record<string, unknown>, body: content, mtime: stat.mtime };
+  // Beaucoup de fichiers (contenus scrapés) commencent par "---" sans être un
+  // vrai front-matter YAML : on tolère l'échec d'analyse et on traite alors le
+  // fichier comme du contenu brut, plutôt que de faire planter tout le build.
+  let data: Record<string, unknown> = {};
+  let content = raw;
+  try {
+    const parsed = matter(raw);
+    data = parsed.data as Record<string, unknown>;
+    content = parsed.content;
+  } catch {
+    data = {};
+    content = raw;
+  }
+  return { data, body: content, mtime: stat.mtime };
 }
 
 function buildMeta(slug: string): EntryMeta | null {
