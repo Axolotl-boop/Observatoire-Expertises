@@ -255,6 +255,7 @@ const SOURCE_ALIASES: [RegExp, string][] = [
   [/le ticket/i, "Le Ticket"],
   [/john cutler|\btbm\b/i, "John Cutler"],
   [/ravi mehta/i, "Ravi Mehta"],
+  [/svpg|silicon valley product group|marty cagan/i, "SVPG"],
 ];
 
 function canonicalSource(raw: string): string {
@@ -288,8 +289,11 @@ export function getNewsletters(): Newsletter[] {
   return getAllEntries()
     .filter((e) => (e.sourcePath || "").includes("Newsletter"))
     .map((e) => {
-      const parsed = readRaw(e.slug);
-      const { source, title } = parseNewsletterHeading(parsed?.body || "");
+      // On lit le fichier BRUT : certains commencent par « --- » et gray-matter
+      // retirerait l'entête « Digest de contenu » (ligne #, vue comme commentaire YAML).
+      const filePath = path.join(CONTENT_DIR, `${e.slug}.md`);
+      const raw = fs.existsSync(filePath) ? fs.readFileSync(filePath, "utf8") : "";
+      const { source, title } = parseNewsletterHeading(raw);
       return { ...e, title: title || e.title, source: source || "Autres" };
     });
 }
