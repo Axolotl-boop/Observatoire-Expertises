@@ -144,6 +144,26 @@ export default function ExpertiseDigests({ digests }: { digests: ExpertiseDigest
             )}
           </h2>
 
+          {/* Légende des verdicts */}
+          <ul className="mb-4 space-y-1 rounded-lg border border-gray-200 bg-white p-3 text-sm">
+            <li>
+              <span className="tag-mode">[mode]</span>{" "}
+              <span className="text-gray-600">— Buzz ou signal isolé. Rien à acter.</span>
+            </li>
+            <li>
+              <span className="tag-tendance">[tendance]</span>{" "}
+              <span className="text-gray-600">
+                — Mouvement réel mais pas acquis. À surveiller.
+              </span>
+            </li>
+            <li>
+              <span className="tag-structurel">[structurel]</span>{" "}
+              <span className="text-gray-600">
+                — Fait dur croisé à une donnée interne. À acter (validé humain).
+              </span>
+            </li>
+          </ul>
+
           {/* Bloc principal : les signaux du mois */}
           <Block
             title="Les signaux importants du mois"

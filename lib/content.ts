@@ -238,9 +238,60 @@ export function getAllSlugs(): string[] {
   return listMarkdownFiles().map(slugFromFilename);
 }
 
-/** Newsletters (dossier « Newsletters-pré-digérées »), de la plus récente à la plus ancienne. */
-export function getNewsletters(): EntryMeta[] {
-  return getAllEntries().filter((e) => (e.sourcePath || "").includes("Newsletter"));
+export interface Newsletter extends EntryMeta {
+  /** Source / publication (ex. « Ravi Mehta », « Le Ticket »). */
+  source: string;
+}
+
+/**
+ * Sources connues : plusieurs formulations (auteur, publication, co-signatures)
+ * désignent la même source. On les ramène à un libellé canonique pour le
+ * regroupement. Une source inconnue conserve son libellé nettoyé.
+ */
+const SOURCE_ALIASES: [RegExp, string][] = [
+  [/product ops confidential|graham reed|antonia landi|popsco|opscast/i, "Product Ops Confidential"],
+  [/the setups|florian mascaro/i, "The Setups"],
+  [/yeita|pauline egea/i, "Yeita"],
+  [/le ticket/i, "Le Ticket"],
+  [/john cutler|\btbm\b/i, "John Cutler"],
+  [/ravi mehta/i, "Ravi Mehta"],
+];
+
+function canonicalSource(raw: string): string {
+  for (const [re, name] of SOURCE_ALIASES) if (re.test(raw)) return name;
+  return raw;
+}
+
+/**
+ * Extrait la source et le titre d'une newsletter depuis sa 1re ligne
+ * « Digest de contenu — <Source>, « <Titre> » (date) ».
+ */
+function parseNewsletterHeading(body: string): { source?: string; title?: string } {
+  const m = body.match(/Digest de contenu\s*[—–-]\s*([^\n]+)/i);
+  if (!m) return {};
+  const s = m[1].replace(/\*+/g, "").trim();
+  const titleM = s.match(/[«"“]\s*(.+?)\s*[»"”]/);
+  const title = titleM?.[1]?.trim();
+  const before = titleM ? s.slice(0, s.indexOf(titleM[0])) : s;
+  const cleaned = before
+    .replace(/newsletter\s*N[°ºo]?\s*\d+/gi, "") // « newsletter #96 »
+    .replace(/N[°ºo]\s*\d+/gi, "") // numéros d'édition
+    .replace(/\([^)]*\)/g, "") // parenthèses (emails, mentions)
+    .replace(/^[\s,;/&-]+|[\s,;/&-]+$/g, "") // ponctuation en début/fin
+    .replace(/\s+/g, " ")
+    .trim();
+  return { source: cleaned ? canonicalSource(cleaned) : undefined, title };
+}
+
+/** Newsletters (dossier « Newsletters-pré-digérées »), enrichies de leur source et titre. */
+export function getNewsletters(): Newsletter[] {
+  return getAllEntries()
+    .filter((e) => (e.sourcePath || "").includes("Newsletter"))
+    .map((e) => {
+      const parsed = readRaw(e.slug);
+      const { source, title } = parseNewsletterHeading(parsed?.body || "");
+      return { ...e, title: title || e.title, source: source || "Autres" };
+    });
 }
 
 /** Mois (AAAA-MM) d'une date ISO, ou « ???? » si indéterminé. */

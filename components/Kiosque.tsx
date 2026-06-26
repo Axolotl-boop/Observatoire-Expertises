@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { useMemo, useState } from "react";
-import type { EntryMeta } from "@/lib/content";
+import type { Newsletter } from "@/lib/content";
 
 function monthKey(iso?: string): string {
   if (!iso) return "????";
@@ -25,7 +25,7 @@ function formatDate(iso?: string): string {
   return d.toLocaleDateString("fr-FR", { day: "numeric", month: "short", year: "numeric" });
 }
 
-export default function Kiosque({ newsletters }: { newsletters: EntryMeta[] }) {
+export default function Kiosque({ newsletters }: { newsletters: Newsletter[] }) {
   const months = useMemo(
     () => Array.from(new Set(newsletters.map((n) => monthKey(n.date)))).sort().reverse(),
     [newsletters],
@@ -38,6 +38,22 @@ export default function Kiosque({ newsletters }: { newsletters: EntryMeta[] }) {
     () => (month ? newsletters.filter((n) => monthKey(n.date) === month) : newsletters),
     [newsletters, month],
   );
+
+  // Regroupement par source, trié par nombre de newsletters décroissant.
+  const groups = useMemo(() => {
+    const map = new Map<string, Newsletter[]>();
+    for (const n of filtered) {
+      const arr = map.get(n.source) ?? [];
+      arr.push(n);
+      map.set(n.source, arr);
+    }
+    return Array.from(map.entries())
+      .map(([source, items]) => ({
+        source,
+        items: items.sort((a, b) => (b.date ?? "").localeCompare(a.date ?? "")),
+      }))
+      .sort((a, b) => b.items.length - a.items.length || a.source.localeCompare(b.source));
+  }, [filtered]);
 
   return (
     <div>
@@ -72,36 +88,48 @@ export default function Kiosque({ newsletters }: { newsletters: EntryMeta[] }) {
         ))}
       </div>
 
-      <p className="mb-4 text-sm text-gray-500">
-        {filtered.length} newsletter{filtered.length > 1 ? "s" : ""}
-        {filtered.length !== newsletters.length ? ` sur ${newsletters.length}` : ""}
+      <p className="mb-6 text-sm text-gray-500">
+        {filtered.length} newsletter{filtered.length > 1 ? "s" : ""} ·{" "}
+        {groups.length} source{groups.length > 1 ? "s" : ""}
       </p>
 
-      {filtered.length === 0 ? (
+      {groups.length === 0 ? (
         <div className="rounded-lg border border-dashed border-gray-300 bg-white p-10 text-center text-gray-500">
           Aucune newsletter pour cette période.
         </div>
       ) : (
-        <ul className="grid gap-4 sm:grid-cols-2">
-          {filtered.map((n) => (
-            <li key={n.slug}>
-              <Link
-                href={`/entries/${encodeURIComponent(n.slug)}`}
-                className="block h-full rounded-lg border border-gray-200 bg-white p-5 transition hover:border-electrique hover:shadow-sm"
-              >
-                {n.date && (
-                  <span className="text-xs text-gray-400">{formatDate(n.date)}</span>
-                )}
-                <h2 className="mt-1 font-semibold text-gray-900">{n.title}</h2>
-                {n.description && (
-                  <p className="mt-1 line-clamp-3 text-sm text-gray-600">
-                    {n.description}
-                  </p>
-                )}
-              </Link>
-            </li>
+        <div className="space-y-8">
+          {groups.map((group) => (
+            <section key={group.source}>
+              <h2 className="mb-3 flex items-baseline gap-2 font-title text-lg font-bold text-marine">
+                {group.source}
+                <span className="text-sm font-normal text-gray-400">
+                  {group.items.length} édition{group.items.length > 1 ? "s" : ""}
+                </span>
+              </h2>
+              <ul className="grid gap-4 sm:grid-cols-2">
+                {group.items.map((n) => (
+                  <li key={n.slug}>
+                    <Link
+                      href={`/entries/${encodeURIComponent(n.slug)}`}
+                      className="block h-full rounded-lg border border-gray-200 bg-white p-5 transition hover:border-electrique hover:shadow-sm"
+                    >
+                      {n.date && (
+                        <span className="text-xs text-gray-400">{formatDate(n.date)}</span>
+                      )}
+                      <h3 className="mt-1 font-semibold text-gray-900">{n.title}</h3>
+                      {n.description && (
+                        <p className="mt-1 line-clamp-3 text-sm text-gray-600">
+                          {n.description}
+                        </p>
+                      )}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </section>
           ))}
-        </ul>
+        </div>
       )}
     </div>
   );
