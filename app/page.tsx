@@ -13,7 +13,7 @@ export default async function HomePage() {
           Observatoire des Expertises
         </h1>
         <p className="mt-2 text-gray-600">
-          Digests par expertise, issus des données traitées par les agents IA.
+          Là où le discours du marché rencontre nos données.
         </p>
       </div>
 

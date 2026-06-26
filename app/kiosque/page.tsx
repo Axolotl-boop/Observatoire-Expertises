@@ -17,7 +17,7 @@ export default function KiosquePage() {
           🗞️ Le kiosque à journaux
         </h1>
         <p className="mt-2 text-gray-600">
-          Les newsletters pré-digérées, filtrables par mois.
+          Ce qui se dit. Ce qu&apos;on en retient.
         </p>
       </div>
 
