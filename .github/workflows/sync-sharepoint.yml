@@ -1,0 +1,47 @@
+name: Synchronisation SharePoint
+
+# Récupère les .md depuis SharePoint et les committe dans `content/`.
+# Un push sur le dépôt déclenche automatiquement un redéploiement Vercel.
+
+on:
+  schedule:
+    - cron: "0 * * * *" # toutes les heures
+  workflow_dispatch: {} # déclenchement manuel possible
+
+permissions:
+  contents: write
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Synchroniser depuis SharePoint
+        env:
+          TENANT_ID: ${{ secrets.TENANT_ID }}
+          CLIENT_ID: ${{ secrets.CLIENT_ID }}
+          CLIENT_SECRET: ${{ secrets.CLIENT_SECRET }}
+          SHAREPOINT_HOST: ${{ secrets.SHAREPOINT_HOST }}
+          SHAREPOINT_SITE: ${{ secrets.SHAREPOINT_SITE }}
+          SHAREPOINT_DRIVE: ${{ secrets.SHAREPOINT_DRIVE }}
+          SHAREPOINT_FOLDER: ${{ secrets.SHAREPOINT_FOLDER }}
+        run: node scripts/sync-sharepoint.mjs
+
+      - name: Committer les changements
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add content/
+          if git diff --cached --quiet; then
+            echo "Aucun changement à committer."
+          else
+            git commit -m "chore: synchronisation du contenu SharePoint"
+            git push
+          fi
