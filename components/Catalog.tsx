@@ -64,7 +64,7 @@ export default function Catalog({ entries }: { entries: EntryMeta[] }) {
           value={query}
           onChange={(e) => setQuery(e.target.value)}
           placeholder="Rechercher dans le catalogue…"
-          className="w-full rounded-lg border border-gray-300 bg-white px-4 py-2.5 text-sm outline-none focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500"
+          className="w-full rounded-lg border border-gray-300 bg-white px-4 py-2.5 text-sm outline-none focus:border-electrique focus:ring-1 focus:ring-electrique"
         />
         <div className="flex flex-wrap gap-3">
           <select
@@ -131,12 +131,12 @@ export default function Catalog({ entries }: { entries: EntryMeta[] }) {
               >
                 <div className="flex flex-wrap items-center gap-2 text-xs">
                   {entry.category && (
-                    <span className="rounded-full bg-indigo-50 px-2 py-0.5 font-medium text-indigo-700">
+                    <span className="rounded-full bg-lilas px-2 py-0.5 font-medium text-violet">
                       {entry.category}
                     </span>
                   )}
                   {entry.subcategory && (
-                    <span className="rounded-full bg-gray-100 px-2 py-0.5 text-gray-600">
+                    <span className="rounded-full bg-glace px-2 py-0.5 text-marine">
                       {entry.subcategory}
                     </span>
                   )}

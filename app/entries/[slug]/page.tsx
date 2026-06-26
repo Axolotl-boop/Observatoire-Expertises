@@ -43,7 +43,7 @@ export default async function EntryPage({
     <article>
       <Link
         href="/"
-        className="text-sm text-indigo-600 hover:underline"
+        className="text-sm text-electrique hover:underline"
       >
         ← Retour au catalogue
       </Link>
@@ -51,7 +51,7 @@ export default async function EntryPage({
       <header className="mt-4 mb-6 border-b border-gray-200 pb-6">
         <div className="flex flex-wrap items-center gap-2 text-xs">
           {entry.category && (
-            <span className="rounded-full bg-indigo-50 px-2 py-0.5 font-medium text-indigo-700">
+            <span className="rounded-full bg-lilas px-2 py-0.5 font-medium text-violet">
               {entry.category}
             </span>
           )}
@@ -81,7 +81,7 @@ export default async function EntryPage({
       </header>
 
       <div
-        className="prose prose-slate max-w-none prose-headings:scroll-mt-20 prose-a:text-indigo-600"
+        className="prose prose-slate max-w-none prose-headings:scroll-mt-20 prose-headings:font-title prose-a:text-electrique"
         dangerouslySetInnerHTML={{ __html: entry.html }}
       />
     </article>

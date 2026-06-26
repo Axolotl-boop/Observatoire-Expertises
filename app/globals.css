@@ -1,13 +1,83 @@
 @import "tailwindcss";
 @plugin "@tailwindcss/typography";
 
-:root {
-  --background: #f7f8fa;
-  --foreground: #1a1d23;
+/* Palette de la charte graphique */
+@theme {
+  /* Identité & navigation */
+  --color-marine: #002882;
+  --color-electrique: #0042ff;
+  /* Action & énergie */
+  --color-orange: #f98f03;
+  --color-braise: #e8572a;
+  /* IA & innovation */
+  --color-violet: #380066;
+  --color-lilas: #e6d9f5;
+  --color-lavande: #c8d6ff;
+  /* Humain & impact */
+  --color-jade: #6abfa3;
+  --color-foret: #1a4d3e;
+  --color-jadeclair: #e8f7f2;
+  /* Fonds & neutralité */
+  --color-creme: #fbf2e9;
+  --color-glace: #f2f5ff;
+  /* Premium & prestige */
+  --color-petrole: #0e2a3a;
+  --color-terre: #7a2a0e;
+  /* Fonctionnelles */
+  --color-succes: #1db954;
+  --color-alerte: #e53935;
+  --color-avert: #f59e0b;
+  --color-desactive: #a0a0b0;
+
+  /* Polices (les variables --font-* sont injectées par next/font/local) */
+  --font-sans: var(--font-geomanist), ui-sans-serif, system-ui, sans-serif;
+  --font-title: var(--font-publica), ui-sans-serif, system-ui, sans-serif;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  background: var(--color-glace);
+  color: #1a1d23;
+  font-family: var(--font-geomanist), ui-sans-serif, system-ui, sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.font-title {
+  font-family: var(--font-publica), ui-sans-serif, system-ui, sans-serif;
+}
+
+/* Tags de signal (bloc « Les signaux importants du mois ») */
+.tag-structurel {
+  color: var(--color-alerte);
+  font-weight: 600;
+  font-style: normal;
+}
+.tag-tendance {
+  color: var(--color-orange);
+  font-weight: 600;
+  font-style: normal;
+}
+.tag-mode {
+  color: #eab308;
+  font-weight: 600;
+  font-style: normal;
+}
+
+/* Texte de provenance (ce qui suit un « — ») */
+.signal-note {
+  color: #475569;
+  font-style: italic;
+}
+
+.signal-list {
+  margin: 0;
+  padding-left: 1.25rem;
+  list-style: decimal;
+}
+.signal-list > li {
+  margin: 0.4rem 0;
 }

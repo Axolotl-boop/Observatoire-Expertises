@@ -342,6 +342,61 @@ function sliceDigestSections(body: string): Record<string, string> {
   return out;
 }
 
+function escapeHtml(s: string): string {
+  return s
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;");
+}
+
+/** Colore les verdicts [structurel]/[tendance]/[mode]. */
+function colorizeTags(s: string): string {
+  return s
+    .replace(/\[structurel\]/gi, '<span class="tag-structurel">[structurel]</span>')
+    .replace(/\[tendance\]/gi, '<span class="tag-tendance">[tendance]</span>')
+    .replace(/\[mode\]/gi, '<span class="tag-mode">[mode]</span>');
+}
+
+/**
+ * Rend la section « signaux » : liste numérotée, tags colorés, et tout ce qui
+ * suit le premier « — » (la provenance) en italique gris.
+ */
+function renderSignauxHtml(md: string): string {
+  const items = md
+    .split(/\r?\n/)
+    .map((l) => l.trim())
+    .filter((l) => /^\d+[.)]\s+/.test(l))
+    .map((l) => l.replace(/^\d+[.)]\s+/, ""));
+  if (!items.length) return "";
+  const lis = items
+    .map((raw) => {
+      let text = escapeHtml(raw);
+      const idx = text.indexOf("—");
+      if (idx >= 0) {
+        text = `${text.slice(0, idx)}<span class="signal-note">${text.slice(idx)}</span>`;
+      }
+      text = colorizeTags(text);
+      return `<li>${text}</li>`;
+    })
+    .join("");
+  return `<ol class="signal-list">${lis}</ol>`;
+}
+
+/**
+ * Met en gras les « titres » internes des blocs : une puce dont le texte est un
+ * libellé court terminé par « : » (ex. « Problématiques récurrentes : »).
+ */
+function emphasizeLabels(md: string): string {
+  return md
+    .split(/\r?\n/)
+    .map((line) => {
+      const m = line.match(/^(\s*[-*]\s+)([^.:\n*]{2,60}:)(\s.*)?$/);
+      if (!m) return line;
+      return `${m[1]}**${m[2].trim()}**${m[3] ?? ""}`;
+    })
+    .join("\n");
+}
+
 /** Pour chaque expertise, charge et rend le digest le plus récent. */
 export async function getExpertiseDigests(): Promise<ExpertiseDigest[]> {
   const result: ExpertiseDigest[] = [];
@@ -354,7 +409,9 @@ export async function getExpertiseDigests(): Promise<ExpertiseDigest[]> {
     }
     const meta = buildMeta(slug);
     const secs = sliceDigestSections(parsed.body);
-    const render = async (s?: string) => (s ? renderMarkdown(s) : "");
+    // Blocs : titres internes mis en gras puis rendu Markdown standard.
+    const renderBloc = async (s?: string) =>
+      s ? renderMarkdown(emphasizeLabels(s)) : "";
     result.push({
       key: exp.key,
       label: exp.label,
@@ -364,11 +421,11 @@ export async function getExpertiseDigests(): Promise<ExpertiseDigest[]> {
       date: meta?.date,
       sourcePath: meta?.sourcePath,
       sections: {
-        signaux: await render(secs.signaux),
-        bloc1: await render(secs.bloc1),
-        bloc2: await render(secs.bloc2),
-        bloc3: await render(secs.bloc3),
-        bloc4: await render(secs.bloc4),
+        signaux: renderSignauxHtml(secs.signaux || ""),
+        bloc1: await renderBloc(secs.bloc1),
+        bloc2: await renderBloc(secs.bloc2),
+        bloc3: await renderBloc(secs.bloc3),
+        bloc4: await renderBloc(secs.bloc4),
       },
     });
   }

@@ -11,7 +11,7 @@ export default async function HomePage() {
   return (
     <div>
       <div className="mb-8">
-        <h1 className="text-2xl font-bold text-gray-900">
+        <h1 className="font-title text-2xl font-bold text-marine">
           Observatoire des Expertises
         </h1>
         <p className="mt-2 text-gray-600">
@@ -22,7 +22,7 @@ export default async function HomePage() {
       <ExpertiseDigests digests={digests} />
 
       <div className="mb-6 border-t border-gray-200 pt-8">
-        <h2 className="text-xl font-bold text-gray-900">Catalogue complet</h2>
+        <h2 className="font-title text-xl font-bold text-marine">Catalogue complet</h2>
         <p className="mt-1 text-gray-600">
           Recherchez et explorez tous les contenus synchronisés depuis SharePoint.
         </p>
