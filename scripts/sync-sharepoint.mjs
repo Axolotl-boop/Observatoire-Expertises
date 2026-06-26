@@ -94,6 +94,8 @@ async function listMarkdown(token, driveId, folderPath) {
         const childPath = folderPath ? `${folderPath}/${item.name}` : item.name;
         files.push(...(await listMarkdown(token, driveId, childPath)));
       } else if (item.name.toLowerCase().endsWith(".md")) {
+        // On mémorise le sous-dossier d'origine pour éviter les collisions de noms.
+        item.__folder = folderPath;
         files.push(item);
       }
     }
@@ -142,9 +144,16 @@ async function main() {
 
   for (const item of files) {
     const content = await downloadFile(item);
-    const outName = safeName(item.name);
+    // Chemin relatif au dossier configuré, pour garder un identifiant unique
+    // même si deux sous-dossiers contiennent un fichier du même nom.
+    let rel = item.__folder || "";
+    if (SHAREPOINT_FOLDER && rel.startsWith(SHAREPOINT_FOLDER)) {
+      rel = rel.slice(SHAREPOINT_FOLDER.length).replace(/^\/+/, "");
+    }
+    const relPath = rel ? `${rel}/${item.name}` : item.name;
+    const outName = `${safeName(relPath.replace(/\//g, "-")).replace(/\.md$/i, "")}.md`;
     fs.writeFileSync(path.join(CONTENT_DIR, outName), content, "utf8");
-    console.log(`  ✓ ${item.name} -> content/${outName}`);
+    console.log(`  ✓ ${relPath} -> content/${outName}`);
   }
 
   console.log("Synchronisation terminée.");
