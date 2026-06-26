@@ -234,8 +234,13 @@ export function getAllEntries(): EntryMeta[] {
     .sort((a, b) => (b.date ?? "").localeCompare(a.date ?? ""));
 }
 
+/** Le fichier PAD « bootstrap » ne doit jamais apparaître sur le site. */
+function isHidden(slug: string): boolean {
+  return /bootstrap/i.test(INDEX[slug]?.path || "");
+}
+
 export function getAllSlugs(): string[] {
-  return listMarkdownFiles().map(slugFromFilename);
+  return listMarkdownFiles().map(slugFromFilename).filter((s) => !isHidden(s));
 }
 
 export interface Newsletter extends EntryMeta {
@@ -334,9 +339,89 @@ export function monthOf(iso?: string): string {
   return m ? `${m[1]}-${m[2]}` : "????";
 }
 
-/** Notes PAD retraitées (synthèses de la demande), de la plus récente à la plus ancienne. */
-export function getPadNotes(): EntryMeta[] {
-  return getAllEntries().filter((e) => (e.sourcePath || "").includes("Notes-PAD"));
+export interface PadChartRow {
+  label: string;
+  value: number;
+}
+
+export interface PadMonth {
+  month: string; // AAAA-MM
+  date?: string;
+  signauxHtml: string;
+  mix: { rows: PadChartRow[]; conclusionHtml: string };
+  profils: { rows: PadChartRow[]; conclusionHtml: string };
+}
+
+/** Lignes d'une section délimitée par son titre, jusqu'au prochain titre ## / ### ou « --- ». */
+function sectionLines(lines: string[], startRe: RegExp): string[] {
+  const start = lines.findIndex((l) => startRe.test(l));
+  if (start < 0) return [];
+  const out: string[] = [];
+  for (let i = start + 1; i < lines.length; i++) {
+    const l = lines[i];
+    if (/^#{2,3}\s/.test(l)) break;
+    if (/^\s*-{3,}\s*$/.test(l)) break;
+    out.push(l);
+  }
+  return out;
+}
+
+/** Parse un tableau Markdown « | label | valeur | » en lignes {label, value}. */
+function parsePadTable(lines: string[]): PadChartRow[] {
+  const rows: PadChartRow[] = [];
+  for (const l of lines) {
+    const m = l.match(/^\s*\|(.+)\|\s*$/);
+    if (!m) continue;
+    const cells = m[1].split("|").map((c) => c.trim());
+    if (cells.length < 2) continue;
+    if (/^-+$/.test(cells[0].replace(/\s/g, ""))) continue; // séparateur |---|
+    const numStr = cells[1].replace(/[^\d.-]/g, "");
+    if (numStr === "") continue; // ligne d'en-tête (« Mentions », « Occurrences »)
+    const value = Number(numStr);
+    if (Number.isNaN(value)) continue;
+    rows.push({ label: cells[0], value });
+  }
+  return rows;
+}
+
+/** Texte de conclusion d'une section (les lignes hors tableau). */
+function padConclusion(lines: string[]): string {
+  return lines
+    .filter((l) => !/^\s*\|/.test(l))
+    .join("\n")
+    .trim();
+}
+
+/** Notes PAD mensuelles (hors « bootstrap »), parsées en sections, plus récentes d'abord. */
+export async function getPadMonths(): Promise<PadMonth[]> {
+  const notes = getAllEntries().filter(
+    (e) => (e.sourcePath || "").includes("Notes-PAD") && !/bootstrap/i.test(e.sourcePath || ""),
+  );
+  const result: PadMonth[] = [];
+  for (const e of notes) {
+    const filePath = path.join(CONTENT_DIR, `${e.slug}.md`);
+    if (!fs.existsSync(filePath)) continue;
+    const lines = fs.readFileSync(filePath, "utf8").split(/\r?\n/);
+
+    const signaux = sectionLines(lines, /^##\s*5\.?\s*Signaux saillants/i);
+    const mixL = sectionLines(lines, /^###\s*Mix par expertise/i);
+    const profL = sectionLines(lines, /^###\s*Profils?\s+et\s+s[ée]niorit/i);
+
+    result.push({
+      month: monthOf(e.date),
+      date: e.date,
+      signauxHtml: await renderMarkdown(signaux.join("\n")),
+      mix: {
+        rows: parsePadTable(mixL),
+        conclusionHtml: await renderMarkdown(padConclusion(mixL)),
+      },
+      profils: {
+        rows: parsePadTable(profL),
+        conclusionHtml: await renderMarkdown(padConclusion(profL)),
+      },
+    });
+  }
+  return result.sort((a, b) => (b.date ?? "").localeCompare(a.date ?? ""));
 }
 
 async function renderMarkdown(markdown: string): Promise<string> {
@@ -352,6 +437,7 @@ async function renderMarkdown(markdown: string): Promise<string> {
 
 /** Charge une entrée complète (métadonnées + HTML rendu). */
 export async function getEntry(slug: string): Promise<Entry | null> {
+  if (isHidden(slug)) return null;
   const meta = buildMeta(slug);
   if (!meta) return null;
   const isNewsletter = (meta.sourcePath || "").includes("Newsletter");

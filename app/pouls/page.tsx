@@ -1,5 +1,5 @@
 import Pouls from "@/components/Pouls";
-import { getPadNotes } from "@/lib/content";
+import { getPadMonths } from "@/lib/content";
 
 export const dynamic = "force-static";
 
@@ -7,8 +7,8 @@ export const metadata = {
   title: "Le pouls du marché — Observatoire des Expertises",
 };
 
-export default function PoulsPage() {
-  const notes = getPadNotes();
+export default async function PoulsPage() {
+  const months = await getPadMonths();
 
   return (
     <div>
@@ -17,16 +17,16 @@ export default function PoulsPage() {
           🩺 Le pouls du marché
         </h1>
         <p className="mt-2 text-gray-600">
-          La demande réelle, dérivée du pipe commercial (Notes PAD retraitées).
+          La demande réelle, directement de notre pipe commercial.
         </p>
       </div>
 
-      {notes.length === 0 ? (
+      {months.length === 0 ? (
         <div className="rounded-lg border border-dashed border-gray-300 bg-white p-10 text-center text-gray-500">
           Aucune note pour le moment.
         </div>
       ) : (
-        <Pouls notes={notes} />
+        <Pouls months={months} />
       )}
     </div>
   );

@@ -1,14 +1,7 @@
 "use client";
 
-import Link from "next/link";
 import { useMemo, useState } from "react";
-import type { EntryMeta } from "@/lib/content";
-
-function monthKey(iso?: string): string {
-  if (!iso) return "????";
-  const m = iso.match(/^(\d{4})-(\d{2})/);
-  return m ? `${m[1]}-${m[2]}` : "????";
-}
+import type { PadChartRow, PadMonth } from "@/lib/content";
 
 function monthLabel(key: string): string {
   const m = key.match(/^(\d{4})-(\d{2})$/);
@@ -18,50 +11,47 @@ function monthLabel(key: string): string {
   return label.charAt(0).toUpperCase() + label.slice(1);
 }
 
-function formatDate(iso?: string): string {
-  if (!iso) return "";
-  const d = new Date(iso);
-  if (Number.isNaN(d.getTime())) return "";
-  return d.toLocaleDateString("fr-FR", { day: "numeric", month: "short", year: "numeric" });
+function BarChart({ rows, color }: { rows: PadChartRow[]; color: string }) {
+  const max = Math.max(...rows.map((r) => r.value), 1);
+  return (
+    <div className="space-y-2">
+      {rows.map((r) => (
+        <div key={r.label} className="flex items-center gap-3">
+          <div className="w-36 shrink-0 truncate text-sm text-gray-700" title={r.label}>
+            {r.label}
+          </div>
+          <div className="h-5 flex-1 overflow-hidden rounded bg-glace">
+            <div
+              className="h-full rounded"
+              style={{ width: `${(r.value / max) * 100}%`, backgroundColor: color }}
+            />
+          </div>
+          <div className="w-8 shrink-0 text-right text-sm font-semibold text-marine">
+            {r.value}
+          </div>
+        </div>
+      ))}
+    </div>
+  );
 }
 
-export default function Pouls({ notes }: { notes: EntryMeta[] }) {
-  const months = useMemo(
-    () => Array.from(new Set(notes.map((n) => monthKey(n.date)))).sort().reverse(),
-    [notes],
-  );
-
-  const [month, setMonth] = useState<string>(() => months[0] ?? "");
-
-  const filtered = useMemo(
-    () => (month ? notes.filter((n) => monthKey(n.date) === month) : notes),
-    [notes, month],
-  );
+export default function Pouls({ months }: { months: PadMonth[] }) {
+  const monthKeys = useMemo(() => months.map((m) => m.month), [months]);
+  const [month, setMonth] = useState<string>(() => monthKeys[0] ?? "");
+  const current = months.find((m) => m.month === month) ?? months[0];
 
   return (
     <div>
       {/* Filtre par mois */}
       <div className="mb-6 flex flex-wrap gap-2">
-        <button
-          type="button"
-          onClick={() => setMonth("")}
-          className={[
-            "rounded-full px-4 py-2 text-sm font-medium transition",
-            month === ""
-              ? "bg-electrique text-white"
-              : "border border-gray-300 bg-white text-marine hover:border-electrique hover:text-electrique",
-          ].join(" ")}
-        >
-          Tous les mois
-        </button>
-        {months.map((m) => (
+        {monthKeys.map((m) => (
           <button
             key={m}
             type="button"
             onClick={() => setMonth(m)}
             className={[
               "rounded-full px-4 py-2 text-sm font-medium transition",
-              month === m
+              m === current?.month
                 ? "bg-electrique text-white"
                 : "border border-gray-300 bg-white text-marine hover:border-electrique hover:text-electrique",
             ].join(" ")}
@@ -71,34 +61,64 @@ export default function Pouls({ notes }: { notes: EntryMeta[] }) {
         ))}
       </div>
 
-      <p className="mb-4 text-sm text-gray-500">
-        {filtered.length} note{filtered.length > 1 ? "s" : ""}
-        {filtered.length !== notes.length ? ` sur ${notes.length}` : ""}
-      </p>
-
-      {filtered.length === 0 ? (
+      {!current ? (
         <div className="rounded-lg border border-dashed border-gray-300 bg-white p-10 text-center text-gray-500">
           Aucune note pour cette période.
         </div>
       ) : (
-        <ul className="grid gap-4 sm:grid-cols-2">
-          {filtered.map((n) => (
-            <li key={n.slug}>
-              <Link
-                href={`/entries/${encodeURIComponent(n.slug)}`}
-                className="block h-full rounded-lg border border-gray-200 bg-white p-5 transition hover:border-electrique hover:shadow-sm"
-              >
-                {n.date && (
-                  <span className="text-xs text-gray-400">{formatDate(n.date)}</span>
-                )}
-                <h2 className="mt-1 font-semibold text-gray-900">{n.title}</h2>
-                {n.description && (
-                  <p className="mt-1 line-clamp-3 text-sm text-gray-600">{n.description}</p>
-                )}
-              </Link>
-            </li>
-          ))}
-        </ul>
+        <div>
+          {/* Bandeau principal : les grands signaux du mois */}
+          <div className="mb-4 rounded-xl border border-lavande bg-glace p-5">
+            <h2 className="mb-2 font-title text-lg font-bold text-marine">
+              Les grands signaux du mois
+            </h2>
+            {current.signauxHtml ? (
+              <div
+                className="prose prose-sm prose-slate max-w-none prose-strong:text-marine"
+                dangerouslySetInnerHTML={{ __html: current.signauxHtml }}
+              />
+            ) : (
+              <p className="text-sm text-gray-400">Section non disponible.</p>
+            )}
+          </div>
+
+          {/* Deux graphes : mix par expertise & profils/séniorité */}
+          <div className="grid gap-4 md:grid-cols-2">
+            <div className="rounded-xl border border-gray-200 bg-white p-5">
+              <h2 className="mb-4 font-title text-lg font-bold text-marine">
+                Mix par expertise
+              </h2>
+              {current.mix.rows.length > 0 ? (
+                <BarChart rows={current.mix.rows} color="#0042ff" />
+              ) : (
+                <p className="text-sm text-gray-400">Données non disponibles.</p>
+              )}
+              {current.mix.conclusionHtml && (
+                <div
+                  className="prose prose-sm prose-slate mt-4 max-w-none prose-strong:text-marine"
+                  dangerouslySetInnerHTML={{ __html: current.mix.conclusionHtml }}
+                />
+              )}
+            </div>
+
+            <div className="rounded-xl border border-gray-200 bg-white p-5">
+              <h2 className="mb-4 font-title text-lg font-bold text-marine">
+                Profils et séniorité
+              </h2>
+              {current.profils.rows.length > 0 ? (
+                <BarChart rows={current.profils.rows} color="#6abfa3" />
+              ) : (
+                <p className="text-sm text-gray-400">Données non disponibles.</p>
+              )}
+              {current.profils.conclusionHtml && (
+                <div
+                  className="prose prose-sm prose-slate mt-4 max-w-none prose-strong:text-marine"
+                  dangerouslySetInnerHTML={{ __html: current.profils.conclusionHtml }}
+                />
+              )}
+            </div>
+          </div>
+        </div>
       )}
     </div>
   );
