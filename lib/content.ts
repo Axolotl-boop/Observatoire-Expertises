@@ -241,6 +241,30 @@ export function getAllSlugs(): string[] {
 export interface Newsletter extends EntryMeta {
   /** Source / publication (ex. « Ravi Mehta », « Le Ticket »). */
   source: string;
+  /** Début de la section « Verdict » de la newsletter. */
+  verdict?: string;
+}
+
+/** Extrait le début de la section « VERDICT » d'une newsletter. */
+function extractVerdict(raw: string): string | undefined {
+  const lines = raw.split(/\r?\n/);
+  const start = lines.findIndex((l) => /^#{0,6}\s*\d*\.?\s*verdict\b/i.test(l.trim()));
+  if (start < 0) return undefined;
+  const collected: string[] = [];
+  for (let i = start + 1; i < lines.length; i++) {
+    const line = lines[i];
+    if (/^#{1,6}\s/.test(line)) break; // section suivante
+    if (/^\s*-{3,}\s*$/.test(line)) break; // séparateur ---
+    collected.push(line);
+    if (collected.join(" ").trim().length > 240) break;
+  }
+  const text = collected
+    .join(" ")
+    .replace(/[#>*_`]/g, "")
+    .replace(/\s+/g, " ")
+    .trim();
+  if (!text) return undefined;
+  return text.length > 220 ? `${text.slice(0, 220).trim()}…` : text;
 }
 
 /**
@@ -294,7 +318,12 @@ export function getNewsletters(): Newsletter[] {
       const filePath = path.join(CONTENT_DIR, `${e.slug}.md`);
       const raw = fs.existsSync(filePath) ? fs.readFileSync(filePath, "utf8") : "";
       const { source, title } = parseNewsletterHeading(raw);
-      return { ...e, title: title || e.title, source: source || "Autres" };
+      return {
+        ...e,
+        title: title || e.title,
+        source: source || "Autres",
+        verdict: extractVerdict(raw),
+      };
     });
 }
 

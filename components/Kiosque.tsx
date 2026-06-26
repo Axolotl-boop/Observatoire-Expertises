@@ -141,8 +141,8 @@ export default function Kiosque({ newsletters }: { newsletters: Newsletter[] }) 
                     <span className="text-xs text-gray-400">{formatDate(n.date)}</span>
                   )}
                   <h3 className="mt-1 font-semibold text-gray-900">{n.title}</h3>
-                  {n.description && (
-                    <p className="mt-1 line-clamp-3 text-sm text-gray-600">{n.description}</p>
+                  {n.verdict && (
+                    <p className="mt-1 line-clamp-4 text-sm text-gray-600">{n.verdict}</p>
                   )}
                 </Link>
               </li>
