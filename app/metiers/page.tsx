@@ -28,6 +28,10 @@ export default async function MetiersPage() {
       ) : (
         <Metiers quarters={quarters} />
       )}
+
+      <p className="mt-8 text-sm italic text-gray-500">
+        Sources : APEC, WTTJ, Baromètres SEYOS, TPC &amp; Noé
+      </p>
     </div>
   );
 }

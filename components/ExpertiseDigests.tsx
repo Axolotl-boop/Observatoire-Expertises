@@ -63,29 +63,20 @@ function Block({
       </button>
       <div className="px-5 pb-5">
         {html ? (
-          <>
-            <div className={open ? "" : "relative max-h-24 overflow-hidden"}>
+          <div className={open ? "" : "relative max-h-24 overflow-hidden"}>
+            <div
+              className="prose prose-sm prose-slate max-w-none prose-strong:text-marine"
+              dangerouslySetInnerHTML={{ __html: html }}
+            />
+            {!open && (
               <div
-                className="prose prose-sm prose-slate max-w-none prose-strong:text-marine"
-                dangerouslySetInnerHTML={{ __html: html }}
+                className={[
+                  "pointer-events-none absolute inset-x-0 bottom-0 h-12 bg-gradient-to-t",
+                  accent ? "from-glace" : "from-white",
+                ].join(" ")}
               />
-              {!open && (
-                <div
-                  className={[
-                    "pointer-events-none absolute inset-x-0 bottom-0 h-12 bg-gradient-to-t",
-                    accent ? "from-glace" : "from-white",
-                  ].join(" ")}
-                />
-              )}
-            </div>
-            <button
-              type="button"
-              onClick={onToggle}
-              className="mt-2 text-sm font-medium text-electrique hover:underline"
-            >
-              {open ? "Replier" : "Déplier"}
-            </button>
-          </>
+            )}
+          </div>
         ) : (
           <p className="text-sm text-gray-400">Section non disponible.</p>
         )}
@@ -181,7 +172,7 @@ export default function ExpertiseDigests({ digests }: { digests: ExpertiseDigest
             <li>
               <span className="tag-structurel">[structurel]</span>{" "}
               <span className="text-gray-600">
-                — Fait dur croisé à une donnée interne. À acter (validé humain).
+                — Fait dur croisé à une donnée interne. À acter.
               </span>
             </li>
           </ul>

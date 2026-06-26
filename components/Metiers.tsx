@@ -1,44 +1,58 @@
 "use client";
 
 import { useMemo, useState } from "react";
-import type { EmploiQuarter } from "@/lib/content";
+import type { EmploiQuarter, SynthRow } from "@/lib/content";
 
 function quarterLabel(q: string): string {
   const m = q.match(/^(\d{4})-T([1-4])$/i);
   return m ? `T${m[2]} ${m[1]}` : q;
 }
 
-function Block({
-  title,
-  html,
-  accent,
-}: {
-  title: string;
-  html?: string;
-  accent?: boolean;
-}) {
+function Verdict({ value }: { value?: string }) {
+  const v = (value ?? "").replace(/`/g, "").trim();
+  if (/\[structurel\]/i.test(v)) return <span className="tag-structurel">{v}</span>;
+  if (/\[tendance\]/i.test(v)) return <span className="tag-tendance">{v}</span>;
+  if (/\[mode\]/i.test(v)) return <span className="tag-mode">{v}</span>;
+  return <span className="text-gray-400">{v || "—"}</span>;
+}
+
+function SynthTable({ title, rows }: { title: string; rows: SynthRow[] }) {
   return (
-    <div
-      className={[
-        "rounded-xl border p-5",
-        accent ? "border-lavande bg-glace" : "border-gray-200 bg-white",
-      ].join(" ")}
-    >
-      <h2 className="mb-2 font-title text-lg font-bold text-marine">{title}</h2>
-      {html && html.trim() ? (
-        <div
-          className="prose prose-sm prose-slate max-w-none prose-strong:text-marine"
-          dangerouslySetInnerHTML={{ __html: html }}
-        />
+    <div className="rounded-xl border border-gray-200 bg-white p-5">
+      <h2 className="mb-3 font-title text-lg font-bold text-marine">{title}</h2>
+      {rows.length === 0 ? (
+        <p className="text-sm text-gray-400">Aucune donnée ce trimestre.</p>
       ) : (
-        <p className="text-sm text-gray-400">—</p>
+        <div className="overflow-x-auto">
+          <table className="w-full border-collapse text-sm">
+            <thead>
+              <tr className="border-b border-gray-200 text-left text-xs uppercase tracking-wide text-gray-500">
+                <th className="py-2 pr-3 font-semibold">Élément</th>
+                <th className="py-2 pr-3 font-semibold">Statut</th>
+                <th className="py-2 pr-3 font-semibold">Verdict</th>
+                <th className="py-2 font-semibold">Source</th>
+              </tr>
+            </thead>
+            <tbody>
+              {rows.map((r, i) => (
+                <tr key={i} className="border-b border-gray-100 align-top">
+                  <td className="py-2 pr-3 text-gray-800">{r[0]}</td>
+                  <td className="py-2 pr-3 whitespace-nowrap text-gray-600">{r[1]}</td>
+                  <td className="py-2 pr-3 whitespace-nowrap">
+                    <Verdict value={r[2]} />
+                  </td>
+                  <td className="py-2 text-gray-500">{r[3]}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
       )}
     </div>
   );
 }
 
 export default function Metiers({ quarters }: { quarters: EmploiQuarter[] }) {
-  // Liste des expertises (union ordonnée à travers les trimestres).
   const expertises = useMemo(() => {
     const map = new Map<string, string>();
     for (const q of quarters) {
@@ -114,11 +128,8 @@ export default function Metiers({ quarters }: { quarters: EmploiQuarter[] }) {
           </h2>
 
           <div className="space-y-4">
-            <Block title="Lecture transverse" html={exp.lectureHtml} accent />
-            <div className="grid items-start gap-4 md:grid-cols-2">
-              <Block title="Compétences" html={exp.competencesHtml} />
-              <Block title="Outils" html={exp.outilsHtml} />
-            </div>
+            <SynthTable title="Compétences" rows={exp.competences} />
+            <SynthTable title="Outils" rows={exp.outils} />
           </div>
         </div>
       )}

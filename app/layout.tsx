@@ -50,6 +50,12 @@ export default function RootLayout({
                   Le pouls du marché
                 </span>
               </Link>
+              <Link href="/concurrence" className="flex items-center gap-2">
+                <span className="text-xl">💥</span>
+                <span className="font-title font-semibold text-marine hover:text-electrique">
+                  Concurrence
+                </span>
+              </Link>
               <Link href="/metiers" className="flex items-center gap-2">
                 <span className="text-xl">💼</span>
                 <span className="font-title font-semibold text-marine hover:text-electrique">

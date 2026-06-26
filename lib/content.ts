@@ -339,12 +339,14 @@ export function monthOf(iso?: string): string {
   return m ? `${m[1]}-${m[2]}` : "????";
 }
 
+/** Une ligne du tableau de synthèse : [élément, statut, verdict, source/date]. */
+export type SynthRow = string[];
+
 export interface EmploiExpertise {
   key: string;
   label: string;
-  competencesHtml: string;
-  outilsHtml: string;
-  lectureHtml: string;
+  competences: SynthRow[];
+  outils: SynthRow[];
 }
 
 export interface EmploiQuarter {
@@ -363,8 +365,34 @@ const EMPLOI_LABELS: Record<string, string> = {
 };
 
 /**
+ * Extrait une sous-section « **LABEL** » du tableau de synthèse, en colonnes.
+ * Gère les deux formats rencontrés : tableau Markdown (| Item | État | … |) ou
+ * liste à puces (« - item · statut · verdict · date »).
+ */
+function synthRows(lines: string[], labelRe: RegExp): SynthRow[] {
+  const start = lines.findIndex((l) => /^\*\*.+\*\*$/.test(l.trim()) && labelRe.test(l));
+  if (start < 0) return [];
+  const rows: SynthRow[] = [];
+  for (let i = start + 1; i < lines.length; i++) {
+    const l = lines[i].trim();
+    if (/^\*\*.+\*\*$/.test(l)) break; // sous-section suivante
+    if (l.startsWith("|")) {
+      const cells = l.replace(/^\|/, "").replace(/\|$/, "").split("|").map((c) => c.trim());
+      if (cells.length < 2) continue;
+      if (/^-+$/.test(cells[0].replace(/\s/g, ""))) continue; // séparateur |---|
+      if (/^(item|[ée]l[ée]ment)$/i.test(cells[0])) continue; // ligne d'en-tête
+      rows.push(cells);
+    } else if (l.startsWith("-")) {
+      rows.push(l.replace(/^-\s*/, "").split(/\s[·•]\s/).map((c) => c.trim()));
+    }
+  }
+  return rows;
+}
+
+/**
  * Veille-emploi trimestrielle : un fichier par expertise dans les dossiers
  * « 20XX-TX » (les dossiers « 20XX-06 » sont des snapshots mensuels, ignorés).
+ * On en extrait les tableaux de synthèse « Compétences » et « Outils ».
  */
 export async function getEmploiQuarters(): Promise<EmploiQuarter[]> {
   const byQuarter = new Map<string, Map<string, EmploiExpertise>>();
@@ -381,17 +409,13 @@ export async function getEmploiQuarters(): Promise<EmploiQuarter[]> {
     const filePath = path.join(CONTENT_DIR, `${e.slug}.md`);
     if (!fs.existsSync(filePath)) continue;
     const lines = fs.readFileSync(filePath, "utf8").split(/\r?\n/);
+    const synth = sectionLines(lines, /^##\s*Tableau de synth/i);
 
     const exp: EmploiExpertise = {
       key,
       label: EMPLOI_LABELS[key],
-      competencesHtml: await renderMarkdown(
-        sectionLines(lines, /^###\s*Comp[ée]tences/i).join("\n"),
-      ),
-      outilsHtml: await renderMarkdown(sectionLines(lines, /^###\s*Outils/i).join("\n")),
-      lectureHtml: await renderMarkdown(
-        sectionLines(lines, /^##\s*Lecture transverse/i).join("\n"),
-      ),
+      competences: synthRows(synth, /COMP[ÉE]TENCES/i),
+      outils: synthRows(synth, /OUTILS/i),
     };
     if (!byQuarter.has(quarter)) byQuarter.set(quarter, new Map());
     byQuarter.get(quarter)!.set(key, exp);
@@ -403,6 +427,61 @@ export async function getEmploiQuarters(): Promise<EmploiQuarter[]> {
       expertises: EMPLOI_ORDER.filter((k) => m.has(k)).map((k) => m.get(k)!),
     }))
     .sort((a, b) => b.quarter.localeCompare(a.quarter));
+}
+
+export interface ConcurrenceAxis {
+  title: string;
+  html: string;
+}
+
+export interface ConcurrenceQuarter {
+  quarter: string;
+  lectureHtml: string;
+  axes: ConcurrenceAxis[];
+}
+
+/**
+ * Veille concurrentielle trimestrielle : un fichier unique par trimestre
+ * (dossiers « 20XX-TX »), organisé par Axes + une Lecture transverse.
+ */
+export async function getConcurrenceQuarters(): Promise<ConcurrenceQuarter[]> {
+  const byQuarter = new Map<string, string>(); // quarter -> slug
+  for (const e of getAllEntries()) {
+    const p = e.sourcePath || "";
+    if (!p.includes("Veille-concurrentielle")) continue;
+    const qm = p.match(/\/(20\d\d-T[1-4])\//i);
+    if (!qm) continue; // on écarte les snapshots mensuels
+    byQuarter.set(qm[1].toUpperCase(), e.slug);
+  }
+
+  const result: ConcurrenceQuarter[] = [];
+  for (const [quarter, slug] of byQuarter) {
+    const filePath = path.join(CONTENT_DIR, `${slug}.md`);
+    if (!fs.existsSync(filePath)) continue;
+    const lines = fs.readFileSync(filePath, "utf8").split(/\r?\n/);
+
+    const axes: ConcurrenceAxis[] = [];
+    for (let i = 0; i < lines.length; i++) {
+      const m = lines[i].match(/^##\s*(Axe\s*\d+.*)$/i);
+      if (!m) continue;
+      const title = m[1].split(/\s[·•]\s/)[0].trim(); // on retire les tags « · [transverse] »
+      const body: string[] = [];
+      for (let j = i + 1; j < lines.length; j++) {
+        if (/^##\s/.test(lines[j])) break;
+        body.push(lines[j]);
+      }
+      const md = body.join("\n").replace(/^\s*-{3,}\s*$/gm, "").trim();
+      axes.push({ title, html: await renderMarkdown(md) });
+    }
+
+    const lecture = sectionLines(lines, /^##\s*Lecture transverse/i);
+    result.push({
+      quarter,
+      lectureHtml: await renderMarkdown(lecture.join("\n")),
+      axes,
+    });
+  }
+  return result.sort((a, b) => b.quarter.localeCompare(a.quarter));
 }
 
 export interface PadChartRow {
