@@ -50,6 +50,12 @@ export default function RootLayout({
                   Le pouls du marché
                 </span>
               </Link>
+              <Link href="/metiers" className="flex items-center gap-2">
+                <span className="text-xl">💼</span>
+                <span className="font-title font-semibold text-marine hover:text-electrique">
+                  Métiers &amp; Compétences
+                </span>
+              </Link>
             </nav>
             <a
               href="https://outlook.office.com/mail/deeplink/compose?to=axel.alizier@wefiit.com&subject=Feedback%20Observatoire%20des%20Expertises"

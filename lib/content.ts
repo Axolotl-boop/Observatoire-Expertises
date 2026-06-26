@@ -339,6 +339,72 @@ export function monthOf(iso?: string): string {
   return m ? `${m[1]}-${m[2]}` : "????";
 }
 
+export interface EmploiExpertise {
+  key: string;
+  label: string;
+  competencesHtml: string;
+  outilsHtml: string;
+  lectureHtml: string;
+}
+
+export interface EmploiQuarter {
+  quarter: string; // ex. « 2026-T2 »
+  expertises: EmploiExpertise[];
+}
+
+const EMPLOI_ORDER = ["pm", "qa", "productops", "pmm", "datapm", "productai"];
+const EMPLOI_LABELS: Record<string, string> = {
+  pm: "Product Management",
+  qa: "QA",
+  productops: "Product Ops",
+  pmm: "PMM",
+  datapm: "Data PM",
+  productai: "IA PM",
+};
+
+/**
+ * Veille-emploi trimestrielle : un fichier par expertise dans les dossiers
+ * « 20XX-TX » (les dossiers « 20XX-06 » sont des snapshots mensuels, ignorés).
+ */
+export async function getEmploiQuarters(): Promise<EmploiQuarter[]> {
+  const byQuarter = new Map<string, Map<string, EmploiExpertise>>();
+  for (const e of getAllEntries()) {
+    const p = e.sourcePath || "";
+    if (!p.includes("Veille-emploi")) continue;
+    const qm = p.match(/\/(20\d\d-T[1-4])\//i);
+    if (!qm) continue; // on écarte les snapshots mensuels
+    const quarter = qm[1].toUpperCase();
+    const km = p.match(/snapshot-emploi-([a-z]+)-t[1-4]/i);
+    const key = km ? km[1].toLowerCase() : "";
+    if (!EMPLOI_LABELS[key]) continue;
+
+    const filePath = path.join(CONTENT_DIR, `${e.slug}.md`);
+    if (!fs.existsSync(filePath)) continue;
+    const lines = fs.readFileSync(filePath, "utf8").split(/\r?\n/);
+
+    const exp: EmploiExpertise = {
+      key,
+      label: EMPLOI_LABELS[key],
+      competencesHtml: await renderMarkdown(
+        sectionLines(lines, /^###\s*Comp[ée]tences/i).join("\n"),
+      ),
+      outilsHtml: await renderMarkdown(sectionLines(lines, /^###\s*Outils/i).join("\n")),
+      lectureHtml: await renderMarkdown(
+        sectionLines(lines, /^##\s*Lecture transverse/i).join("\n"),
+      ),
+    };
+    if (!byQuarter.has(quarter)) byQuarter.set(quarter, new Map());
+    byQuarter.get(quarter)!.set(key, exp);
+  }
+
+  return Array.from(byQuarter.entries())
+    .map(([quarter, m]) => ({
+      quarter,
+      expertises: EMPLOI_ORDER.filter((k) => m.has(k)).map((k) => m.get(k)!),
+    }))
+    .sort((a, b) => b.quarter.localeCompare(a.quarter));
+}
+
 export interface PadChartRow {
   label: string;
   value: number;
