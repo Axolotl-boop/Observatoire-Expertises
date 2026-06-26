@@ -188,6 +188,10 @@ async function main() {
     }
   }
 
+  // Index reliant chaque slug à son chemin SharePoint d'origine. Le slug étant
+  // tronqué, ce chemin est la seule source fiable pour déduire catégorie/date/titre.
+  const index = {};
+
   for (const item of files) {
     const content = await downloadFile(item);
     // Chemin relatif au dossier configuré, pour garder un identifiant unique
@@ -198,10 +202,18 @@ async function main() {
     }
     const relPath = rel ? `${rel}/${item.name}` : item.name;
     const base = safeName(relPath.replace(/\//g, "-")).replace(/\.md$/i, "");
-    const outName = `${shortenBase(base)}.md`;
+    const slug = shortenBase(base);
+    const outName = `${slug}.md`;
     fs.writeFileSync(path.join(CONTENT_DIR, outName), content, "utf8");
+    index[slug] = { path: relPath, modified: item.lastModifiedDateTime || null };
     console.log(`  ✓ ${relPath} -> content/${outName}`);
   }
+
+  fs.writeFileSync(
+    path.join(CONTENT_DIR, "_index.json"),
+    `${JSON.stringify(index, null, 2)}\n`,
+    "utf8",
+  );
 
   console.log("Synchronisation terminée.");
 }

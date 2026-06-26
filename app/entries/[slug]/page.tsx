@@ -50,14 +50,19 @@ export default async function EntryPage({
 
       <header className="mt-4 mb-6 border-b border-gray-200 pb-6">
         <div className="flex flex-wrap items-center gap-2 text-xs">
-          {entry.agent && (
+          {entry.category && (
             <span className="rounded-full bg-indigo-50 px-2 py-0.5 font-medium text-indigo-700">
-              {entry.agent}
+              {entry.category}
             </span>
           )}
-          {entry.category && (
+          {entry.subcategory && (
             <span className="rounded-full bg-gray-100 px-2 py-0.5 text-gray-600">
-              {entry.category}
+              {entry.subcategory}
+            </span>
+          )}
+          {entry.agent && (
+            <span className="rounded-full bg-gray-100 px-2 py-0.5 text-gray-600">
+              {entry.agent}
             </span>
           )}
           {entry.date && (
@@ -67,6 +72,11 @@ export default async function EntryPage({
         <h1 className="mt-3 text-3xl font-bold text-gray-900">{entry.title}</h1>
         {entry.description && (
           <p className="mt-2 text-gray-600">{entry.description}</p>
+        )}
+        {entry.sourcePath && (
+          <p className="mt-3 text-xs text-gray-400">
+            Source SharePoint : {entry.sourcePath}
+          </p>
         )}
       </header>
 
