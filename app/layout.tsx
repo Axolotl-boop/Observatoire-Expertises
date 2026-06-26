@@ -30,14 +30,27 @@ export default function RootLayout({
     <html lang="fr" className={`${geomanist.variable} ${publica.variable}`}>
       <body className="min-h-screen flex flex-col">
         <header className="border-b border-gray-200 bg-white">
-          <div className="mx-auto max-w-5xl px-4 py-4 flex items-center justify-between">
-            <Link href="/" className="flex items-center gap-2">
-              <span className="text-xl">🔭</span>
-              <span className="font-title font-semibold text-marine">
-                Observatoire des Expertises
-              </span>
-            </Link>
-            <span className="text-sm text-gray-500">Données &amp; agents IA</span>
+          <div className="mx-auto max-w-5xl px-4 py-4 flex flex-wrap items-center justify-between gap-3">
+            <nav className="flex flex-wrap items-center gap-x-5 gap-y-2">
+              <Link href="/" className="flex items-center gap-2">
+                <span className="text-xl">🔭</span>
+                <span className="font-title font-semibold text-marine">
+                  Observatoire des Expertises
+                </span>
+              </Link>
+              <Link href="/kiosque" className="flex items-center gap-2">
+                <span className="text-xl">🗞️</span>
+                <span className="font-title font-semibold text-marine hover:text-electrique">
+                  Le kiosque à journaux
+                </span>
+              </Link>
+            </nav>
+            <a
+              href="mailto:axel.alizier@wefiit.com?subject=Feedback%20Observatoire%20des%20Expertises"
+              className="rounded-full bg-orange px-4 py-2 text-sm font-medium text-white transition hover:bg-braise"
+            >
+              💌 Envoyez un feedback !
+            </a>
           </div>
         </header>
         <main className="flex-1 mx-auto w-full max-w-5xl px-4 py-8">

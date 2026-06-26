@@ -17,36 +17,38 @@ function formatDate(iso?: string): string {
   return d.toLocaleDateString("fr-FR", { year: "numeric", month: "long" });
 }
 
-function Collapsible({
+function Block({
   title,
   html,
+  open,
+  onToggle,
   accent,
-  defaultOpen = true,
 }: {
   title: string;
   html?: string;
+  open: boolean;
+  onToggle: () => void;
   accent?: boolean;
-  defaultOpen?: boolean;
 }) {
   return (
-    <details
-      open={defaultOpen}
+    <div
       className={[
-        "group rounded-xl border",
+        "rounded-xl border",
         accent ? "border-lavande bg-glace" : "border-gray-200 bg-white",
       ].join(" ")}
     >
-      <summary className="flex cursor-pointer list-none items-center justify-between gap-2 p-5">
-        <h3
-          className={[
-            "font-title font-semibold",
-            accent ? "text-marine" : "text-marine",
-          ].join(" ")}
-        >
-          {title}
-        </h3>
+      <button
+        type="button"
+        onClick={onToggle}
+        aria-expanded={open}
+        className="flex w-full items-center justify-between gap-2 p-5 text-left"
+      >
+        <h3 className="font-title font-semibold text-marine">{title}</h3>
         <svg
-          className="h-5 w-5 shrink-0 text-gray-400 transition-transform group-open:rotate-180"
+          className={[
+            "h-5 w-5 shrink-0 text-gray-400 transition-transform",
+            open ? "rotate-180" : "",
+          ].join(" ")}
           viewBox="0 0 20 20"
           fill="currentColor"
           aria-hidden="true"
@@ -57,24 +59,50 @@ function Collapsible({
             clipRule="evenodd"
           />
         </svg>
-      </summary>
+      </button>
       <div className="px-5 pb-5">
         {html ? (
-          <div
-            className="prose prose-sm prose-slate max-w-none prose-strong:text-marine"
-            dangerouslySetInnerHTML={{ __html: html }}
-          />
+          <>
+            <div className={open ? "" : "relative max-h-24 overflow-hidden"}>
+              <div
+                className="prose prose-sm prose-slate max-w-none prose-strong:text-marine"
+                dangerouslySetInnerHTML={{ __html: html }}
+              />
+              {!open && (
+                <div
+                  className={[
+                    "pointer-events-none absolute inset-x-0 bottom-0 h-12 bg-gradient-to-t",
+                    accent ? "from-glace" : "from-white",
+                  ].join(" ")}
+                />
+              )}
+            </div>
+            <button
+              type="button"
+              onClick={onToggle}
+              className="mt-2 text-sm font-medium text-electrique hover:underline"
+            >
+              {open ? "Replier" : "Déplier"}
+            </button>
+          </>
         ) : (
           <p className="text-sm text-gray-400">Section non disponible.</p>
         )}
       </div>
-    </details>
+    </div>
   );
 }
 
 export default function ExpertiseDigests({ digests }: { digests: ExpertiseDigest[] }) {
   const firstAvailable = digests.find((d) => d.available) ?? digests[0];
   const [active, setActive] = useState<string>(firstAvailable?.key ?? "");
+  // Repliés par défaut. Les 4 blocs sont gérés par paires (lignes) : ouvrir l'un
+  // ouvre son voisin de ligne pour éviter qu'il paraisse vide.
+  const [openSignaux, setOpenSignaux] = useState(false);
+  const [openRows, setOpenRows] = useState<[boolean, boolean]>([false, false]);
+  const toggleRow = (i: 0 | 1) =>
+    setOpenRows((r) => (i === 0 ? [!r[0], r[1]] : [r[0], !r[1]]));
+
   const current = digests.find((d) => d.key === active);
 
   return (
@@ -117,21 +145,28 @@ export default function ExpertiseDigests({ digests }: { digests: ExpertiseDigest
           </h2>
 
           {/* Bloc principal : les signaux du mois */}
-          <Collapsible
+          <Block
             title="Les signaux importants du mois"
             html={current.sections.signaux}
+            open={openSignaux}
+            onToggle={() => setOpenSignaux((v) => !v)}
             accent
           />
 
-          {/* Les 4 blocs */}
-          <div className="mt-4 grid gap-4 md:grid-cols-2">
-            {DIGEST_BLOCKS.map((block) => (
-              <Collapsible
-                key={block.key}
-                title={block.title}
-                html={current.sections?.[block.key]}
-              />
-            ))}
+          {/* Les 4 blocs, ouverture synchronisée par ligne */}
+          <div className="mt-4 grid items-start gap-4 md:grid-cols-2">
+            {DIGEST_BLOCKS.map((block, i) => {
+              const row: 0 | 1 = i < 2 ? 0 : 1;
+              return (
+                <Block
+                  key={block.key}
+                  title={block.title}
+                  html={current.sections?.[block.key]}
+                  open={openRows[row]}
+                  onToggle={() => toggleRow(row)}
+                />
+              );
+            })}
           </div>
         </div>
       ) : (

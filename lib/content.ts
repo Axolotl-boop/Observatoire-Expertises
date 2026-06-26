@@ -238,6 +238,18 @@ export function getAllSlugs(): string[] {
   return listMarkdownFiles().map(slugFromFilename);
 }
 
+/** Newsletters (dossier « Newsletters-pré-digérées »), de la plus récente à la plus ancienne. */
+export function getNewsletters(): EntryMeta[] {
+  return getAllEntries().filter((e) => (e.sourcePath || "").includes("Newsletter"));
+}
+
+/** Mois (AAAA-MM) d'une date ISO, ou « ???? » si indéterminé. */
+export function monthOf(iso?: string): string {
+  if (!iso) return "????";
+  const m = iso.match(/^(\d{4})-(\d{2})/);
+  return m ? `${m[1]}-${m[2]}` : "????";
+}
+
 async function renderMarkdown(markdown: string): Promise<string> {
   const file = await unified()
     .use(remarkParse)
