@@ -257,3 +257,120 @@ export async function getEntry(slug: string): Promise<Entry | null> {
   const html = await renderMarkdown(parsed.body);
   return { ...meta, html };
 }
+
+// ---------------------------------------------------------------------------
+// Digests par expertise (dossier 02-Digests-par-expertise)
+// ---------------------------------------------------------------------------
+
+/** Les 6 expertises et le dossier SharePoint correspondant. Ordre = ordre d'affichage. */
+export const EXPERTISES: { key: string; label: string; folder: string }[] = [
+  { key: "product-management", label: "Product Management", folder: "Product-Management" },
+  { key: "qa", label: "QA", folder: "QA" },
+  { key: "product-ops", label: "Product Ops", folder: "Product-Ops" },
+  { key: "pmm", label: "PMM", folder: "PMM" },
+  { key: "data-pm", label: "Data PM", folder: "Data-PM" },
+  { key: "ia-pm", label: "IA PM", folder: "Product-AI" },
+];
+
+/** Les 4 blocs (hors « signaux ») avec leur titre d'affichage. */
+export const DIGEST_BLOCKS: { key: "bloc1" | "bloc2" | "bloc3" | "bloc4"; title: string }[] = [
+  { key: "bloc1", title: "Problématiques clients & positionnement offre" },
+  { key: "bloc2", title: "Signaux qui challengent nos convictions" },
+  { key: "bloc3", title: "Skills, méthodes & outils" },
+  { key: "bloc4", title: "Sujets éditoriaux & angle" },
+];
+
+export interface ExpertiseDigest {
+  key: string;
+  label: string;
+  available: boolean;
+  slug?: string;
+  title?: string;
+  date?: string;
+  sourcePath?: string;
+  /** Sections rendues en HTML. */
+  sections?: {
+    signaux: string;
+    bloc1: string;
+    bloc2: string;
+    bloc3: string;
+    bloc4: string;
+  };
+}
+
+/** Digest le plus récent d'une expertise (hors fichiers *REPORT*). */
+function latestDigestSlug(folder: string): string | undefined {
+  const needle = `/02-Digests-par-expertise/${folder}/`;
+  const candidates = Object.entries(INDEX)
+    .filter(([, v]) => v.path.includes(needle))
+    .filter(([, v]) => !/report/i.test(v.path))
+    .map(([slug, v]) => ({ slug, date: extractDate(v.path) || "", path: v.path }))
+    .sort((a, b) => b.date.localeCompare(a.date) || b.path.localeCompare(a.path));
+  return candidates[0]?.slug;
+}
+
+/** Découpe le corps d'un digest en ses 5 sections (texte Markdown brut). */
+function sliceDigestSections(body: string): Record<string, string> {
+  const lines = body.split(/\r?\n/);
+  const markers: { key: string; re: RegExp }[] = [
+    { key: "signaux", re: /^\s*§\s*1\b/ },
+    { key: "bloc1", re: /^\s*Bloc\s*1\b/i },
+    { key: "bloc2", re: /^\s*Bloc\s*2\b/i },
+    { key: "bloc3", re: /^\s*Bloc\s*3\b/i },
+    { key: "bloc4", re: /^\s*Bloc\s*4\b/i },
+    { key: "__end", re: /^\s*(Garde-fous|Sources utilis|#{2,}\s)/i },
+  ];
+  const found: { key: string; line: number }[] = [];
+  for (const m of markers) {
+    const idx = lines.findIndex((l) => m.re.test(l));
+    if (idx >= 0) found.push({ key: m.key, line: idx });
+  }
+  found.sort((a, b) => a.line - b.line);
+
+  const out: Record<string, string> = {};
+  for (let i = 0; i < found.length; i++) {
+    const cur = found[i];
+    if (cur.key === "__end") continue;
+    const next = found[i + 1];
+    const chunk = lines
+      .slice(cur.line + 1, next ? next.line : lines.length)
+      .join("\n")
+      .replace(/^\s*-{3,}\s*$/gm, "") // retire les séparateurs ---
+      .trim();
+    out[cur.key] = chunk;
+  }
+  return out;
+}
+
+/** Pour chaque expertise, charge et rend le digest le plus récent. */
+export async function getExpertiseDigests(): Promise<ExpertiseDigest[]> {
+  const result: ExpertiseDigest[] = [];
+  for (const exp of EXPERTISES) {
+    const slug = latestDigestSlug(exp.folder);
+    const parsed = slug ? readRaw(slug) : null;
+    if (!slug || !parsed) {
+      result.push({ key: exp.key, label: exp.label, available: false });
+      continue;
+    }
+    const meta = buildMeta(slug);
+    const secs = sliceDigestSections(parsed.body);
+    const render = async (s?: string) => (s ? renderMarkdown(s) : "");
+    result.push({
+      key: exp.key,
+      label: exp.label,
+      available: true,
+      slug,
+      title: meta?.title,
+      date: meta?.date,
+      sourcePath: meta?.sourcePath,
+      sections: {
+        signaux: await render(secs.signaux),
+        bloc1: await render(secs.bloc1),
+        bloc2: await render(secs.bloc2),
+        bloc3: await render(secs.bloc3),
+        bloc4: await render(secs.bloc4),
+      },
+    });
+  }
+  return result;
+}
