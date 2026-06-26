@@ -46,7 +46,9 @@ export default function RootLayout({
               </Link>
             </nav>
             <a
-              href="mailto:axel.alizier@wefiit.com?subject=Feedback%20Observatoire%20des%20Expertises"
+              href="https://outlook.office.com/mail/deeplink/compose?to=axel.alizier@wefiit.com&subject=Feedback%20Observatoire%20des%20Expertises"
+              target="_blank"
+              rel="noopener noreferrer"
               className="rounded-full bg-orange px-4 py-2 text-sm font-medium text-white transition hover:bg-braise"
             >
               💌 Envoyez un feedback !

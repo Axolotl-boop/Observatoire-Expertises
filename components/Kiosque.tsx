@@ -26,12 +26,13 @@ function formatDate(iso?: string): string {
 }
 
 export default function Kiosque({ newsletters }: { newsletters: EntryMeta[] }) {
-  const [month, setMonth] = useState<string>("");
-
   const months = useMemo(
     () => Array.from(new Set(newsletters.map((n) => monthKey(n.date)))).sort().reverse(),
     [newsletters],
   );
+
+  // Par défaut, on affiche le mois le plus récent.
+  const [month, setMonth] = useState<string>(() => months[0] ?? "");
 
   const filtered = useMemo(
     () => (month ? newsletters.filter((n) => monthKey(n.date) === month) : newsletters),
