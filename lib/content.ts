@@ -449,6 +449,21 @@ export interface ConcurrenceQuarter {
   filename: string;
 }
 
+/** Retire les segments « · Surface(s) : … » et « · Source(s) : … » des puces. */
+function stripSurfaceSource(md: string): string {
+  return md
+    .split(/\r?\n/)
+    .map((line) => {
+      if (!/\s[·•]\s/.test(line)) return line;
+      const parts = line.split(/\s[·•]\s/);
+      const kept = parts.filter(
+        (p, i) => i === 0 || !/^(surfaces?|sources?)\s*:/i.test(p.trim()),
+      );
+      return kept.join(" · ");
+    })
+    .join("\n");
+}
+
 /**
  * Veille concurrentielle trimestrielle : un fichier unique par trimestre
  * (dossiers « 20XX-TX »), organisé par Axes + une Lecture transverse.
@@ -481,8 +496,8 @@ export async function getConcurrenceQuarters(): Promise<ConcurrenceQuarter[]> {
         if (/^##\s/.test(lines[j])) break;
         body.push(lines[j]);
       }
-      const md = body.join("\n").replace(/^\s*-{3,}\s*$/gm, "").trim();
-      axes.push({ title, html: await renderMarkdown(md) });
+      const md = stripSurfaceSource(body.join("\n").replace(/^\s*-{3,}\s*$/gm, "").trim());
+      axes.push({ title, html: colorizeTags(await renderMarkdown(md)) });
     }
 
     const lecture = sectionLines(lines, /^##\s*Lecture transverse/i);
