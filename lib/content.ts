@@ -319,9 +319,23 @@ async function renderMarkdown(markdown: string): Promise<string> {
 /** Charge une entrée complète (métadonnées + HTML rendu). */
 export async function getEntry(slug: string): Promise<Entry | null> {
   const meta = buildMeta(slug);
-  const parsed = readRaw(slug);
-  if (!meta || !parsed) return null;
-  const html = await renderMarkdown(parsed.body);
+  if (!meta) return null;
+  const isNewsletter = (meta.sourcePath || "").includes("Newsletter");
+  let bodyMd: string;
+  if (isNewsletter) {
+    // Contenu brut : conserve l'entête « Digest de contenu — … » que gray-matter
+    // retirerait sur les fichiers commençant par « --- » (ligne # vue comme commentaire).
+    const filePath = path.join(CONTENT_DIR, `${slug}.md`);
+    if (!fs.existsSync(filePath)) return null;
+    bodyMd = fs
+      .readFileSync(filePath, "utf8")
+      .replace(/^﻿?---[ \t]*\r?\n/, ""); // retire un « --- » d'ouverture éventuel
+  } else {
+    const parsed = readRaw(slug);
+    if (!parsed) return null;
+    bodyMd = parsed.body;
+  }
+  const html = await renderMarkdown(bodyMd);
   return { ...meta, html };
 }
 
