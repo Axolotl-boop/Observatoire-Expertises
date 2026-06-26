@@ -347,6 +347,9 @@ export interface EmploiExpertise {
   label: string;
   competences: SynthRow[];
   outils: SynthRow[];
+  /** Contenu brut du .md et nom de fichier d'origine (pour téléchargement). */
+  raw: string;
+  filename: string;
 }
 
 export interface EmploiQuarter {
@@ -408,7 +411,8 @@ export async function getEmploiQuarters(): Promise<EmploiQuarter[]> {
 
     const filePath = path.join(CONTENT_DIR, `${e.slug}.md`);
     if (!fs.existsSync(filePath)) continue;
-    const lines = fs.readFileSync(filePath, "utf8").split(/\r?\n/);
+    const raw = fs.readFileSync(filePath, "utf8");
+    const lines = raw.split(/\r?\n/);
     const synth = sectionLines(lines, /^##\s*Tableau de synth/i);
 
     const exp: EmploiExpertise = {
@@ -416,6 +420,8 @@ export async function getEmploiQuarters(): Promise<EmploiQuarter[]> {
       label: EMPLOI_LABELS[key],
       competences: synthRows(synth, /COMP[ÉE]TENCES/i),
       outils: synthRows(synth, /OUTILS/i),
+      raw,
+      filename: (e.sourcePath || `${e.slug}.md`).split("/").pop() || `${e.slug}.md`,
     };
     if (!byQuarter.has(quarter)) byQuarter.set(quarter, new Map());
     byQuarter.get(quarter)!.set(key, exp);
@@ -438,6 +444,9 @@ export interface ConcurrenceQuarter {
   quarter: string;
   lectureHtml: string;
   axes: ConcurrenceAxis[];
+  /** Contenu brut du .md et nom de fichier d'origine (pour téléchargement). */
+  raw: string;
+  filename: string;
 }
 
 /**
@@ -458,7 +467,9 @@ export async function getConcurrenceQuarters(): Promise<ConcurrenceQuarter[]> {
   for (const [quarter, slug] of byQuarter) {
     const filePath = path.join(CONTENT_DIR, `${slug}.md`);
     if (!fs.existsSync(filePath)) continue;
-    const lines = fs.readFileSync(filePath, "utf8").split(/\r?\n/);
+    const raw = fs.readFileSync(filePath, "utf8");
+    const lines = raw.split(/\r?\n/);
+    const meta = INDEX[slug];
 
     const axes: ConcurrenceAxis[] = [];
     for (let i = 0; i < lines.length; i++) {
@@ -479,6 +490,8 @@ export async function getConcurrenceQuarters(): Promise<ConcurrenceQuarter[]> {
       quarter,
       lectureHtml: await renderMarkdown(lecture.join("\n")),
       axes,
+      raw,
+      filename: (meta?.path || `${slug}.md`).split("/").pop() || `${slug}.md`,
     });
   }
   return result.sort((a, b) => b.quarter.localeCompare(a.quarter));

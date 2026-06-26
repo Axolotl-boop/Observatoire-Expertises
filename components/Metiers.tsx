@@ -8,6 +8,18 @@ function quarterLabel(q: string): string {
   return m ? `T${m[2]} ${m[1]}` : q;
 }
 
+function downloadMd(filename: string, content: string) {
+  const blob = new Blob([content], { type: "text/markdown;charset=utf-8" });
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement("a");
+  a.href = url;
+  a.download = filename;
+  document.body.appendChild(a);
+  a.click();
+  a.remove();
+  URL.revokeObjectURL(url);
+}
+
 function Verdict({ value }: { value?: string }) {
   const v = (value ?? "").replace(/`/g, "").trim();
   if (/\[structurel\]/i.test(v)) return <span className="tag-structurel">{v}</span>;
@@ -120,12 +132,21 @@ export default function Metiers({ quarters }: { quarters: EmploiQuarter[] }) {
         </div>
       ) : (
         <div className="mt-6">
-          <h2 className="mb-4 font-title text-xl font-bold text-marine">
-            {exp.label}
-            <span className="ml-2 text-sm font-normal text-gray-400">
-              · {quarterLabel(selectedQuarter)}
-            </span>
-          </h2>
+          <div className="mb-4 flex flex-wrap items-baseline justify-between gap-2">
+            <h2 className="font-title text-xl font-bold text-marine">
+              {exp.label}
+              <span className="ml-2 text-sm font-normal text-gray-400">
+                · {quarterLabel(selectedQuarter)}
+              </span>
+            </h2>
+            <button
+              type="button"
+              onClick={() => downloadMd(exp.filename, exp.raw)}
+              className="text-sm font-medium text-electrique hover:underline"
+            >
+              ⬇ Télécharger le snapshot (.md)
+            </button>
+          </div>
 
           <div className="space-y-4">
             <SynthTable title="Compétences" rows={exp.competences} />

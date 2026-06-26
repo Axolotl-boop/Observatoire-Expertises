@@ -30,39 +30,14 @@ export default function RootLayout({
     <html lang="fr" className={`${geomanist.variable} ${publica.variable}`}>
       <body className="min-h-screen flex flex-col">
         <header className="border-b border-gray-200 bg-white">
-          <div className="mx-auto max-w-5xl px-4 py-4 flex flex-wrap items-center justify-between gap-3">
-            <nav className="flex flex-wrap items-center gap-x-5 gap-y-2">
-              <Link href="/" className="flex items-center gap-2">
-                <span className="text-xl">🔭</span>
-                <span className="font-title font-semibold text-marine">
-                  Observatoire des Expertises
-                </span>
-              </Link>
-              <Link href="/kiosque" className="flex items-center gap-2">
-                <span className="text-xl">🗞️</span>
-                <span className="font-title font-semibold text-marine hover:text-electrique">
-                  Le kiosque à journaux
-                </span>
-              </Link>
-              <Link href="/pouls" className="flex items-center gap-2">
-                <span className="text-xl">🩺</span>
-                <span className="font-title font-semibold text-marine hover:text-electrique">
-                  Le pouls du marché
-                </span>
-              </Link>
-              <Link href="/concurrence" className="flex items-center gap-2">
-                <span className="text-xl">💥</span>
-                <span className="font-title font-semibold text-marine hover:text-electrique">
-                  Concurrence
-                </span>
-              </Link>
-              <Link href="/metiers" className="flex items-center gap-2">
-                <span className="text-xl">💼</span>
-                <span className="font-title font-semibold text-marine hover:text-electrique">
-                  Métiers &amp; Compétences
-                </span>
-              </Link>
-            </nav>
+          {/* Marque principale + feedback */}
+          <div className="mx-auto flex max-w-5xl flex-wrap items-center justify-between gap-3 px-4 pt-4 pb-3">
+            <Link href="/" className="flex items-center gap-2.5">
+              <span className="text-3xl">🔭</span>
+              <span className="font-title text-xl font-bold text-marine sm:text-2xl">
+                Observatoire des Expertises
+              </span>
+            </Link>
             <a
               href="https://outlook.office.com/mail/deeplink/compose?to=axel.alizier@wefiit.com&subject=Feedback%20Observatoire%20des%20Expertises"
               target="_blank"
@@ -72,6 +47,35 @@ export default function RootLayout({
               💌 Envoyez un feedback !
             </a>
           </div>
+          {/* Sous-navigation */}
+          <nav className="border-t border-gray-100 bg-glace/60">
+            <div className="mx-auto flex max-w-5xl flex-wrap gap-x-6 gap-y-1 px-4 py-2 text-sm">
+              <Link
+                href="/kiosque"
+                className="font-title font-medium text-gray-600 transition hover:text-electrique"
+              >
+                🗞️ Le kiosque à journaux
+              </Link>
+              <Link
+                href="/pouls"
+                className="font-title font-medium text-gray-600 transition hover:text-electrique"
+              >
+                🩺 Le pouls du marché
+              </Link>
+              <Link
+                href="/concurrence"
+                className="font-title font-medium text-gray-600 transition hover:text-electrique"
+              >
+                💥 Concurrence
+              </Link>
+              <Link
+                href="/metiers"
+                className="font-title font-medium text-gray-600 transition hover:text-electrique"
+              >
+                💼 Métiers &amp; Compétences
+              </Link>
+            </div>
+          </nav>
         </header>
         <main className="flex-1 mx-auto w-full max-w-5xl px-4 py-8">
           {children}
