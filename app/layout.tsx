@@ -81,8 +81,11 @@ export default function RootLayout({
           {children}
         </main>
         <footer className="border-t border-gray-200 bg-white">
-          <div className="mx-auto max-w-5xl px-4 py-4 text-sm text-gray-500">
-            Contenu synchronisé automatiquement depuis SharePoint.
+          <div className="mx-auto flex max-w-5xl flex-wrap items-center justify-between gap-2 px-4 py-4 text-sm text-gray-500">
+            <span>Contenu synchronisé automatiquement depuis SharePoint.</span>
+            <a href="/api/auth/signout" className="text-gray-500 hover:text-electrique">
+              Se déconnecter
+            </a>
           </div>
         </footer>
       </body>
