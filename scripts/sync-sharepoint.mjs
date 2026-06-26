@@ -32,6 +32,22 @@ const {
 const GRAPH = "https://graph.microsoft.com/v1.0";
 const CONTENT_DIR = path.join(process.cwd(), "content");
 
+// Nettoyage des valeurs : un copier-coller dans les secrets GitHub introduit
+// souvent un espace, un retour à la ligne, un "https://" ou un "/" final.
+function normalizeHost(v) {
+  return (v || "")
+    .trim()
+    .replace(/^https?:\/\//i, "") // retire le protocole éventuel
+    .replace(/\/.*$/, ""); // retire tout chemin éventuel
+}
+function normalizeSite(v) {
+  let s = (v || "").trim();
+  if (s && !s.startsWith("/")) s = `/${s}`; // doit commencer par /sites/... ou /teams/...
+  return s.replace(/\/+$/, ""); // retire le(s) / final(aux)
+}
+const HOST = normalizeHost(SHAREPOINT_HOST);
+const SITE = normalizeSite(SHAREPOINT_SITE);
+
 function requireEnv() {
   const missing = [
     "TENANT_ID",
@@ -69,8 +85,29 @@ async function graph(token, urlPath) {
 }
 
 async function getSiteId(token) {
-  const data = await graph(token, `/sites/${SHAREPOINT_HOST}:${SHAREPOINT_SITE}`);
-  return data.id;
+  if (!/\.sharepoint\.com$/i.test(HOST)) {
+    console.warn(
+      `⚠️ SHAREPOINT_HOST inattendu : il devrait ressembler à "monentreprise.sharepoint.com".`,
+    );
+  }
+  try {
+    const data = await graph(token, `/sites/${HOST}:${SITE}`);
+    return data.id;
+  } catch (e) {
+    // Diagnostic : quel domaine SharePoint le jeton peut-il réellement atteindre ?
+    // Le webUrl du site racine révèle le tenant auquel le jeton est rattaché.
+    try {
+      const root = await graph(token, `/sites/root?$select=webUrl`);
+      console.error("──────────────── DIAGNOSTIC ────────────────");
+      console.error(`Domaine réellement accessible par le jeton : ${root.webUrl}`);
+      console.error(`SHAREPOINT_HOST doit correspondre au domaine ci-dessus.`);
+      console.error(`SHAREPOINT_SITE doit être le chemin après le domaine (ex: /sites/XXX).`);
+      console.error("─────────────────────────────────────────────");
+    } catch {
+      /* le diagnostic est best-effort */
+    }
+    throw e;
+  }
 }
 
 async function getDriveId(token, siteId) {
