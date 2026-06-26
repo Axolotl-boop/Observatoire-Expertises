@@ -18,6 +18,7 @@
 
 import fs from "node:fs";
 import path from "node:path";
+import crypto from "node:crypto";
 
 const {
   TENANT_ID,
@@ -157,6 +158,16 @@ function safeName(name) {
     .toLowerCase();
 }
 
+// Longueur max d'un slug. Un chemin SharePoint profond produit des noms trop
+// longs pour le système de fichiers (ENAMETOOLONG au build). On tronque en
+// gardant l'unicité grâce à un court hash du nom complet.
+const MAX_SLUG = 100;
+function shortenBase(base) {
+  if (base.length <= MAX_SLUG) return base;
+  const hash = crypto.createHash("sha1").update(base).digest("hex").slice(0, 8);
+  return `${base.slice(0, MAX_SLUG - 9)}-${hash}`;
+}
+
 async function main() {
   requireEnv();
   console.log("Authentification Microsoft Graph…");
@@ -186,7 +197,8 @@ async function main() {
       rel = rel.slice(SHAREPOINT_FOLDER.length).replace(/^\/+/, "");
     }
     const relPath = rel ? `${rel}/${item.name}` : item.name;
-    const outName = `${safeName(relPath.replace(/\//g, "-")).replace(/\.md$/i, "")}.md`;
+    const base = safeName(relPath.replace(/\//g, "-")).replace(/\.md$/i, "");
+    const outName = `${shortenBase(base)}.md`;
     fs.writeFileSync(path.join(CONTENT_DIR, outName), content, "utf8");
     console.log(`  ✓ ${relPath} -> content/${outName}`);
   }
