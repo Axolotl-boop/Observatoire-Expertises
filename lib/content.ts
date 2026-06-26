@@ -547,33 +547,37 @@ export const DIGEST_BLOCKS: { key: "bloc1" | "bloc2" | "bloc3" | "bloc4"; title:
   { key: "bloc4", title: "Sujets éditoriaux & angle" },
 ];
 
+export interface DigestSections {
+  signaux: string;
+  bloc1: string;
+  bloc2: string;
+  bloc3: string;
+  bloc4: string;
+}
+
+export interface DigestEntry {
+  month: string; // AAAA-MM
+  date?: string;
+  slug: string;
+  sections: DigestSections;
+}
+
 export interface ExpertiseDigest {
   key: string;
   label: string;
   available: boolean;
-  slug?: string;
-  title?: string;
-  date?: string;
-  sourcePath?: string;
-  /** Sections rendues en HTML. */
-  sections?: {
-    signaux: string;
-    bloc1: string;
-    bloc2: string;
-    bloc3: string;
-    bloc4: string;
-  };
+  /** Digests mensuels, du plus récent au plus ancien. */
+  entries: DigestEntry[];
 }
 
-/** Digest le plus récent d'une expertise (hors fichiers *REPORT*). */
-function latestDigestSlug(folder: string): string | undefined {
+/** Digests d'une expertise (hors fichiers *REPORT*), du plus récent au plus ancien. */
+function digestSlugsForFolder(folder: string): { slug: string; date: string }[] {
   const needle = `/02-Digests-par-expertise/${folder}/`;
-  const candidates = Object.entries(INDEX)
+  return Object.entries(INDEX)
     .filter(([, v]) => v.path.includes(needle))
     .filter(([, v]) => !/report/i.test(v.path))
-    .map(([slug, v]) => ({ slug, date: extractDate(v.path) || "", path: v.path }))
-    .sort((a, b) => b.date.localeCompare(a.date) || b.path.localeCompare(a.path));
-  return candidates[0]?.slug;
+    .map(([slug, v]) => ({ slug, date: extractDate(v.path) || "" }))
+    .sort((a, b) => b.date.localeCompare(a.date) || b.slug.localeCompare(a.slug));
 }
 
 /** Découpe le corps d'un digest en ses 5 sections (texte Markdown brut). */
@@ -664,36 +668,35 @@ function emphasizeLabels(md: string): string {
     .join("\n");
 }
 
-/** Pour chaque expertise, charge et rend le digest le plus récent. */
+/** Pour chaque expertise, charge et rend tous les digests mensuels. */
 export async function getExpertiseDigests(): Promise<ExpertiseDigest[]> {
+  const renderBloc = async (s?: string) => (s ? renderMarkdown(emphasizeLabels(s)) : "");
   const result: ExpertiseDigest[] = [];
   for (const exp of EXPERTISES) {
-    const slug = latestDigestSlug(exp.folder);
-    const parsed = slug ? readRaw(slug) : null;
-    if (!slug || !parsed) {
-      result.push({ key: exp.key, label: exp.label, available: false });
-      continue;
+    const slugs = digestSlugsForFolder(exp.folder);
+    const entries: DigestEntry[] = [];
+    for (const { slug, date } of slugs) {
+      const parsed = readRaw(slug);
+      if (!parsed) continue;
+      const secs = sliceDigestSections(parsed.body);
+      entries.push({
+        month: monthOf(date),
+        date,
+        slug,
+        sections: {
+          signaux: renderSignauxHtml(secs.signaux || ""),
+          bloc1: await renderBloc(secs.bloc1),
+          bloc2: await renderBloc(secs.bloc2),
+          bloc3: await renderBloc(secs.bloc3),
+          bloc4: await renderBloc(secs.bloc4),
+        },
+      });
     }
-    const meta = buildMeta(slug);
-    const secs = sliceDigestSections(parsed.body);
-    // Blocs : titres internes mis en gras puis rendu Markdown standard.
-    const renderBloc = async (s?: string) =>
-      s ? renderMarkdown(emphasizeLabels(s)) : "";
     result.push({
       key: exp.key,
       label: exp.label,
-      available: true,
-      slug,
-      title: meta?.title,
-      date: meta?.date,
-      sourcePath: meta?.sourcePath,
-      sections: {
-        signaux: renderSignauxHtml(secs.signaux || ""),
-        bloc1: await renderBloc(secs.bloc1),
-        bloc2: await renderBloc(secs.bloc2),
-        bloc3: await renderBloc(secs.bloc3),
-        bloc4: await renderBloc(secs.bloc4),
-      },
+      available: entries.length > 0,
+      entries,
     });
   }
   return result;

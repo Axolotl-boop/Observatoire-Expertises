@@ -10,11 +10,12 @@ const DIGEST_BLOCKS: { key: "bloc1" | "bloc2" | "bloc3" | "bloc4"; title: string
   { key: "bloc4", title: "Sujets éditoriaux & angle" },
 ];
 
-function formatDate(iso?: string): string {
-  if (!iso) return "";
-  const d = new Date(iso);
-  if (Number.isNaN(d.getTime())) return "";
-  return d.toLocaleDateString("fr-FR", { year: "numeric", month: "long" });
+function monthLabel(key: string): string {
+  const m = key.match(/^(\d{4})-(\d{2})$/);
+  if (!m) return key;
+  const d = new Date(Number(m[1]), Number(m[2]) - 1, 1);
+  const label = d.toLocaleDateString("fr-FR", { month: "long", year: "numeric" });
+  return label.charAt(0).toUpperCase() + label.slice(1);
 }
 
 function Block({
@@ -96,18 +97,20 @@ function Block({
 export default function ExpertiseDigests({ digests }: { digests: ExpertiseDigest[] }) {
   const firstAvailable = digests.find((d) => d.available) ?? digests[0];
   const [active, setActive] = useState<string>(firstAvailable?.key ?? "");
-  // Repliés par défaut. Les 4 blocs sont gérés par paires (lignes) : ouvrir l'un
-  // ouvre son voisin de ligne pour éviter qu'il paraisse vide.
+  const [month, setMonth] = useState<string>("");
   const [openSignaux, setOpenSignaux] = useState(false);
   const [openRows, setOpenRows] = useState<[boolean, boolean]>([false, false]);
   const toggleRow = (i: 0 | 1) =>
     setOpenRows((r) => (i === 0 ? [!r[0], r[1]] : [r[0], !r[1]]));
 
   const current = digests.find((d) => d.key === active);
+  const months = current?.entries.map((e) => e.month) ?? [];
+  const selectedMonth = months.includes(month) ? month : months[0];
+  const entry = current?.entries.find((e) => e.month === selectedMonth);
 
   return (
     <section className="mb-12">
-      {/* Boutons-filtres par expertise */}
+      {/* Filtre par expertise */}
       <div className="flex flex-wrap gap-2">
         {digests.map((d) => {
           const isActive = d.key === active;
@@ -133,15 +136,34 @@ export default function ExpertiseDigests({ digests }: { digests: ExpertiseDigest
         })}
       </div>
 
-      {current?.available && current.sections ? (
+      {/* Filtre par mois */}
+      {months.length > 0 && (
+        <div className="mt-3 flex flex-wrap gap-2">
+          {months.map((m) => (
+            <button
+              key={m}
+              type="button"
+              onClick={() => setMonth(m)}
+              className={[
+                "rounded-full px-3 py-1.5 text-xs font-medium transition",
+                m === selectedMonth
+                  ? "bg-marine text-white"
+                  : "border border-gray-300 bg-white text-marine hover:border-marine",
+              ].join(" ")}
+            >
+              {monthLabel(m)}
+            </button>
+          ))}
+        </div>
+      )}
+
+      {current?.available && entry ? (
         <div className="mt-6">
           <h2 className="mb-4 font-title text-xl font-bold text-marine">
             {current.label}
-            {current.date && (
-              <span className="ml-2 text-sm font-normal text-gray-400">
-                · digest {formatDate(current.date)}
-              </span>
-            )}
+            <span className="ml-2 text-sm font-normal text-gray-400">
+              · digest {monthLabel(entry.month)}
+            </span>
           </h2>
 
           {/* Légende des verdicts */}
@@ -167,7 +189,7 @@ export default function ExpertiseDigests({ digests }: { digests: ExpertiseDigest
           {/* Bloc principal : les signaux du mois */}
           <Block
             title="Les signaux importants du mois"
-            html={current.sections.signaux}
+            html={entry.sections.signaux}
             open={openSignaux}
             onToggle={() => setOpenSignaux((v) => !v)}
             accent
@@ -181,7 +203,7 @@ export default function ExpertiseDigests({ digests }: { digests: ExpertiseDigest
                 <Block
                   key={block.key}
                   title={block.title}
-                  html={current.sections?.[block.key]}
+                  html={entry.sections[block.key]}
                   open={openRows[row]}
                   onToggle={() => toggleRow(row)}
                 />
