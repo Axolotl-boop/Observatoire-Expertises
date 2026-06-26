@@ -84,30 +84,28 @@ async function graph(token, urlPath) {
   return res.json();
 }
 
-async function getSiteId(token) {
-  if (!/\.sharepoint\.com$/i.test(HOST)) {
-    console.warn(
-      `⚠️ SHAREPOINT_HOST inattendu : il devrait ressembler à "monentreprise.sharepoint.com".`,
-    );
-  }
+// Déduit le domaine SharePoint canonique du tenant à partir du jeton lui-même
+// (webUrl du site racine). C'est insensible aux fautes de frappe dans le secret
+// SHAREPOINT_HOST ; ce dernier ne sert plus que de repli si la déduction échoue.
+async function resolveHost(token) {
   try {
-    const data = await graph(token, `/sites/${HOST}:${SITE}`);
-    return data.id;
-  } catch (e) {
-    // Diagnostic : quel domaine SharePoint le jeton peut-il réellement atteindre ?
-    // Le webUrl du site racine révèle le tenant auquel le jeton est rattaché.
-    try {
-      const root = await graph(token, `/sites/root?$select=webUrl`);
-      console.error("──────────────── DIAGNOSTIC ────────────────");
-      console.error(`Domaine réellement accessible par le jeton : ${root.webUrl}`);
-      console.error(`SHAREPOINT_HOST doit correspondre au domaine ci-dessus.`);
-      console.error(`SHAREPOINT_SITE doit être le chemin après le domaine (ex: /sites/XXX).`);
-      console.error("─────────────────────────────────────────────");
-    } catch {
-      /* le diagnostic est best-effort */
+    const root = await graph(token, `/sites/root?$select=webUrl`);
+    const host = new URL(root.webUrl).hostname;
+    if (HOST && host.toLowerCase() !== HOST.toLowerCase()) {
+      console.warn(
+        `ℹ️ Domaine déduit du jeton : ${host} (le secret SHAREPOINT_HOST="${HOST}" est ignoré).`,
+      );
     }
-    throw e;
+    return host;
+  } catch {
+    return HOST; // repli sur la valeur fournie
   }
+}
+
+async function getSiteId(token) {
+  const host = await resolveHost(token);
+  const data = await graph(token, `/sites/${host}:${SITE}`);
+  return data.id;
 }
 
 async function getDriveId(token, siteId) {
