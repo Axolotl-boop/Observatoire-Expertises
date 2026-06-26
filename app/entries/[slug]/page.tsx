@@ -40,14 +40,18 @@ export default async function EntryPage({
   if (!entry) notFound();
 
   const isNewsletter = (entry.sourcePath ?? "").includes("Newsletter");
+  const isPad = (entry.sourcePath ?? "").includes("Notes-PAD");
+  const backHref = isNewsletter ? "/kiosque" : isPad ? "/pouls" : "/";
+  const backLabel = isNewsletter
+    ? "← Retour au kiosque"
+    : isPad
+      ? "← Retour au pouls du marché"
+      : "← Retour à l'accueil";
 
   return (
     <article>
-      <Link
-        href={isNewsletter ? "/kiosque" : "/"}
-        className="text-sm text-electrique hover:underline"
-      >
-        {isNewsletter ? "← Retour au kiosque" : "← Retour à l'accueil"}
+      <Link href={backHref} className="text-sm text-electrique hover:underline">
+        {backLabel}
       </Link>
 
       {!isNewsletter && (

@@ -334,6 +334,11 @@ export function monthOf(iso?: string): string {
   return m ? `${m[1]}-${m[2]}` : "????";
 }
 
+/** Notes PAD retraitées (synthèses de la demande), de la plus récente à la plus ancienne. */
+export function getPadNotes(): EntryMeta[] {
+  return getAllEntries().filter((e) => (e.sourcePath || "").includes("Notes-PAD"));
+}
+
 async function renderMarkdown(markdown: string): Promise<string> {
   const file = await unified()
     .use(remarkParse)

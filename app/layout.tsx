@@ -44,6 +44,12 @@ export default function RootLayout({
                   Le kiosque à journaux
                 </span>
               </Link>
+              <Link href="/pouls" className="flex items-center gap-2">
+                <span className="text-xl">🩺</span>
+                <span className="font-title font-semibold text-marine hover:text-electrique">
+                  Le pouls du marché
+                </span>
+              </Link>
             </nav>
             <a
               href="https://outlook.office.com/mail/deeplink/compose?to=axel.alizier@wefiit.com&subject=Feedback%20Observatoire%20des%20Expertises"
