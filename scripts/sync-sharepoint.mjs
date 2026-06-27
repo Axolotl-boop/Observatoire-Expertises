@@ -215,6 +215,13 @@ async function main() {
     "utf8",
   );
 
+  // Horodatage du passage de synchro (pour l'indicateur de fraîcheur).
+  fs.writeFileSync(
+    path.join(CONTENT_DIR, "_meta.json"),
+    `${JSON.stringify({ syncedAt: new Date().toISOString() }, null, 2)}\n`,
+    "utf8",
+  );
+
   console.log("Synchronisation terminée.");
 }
 

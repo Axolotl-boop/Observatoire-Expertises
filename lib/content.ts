@@ -339,6 +339,25 @@ export function monthOf(iso?: string): string {
   return m ? `${m[1]}-${m[2]}` : "????";
 }
 
+/** Date ISO du dernier passage de synchro SharePoint (content/_meta.json). */
+export function getLastSync(): string | null {
+  const p = path.join(CONTENT_DIR, "_meta.json");
+  if (fs.existsSync(p)) {
+    try {
+      const meta = JSON.parse(fs.readFileSync(p, "utf8")) as { syncedAt?: string };
+      if (meta.syncedAt) return meta.syncedAt;
+    } catch {
+      /* ignore */
+    }
+  }
+  // Repli : la plus récente date de modification des fichiers indexés.
+  const mods = Object.values(INDEX)
+    .map((v) => v.modified)
+    .filter((m): m is string => Boolean(m))
+    .sort();
+  return mods.length ? mods[mods.length - 1] : null;
+}
+
 /** Une ligne du tableau de synthèse : [élément, statut, verdict, source/date]. */
 export type SynthRow = string[];
 
@@ -440,13 +459,71 @@ export interface ConcurrenceAxis {
   html: string;
 }
 
+export interface ConcurrenceTrackingRow {
+  cabinet: string;
+  axis: string; // libellé court de l'axe (ex. « Axe 1 »)
+  move: string; // description du mouvement
+  verdict: string; // verdict brut (ex. « [tendance] »)
+  verdictKey: string; // mode | tendance | structurel | ""
+  date: string;
+}
+
 export interface ConcurrenceQuarter {
   quarter: string;
   lectureHtml: string;
   axes: ConcurrenceAxis[];
+  tracking: ConcurrenceTrackingRow[];
+  cabinets: string[];
   /** Contenu brut du .md et nom de fichier d'origine (pour téléchargement). */
   raw: string;
   filename: string;
+}
+
+/** Parse le « Tableau de suivi » (cabinet × axe) en lignes longues filtrables. */
+function parseTracking(lines: string[]): ConcurrenceTrackingRow[] {
+  const section = sectionLines(lines, /^##\s*Tableau de suivi/i);
+  const tableRows = section.filter((l) => l.trim().startsWith("|"));
+  const rows: ConcurrenceTrackingRow[] = [];
+  let axisHeaders: string[] = [];
+  for (const r of tableRows) {
+    const cells = r
+      .trim()
+      .replace(/^\|/, "")
+      .replace(/\|$/, "")
+      .split("|")
+      .map((c) => c.trim());
+    if (cells.every((c) => /^-+$/.test(c.replace(/\s/g, "")))) continue; // séparateur
+    if (axisHeaders.length === 0 && /cabinet/i.test(cells[0])) {
+      axisHeaders = cells.slice(1).map((c) => {
+        const m = c.replace(/\*\*/g, "").match(/Axe\s*\d+/i);
+        return m ? m[0] : c.replace(/\*\*/g, "").trim();
+      });
+      continue;
+    }
+    const cabinet = cells[0].replace(/\*\*/g, "").trim();
+    if (!cabinet) continue;
+    cells.slice(1).forEach((cell, idx) => {
+      const c = cell.trim();
+      if (!c || /^⬜/.test(c) || c === "—") return;
+      const vm = c.match(/\[(mode|tendance|structurel)[^\]]*\]/i);
+      const dm = c.match(/\d{4}-\d{2}(?:-\d{2})?/);
+      const move = c
+        .replace(/^✅\s*/, "")
+        .replace(/\s*·?\s*\[(mode|tendance|structurel)[^\]]*\][^·]*/i, "")
+        .replace(/\s*·?\s*\d{4}-\d{2}(?:-\d{2})?\s*$/, "")
+        .replace(/\s*·\s*$/, "")
+        .trim();
+      rows.push({
+        cabinet,
+        axis: axisHeaders[idx] || `Axe ${idx + 1}`,
+        move,
+        verdict: vm ? vm[0] : "",
+        verdictKey: vm ? vm[1].toLowerCase() : "",
+        date: dm ? dm[0] : "",
+      });
+    });
+  }
+  return rows;
 }
 
 /**
@@ -514,10 +591,14 @@ export async function getConcurrenceQuarters(): Promise<ConcurrenceQuarter[]> {
     }
 
     const lecture = sectionLines(lines, /^##\s*Lecture transverse/i);
+    const tracking = parseTracking(lines);
+    const cabinets = Array.from(new Set(tracking.map((t) => t.cabinet))).sort();
     result.push({
       quarter,
       lectureHtml: await renderMarkdown(lecture.join("\n")),
       axes,
+      tracking,
+      cabinets,
       raw,
       filename: (meta?.path || `${slug}.md`).split("/").pop() || `${slug}.md`,
     });

@@ -3,6 +3,8 @@ import localFont from "next/font/local";
 import Link from "next/link";
 import Analytics from "@/components/Analytics";
 import SignOutButton from "@/components/SignOutButton";
+import SyncFreshness from "@/components/SyncFreshness";
+import { getLastSync } from "@/lib/content";
 import "./globals.css";
 
 const geomanist = localFont({
@@ -28,6 +30,7 @@ export default function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
+  const lastSync = getLastSync();
   return (
     <html lang="fr" className={`${geomanist.variable} ${publica.variable}`}>
       <body className="min-h-screen flex flex-col">
@@ -85,7 +88,7 @@ export default function RootLayout({
         </main>
         <footer className="border-t border-gray-200 bg-white">
           <div className="mx-auto flex max-w-5xl flex-wrap items-center justify-between gap-2 px-4 py-4 text-sm text-gray-500">
-            <span>Contenu synchronisé automatiquement depuis SharePoint.</span>
+            <SyncFreshness syncedAt={lastSync} />
             <div className="flex items-center gap-4">
               <Link href="/admin/stats" className="text-gray-500 hover:text-electrique">
                 Statistiques
