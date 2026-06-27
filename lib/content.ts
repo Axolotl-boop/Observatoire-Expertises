@@ -339,6 +339,80 @@ export function monthOf(iso?: string): string {
   return m ? `${m[1]}-${m[2]}` : "????";
 }
 
+export interface WhatsNewItem {
+  rubric: string;
+  emoji: string;
+  title: string;
+  date?: string;
+  href: string;
+}
+
+/** Dernier contenu de chaque rubrique (pour l'encart « Quoi de neuf »). */
+export function getWhatsNew(): WhatsNewItem[] {
+  const items: WhatsNewItem[] = [];
+
+  // Dernière newsletter (titre + source propres)
+  const news = getNewsletters();
+  if (news[0]) {
+    items.push({
+      rubric: "Kiosque à journaux",
+      emoji: "🗞️",
+      title: news[0].source ? `${news[0].title} · ${news[0].source}` : news[0].title,
+      date: news[0].date,
+      href: `/entries/${encodeURIComponent(news[0].slug)}`,
+    });
+  }
+
+  const all = getAllEntries().filter((e) => !/bootstrap/i.test(e.sourcePath || ""));
+  const latest = (pred: (p: string) => boolean) =>
+    all
+      .filter((e) => pred(e.sourcePath || ""))
+      .sort((a, b) => (b.date ?? "").localeCompare(a.date ?? ""))[0];
+  const quarterOf = (p?: string) => {
+    const m = (p || "").match(/(20\d\d)-T([1-4])/i);
+    return m ? `T${m[2]} ${m[1]}` : "";
+  };
+
+  const pad = latest((p) => p.includes("Notes-PAD"));
+  if (pad) {
+    items.push({
+      rubric: "Pouls du marché",
+      emoji: "🩺",
+      title: pad.title,
+      date: pad.date,
+      href: "/pouls",
+    });
+  }
+
+  const conc = latest(
+    (p) => p.includes("Veille-concurrentielle") && /\/20\d\d-T[1-4]\//.test(p),
+  );
+  if (conc) {
+    items.push({
+      rubric: "Concurrence",
+      emoji: "💥",
+      title: `Snapshot concurrentiel — ${quarterOf(conc.sourcePath)}`,
+      date: conc.date,
+      href: "/concurrence",
+    });
+  }
+
+  const emp = latest(
+    (p) => p.includes("Veille-emploi") && /\/20\d\d-T[1-4]\//.test(p),
+  );
+  if (emp) {
+    items.push({
+      rubric: "Métiers & Compétences",
+      emoji: "💼",
+      title: `Veille emploi — ${quarterOf(emp.sourcePath)}`,
+      date: emp.date,
+      href: "/metiers",
+    });
+  }
+
+  return items;
+}
+
 /** Une ligne du tableau de synthèse : [élément, statut, verdict, source/date]. */
 export type SynthRow = string[];
 
