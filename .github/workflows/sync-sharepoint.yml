@@ -14,6 +14,8 @@ permissions:
 jobs:
   sync:
     runs-on: ubuntu-latest
+    env:
+      MAIL_SERVER: ${{ secrets.MAIL_SERVER }}
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -33,6 +35,27 @@ jobs:
           SHAREPOINT_DRIVE: ${{ secrets.SHAREPOINT_DRIVE }}
           SHAREPOINT_FOLDER: ${{ secrets.SHAREPOINT_FOLDER }}
         run: node scripts/sync-sharepoint.mjs
+
+      - name: Détecter un nouveau digest mensuel
+        id: detect
+        run: node scripts/notify-digest.mjs
+
+      - name: Notifier le nouveau digest par email
+        if: steps.detect.outputs.new_month != '' && env.MAIL_SERVER != ''
+        uses: dawidd6/action-send-mail@v3
+        with:
+          server_address: ${{ secrets.MAIL_SERVER }}
+          server_port: ${{ secrets.MAIL_PORT }}
+          username: ${{ secrets.MAIL_USERNAME }}
+          password: ${{ secrets.MAIL_PASSWORD }}
+          from: Observatoire des Expertises <${{ secrets.MAIL_USERNAME }}>
+          to: ${{ secrets.MAIL_TO }}
+          subject: "Le digest de ${{ steps.detect.outputs.month_label }} est disponible"
+          html_body: |
+            <p>Bonjour,</p>
+            <p>Le nouveau digest mensuel (<strong>${{ steps.detect.outputs.month_label }}</strong>)
+            est disponible sur l'Observatoire des Expertises.</p>
+            <p><a href="${{ secrets.SITE_URL }}">Ouvrir l'Observatoire des Expertises</a></p>
 
       - name: Committer les changements
         run: |
