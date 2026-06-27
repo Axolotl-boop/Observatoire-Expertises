@@ -2,6 +2,7 @@
 
 import { useMemo, useState } from "react";
 import type { EmploiQuarter, SynthRow } from "@/lib/content";
+import { track } from "@/lib/track";
 
 function quarterLabel(q: string): string {
   const m = q.match(/^(\d{4})-T([1-4])$/i);
@@ -110,7 +111,10 @@ export default function Metiers({ quarters }: { quarters: EmploiQuarter[] }) {
           <button
             key={e.key}
             type="button"
-            onClick={() => setExpKey(e.key)}
+            onClick={() => {
+              setExpKey(e.key);
+              track("filter", `Métiers · expertise:${e.label}`);
+            }}
             className={[
               "rounded-full px-4 py-2 text-sm font-medium transition",
               e.key === exp?.key
@@ -130,7 +134,10 @@ export default function Metiers({ quarters }: { quarters: EmploiQuarter[] }) {
             <button
               key={q}
               type="button"
-              onClick={() => setQuarter(q)}
+              onClick={() => {
+                setQuarter(q);
+                track("filter", `Métiers · trimestre:${q}`);
+              }}
               className={[
                 "rounded-full px-3 py-1.5 text-xs font-medium transition",
                 q === selectedQuarter
@@ -159,7 +166,10 @@ export default function Metiers({ quarters }: { quarters: EmploiQuarter[] }) {
             </h2>
             <button
               type="button"
-              onClick={() => downloadMd(exp.filename, exp.raw)}
+              onClick={() => {
+                track("download", exp.filename);
+                downloadMd(exp.filename, exp.raw);
+              }}
               className="text-sm font-medium text-electrique hover:underline"
             >
               ⬇ Télécharger le snapshot (.md)
@@ -185,7 +195,11 @@ export default function Metiers({ quarters }: { quarters: EmploiQuarter[] }) {
               <button
                 key={v.key}
                 type="button"
-                onClick={() => setVerdict(verdict === v.key ? "" : v.key)}
+                onClick={() => {
+                  const nv = verdict === v.key ? "" : v.key;
+                  setVerdict(nv);
+                  if (nv) track("filter", `Métiers · verdict:${nv}`);
+                }}
                 className={[
                   "rounded-full border px-3 py-1.5 text-xs font-medium transition",
                   verdict === v.key ? "border-marine bg-glace" : "border-gray-300 bg-white",

@@ -4,6 +4,7 @@ import Link from "next/link";
 import { useMemo, useState } from "react";
 import type { Newsletter } from "@/lib/content";
 import { SOURCE_INFO } from "@/lib/sources";
+import { track } from "@/lib/track";
 
 // Couleurs de la charte pour la tranche des dossiers (cycle stable par source).
 const ACCENTS = ["#002882", "#6abfa3", "#380066", "#f98f03", "#1a4d3e", "#0e2a3a", "#e8572a"];
@@ -89,7 +90,10 @@ export default function Kiosque({ newsletters }: { newsletters: Newsletter[] }) 
           <button
             key={m}
             type="button"
-            onClick={() => setMonth(m)}
+            onClick={() => {
+              setMonth(m);
+              track("filter", `Kiosque · mois:${m}`);
+            }}
             className={[
               "rounded-full px-4 py-2 text-sm font-medium transition",
               month === m
@@ -169,7 +173,10 @@ export default function Kiosque({ newsletters }: { newsletters: Newsletter[] }) 
                   <button
                     key={group.source}
                     type="button"
-                    onClick={() => setOpenSource(group.source)}
+                    onClick={() => {
+                      setOpenSource(group.source);
+                      track("source_open", group.source);
+                    }}
                     className="group flex flex-col overflow-hidden rounded-xl border border-gray-200 bg-white text-left transition hover:-translate-y-0.5 hover:shadow-md"
                   >
                     <div className="h-2" style={{ backgroundColor: accentOf(group.source) }} />

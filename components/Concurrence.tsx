@@ -2,6 +2,7 @@
 
 import { useMemo, useState } from "react";
 import type { ConcurrenceQuarter, ConcurrenceTrackingRow } from "@/lib/content";
+import { track } from "@/lib/track";
 
 function quarterLabel(q: string): string {
   const m = q.match(/^(\d{4})-T([1-4])$/i);
@@ -58,7 +59,10 @@ function TrackingTable({ rows, cabinets }: { rows: ConcurrenceTrackingRow[]; cab
       <div className="mb-4 flex flex-wrap items-center gap-2">
         <select
           value={cabinet}
-          onChange={(e) => setCabinet(e.target.value)}
+          onChange={(e) => {
+            setCabinet(e.target.value);
+            if (e.target.value) track("filter", `Concurrence · cabinet:${e.target.value}`);
+          }}
           className="rounded-lg border border-gray-300 bg-white px-3 py-1.5 text-sm text-marine"
         >
           <option value="">Tous les cabinets</option>
@@ -84,7 +88,11 @@ function TrackingTable({ rows, cabinets }: { rows: ConcurrenceTrackingRow[]; cab
           <button
             key={v.key}
             type="button"
-            onClick={() => setVerdict(verdict === v.key ? "" : v.key)}
+            onClick={() => {
+              const nv = verdict === v.key ? "" : v.key;
+              setVerdict(nv);
+              if (nv) track("filter", `Concurrence · verdict:${nv}`);
+            }}
             className={[
               "rounded-full border px-3 py-1.5 text-xs font-medium transition",
               verdict === v.key ? "border-marine bg-glace" : "border-gray-300 bg-white",
@@ -224,7 +232,10 @@ export default function Concurrence({ quarters }: { quarters: ConcurrenceQuarter
         {current && (
           <button
             type="button"
-            onClick={() => downloadMd(current.filename, current.raw)}
+            onClick={() => {
+              track("download", current.filename);
+              downloadMd(current.filename, current.raw);
+            }}
             className="text-sm font-medium text-electrique hover:underline"
           >
             ⬇ Télécharger le snapshot (.md)

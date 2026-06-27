@@ -52,11 +52,36 @@ export default async function StatsPage() {
   const maxDay = Math.max(...stats.visitorsByDay.map((d) => d.views), 1);
   const maxClick = Math.max(...stats.topClicks.map((c) => c.clicks), 1);
 
+  const maxFunnel = Math.max(stats.funnel.connected, 1);
+  const maxEvent = Math.max(...stats.topEvents.map((e) => e.count), 1);
+
   return (
     <div>
-      <div className="mb-8">
-        <h1 className="font-title text-2xl font-bold text-marine">📊 Statistiques d'usage</h1>
-        <p className="mt-2 text-gray-600">Monitoring de l'utilisation du portail.</p>
+      <div className="mb-8 flex flex-wrap items-start justify-between gap-3">
+        <div>
+          <h1 className="font-title text-2xl font-bold text-marine">📊 Statistiques d'usage</h1>
+          <p className="mt-2 text-gray-600">Monitoring de l'utilisation du portail.</p>
+        </div>
+        <a
+          href="/api/export"
+          className="rounded-full border border-gray-300 bg-white px-4 py-2 text-sm font-medium text-marine hover:border-electrique hover:text-electrique"
+        >
+          ⬇ Exporter en CSV
+        </a>
+      </div>
+
+      {/* Actifs récents */}
+      <div className="mb-8 grid gap-4 sm:grid-cols-3">
+        {[
+          { label: "Actifs aujourd'hui (DAU)", value: stats.dau },
+          { label: "Actifs 7 jours (WAU)", value: stats.wau },
+          { label: "Actifs 30 jours (MAU)", value: stats.mau },
+        ].map((c) => (
+          <div key={c.label} className="rounded-xl border border-gray-200 bg-white p-5">
+            <div className="text-sm text-gray-500">{c.label}</div>
+            <div className="font-title text-3xl font-bold text-marine">{c.value}</div>
+          </div>
+        ))}
       </div>
 
       {/* Cartes synthèse */}
@@ -70,6 +95,48 @@ export default async function StatsPage() {
           <div className="font-title text-3xl font-bold text-marine">{stats.totalPageviews}</div>
         </div>
       </div>
+
+      {/* Funnel (30 derniers jours) */}
+      <section className="mb-8 rounded-xl border border-gray-200 bg-white p-5">
+        <h2 className="mb-4 font-title text-lg font-bold text-marine">
+          Parcours d'usage (30 derniers jours)
+        </h2>
+        <div className="space-y-1.5">
+          {[
+            { label: "Connexion (a consulté le site)", value: stats.funnel.connected },
+            { label: "A visité une rubrique", value: stats.funnel.section },
+            { label: "A réalisé une action (filtre, téléchargement, dépliage)", value: stats.funnel.action },
+          ].map((s) => (
+            <div key={s.label} className="flex items-center gap-3 text-sm">
+              <span className="w-72 shrink-0 text-gray-600">{s.label}</span>
+              <Bar value={s.value} max={maxFunnel} />
+              <span className="w-16 shrink-0 text-right font-semibold text-marine">
+                {s.value}
+              </span>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* Événements nommés */}
+      <section className="mb-8 rounded-xl border border-gray-200 bg-white p-5">
+        <h2 className="mb-4 font-title text-lg font-bold text-marine">Événements</h2>
+        {stats.topEvents.length === 0 ? (
+          <p className="text-sm text-gray-400">Aucun événement.</p>
+        ) : (
+          <div className="space-y-1.5">
+            {stats.topEvents.map((e) => (
+              <div key={e.event} className="flex items-center gap-3 text-sm">
+                <span className="w-40 shrink-0 font-medium text-gray-700">{e.event}</span>
+                <Bar value={e.count} max={maxEvent} color="#380066" />
+                <span className="w-28 shrink-0 text-right text-gray-600">
+                  {e.count} · {e.users} pers.
+                </span>
+              </div>
+            ))}
+          </div>
+        )}
+      </section>
 
       {/* Visiteurs par jour */}
       <section className="mb-8 rounded-xl border border-gray-200 bg-white p-5">

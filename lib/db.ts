@@ -43,6 +43,37 @@ export async function logEvent(e: TrackEvent): Promise<void> {
   `;
 }
 
+/** Tous les événements (pour export CSV). */
+export async function exportEvents(): Promise<
+  { ts: string; user_email: string | null; event: string; target: string | null; path: string | null }[]
+> {
+  if (!sql) return [];
+  await ensureSchema();
+  return (await sql`
+    select to_char(ts, 'YYYY-MM-DD"T"HH24:MI:SS') as ts, user_email, event, target, path
+    from events order by ts desc
+  `) as {
+    ts: string;
+    user_email: string | null;
+    event: string;
+    target: string | null;
+    path: string | null;
+  }[];
+}
+
+/** Purge les événements plus vieux que N mois. Renvoie le nombre supprimé. */
+export async function purgeOldEvents(months: number): Promise<number> {
+  if (!sql) return 0;
+  await ensureSchema();
+  const rows = (await sql`
+    with del as (
+      delete from events where ts < now() - (${months} * interval '1 month') returning 1
+    )
+    select count(*)::int as n from del
+  `) as { n: number }[];
+  return rows[0]?.n ?? 0;
+}
+
 export interface Stats {
   totalPageviews: number;
   uniqueVisitors: number;
@@ -51,6 +82,11 @@ export interface Stats {
   topClicks: { target: string; clicks: number; users: number }[];
   topPaths: { path: string; views: number }[];
   byUser: { user_email: string; events: number; lastSeen: string }[];
+  topEvents: { event: string; count: number; users: number }[];
+  dau: number;
+  wau: number;
+  mau: number;
+  funnel: { connected: number; section: number; action: number };
 }
 
 export async function getStats(): Promise<Stats | null> {
@@ -103,6 +139,36 @@ export async function getStats(): Promise<Stats | null> {
     group by 1 order by events desc limit 50
   `) as { user_email: string; events: number; lastSeen: string }[];
 
+  const topEvents = (await sql`
+    select event, count(*) as count, count(distinct user_email) as users
+    from events group by 1 order by count desc
+  `) as { event: string; count: number; users: number }[];
+
+  const [active] = (await sql`
+    select
+      count(distinct user_email) filter (where ts > now() - interval '1 day') as dau,
+      count(distinct user_email) filter (where ts > now() - interval '7 days') as wau,
+      count(distinct user_email) filter (where ts > now() - interval '30 days') as mau
+    from events
+  `) as { dau: number; wau: number; mau: number }[];
+
+  const [funnel] = (await sql`
+    with u as (
+      select user_email,
+        bool_or(event = 'pageview') as connected,
+        bool_or(path ~ '^/(kiosque|pouls|concurrence|metiers|entries)') as section,
+        bool_or(event in ('download', 'filter', 'digest_expand', 'source_open')) as action
+      from events
+      where ts > now() - interval '30 days' and user_email is not null
+      group by user_email
+    )
+    select
+      count(*) filter (where connected) as connected,
+      count(*) filter (where section) as section,
+      count(*) filter (where action) as action
+    from u
+  `) as { connected: number; section: number; action: number }[];
+
   return {
     totalPageviews: Number(totals?.views ?? 0),
     uniqueVisitors: Number(totals?.visitors ?? 0),
@@ -127,5 +193,18 @@ export async function getStats(): Promise<Stats | null> {
       events: Number(r.events),
       lastSeen: r.lastSeen,
     })),
+    topEvents: topEvents.map((r) => ({
+      event: r.event,
+      count: Number(r.count),
+      users: Number(r.users),
+    })),
+    dau: Number(active?.dau ?? 0),
+    wau: Number(active?.wau ?? 0),
+    mau: Number(active?.mau ?? 0),
+    funnel: {
+      connected: Number(funnel?.connected ?? 0),
+      section: Number(funnel?.section ?? 0),
+      action: Number(funnel?.action ?? 0),
+    },
   };
 }

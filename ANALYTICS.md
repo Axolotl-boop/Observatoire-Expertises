@@ -8,9 +8,26 @@ PostgreSQL, en associant chaque événement à l'**email SSO** de l'utilisateur
 ## Ce qui est mesuré
 
 - **Visiteurs uniques** et **pages vues** (total, par jour sur 30 jours, par mois)
-- **Clics par élément** (libellé du lien/bouton) + nombre de personnes distinctes
+- **Actifs récents** : DAU (jour), WAU (7 j), MAU (30 j)
+- **Parcours d'usage** (funnel) : connexion → visite d'une rubrique → action
+- **Événements nommés** : `download`, `filter`, `digest_expand`, `source_open`, `pageview`, `click`
+- **Clics par élément** (autocapture) + nombre de personnes distinctes
 - **Pages/sections les plus vues**
 - **Activité par personne** (volume d'événements, dernière activité)
+- **Export CSV** (bouton sur `/admin/stats`, réservé admin)
+
+## Rétention (RGPD)
+
+Un **cron quotidien** (`vercel.json` → `/api/cron/purge`, 03:00 UTC) supprime les
+événements plus vieux que `RETENTION_MONTHS` (défaut **12 mois**).
+
+| Variable | Rôle |
+|---|---|
+| `RETENTION_MONTHS` | ancienneté max des événements (défaut 12) |
+| `CRON_SECRET` | protège l'endpoint de purge ; Vercel l'envoie automatiquement en `Authorization: Bearer …` quand il est défini |
+
+> Définir `CRON_SECRET` dans les variables Vercel (valeur aléatoire) pour que la
+> purge ne soit déclenchable que par le cron.
 
 ## Mise en place
 

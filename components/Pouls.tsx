@@ -2,6 +2,7 @@
 
 import { useMemo, useState } from "react";
 import type { PadChartRow, PadMonth } from "@/lib/content";
+import { track } from "@/lib/track";
 
 function monthLabel(key: string): string {
   const m = key.match(/^(\d{4})-(\d{2})$/);
@@ -48,7 +49,10 @@ export default function Pouls({ months }: { months: PadMonth[] }) {
           <button
             key={m}
             type="button"
-            onClick={() => setMonth(m)}
+            onClick={() => {
+              setMonth(m);
+              track("filter", `Pouls · mois:${m}`);
+            }}
             className={[
               "rounded-full px-4 py-2 text-sm font-medium transition",
               m === current?.month

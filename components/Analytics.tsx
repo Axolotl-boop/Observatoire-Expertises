@@ -2,20 +2,7 @@
 
 import { usePathname } from "next/navigation";
 import { useEffect } from "react";
-
-function send(event: string, target: string | null, path: string) {
-  try {
-    const body = JSON.stringify({ event, target, path });
-    fetch("/api/track", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body,
-      keepalive: true,
-    }).catch(() => {});
-  } catch {
-    /* tracking best-effort */
-  }
-}
+import { track } from "@/lib/track";
 
 function labelOf(el: Element): string | null {
   const explicit = el.getAttribute("data-track");
@@ -31,10 +18,10 @@ export default function Analytics() {
 
   // Page vue à chaque navigation.
   useEffect(() => {
-    send("pageview", null, pathname);
+    track("pageview");
   }, [pathname]);
 
-  // Clic sur tout lien / bouton / élément balisé data-track.
+  // Clic sur tout lien / bouton / élément balisé data-track (autocapture).
   useEffect(() => {
     function onClick(e: MouseEvent) {
       const target = e.target as Element | null;
@@ -42,7 +29,7 @@ export default function Analytics() {
       if (!el) return;
       const label = labelOf(el);
       if (!label) return;
-      send("click", label, window.location.pathname);
+      track("click", label);
     }
     document.addEventListener("click", onClick, true);
     return () => document.removeEventListener("click", onClick, true);

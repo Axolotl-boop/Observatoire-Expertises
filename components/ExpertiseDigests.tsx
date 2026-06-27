@@ -2,6 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 import type { ExpertiseDigest } from "@/lib/content";
+import { track } from "@/lib/track";
 
 const DIGEST_BLOCKS: { key: "bloc1" | "bloc2" | "bloc3" | "bloc4"; title: string }[] = [
   { key: "bloc1", title: "Problématiques clients & positionnement offre" },
@@ -40,7 +41,10 @@ function Block({
     >
       <button
         type="button"
-        onClick={onToggle}
+        onClick={() => {
+          if (!open) track("digest_expand", title);
+          onToggle();
+        }}
         aria-expanded={open}
         className="flex w-full items-center justify-between gap-2 p-5 text-left"
       >
@@ -124,7 +128,10 @@ export default function ExpertiseDigests({ digests }: { digests: ExpertiseDigest
               key={d.key}
               type="button"
               disabled={!d.available}
-              onClick={() => setActive(d.key)}
+              onClick={() => {
+                setActive(d.key);
+                track("filter", `Observatoire · expertise:${d.label}`);
+              }}
               className={[
                 "rounded-full px-4 py-2 text-sm font-medium transition",
                 isActive
@@ -148,7 +155,10 @@ export default function ExpertiseDigests({ digests }: { digests: ExpertiseDigest
             <button
               key={m}
               type="button"
-              onClick={() => setMonth(m)}
+              onClick={() => {
+                setMonth(m);
+                track("filter", `Observatoire · mois:${m}`);
+              }}
               className={[
                 "rounded-full px-3 py-1.5 text-xs font-medium transition",
                 m === selectedMonth
