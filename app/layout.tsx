@@ -54,12 +54,6 @@ export default function RootLayout({
           <nav className="border-t border-gray-100 bg-glace/60">
             <div className="mx-auto flex max-w-5xl flex-wrap gap-x-6 gap-y-1 px-4 py-2 text-sm">
               <Link
-                href="/recherche"
-                className="font-title font-medium text-gray-600 transition hover:text-electrique"
-              >
-                🔎 Rechercher
-              </Link>
-              <Link
                 href="/kiosque"
                 className="font-title font-medium text-gray-600 transition hover:text-electrique"
               >

@@ -243,62 +243,6 @@ export function getAllSlugs(): string[] {
   return listMarkdownFiles().map(slugFromFilename).filter((s) => !isHidden(s));
 }
 
-export interface SearchItem {
-  slug: string;
-  title: string;
-  type: string;
-  subtitle?: string;
-  date?: string;
-  /** Texte normalisé (minuscule, sans accents) pour la recherche. */
-  text: string;
-}
-
-/** Normalise pour une recherche insensible à la casse et aux accents. */
-export function normalizeForSearch(s: string): string {
-  return s
-    .toLowerCase()
-    .normalize("NFD")
-    .replace(/[̀-ͯ]/g, "");
-}
-
-function typeLabel(p: string): string {
-  if (p.includes("Newsletter")) return "Newsletter";
-  if (p.includes("02-Digests")) return "Digest";
-  if (p.includes("Notes-PAD")) return "Note PAD";
-  if (p.includes("Veille-concurrentielle")) return "Concurrence";
-  if (p.includes("Veille-emploi")) return "Emploi";
-  return "Document";
-}
-
-/** Index de recherche construit au build à partir de tous les contenus. */
-export function getSearchIndex(): SearchItem[] {
-  const items: SearchItem[] = [];
-  for (const slug of getAllSlugs()) {
-    const meta = buildMeta(slug);
-    if (!meta) continue;
-    const parsed = readRaw(slug);
-    const stripped = (parsed?.body || "")
-      .replace(/```[\s\S]*?```/g, " ")
-      .replace(/\[(.*?)\]\(.*?\)/g, "$1")
-      .replace(/[#>*_`|]/g, " ")
-      .replace(/\s+/g, " ")
-      .trim()
-      .slice(0, 800);
-    const subtitle =
-      [meta.section, meta.category, meta.subcategory].filter(Boolean).join(" · ") ||
-      undefined;
-    items.push({
-      slug,
-      title: meta.title,
-      type: typeLabel(meta.sourcePath || ""),
-      subtitle,
-      date: meta.date,
-      text: normalizeForSearch([meta.title, subtitle, stripped].filter(Boolean).join(" ")),
-    });
-  }
-  return items;
-}
-
 export interface Newsletter extends EntryMeta {
   /** Source / publication (ex. « Ravi Mehta », « Le Ticket »). */
   source: string;
