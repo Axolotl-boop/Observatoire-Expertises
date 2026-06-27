@@ -90,6 +90,7 @@ export default function ExpertiseDigests({ digests }: { digests: ExpertiseDigest
   const [active, setActive] = useState<string>(firstAvailable?.key ?? "");
   const [month, setMonth] = useState<string>("");
   const [openSignaux, setOpenSignaux] = useState(false);
+  const [showInfo, setShowInfo] = useState(false);
   const [openRows, setOpenRows] = useState<[boolean, boolean]>([false, false]);
   const toggleRow = (i: 0 | 1) =>
     setOpenRows((r) => (i === 0 ? [!r[0], r[1]] : [r[0], !r[1]]));
@@ -158,24 +159,77 @@ export default function ExpertiseDigests({ digests }: { digests: ExpertiseDigest
           </h2>
 
           {/* Légende des verdicts */}
-          <ul className="mb-4 space-y-1 rounded-lg border border-gray-200 bg-white p-3 text-sm">
-            <li>
-              <span className="tag-mode">[mode]</span>{" "}
-              <span className="text-gray-600">— Buzz ou signal isolé. Rien à acter.</span>
-            </li>
-            <li>
-              <span className="tag-tendance">[tendance]</span>{" "}
-              <span className="text-gray-600">
-                — Mouvement réel mais pas acquis. À surveiller.
-              </span>
-            </li>
-            <li>
-              <span className="tag-structurel">[structurel]</span>{" "}
-              <span className="text-gray-600">
-                — Fait dur croisé à une donnée interne. À acter.
-              </span>
-            </li>
-          </ul>
+          <div className="mb-4 rounded-lg border border-gray-200 bg-white p-3 text-sm">
+            <div className="flex items-start justify-between gap-2">
+              <ul className="space-y-1">
+                <li>
+                  <span className="tag-mode">[mode]</span>{" "}
+                  <span className="text-gray-600">— Buzz ou signal isolé. Rien à acter.</span>
+                </li>
+                <li>
+                  <span className="tag-tendance">[tendance]</span>{" "}
+                  <span className="text-gray-600">
+                    — Mouvement réel mais pas acquis. À surveiller.
+                  </span>
+                </li>
+                <li>
+                  <span className="tag-structurel">[structurel]</span>{" "}
+                  <span className="text-gray-600">
+                    — Fait dur croisé à une donnée interne. À acter.
+                  </span>
+                </li>
+              </ul>
+              <button
+                type="button"
+                onClick={() => setShowInfo((v) => !v)}
+                aria-expanded={showInfo}
+                aria-label="En savoir plus sur les verdicts"
+                title="En savoir plus"
+                className="shrink-0 text-gray-400 transition hover:text-electrique"
+              >
+                <svg className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                  <path
+                    fillRule="evenodd"
+                    d="M10 18a8 8 0 100-16 8 8 0 000 16zM9 9a1 1 0 012 0v4a1 1 0 11-2 0V9zm1-4.25a1.1 1.1 0 100 2.2 1.1 1.1 0 000-2.2z"
+                    clipRule="evenodd"
+                  />
+                </svg>
+              </button>
+            </div>
+
+            {showInfo && (
+              <div className="mt-3 space-y-3 border-t border-gray-100 pt-3 text-gray-600">
+                <p>
+                  <span className="tag-mode">[mode]</span> — Signal repéré dans une ou
+                  deux sources, sans mouvement observable derrière. On le note sans lui
+                  prêter de portée. Tant qu'un signal n'a pas fait la preuve du contraire,
+                  il reste ici.
+                </p>
+                <p>
+                  <span className="tag-tendance">[tendance]</span> — Le signal se répète,
+                  converge depuis plusieurs sources indépendantes ou s'installe dans la
+                  durée. C'est un déplacement réel du marché, mais qui peut encore refluer.
+                  On le suit, on ne le grave pas.
+                </p>
+                <div>
+                  <p>
+                    <span className="tag-structurel">[structurel]</span> — Réservé aux
+                    signaux qui réunissent deux conditions cumulatives :
+                  </p>
+                  <ul className="ml-5 mt-1 list-disc space-y-0.5">
+                    <li>
+                      Une preuve quantitative dure (étude chiffrée, opération M&amp;A, fait
+                      mesurable) ;
+                    </li>
+                    <li>
+                      Une corroboration par nos données propriétaires (PAD, emploi,
+                      concurrence).
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            )}
+          </div>
 
           {/* Bloc principal : les signaux du mois */}
           <Block
