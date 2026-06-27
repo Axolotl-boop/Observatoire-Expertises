@@ -16,6 +16,11 @@ import MicrosoftEntraID from "next-auth/providers/microsoft-entra-id";
 export const { handlers, auth, signIn, signOut } = NextAuth({
   trustHost: true,
   providers: [MicrosoftEntraID],
+  // Page de connexion personnalisée : redirige directement vers Microsoft
+  // (pas d'écran intermédiaire de choix de fournisseur).
+  pages: { signIn: "/login" },
+  // Session longue : évite de redemander la connexion à chaque visite.
+  session: { maxAge: 30 * 24 * 60 * 60 }, // 30 jours
   callbacks: {
     // Seuls les utilisateurs authentifiés (donc du tenant WeFiiT) sont autorisés.
     authorized: async ({ auth }) => !!auth,
