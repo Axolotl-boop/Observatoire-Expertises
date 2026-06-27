@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import type { ExpertiseDigest } from "@/lib/content";
 
 const DIGEST_BLOCKS: { key: "bloc1" | "bloc2" | "bloc3" | "bloc4"; title: string }[] = [
@@ -95,6 +95,19 @@ export default function ExpertiseDigests({ digests }: { digests: ExpertiseDigest
   const toggleRow = (i: 0 | 1) =>
     setOpenRows((r) => (i === 0 ? [!r[0], r[1]] : [r[0], !r[1]]));
 
+  // Fermeture de l'infobulle au clic à l'extérieur.
+  const infoRef = useRef<HTMLDivElement>(null);
+  useEffect(() => {
+    if (!showInfo) return;
+    function onDoc(e: MouseEvent) {
+      if (infoRef.current && !infoRef.current.contains(e.target as Node)) {
+        setShowInfo(false);
+      }
+    }
+    document.addEventListener("mousedown", onDoc);
+    return () => document.removeEventListener("mousedown", onDoc);
+  }, [showInfo]);
+
   const current = digests.find((d) => d.key === active);
   const months = current?.entries.map((e) => e.month) ?? [];
   const selectedMonth = months.includes(month) ? month : months[0];
@@ -179,56 +192,61 @@ export default function ExpertiseDigests({ digests }: { digests: ExpertiseDigest
                   </span>
                 </li>
               </ul>
-              <button
-                type="button"
-                onClick={() => setShowInfo((v) => !v)}
-                aria-expanded={showInfo}
-                aria-label="En savoir plus sur les verdicts"
-                title="En savoir plus"
-                className="shrink-0 text-gray-400 transition hover:text-electrique"
-              >
-                <svg className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-                  <path
-                    fillRule="evenodd"
-                    d="M10 18a8 8 0 100-16 8 8 0 000 16zM9 9a1 1 0 012 0v4a1 1 0 11-2 0V9zm1-4.25a1.1 1.1 0 100 2.2 1.1 1.1 0 000-2.2z"
-                    clipRule="evenodd"
-                  />
-                </svg>
-              </button>
-            </div>
+              <div className="relative shrink-0" ref={infoRef}>
+                <button
+                  type="button"
+                  onClick={() => setShowInfo((v) => !v)}
+                  aria-expanded={showInfo}
+                  aria-label="En savoir plus sur les verdicts"
+                  title="En savoir plus"
+                  className="text-gray-400 transition hover:text-electrique"
+                >
+                  <svg className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                    <path
+                      fillRule="evenodd"
+                      d="M10 18a8 8 0 100-16 8 8 0 000 16zM9 9a1 1 0 012 0v4a1 1 0 11-2 0V9zm1-4.25a1.1 1.1 0 100 2.2 1.1 1.1 0 000-2.2z"
+                      clipRule="evenodd"
+                    />
+                  </svg>
+                </button>
 
-            {showInfo && (
-              <div className="mt-3 space-y-3 border-t border-gray-100 pt-3 text-gray-600">
-                <p>
-                  <span className="tag-mode">[mode]</span> — Signal repéré dans une ou
-                  deux sources, sans mouvement observable derrière. On le note sans lui
-                  prêter de portée. Tant qu'un signal n'a pas fait la preuve du contraire,
-                  il reste ici.
-                </p>
-                <p>
-                  <span className="tag-tendance">[tendance]</span> — Le signal se répète,
-                  converge depuis plusieurs sources indépendantes ou s'installe dans la
-                  durée. C'est un déplacement réel du marché, mais qui peut encore refluer.
-                  On le suit, on ne le grave pas.
-                </p>
-                <div>
-                  <p>
-                    <span className="tag-structurel">[structurel]</span> — Réservé aux
-                    signaux qui réunissent deux conditions cumulatives :
-                  </p>
-                  <ul className="ml-5 mt-1 list-disc space-y-0.5">
-                    <li>
-                      Une preuve quantitative dure (étude chiffrée, opération M&amp;A, fait
-                      mesurable) ;
-                    </li>
-                    <li>
-                      Une corroboration par nos données propriétaires (PAD, emploi,
-                      concurrence).
-                    </li>
-                  </ul>
-                </div>
+                {showInfo && (
+                  <div
+                    role="tooltip"
+                    className="absolute right-0 top-8 z-20 w-[min(24rem,90vw)] space-y-3 rounded-lg border border-gray-200 bg-white p-4 text-gray-600 shadow-lg"
+                  >
+                    <p>
+                      <span className="tag-mode">[mode]</span> — Signal repéré dans une ou
+                      deux sources, sans mouvement observable derrière. On le note sans lui
+                      prêter de portée. Tant qu'un signal n'a pas fait la preuve du
+                      contraire, il reste ici.
+                    </p>
+                    <p>
+                      <span className="tag-tendance">[tendance]</span> — Le signal se
+                      répète, converge depuis plusieurs sources indépendantes ou s'installe
+                      dans la durée. C'est un déplacement réel du marché, mais qui peut
+                      encore refluer. On le suit, on ne le grave pas.
+                    </p>
+                    <div>
+                      <p>
+                        <span className="tag-structurel">[structurel]</span> — Réservé aux
+                        signaux qui réunissent deux conditions cumulatives :
+                      </p>
+                      <ul className="ml-5 mt-1 list-disc space-y-0.5">
+                        <li>
+                          Une preuve quantitative dure (étude chiffrée, opération M&amp;A,
+                          fait mesurable) ;
+                        </li>
+                        <li>
+                          Une corroboration par nos données propriétaires (PAD, emploi,
+                          concurrence).
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                )}
               </div>
-            )}
+            </div>
           </div>
 
           {/* Bloc principal : les signaux du mois */}
