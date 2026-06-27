@@ -73,17 +73,6 @@ h6,
   font-style: italic;
 }
 
-/* Liens croisés de provenance dans les signaux */
-.signal-link {
-  color: var(--color-electrique);
-  font-style: normal;
-  text-decoration: underline;
-  text-underline-offset: 2px;
-}
-.signal-link:hover {
-  color: var(--color-marine);
-}
-
 .signal-list {
   margin: 0;
   padding-left: 1.25rem;

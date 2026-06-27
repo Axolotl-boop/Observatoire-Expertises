@@ -735,20 +735,6 @@ function colorizeTags(s: string): string {
     .replace(/\[mode\]/gi, '<span class="tag-mode">[mode]</span>');
 }
 
-/** Transforme les mentions de provenance d'un signal en liens vers la rubrique. */
-function linkifyProvenance(s: string): string {
-  const rules: [RegExp, string][] = [
-    [/\bsnapshot\s+concurrentiel\b/gi, "/concurrence"],
-    [/\bsnapshot\s+emploi\b/gi, "/metiers"],
-    [/\bnewsletters?\b/gi, "/kiosque"],
-    [/\bPAD\b/g, "/pouls"],
-  ];
-  let out = s;
-  for (const [re, href] of rules) {
-    out = out.replace(re, (m) => `<a class="signal-link" href="${href}">${m}</a>`);
-  }
-  return out;
-}
 
 /**
  * Rend la section « signaux » : liste numérotée, tags colorés, et tout ce qui
@@ -769,7 +755,6 @@ function renderSignauxHtml(md: string): string {
         text = `${text.slice(0, idx)}<span class="signal-note">${text.slice(idx)}</span>`;
       }
       text = colorizeTags(text);
-      text = linkifyProvenance(text);
       return `<li>${text}</li>`;
     })
     .join("");
