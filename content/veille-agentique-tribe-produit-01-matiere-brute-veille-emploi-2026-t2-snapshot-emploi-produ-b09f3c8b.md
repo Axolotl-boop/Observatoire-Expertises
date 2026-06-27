@@ -1,17 +1,16 @@
----
-
 # Snapshot emploi — Product Operations — T2 2026
 
-> **Rédigé par :** pré-draft agent · **À valider par :** Axel
-> **Expertise :** Product Operations · **Boards :** WTTJ (gisement principal), Indeed (2 viewjobs + agrégations) · APEC : 0 annonce exploitable · Lenny's : 0 annonce France
-> **Baromètres :** Seyos Baromètre des Salaires & Métiers IT 2026 · APEC Métiers Cadres Porteurs 2026 (éd. 5) · Noé Salaire Product Manager 2026
-> **Note :** 1er passage = ligne de base / pas de delta observable
+> Rédigé par : pré-draft agent · À valider par : Axel
+> Expertise : Product Operations (Product Ops) · Boards : WTTJ (gisement quasi exclusif), Indeed (2 viewjob + agrégation indicative) — APEC nul, Lenny's nul · Baromètres : Seyos Baromètre IT 2026 · APEC Métiers Cadres Porteurs 2026 · Noé Salaire PM 2026
+> Note : **1er passage = ligne de base** — aucun delta observable, aucun [structurel]-par-transition
 
 ---
 
 ## Seuil de matière
 
-**OK — mais mince.** La matière boards est exploitable (~16 annonces individuelles WTTJ + 2 viewjobs Indeed) et permet de poser les intitulés, compétences et séniorité dominants. La convergence inter-boards reste faible (WTTJ quasi-exclusif). Aucun baromètre groundé ne couvre Product Ops comme catégorie propre — ce vide est lui-même une information structurelle (voir Séniorité / volume / structure ci-dessous).
+**Insuffisant sur plusieurs dimensions — OK sur les intitulés et les compétences.**
+
+Matière utile concentrée sur WTTJ (~16 annonces individuelles distinctes, dont plusieurs intitulés hybrides). Convergence inter-boards très faible : Indeed = 2 viewjob seulement, APEC et Lenny's secs. Aucun baromètre disponible ne chiffre ni ne structure le Product Ops en France comme métier distinct : il est absent des 450 métiers cadres APEC 2026, absent de la nomenclature Seyos 2026 (catégorie « Gestion de Projets & Product » = PM, PO, Head of Product, CPO), absent de la pyramide Noé 2026. Toute structuration sur volume, séniorité ou géo reste non documentée par les sources baromètre disponibles.
 
 ---
 
@@ -19,120 +18,94 @@
 
 ### Intitulés
 
-- **« Product Operations Manager »** — **présent / récurrent** sur WTTJ (Lucky Cart, 360Learning, Pluxee, Mistral AI) + 1 viewjob Indeed (Paris 75010, profil SaaS/tech) · WTTJ + Indeed · `[tendance]`
-- **« Product Ops »** — **présent / récurrent**, forme courte dominante sur WTTJ (PayFit ×2, Hubvisory, Tak, MWM, Thiga, Nexton) + 1 viewjob Indeed (Lemonway, Paris 75002) · WTTJ + Indeed · `[tendance]`
-- **« Lead Product Operations / Product Ops Lead »** — **marginal**, 2 occurrences WTTJ (Doctolib « Lead Product Operations », Trustpair « Product Ops Lead » en freelance) · WTTJ seul · `[mode]` *(peu d'occurrences, un seul board)*
-- **« Head of Product Operations »** — **marginal**, 1 occurrence WTTJ (AI6 Technologies) · WTTJ seul · `[mode]`
-- **Intitulés hybrides PM/Ops** (« Product Manager - Opérations », « Product & Marketing AI Ops », « Ops products ») — **marginal / frontière floue**, présents sur WTTJ (Murfy, Ornikar, Work4), signal de périmètre instable du métier · WTTJ seul · `[mode]` *(à surveiller comme indicateur de porosité avec le PM générique)*
+Le marché IT est clairement en phase de transition, mais loin de s'essouffler[1] — ce contexte général s'applique au cadre dans lequel Product Ops s'inscrit comme expertise produit de niche.
 
----
+- **"Product Operations Manager"** — présent/récurrent ce trimestre (Lucky Cart, 360Learning, Pluxee, 1 viewjob Indeed) · WTTJ + Indeed · `[tendance]`
+- **"Product Ops"** — présent/récurrent ce trimestre (PayFit ×2, Hubvisory, Tak, MWM, Thiga, Nexton, 1 viewjob Indeed) · WTTJ + Indeed · `[tendance]`
+- **"Lead Product Operations" / "Product Ops Lead"** — présent, peu d'occurrences (Doctolib « Lead », Trustpair « Product Ops Lead » freelance) · WTTJ seul · `[mode]`
+- **"Head of Product Operations"** — ponctuel (AI6 Technologies) · WTTJ seul · `[mode]`
+- **Intitulés hybrides PM/Ops** ("Product Manager - Opérations", "Product & Marketing AI Ops", "Ops products") — signal de frontière floue, marginal · WTTJ (Murfy, Ornikar, Work4) · `[mode]` (à surveiller : signal de non-stabilisation taxonomique)
 
 ### Compétences
 
-- **Antériorité PM et/ou Product Ops exigée** — **présente / récurrente** : les seuils d'expérience capturés (« 2-5 ans Product Ops/PM/Project/Consulting », « 4+ ans product ops/program management en SaaS/tech », « 7+ ans PM/Product Ops ») signalent une demande orientée confirmé-senior ; aucun poste junior identifié ce trimestre · WTTJ + Indeed · `[tendance]`
-- **Mise en place / industrialisation des process produit** (roadmap planning, OKRs, suivi d'usage, expérimentation, discovery) — **présente**, récurrente · WTTJ (AI6, Mistral) · `[tendance]`
-- **Rareté des profils combinant vision produit et compétences IA / data** — signal de pénurie qualitative issu des baromètres : les compétences techniques considérées comme pénuriques (cybersécurité, IA, data, cloud) permettront aux professionnels les maîtrisant de bénéficier d'une demande accrue[1] — ce signal (Seyos 2026) s'applique aux Product Ops seniors qui doivent articuler instrumentation data et pilotage de la maturité produit · Seyos 2026 · signal de rareté, qualitatif
-- **Exposition au reporting niveau exécutif** — **marginal**, 1 seul viewjob Indeed · Indeed seul · `[mode]` *(1 board uniquement)*
-
----
+- **Expérience préalable PM et/ou Product Operations** — exigence convergente sur plusieurs annonces WTTJ + viewjob Indeed (seuils cités : « 7+ ans PM/Product Ops » Doctolib ; « 4+ ans » viewjob ; « 2-5 ans » viewjob) · WTTJ + Indeed · `[tendance]`
+- **Industrialisation des process produit** (roadmap planning, OKRs, suivi d'usage, expérimentation, discovery) — présent WTTJ (AI6, Mistral) · WTTJ seul · `[tendance]`
+- **Exposition au reporting niveau exécutif** — présent viewjob Indeed seul · `[mode]`
+- **Compétences IA / data en tension (contexte IT général)** — les profils experts en IA, en cybersécurité ou encore ceux qui maîtrisent le cloud computing restent massivement recherchés par les organisations ; les entreprises font face à une pénurie de talents qualifiés[2] (signal Seyos 2026, portée IT générale — non spécifique Product Ops). À surveiller comme pression de compétence dans les prochaines passes. Qualitatif uniquement, aucun chiffre spécifique Product Ops disponible.
 
 ### Outils
 
-**RAS ce trimestre.** Aucun outil explicitement nommé dans les snippets captés. Dimension non documentée côté offres.
-
----
+- **RAS ce trimestre** — aucun outil explicitement nommé dans les snippets captés. Dimension à ouvrir dans le jeu de requêtes (stack outillage Product Ops = Jira, Miro, Confluence, outils analytics, no-code) pour les passes suivantes.
 
 ### Séniorité / volume / structure
 
-**Volume — offres :** Le marché Product Ops tel que capté ce trimestre est un **marché de niche à faible volume d'annonces nommées**. La passe identifie ~16 annonces individuelles WTTJ + 2 viewjobs Indeed, avec une concentration IDF quasi-exclusive. Les pages d'agrégation Indeed sont trompeuses (matching large : « Product Operations Manager » national = +1 000 annonces indexées, dont l'écrasante majorité ne correspond pas à l'intitulé strict). Le volume réel de postes intitulés explicitement Product Ops est très inférieur à ces agrégats. *Source : pages d'agrégation Indeed datées (6 juin 2026, la plus récente).*
+**Non documenté par les baromètres disponibles.**
 
-**Concentration géographique :** Paris / IDF quasi-exclusif pour les annonces captées. Cohérent avec la concentration générale des profils produit en France : la majorité des emplois de Product Managers sont situés à Paris — 69 % des Product Managers travaillent dans la capitale[2] — ce chiffre (Noé 2026, population PM auto-déclarative) constitue un indice proxy pertinent pour les Product Ops, qui évoluent dans les mêmes écosystèmes.
-
-**Séniorité :** Pas de poste junior capté. Les seuils d'expérience cités dans les fiches (2-5 ans, 4+ ans, 7+ ans) orientent vers un niveau confirmé à senior. Non documenté par baromètre propre à Product Ops.
-
-**Pyramide / structure des rôles :** Les baromètres groundés disponibles ne couvrent pas Product Ops comme catégorie autonome. La nomenclature Seyos 2026 de la catégorie "Gestion de Projets & Product" liste : Business Analyst/PPO, Chef de projet AMOA, Chef de projet AMOE, Chef de projet fonctionnel, Chef de Projet MOA, Chef de Projet MOE, Chef de Projet Technique Logiciel, Head of Product, CPO – Chief Product Officer, Product Manager, Product Owner, Scrum Master, Epic Owner, Release Train Engineer.[3] **Product Operations n'y figure pas** (Seyos 2026). De même, Product Ops est absent de la nomenclature APEC des 450 métiers cadres[4] utilisée pour les Métiers Cadres Porteurs 2026. → **Signal structurel : le métier n'est pas encore intégré aux classifications françaises standardisées.** Ce vide de nomenclature est en lui-même une information de ligne de base.
-
-**Santé du marché IT (contexte macro) :** Le marché IT est clairement entré dans une phase de transition : il se réinvente face aux innovations rapides et constantes qui redistribuent sans cesse les cartes.[5]Les organisations capables de proposer un environnement de travail flexible, des parcours de formation pour monter rapidement en compétences et une vraie vision tireront leur épingle du jeu en 2026.[5] Par ailleurs, la volumétrie des offres d'emploi cadre publiées sur apec.fr a connu un ralentissement, qui s'est encore accentué en 2025 : -15,5 % versus 2024.[6] Ce contexte global de contraction du volume d'offres (APEC Métiers Cadres Porteurs 2026) s'applique en toile de fond au marché Product Ops.
-
-**Skew type d'employeur :** Les recruteurs captés sont majoritairement des **éditeurs produit SaaS/IA/fintech** (Doctolib, PayFit, 360Learning, Mistral AI, Pluxee, Lucky Cart, Trustpair, MWM, Ornikar, AI6, Lemonway) et des **cabinets conseil produit spécialisés** (Hubvisory, Thiga, Nexton). Aucune ESN généraliste identifiée sur ce créneau ce trimestre.
+- **Nomenclature APEC** : Product Ops absent des 450 métiers cadres identifiés — la volumétrie des offres d'emploi cadre publiées sur apec.fr a connu un ralentissement accentué en 2025 : -15,5 % versus 2024[3]. Product Ops non individualisé, volume non isolable.
+- **Nomenclature Seyos 2026** : la catégorie « Gestion de Projets & Product » regroupe Business Analyst/PPO, Chef de projet AMOA, Chef de projet AMOE, Chef de projet fonctionnel, Chef de Projet MOA, Chef de Projet MOE, Chef de Projet Technique Logiciel, Head of Product, CPO – Chief Product Officer, Product Manager, Product Owner, Scrum Master, Epic Owner, Release Train Engineer[4] — **Product Operations / Product Ops absent** de cette nomenclature.
+- **Pyramide produit (Noé 2026)** : les Product Managers ont de belles perspectives de carrière dans une Product Team : ils peuvent ensuite devenir Senior PM, Head of Product ou encore VP Product[5] — pyramide APM→PM→Senior PM→Lead PM→Head of Product→CPO documentée, **Product Ops non mentionné** comme échelon distinct (Noé 2026).
+- **Volume d'offres observé** : mince — WTTJ quasi exclusif (~16 annonces distinctes), Indeed = 2 viewjob. Pages d'agrégation Indeed très trompeuses (matching large PM inclus). Volume réel de postes strictement intitulés Product Ops très inférieur aux chiffres d'agrégation.
+- **Géo** : IDF quasi exclusif sur cette passe. Toutes les annonces référencées = Paris.
+- **Profil employeur** : skew éditeurs produit SaaS-fintech-IA (Doctolib, PayFit, 360Learning, Mistral AI, Pluxee, Lucky Cart, Trustpair, MWM, Ornikar, Lemonway, AI6) + présence notable conseil produit spécialisé (Hubvisory, Thiga, Nexton). Les organisations capables de proposer un environnement de travail flexible, des parcours de formation pour monter rapidement en compétences et une vraie vision tireront sans aucun doute leur épingle du jeu en 2026[1] — les éditeurs produit à forte culture tech correspondent à ce profil.
+- **Mode de contrat** : 1 annonce freelance identifiée (Trustpair « Product Ops Lead »). De plus en plus d'organisations se tournent vers des modèles hybrides, privilégiant les contrats flexibles que peuvent offrir les indépendants à l'engagement d'un CDI[6] — signal contextuel IT général, à confirmer sur Product Ops.
+- **Séniorité dominante dans les offres** : confirmé comme rôle non-junior (2 à 7+ ans requis), mais sans baromètre dédié pour chiffrer la pyramide interne Product Ops.
+- **Santé du marché** : la pénurie de talents qualifiés persiste, et si cela offre de belles perspectives d'emploi pour les professionnels des secteurs les plus en vogue, les entreprises se retrouvent régulièrement en difficulté pour composer leurs équipes IT[2]. Non spécifique Product Ops — contexte IT général (Seyos 2026).
 
 ---
 
 ## Lecture transverse
 
-La structuration la plus nette du trimestre est la **coexistence de deux formes d'intitulés convergentes** (« Product Ops » et « Product Operations Manager ») capturées sur deux boards distincts, dans des écosystèmes employeurs homogènes (SaaS / éditeurs produit / conseil produit, IDF). Ce signal de cohérence de l'écosystème recruteur est la base de la ligne de base.
+**La structuration la plus nette de ce 1er passage** : Product Ops est un **rôle confirmé sénior exclusivement IDF**, à audience restreinte d'employeurs (éditeurs produit SaaS/fintech/IA + conseil produit spécialisé). Sa **non-présence dans les nomenclatures APEC, Seyos et Noé** — les trois baromètres disponibles — confirme qu'il n'est pas encore une catégorie standard du marché cadre français : il reste un intitulé circulant dans une bulle d'écosystème (scale-ups, tech natives, cabinets conseil produit). Les intitulés convergent sur deux formes stables ("Product Ops" / "Product Operations Manager") mais la frontière avec des hybrides PM/Ops reste poreuse.
 
-Un second signal mérite attention : la **présence simultanée de cabinets conseil produit spécialisés** (Hubvisory, Thiga, Nexton) comme recruteurs directs sur ce créneau. Si ce signal se confirme à T+1 ou T+2, il pourrait indiquer une structuration de l'offre de conseil autour de la discipline Product Ops — à lire au Format B (Bloc 3 ou Bloc 2 si challengeant une conviction).
-
-**Absent des nomenclatures baromètre** (Seyos, APEC, Noé) : cela confirme que Product Ops reste un métier émergent dans la classification officielle française. Le plafond de tag offres-seules s'applique pleinement ici : `[tendance]` est le maximum atteignable à ce stade.
+Le signal le plus surveillable pour T+1 : **l'apparition ou l'absence de Product Ops dans les nomenclatures APEC/Seyos** à leur prochaine édition — ce serait le premier marqueur [structurel] possible. En l'état, plafond `[tendance]`.
 
 ---
 
-## Tableau de synthèse (état daté — ligne de base T2 2026)
+## Tableau de synthèse (état daté)
 
-**Intitulés**
-
-| Item | État | Tag | Date |
-|---|---|---|---|
-| « Product Operations Manager » | ✅ présent — récurrent WTTJ + Indeed | `[tendance]` | Juin 2026 |
-| « Product Ops » | ✅ présent — récurrent WTTJ + Indeed | `[tendance]` | Juin 2026 |
-| « Lead Product Operations / Product Ops Lead » | ✅ présent — marginal, WTTJ seul | `[mode]` | Juin 2026 |
-| « Head of Product Operations » | ✅ présent — marginal, 1 occurrence, WTTJ seul | `[mode]` | Juin 2026 |
-| Intitulés hybrides PM/Ops | ✅ présent — marginal, frontière floue, WTTJ seul | `[mode]` | Juin 2026 |
-
-**Compétences**
-
-| Item | État | Tag | Date |
-|---|---|---|---|
-| Antériorité PM / Product Ops exigée | ✅ présente — récurrente, niveau confirmé-senior | `[tendance]` | Juin 2026 |
-| Industrialisation des process produit (OKRs, roadmap, expérimentation) | ✅ présente — récurrente | `[tendance]` | Juin 2026 |
-| Profils IA/data en tension (signal pénurie baromètre) | ✅ présent — signal qualitatif, Seyos 2026 | signal pénurie | 2026 |
-| Exposition reporting exécutif | ✅ présente — marginal, 1 viewjob seul | `[mode]` | Juin 2026 |
-
-**Outils**
-
-| Item | État | Tag | Date |
-|---|---|---|---|
-| Outils nommés dans les annonces | ⬜ pas de matière — aucun outil capturé dans les snippets | — | Juin 2026 |
-
-**Séniorité / volume / structure**
-
-| Item | État | Tag | Date |
-|---|---|---|---|
-| Volume annonces Product Ops (nommé strict) | ✅ présent — faible (~16 WTTJ + 2 Indeed), marché de niche | `[tendance]` | Juin 2026 |
-| Concentration géographique IDF | ✅ présente — quasi-exclusive (offres + proxy Noé 2026) | `[tendance]` | Juin 2026 |
-| Séniorité orientée confirmé-senior | ✅ présente — inférée des seuils d'expérience (offres) | `[tendance]` | Juin 2026 |
-| Product Ops absent des nomenclatures françaises (Seyos / APEC 450 métiers) | ✅ présent — signal structurel de non-standardisation | ligne de base | 2026 |
-| Skew SaaS / éditeurs produit / conseil produit spécialisé | ✅ présent — dominant côté employeurs | `[tendance]` | Juin 2026 |
-| Volume junior | ❌ absent — aucun poste junior identifié ce trimestre | — | Juin 2026 |
-| Présence ESN généraliste | ❌ absent — aucune ESN généraliste captée | — | Juin 2026 |
-| Pyramide structurée APM→PM→Lead→Head→CPO | ⬜ pas de matière propre à Product Ops — pyramide PM documentée par Noé 2026, non transposable directement | — | — |
+- **Intitulés — Product Operations Manager** | ✅ | `[tendance]` | 2026-06-19
+- **Intitulés — Product Ops** | ✅ | `[tendance]` | 2026-06-19
+- **Intitulés — Lead Product Operations / Product Ops Lead** | ✅ | `[mode]` | 2026-06-19
+- **Intitulés — Head of Product Operations** | ✅ | `[mode]` | 2026-06-19
+- **Intitulés — Hybrides PM/Ops** | ✅ | `[mode]` | 2026-06-19
+- **Compétences — Expérience préalable PM/Ops (2-7+ ans)** | ✅ | `[tendance]` | 2026-06-19
+- **Compétences — Industrialisation process produit (OKRs, roadmap, expérimentation)** | ✅ | `[tendance]` | 2026-06-19
+- **Compétences — Exposition reporting exécutif** | ✅ | `[mode]` | 2026-06-19
+- **Compétences — IA/data en tension (contexte IT général)** | ⬜ | — | —
+- **Outils — Stack Product Ops (Jira, Miro, Confluence, analytics)** | ❌ | — | —
+- **Séniorité/volume — Profil confirmé sénior (2-7+ ans), rôle non-junior** | ✅ | `[tendance]` | 2026-06-19
+- **Séniorité/volume — Géo IDF quasi exclusive** | ✅ | `[tendance]` | 2026-06-19
+- **Séniorité/volume — Skew employeurs SaaS/fintech/IA + conseil produit** | ✅ | `[tendance]` | 2026-06-19
+- **Séniorité/volume — Volume chiffré (offres nommées Product Ops)** | ❌ | — | —
+- **Séniorité/volume — Pyramide interne Product Ops documentée par baromètre** | ❌ | — | —
+- **Séniorité/volume — Product Ops dans nomenclature APEC/Seyos** | ❌ | — | —
 
 ---
 
 ## Points de décision pour Axel
 
-- **Candidats `[structurel]` à trancher (faits durs baromètre) :** Aucun ce trimestre. Seyos 2026 et APEC Métiers Cadres Porteurs 2026 ne couvrent pas Product Ops en catégorie propre — l'absence de nomenclature est une ligne de base, pas un fait dur de variation de volume. À surveiller si un baromètre futur (TPC, Seyos T+1) intègre la catégorie.
+- **Candidats `[structurel]` à trancher** : aucun ce trimestre — plafond `[tendance]` sur offres seules. Aucun baromètre ne chiffre ni ne catégorise Product Ops en tant que métier distinct. Aucun [structurel] possible en 1er passage.
 
-- **Convergence limite (1 seul board ou baromètre) à confirmer :**
- - « Lead Product Operations / Product Ops Lead » → WTTJ seul, 2 occurrences. À confirmer sur un second board ou en T+1 avant de faire monter vers `[tendance]`.
- - « Head of Product Operations » → WTTJ seul, 1 occurrence. Reste `[mode]` jusqu'à réplication.
- - Présence des cabinets conseil produit (Hubvisory, Thiga, Nexton) comme recruteurs Product Ops → signal intéressant, 1 seul board, à re-vérifier T+1.
+- **Convergence limite (1 seul board/baromètre) à confirmer** :
+  - "Lead Product Operations / Product Ops Lead" → WTTJ seul, 2 occurrences → plafonné `[mode]`, à confirmer si d'autres boards alimentent cette forme au T+1.
+  - "Head of Product Operations" → WTTJ seul, 1 occurrence → `[mode]`, signal très mince.
+  - "Exposition reporting exécutif" comme compétence → viewjob Indeed seul → à confirmer.
 
-- **Items sans matière ce trimestre (sourcing à vérifier) :**
- - **Outils** : aucun outil nommé dans les snippets captés — à vérifier si les annonces complètes (non snippets) mentionnent des outils spécifiques (Notion, Jira, Amplitude, Mixpanel…). Dimension à investiguer activement en T+1.
- - **Régions hors IDF** : aucune annonce Product Ops hors Paris captée. Sourcing à élargir pour confirmer l'absence ou la marginalité.
- - **Freelance / TJM** : 1 seule annonce freelance identifiée (Trustpair, WTTJ). La dimension indépendant est sous-captée.
+- **Items sans matière ce trimestre (sourcing à vérifier)** :
+  - **Outils** : aucun snippet d'outil capté — à approfondir via requêtes sur les fiches complètes WTTJ (stack mentionnée en corps d'annonce, rarement en titre).
+  - **Compétences IA/data spécifiques Product Ops** : signal IT général Seyos disponible, mais aucune occurrence dans les annonces Product Ops elles-mêmes — à surveiller.
+  - **Freelance / TJM** : 1 seule annonce freelance captée (Trustpair) — volume insuffisant pour un signal ; sourcing complémentaire via Malt conseillé.
+  - **Hors IDF** : zéro annonce hors Paris captée — à vérifier si cela reflète le marché ou un biais de requête.
 
-- **Évolution du jeu de requêtes signalée ce trimestre :**
- - APEC : confirmé sec sur Product Ops (fiches métier PM génériques uniquement). Peut être retiré du jeu de requêtes Product Ops ou maintenu en contrôle négatif.
- - Lenny's Job Board : confirmé sec sur la France. Idem.
- - Indeed : agrégations trompeuses (matching trop large). Prioriser les viewjobs individuels ; les pages d'agrégation ne portent aucune récurrence exploitable.
- - Piste à ouvrir pour T+1 : LinkedIn Jobs (absent du jeu de requêtes actuel) pourrait apporter un second gisement avec dates vérifiées.
+- **Évolution du jeu de requêtes signalée** :
+  - Envisager une requête sur le corps des annonces WTTJ (pas seulement le titre) pour capturer les outils et les compétences data/IA.
+  - Tester "Product Enablement Manager" comme variante émergente (non capté ce trimestre, mais signalé dans fiches métier externes).
+  - Ajouter Malt pour capter le segment freelance Product Ops (TJM, volume, compétences spécifiques).
+  - Surveiller à T+1 : apparition éventuelle de Product Ops dans les nomenclatures APEC / Seyos — ce serait le premier marqueur `[structurel]` candidat.
 
 [1]: https://wefiitcom.sharepoint.com/sites/TribeExpertises/Documents%20partages/Général/2%20-%20OBSERVATOIRE%20DES%20EXPERTISES/Veille%20Agentique%20Tribe%20Produit/01-Matière-brute/Rapports-Emploi/SEYOS_BAROMETRE_DE_%20SALAIRES_IT_2026.pdf "SEYOS_BAROMETRE_DE_ SALAIRES_IT_2026.pdf"
-[2]: https://wefiitcom.sharepoint.com/sites/TribeExpertises/Documents%20partages/Général/2%20-%20OBSERVATOIRE%20DES%20EXPERTISES/Veille%20Agentique%20Tribe%20Produit/01-Matière-brute/Rapports-Emploi/Salaire%20Product%20Manager%202026%20par%20niveau%20⎟%20Noé.pdf "Salaire Product Manager 2026 par niveau ⎟ Noé.pdf"
-[3]: https://wefiitcom.sharepoint.com/sites/TribeExpertises/Documents%20partages/Général/2%20-%20OBSERVATOIRE%20DES%20EXPERTISES/Veille%20Agentique%20Tribe%20Produit/01-Matière-brute/Rapports-Emploi/SEYOS_BAROMETRE_DE_%20SALAIRES_IT_2026.pdf "SEYOS_BAROMETRE_DE_ SALAIRES_IT_2026.pdf"
-[4]: https://wefiitcom.sharepoint.com/sites/TribeExpertises/Documents%20partages/Général/2%20-%20OBSERVATOIRE%20DES%20EXPERTISES/Veille%20Agentique%20Tribe%20Produit/01-Matière-brute/Rapports-Emploi/Les%20metiers%20cadres%20porteurs%20edition%202026.pdf "Les metiers cadres porteurs edition 2026.pdf"
-[5]: https://wefiitcom.sharepoint.com/sites/TribeExpertises/Documents%20partages/Général/2%20-%20OBSERVATOIRE%20DES%20EXPERTISES/Veille%20Agentique%20Tribe%20Produit/01-Matière-brute/Rapports-Emploi/SEYOS_BAROMETRE_DE_%20SALAIRES_IT_2026.pdf "SEYOS_BAROMETRE_DE_ SALAIRES_IT_2026.pdf"
-[6]: https://wefiitcom.sharepoint.com/sites/TribeExpertises/Documents%20partages/Général/2%20-%20OBSERVATOIRE%20DES%20EXPERTISES/Veille%20Agentique%20Tribe%20Produit/01-Matière-brute/Rapports-Emploi/Les%20metiers%20cadres%20porteurs%20edition%202026.pdf "Les metiers cadres porteurs edition 2026.pdf"
+[2]: https://wefiitcom.sharepoint.com/sites/TribeExpertises/Documents%20partages/Général/2%20-%20OBSERVATOIRE%20DES%20EXPERTISES/Veille%20Agentique%20Tribe%20Produit/01-Matière-brute/Rapports-Emploi/SEYOS_BAROMETRE_DE_%20SALAIRES_IT_2026.pdf "SEYOS_BAROMETRE_DE_ SALAIRES_IT_2026.pdf"
+[3]: https://wefiitcom.sharepoint.com/sites/TribeExpertises/Documents%20partages/Général/2%20-%20OBSERVATOIRE%20DES%20EXPERTISES/Veille%20Agentique%20Tribe%20Produit/01-Matière-brute/Rapports-Emploi/Les%20metiers%20cadres%20porteurs%20edition%202026.pdf "Les metiers cadres porteurs edition 2026.pdf"
+[4]: https://wefiitcom.sharepoint.com/sites/TribeExpertises/Documents%20partages/Général/2%20-%20OBSERVATOIRE%20DES%20EXPERTISES/Veille%20Agentique%20Tribe%20Produit/01-Matière-brute/Rapports-Emploi/SEYOS_BAROMETRE_DE_%20SALAIRES_IT_2026.pdf "SEYOS_BAROMETRE_DE_ SALAIRES_IT_2026.pdf"
+[5]: https://wefiitcom.sharepoint.com/sites/TribeExpertises/Documents%20partages/Général/2%20-%20OBSERVATOIRE%20DES%20EXPERTISES/Veille%20Agentique%20Tribe%20Produit/01-Matière-brute/Rapports-Emploi/Salaire%20Product%20Manager%202026%20par%20niveau%20⎟%20Noé.pdf "Salaire Product Manager 2026 par niveau ⎟ Noé.pdf"
+[6]: https://wefiitcom.sharepoint.com/sites/TribeExpertises/Documents%20partages/Général/2%20-%20OBSERVATOIRE%20DES%20EXPERTISES/Veille%20Agentique%20Tribe%20Produit/01-Matière-brute/Rapports-Emploi/SEYOS_BAROMETRE_DE_%20SALAIRES_IT_2026.pdf "SEYOS_BAROMETRE_DE_ SALAIRES_IT_2026.pdf"

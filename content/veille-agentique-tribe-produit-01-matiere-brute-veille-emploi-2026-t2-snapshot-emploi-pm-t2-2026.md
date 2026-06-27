@@ -1,17 +1,16 @@
 ---
 
-# Snapshot emploi — PM — T2 2026
+# Snapshot emploi — Product Management — T2 2026
 
-> **Rédigé par :** pré-draft agent · **À valider par :** Axel
-> **Expertise :** Product Management (pm) · **Boards :** WTTJ (dominant), APEC (quelques détails datés), Indeed (agrégation), Mind the Product Jobs (quasi nul), Lenny's (zéro)
-> **Baromètres groundés :** Seyos — Baromètre des Salaires et Métiers de l'IT & du Digital 2026 · Noé — Salaire Product Manager 2026 par niveau · APEC — Les métiers cadres porteurs édition 2026
-> **Note :** 1er passage = ligne de base · pas de delta (T-1 absent)
+> Rédigé par : pré-draft agent · À valider par : Axel
+> Expertise : Product Management (pm) · Boards : Welcome to the Jungle (dominant), APEC (quelques offres datées), Indeed (agrégation + 1 viewjob), Mind the Product Jobs (marginal), Lenny's Job Board (0 annonce) · Baromètres : Seyos 2026, Noé 2026, APEC Métiers Cadres Porteurs édition 2026
+> Note : **1er passage = ligne de base**
 
 ---
 
 ## Seuil de matière
 
-**OK — signaux convergents sur la dimension Intitulés** (WTTJ, gisement principal, ~40 annonces individuelles distinctes). **Insuffisant sur Compétences** (snippets pauvres, extraction très prudente). **RAS sur Outils** (aucun outil nommé dans les snippets PM généralistes). Séniorité/volume partiellement documenté : pyramide et concentration géographique adossées aux baromètres ; santé du marché adossée au contexte IT/cadre groundé.
+**OK — signaux convergents sur les intitulés** (gisement WTTJ ~40 annonces individuelles distinctes, corroborées par quelques détails-offre APEC datés). Mince sur les dimensions **compétences** (snippets peu détaillés) et **outils** (aucun outil nommé dans les snippets PM généralistes). Fraîcheur globalement non vérifiée (majorité des annonces WTTJ sans date dans les snippets).
 
 ---
 
@@ -19,144 +18,107 @@
 
 ### Intitulés
 
-- **Product Manager / Senior Product Manager** · présent en volume · gisement WTTJ (Indeez, Carlili, SeLoger-MeilleursAgents, Dotfile, LumApps — entreprises produit) · date non vérifiée · `[tendance]`
+La taxonomie Seyos 2026 couvre dans la catégorie « Gestion de Projets & Product » : Head of Product, CPO–Chief Product Officer, Product Manager et Product Owner[1], auxquels viennent s'ajouter sur les offres les niveaux Lead PM et le segment émergent AI PM / PM IA.
 
-- **Product Owner** · présent en volume, skew ESN/conseil marqué (DirectSkills, Manty, mc2i, eXalt, Expleo sur WTTJ ; deux détails APEC datés dont une offre assurance du 20 janvier 2026) · WTTJ + APEC · `[tendance]`
+- **Product Manager / Senior PM** · présent en volume dominant sur WTTJ (Indeez, Carlili, SeLoger-MeilleursAgents, Dotfile, LumApps) ; 8-juin-2026 Indeed agrégation "+100 annonces English Speaking Product Manager Paris" · WTTJ + Indeed · `[tendance]`
 
-- **Lead Product Manager** · présent, skew ESN/conseil net (Theodo × 4 entités, Hubvisory × 3 sur WTTJ ; détail APEC Saint-Cloud) · WTTJ + APEC · `[tendance]`
+- **Product Owner** · présent en volume sur WTTJ (DirectSkills, Manty, mc2i, eXalt, Expleo, TrainMe) et sur APEC avec deux détails-offre datés (20 janv. 2026 Issy-les-Moulineaux secteur assurance ; Paris 09) · WTTJ + APEC · `[tendance]`
 
-- **Head of Product** · présent, plutôt côté entreprises produit (Witco, Unify, Blissim, Farmitoo, LegalPlace, Preligens, Implicity — WTTJ) · date non vérifiée · WTTJ · `[tendance]`
+- **Head of Product** · récurrent WTTJ (Witco, Unify, Blissim, Farmitoo, LegalPlace, Preligens, Implicity) ; date non vérifiée · WTTJ · `[tendance]`
 
-- **CPO / Chief Product Officer et CTPO** · présent, côté entreprises produit (Pix, Dayuse, Innovorder, Tessan, Lokki, BforBank, B4Finance — WTTJ) · date non vérifiée · WTTJ · `[tendance]`
+- **Lead Product Manager** · récurrent WTTJ (Groupe La Centrale, Studapart, Elevo, Germinal, Kameleoon + 4 entités Theodo) + détail-offre APEC Saint-Cloud 92 ; date non vérifiée · WTTJ + APEC · `[tendance]`
 
-- **AI Product Manager / Product Manager IA** · émergent, multi-acteurs convergents (LegalPlace, Hubvisory, Converteo, Skapa, Safran.AI, Thiga, Orus, Mistral AI — WTTJ) ; détail renvoyé à la fiche `productai` · WTTJ · `[tendance]`
+- **CPO / Chief Product Officer** (incl. CTPO) · récurrent WTTJ (Pix, Dayuse, Innovorder, Tessan, Lokki, BforBank, B4Finance) ; date non vérifiée · WTTJ · `[tendance]`
 
-- **Product Growth Manager** · marginal · 1 seul détail APEC (Paris 01, ~juil. 2025) · APEC uniquement · `[mode]`
+- **AI Product Manager / Product Manager IA** · émergent/convergent WTTJ sur 8 entités distinctes (LegalPlace, Hubvisory, Converteo, Skapa, Safran.AI, Thiga, Orus, Mistral AI) ; 29-mai-2026 Indeed "+100 annonces Product Manager AI Paris" · WTTJ + Indeed · `[tendance]` *(détail renvoyé à la fiche productai)*
+
+- **Product Growth Manager** · ponctuel, 1 seul board (APEC, Paris 01, ~juil. 2025) · APEC · `[mode]`
+
+---
 
 ### Compétences
 
-- **Séniorité élevée exigée pour les rôles Head/CPO** (mentions « minimum 8-10 ans », « VP Product / Head of Product / CPO » dans les snippets Unify, Tessan, B4Finance) · WTTJ · `[tendance]` — extraction prudente, snippets pauvres, à confirmer en page
+- **Séniorité élevée exigée pour les rôles de tête** (Head of Product, CPO) : mentions explicites « minimum 8-10 ans », « VP Product / Head of Product / CPO » dans les snippets d'offres WTTJ (Unify, Tessan, B4Finance) · WTTJ · `[tendance]`
 
-- **Conception features « AI-first » / intégration de l'IA dans la roadmap produit** · signalé sur plusieurs offres (LegalPlace, Orus, Converteo — WTTJ) · WTTJ · `[tendance]`
-  > *Signal de rareté baromètre :* les compétences en IA, data et cloud sont considérées comme pénuriques en 2026 par Seyos[1], ce qui corrobore la tension sur les profils capables d'intégrer l'IA en contexte produit. Signal qualitatif uniquement — Seyos 2026.
+- **Conception AI-first / intégration IA dans la roadmap** : exigé dans plusieurs offres PM multi-boards (LegalPlace, Orus, Converteo) ; signal convergent avec la tension de compétence IA identifiée dans Seyos. Seyos 2026 indique que les compétences en IA, data, cloud constituent des compétences pénuriques : « Ce qui va faire la différence en 2026, ce sont les compétences techniques considérées comme pénuriques. Cybersécurité, IA, data, cloud, les professionnels disposant de ces savoirs clés vont pouvoir profiter de salaires à la hausse. »[2] Ce signal de rareté est qualitatif — position pénurique, sans chiffre · Seyos 2026 · `[tendance]`
 
-- **Background technique / sectoriel** (ex. fintech pour Dotfile) · ponctuel · 1 board · `[mode]`
+- **Background technique / sectoriel** (ex. fintech pour Dotfile) · ponctuel, 1 board · WTTJ · `[mode]`
 
-- **Compétences demandées par les recruteurs jugées rares** : les compétences demandées par les recruteurs sont rares ; les offres d'emploi sont nombreuses, les entreprises sont souvent à la recherche de la perle rare — Noé 2026.[2] Signal qualitatif de rareté, source auto-déclarative formation.
+- *Note de prudence : snippets pauvres en détail — extraction prudente, à confirmer en page.*
+
+---
 
 ### Outils
 
-- **RAS ce trimestre.** Aucun outil nommé dans les snippets PM généralistes captés (les outils IA — LLM, RAG — apparaissent sur le segment AI PM ; renvoyé à fiche `productai`). ⬜
+**RAS ce trimestre** sur les PM généralistes captés. Les outils IA (LLM, RAG, Claude Code…) apparaissent dans le segment AI PM — voir fiche productai.
 
-### Séniorité / volume / structure
+---
 
-**Pyramide des rôles :**
-La pyramide documentée par Noé 2026 va de l'APM (Associate PM, davantage orienté delivery, en binôme avec un PM expérimenté) jusqu'au PM, puis Senior PM (sujets plus complexes et stratégiques, fort impact roadmap), Lead PM (responsable de plusieurs squads, mentoring), Head of Product (management direct d'une équipe PM, recrutement), jusqu'au CPO/VP Product, rattaché au CEO et généralement membre du Comex.[3]​[4] — Noé 2026 (source auto-déclarative, population alumni).
+### Séniorité / Volume / Structure
 
-De son côté, Seyos 2026 nomme explicitement dans sa catégorie « Gestion de Projets & Product » les rôles Head of Product, CPO – Chief Product Officer, Product Manager et Product Owner[5], confirmant la taxonomie à quatre niveaux minimum — Seyos 2026.
+**Pyramide des rôles — ligne de base** (baromètres nommés, non observable en tant qu'événement de transition T0) :
 
-**Présence sur le marché (signal qualitatif Seyos, hors chiffre) :**
-Seyos 2026 positionne le CPO comme « perle rare / recherché » et le Head of Product comme « recherché » sur l'indicateur de présence marché.[6]​[7] Signal de rareté relative des rôles de tête — Seyos 2026. Le PO est positionné « recherché / commun » par le même baromètre, cohérent avec le volume des offres captées.
+Noé 2026 documente la pyramide suivante : Associate Product Manager (APM) → Product Owner (PO) / Proxy PO → Product Manager → Technical PM → Senior PM → Lead PM → Head of Product → VP Product / CPO.[3]Seyos 2026 positionne la présence sur marché du Head of Product et du CPO entre « recherché » et « perle rare »[1] (curseur Seyos : commun / recherché / perle rare). Le Product Manager est positionné similairement entre « recherché » et « perle rare » (Seyos 2026).[1] Triangulation limitée : ces positions sont auto-déclaratives chez Noé (alumni bootcamp), recruteur chez Seyos — populations différentes, convergence directionnelle seulement.
 
-**Concentration géographique :**
-La majorité des emplois de Product Managers sont situés à Paris : 69 % des Product Managers travaillent dans la capitale, selon Noé 2026.[4] Signal convergent avec le périmètre WTTJ (IDF dominant dans les annonces captées) — Noé 2026 (auto-déclaratif alumni).
+**Géographie — signal baromètre (Noé 2026)** : La majorité des emplois de Product Managers sont situés à Paris — 69% des Product Managers travaillent dans la capitale.[4] Convergent avec le skew IDF de la fiche (WTTJ et APEC quasi exclusivement Paris / Île-de-France).
 
-**Santé du marché / contexte :**
-Le marché de l'emploi cadre a connu un retournement en 2024, avec une baisse des volumes de recrutement réalisés de -8 %, particulièrement marquée dans les services à forte valeur ajoutée (-10 %), et les prévisions pour 2025 sont à -4 %.[8] — APEC Métiers cadres porteurs 2026. La volumétrie des offres cadres publiées sur apec.fr a connu un ralentissement accentué en 2025 : -15,5 % versus 2024.[9] — APEC 2026. Le segment PM/Product n'apparaît dans aucun des deux classements (« Poids lourds » ni « Formule 1 ») de ce rapport APEC : **volume product non chiffré indépendamment dans ce baromètre.**
+**Volume marché cadre général — contexte (APEC Métiers Cadres Porteurs 2026)** : La volumétrie des offres d'emploi cadre publiées sur apec.fr a connu un ralentissement accentué en 2025 : -15,5 % versus 2024. Le marché de l'emploi cadre a connu un retournement en 2024, avec une baisse des volumes de recrutement réalisés de -8%, particulièrement marquée dans les services à forte valeur ajoutée (-10%). Cette baisse devrait se poursuivre en 2025, avec des prévisions à -4%.[5] Le Product Management en tant qu'intitulé distinct n'apparaît pas dans les métiers « Poids lourds » ou « Formule 1 » du rapport APEC 2026 (périmètre offres cadres avec intitulé identifiable) : **volume PM non chiffré depuis une source grand-N sur ce trimestre**.
 
-À l'inverse, en 2025, le marché de l'IT a enregistré une croissance de plus de 4 % par rapport à 2024, avec plus de 16 000 emplois créés au 1er semestre 2025 dans les startups numériques[10] — Seyos 2026. Deux signaux partiellement divergents (contraction cadre générale APEC vs dynamisme IT Seyos) : triangulation prudente — les deux sources ne mesurent pas les mêmes périmètres.
+**Volume indicatif (offres) :** pages d'agrégation Indeed datées (indicatif courant + archivé confondus) : "+100 annonces Product Manager AI Paris" (29 mai 2026), "+100 English Speaking PM Paris" (8 juin 2026), "+75 PM Freelance Paris" (28 mai 2026) · Indeed · `[tendance]` (volume brut, non séniorisation)
 
-**Skew employeur (depuis les offres) :**
-Marché bicéphale visible dans la matière :
-- *Côté entreprises produit* : PM/Senior PM, Head of Product, CPO (SeLoger, LumApps, Witco, Pix, Mistral AI, BforBank…)
-- *Côté ESN/conseil* : Lead PM, PO, AI PM (Theodo × 4, Hubvisory × 3, Thiga, mc2i, eXalt, Converteo, Expleo…)
-
-Ce skew gonfle la récurrence des intitulés Lead PM, PO et AI PM dans la capture WTTJ ; il ne reflète pas nécessairement le poids de marché réel.
+**Skew employeur :** marché bicéphale — ESN/conseil surreprésenté sur Lead PM, PO et AI PM (Theodo ×4 entités, Thiga, Hubvisory ×3, Converteo, mc2i, eXalt, Expleo) vs. entreprises produit sur PM/Head/CPO (SeLoger, LumApps, Pix, Mistral AI, BforBank…). Ce skew biaise la récurrence des intitulés — à lire avec ce filtre.
 
 ---
 
 ## Lecture transverse
 
-**La structuration la plus nette du trimestre :** la **dualité employeur** (entreprises produit vs ESN/conseil) traverse toutes les dimensions — elle oriente l'intitulé (PO/Lead PM = ESN ; Head/CPO = produit), le niveau de séniorité demandé et probablement les compétences attendues. Ce signal est suffisamment lisible dans la matière pour être posé comme **candidat Bloc 3 Format B** (structuration du marché à challenger ou confirmer).
-
-**Signal AI PM :** convergent sur WTTJ (8 acteurs distincts, mix entreprises produit + ESN), renvoyé à la fiche `productai` pour détail compétences/outils. Le présent snapshot pose la présence de l'intitulé comme `[tendance]` ; la montée en `[tendance]` vers une future ligne de base dépendra de la confirmation multi-trimestres.
-
-**Candidat `[structurel]`** : aucun à poser ce trimestre (1er passage, pas de variation chiffrée observée, pas de transition documentable). La pyramide APM→PM→Lead→Head→CPO et la concentration Paris sont des **lignes de base**, pas des événements structurels.
+La structuration la plus nette du trimestre est la **bifurcation du marché PM en deux sous-segments** qui s'affirment en parallèle sur WTTJ : (1) un segment **PM généraliste / sénior produit** (PM → Senior PM → Lead PM → Head/CPO) tiré par les entreprises produit ; (2) un segment **AI PM** porté quasi exclusivement par ESN/conseil IA et pure players (Mistral AI, Thiga, Hubvisory, LegalPlace). La pyramide APM → PM → Lead → Head → CPO est confirmée en ligne de base par Seyos 2026 et Noé 2026. L'émergence de l'AI PM comme intitulé à part entière (8 entités distinctes, 2 boards) est le signal le plus saillant du trimestre — candidat Bloc 3 Format B pour développement, voire Bloc 2 si ce segment constitue un positionnement à challenger.
 
 ---
 
 ## Tableau de synthèse (état daté)
 
-**Intitulés**
-
-| Item | État | Tag | Date |
-|---|---|---|---|
-| Product Manager / Senior PM | ✅ présent · dominant offres WTTJ | `[tendance]` | 2026-06-19 |
-| Product Owner | ✅ présent · dominant, skew ESN · WTTJ + APEC | `[tendance]` | 2026-06-19 |
-| Lead Product Manager | ✅ présent · skew ESN/conseil net · WTTJ + APEC | `[tendance]` | 2026-06-19 |
-| Head of Product | ✅ présent · côté entreprises produit · WTTJ | `[tendance]` | 2026-06-19 |
-| CPO / Chief Product Officer / CTPO | ✅ présent · côté entreprises produit · WTTJ | `[tendance]` | 2026-06-19 |
-| AI Product Manager / PM IA | ✅ émergent · multi-acteurs WTTJ | `[tendance]` | 2026-06-19 |
-| Product Growth Manager | ❌ marginal · 1 seul détail APEC | `[mode]` | 2026-06-19 |
-
-**Compétences**
-
-| Item | État | Tag | Date |
-|---|---|---|---|
-| Séniorité élevée pour Head/CPO (8-10 ans) | ✅ présent · snippets pauvres, à confirmer | `[tendance]` | 2026-06-19 |
-| Conception features AI-first / IA dans la roadmap | ✅ présent · multi-offres WTTJ | `[tendance]` | 2026-06-19 |
-| Compétences IA en tension/pénurie (signal baromètre) | ✅ présent · qualitatif, Seyos 2026 | `[tendance]` | 2026-06-19 |
-| Background technique/sectoriel (fintech, etc.) | ❌ marginal · ponctuel 1 board | `[mode]` | 2026-06-19 |
-| Détail compétences PM généraliste (outils, méthodes…) | ⬜ pas de matière — snippets trop pauvres | — | 2026-06-19 |
-
-**Outils**
-
-| Item | État | Tag | Date |
-|---|---|---|---|
-| Outils PM généralistes | ⬜ pas de matière — aucun outil nommé dans les snippets | — | 2026-06-19 |
-| Outils IA (LLM, RAG…) | ⬜ hors périmètre fiche — renvoyé à `productai` | — | 2026-06-19 |
-
-**Séniorité / volume / structure**
-
-| Item | État | Tag | Date |
-|---|---|---|---|
-| Pyramide APM→PM→Lead→Head→CPO | ✅ présent · ligne de base documentée · Noé 2026 + Seyos 2026 | — *(ligne de base, pas d'événement)* | 2026-06-19 |
-| Concentration Paris (69 % des PM) | ✅ présent · ligne de base · Noé 2026 | — *(ligne de base)* | 2026-06-19 |
-| Rareté relative CPO / Head of Product | ✅ présent · qualitatif · Seyos 2026 | `[tendance]` | 2026-06-19 |
-| Dualité employeur ESN/conseil vs entreprises produit | ✅ présent · convergent multi-intitulés WTTJ | `[tendance]` | 2026-06-19 |
-| Volume cadre PM/Product chiffré indépendamment | ⬜ pas de matière — absent des classements APEC 2026 | — | 2026-06-19 |
-| Contexte marché cadre (contraction générale) | ✅ présent · -15,5 % offres cadres 2025 · APEC 2026 | `[tendance]` | 2026-06-19 |
-| Contexte marché IT (croissance modérée) | ✅ présent · +4 % IT 2025 · Seyos 2026 | `[tendance]` | 2026-06-19 |
+- **Intitulés — Product Manager / Senior PM** | ✅ | `[tendance]` | 2026-06-19
+- **Intitulés — Product Owner** | ✅ | `[tendance]` | 2026-01-20 (APEC daté) / non daté WTTJ
+- **Intitulés — Lead Product Manager** | ✅ | `[tendance]` | 2026-06-19
+- **Intitulés — Head of Product** | ✅ | `[tendance]` | 2026-06-19
+- **Intitulés — CPO / Chief Product Officer (incl. CTPO)** | ✅ | `[tendance]` | 2026-06-19
+- **Intitulés — AI Product Manager / PM IA** | ✅ | `[tendance]` | 2026-06-19
+- **Intitulés — Product Growth Manager** | ❌ | `[mode]` | ~2025-07 (APEC, archivé)
+- **Compétences — Séniorité élevée exigée (Head/CPO)** | ✅ | `[tendance]` | 2026-06-19
+- **Compétences — Conception AI-first / IA roadmap** | ✅ | `[tendance]` | 2026-06-19
+- **Compétences — Background technique / sectoriel** | ❌ | `[mode]` | 2026-06-19
+- **Compétences — IA comme compétence pénurique** | ✅ | `[tendance]` | Seyos 2026
+- **Outils — Outils PM généralistes nommés** | ❌ | — | —
+- **Séniorité/volume — Pyramide APM→PM→Lead→Head→CPO** | ✅ | — | Seyos 2026 + Noé 2026 (ligne de base)
+- **Séniorité/volume — Rareté PM entre « recherché » et « perle rare »** | ✅ | — | Seyos 2026
+- **Séniorité/volume — Concentration Paris / IDF (69%)** | ✅ | — | Noé 2026
+- **Séniorité/volume — Volume PM chiffré grand-N (APEC)** | ⬜ | — | —
+- **Séniorité/volume — Contexte marché cadre en contraction (-15,5% offres 2025)** | ✅ | — | APEC Métiers porteurs 2026
+- **Séniorité/volume — Skew ESN/conseil sur Lead PM, PO, AI PM** | ✅ | `[tendance]` | 2026-06-19
 
 ---
 
 ## Points de décision pour Axel
 
-- **Candidats `[structurel]` à trancher :** aucun ce trimestre (1er passage). La pyramide APM→PM→Lead→Head→CPO et la concentration Paris sont posées comme lignes de base — à surveiller pour variation à T+1.
+- **Candidats `[structurel]` à trancher :** Aucun ce trimestre — 1er passage, source = alertes offres ; plafond `[tendance]` appliqué. La pyramide (APM → CPO) est une ligne de base baromètre, non un événement — ne pas taguer `[structurel]` sans validation.
 
-- **Convergence limite (1 seul board ou source) à confirmer :**
-  - *Product Growth Manager* → 1 seul détail APEC (~juil. 2025, daté) : signal très faible, à surveiller ou à sortir du jeu de requêtes si absent à T+1.
-  - *Rareté CPO / Head of Product* → signal Seyos 2026 seul (auto-évaluation présence marché) ; convergence boards insuffisante pour consolider.
-  - *Compétence background technique/sectoriel* → 1 board, 1 offre : `[mode]` à confirmer.
+- **Convergence limite (1 seul board/baromètre) à confirmer :**
+  - Product Growth Manager : 1 seul board (APEC ~juil. 2025, possiblement archivé) → `[mode]` à surveiller à T+1.
+  - Rareté PM (position « entre recherché et perle rare ») : Seyos seul pour la position curseur ; Noé confirme le principe de rareté mais population différente (alumni bootcamp). À croiser avec un 2e baromètre recruteur à T+1.
 
 - **Items sans matière ce trimestre (sourcing à vérifier) :**
-  - Outils PM généralistes (Figma, Jira, amplitude, etc.) → snippets insuffisants ; à cibler en page ou par requête outillage dédiée.
-  - Compétences détaillées PM (méthodes, soft skills, discovery vs delivery) → pas extractibles des snippets actuels.
-  - Volume PM/Product chiffré en absolu → absent des baromètres groundés disponibles (APEC ne chiffre pas ce segment séparément).
+  - Volume PM chiffré grand-N (APEC) : le Product Manager n'apparaît pas en catégorie autonome dans APEC Métiers Cadres Porteurs 2026 — vérifier si un rapport APEC spécifique tech/digital documente un volume PM distinct.
+  - Outils PM généralistes (Jira, Figma, Notion…) : absent des snippets ce trimestre — à relancer en page d'offre.
+  - Lenny's Job Board : 0 URL remontée — confirmer si le board est actif France ou hors-périmètre.
 
-- **Évolution du jeu de requêtes signalée ce trimestre :**
-  - Lenny's Job Board à zéro (aucune URL remontée) : à noter côté sourcing — board à évaluer pour maintien ou retrait du jeu.
-  - Mind the Product Jobs quasi nul (1 annonce Amsterdam/Paris faiblement reliée) : même question.
-  - Biais de fraîcheur WTTJ non résolu (aucune date dans les snippets) : envisager une requête directe sur la date de publication pour les prochaines passes.
-  - Skew ESN/conseil structurel sur Lead PM et PO : à documenter explicitement dans le jeu de requêtes (requête « entreprise produit » vs « ESN/conseil » séparées ?) pour distinguer les deux segments à T+1.
+- **Évolution du jeu de requêtes signalée :**
+  - Mind the Product Jobs quasi nul (1 annonce faiblement reliée Paris) : évaluer s'il reste pertinent dans le jeu de requêtes.
+  - La surreprésentation WTTJ (quasi-unique gisement d'annonces individuelles exploitables) crée un biais d'échantillon structurel — envisager d'ajouter LinkedIn Jobs ou un board spé produit francophone pour T+1.
+  - Fraîcheur WTTJ non vérifiable (aucune date dans les snippets) : à résoudre en accédant aux pages d'offres en détail lors de la prochaine passe.
 
 [1]: https://wefiitcom.sharepoint.com/sites/TribeExpertises/Documents%20partages/Général/2%20-%20OBSERVATOIRE%20DES%20EXPERTISES/Veille%20Agentique%20Tribe%20Produit/01-Matière-brute/Rapports-Emploi/SEYOS_BAROMETRE_DE_%20SALAIRES_IT_2026.pdf "SEYOS_BAROMETRE_DE_ SALAIRES_IT_2026.pdf"
-[2]: https://wefiitcom.sharepoint.com/sites/TribeExpertises/Documents%20partages/Général/2%20-%20OBSERVATOIRE%20DES%20EXPERTISES/Veille%20Agentique%20Tribe%20Produit/01-Matière-brute/Rapports-Emploi/Salaire%20Product%20Manager%202026%20par%20niveau%20⎟%20Noé.pdf "Salaire Product Manager 2026 par niveau ⎟ Noé.pdf"
+[2]: https://wefiitcom.sharepoint.com/sites/TribeExpertises/Documents%20partages/Général/2%20-%20OBSERVATOIRE%20DES%20EXPERTISES/Veille%20Agentique%20Tribe%20Produit/01-Matière-brute/Rapports-Emploi/SEYOS_BAROMETRE_DE_%20SALAIRES_IT_2026.pdf "SEYOS_BAROMETRE_DE_ SALAIRES_IT_2026.pdf"
 [3]: https://wefiitcom.sharepoint.com/sites/TribeExpertises/Documents%20partages/Général/2%20-%20OBSERVATOIRE%20DES%20EXPERTISES/Veille%20Agentique%20Tribe%20Produit/01-Matière-brute/Rapports-Emploi/Salaire%20Product%20Manager%202026%20par%20niveau%20⎟%20Noé.pdf "Salaire Product Manager 2026 par niveau ⎟ Noé.pdf"
 [4]: https://wefiitcom.sharepoint.com/sites/TribeExpertises/Documents%20partages/Général/2%20-%20OBSERVATOIRE%20DES%20EXPERTISES/Veille%20Agentique%20Tribe%20Produit/01-Matière-brute/Rapports-Emploi/Salaire%20Product%20Manager%202026%20par%20niveau%20⎟%20Noé.pdf "Salaire Product Manager 2026 par niveau ⎟ Noé.pdf"
-[5]: https://wefiitcom.sharepoint.com/sites/TribeExpertises/Documents%20partages/Général/2%20-%20OBSERVATOIRE%20DES%20EXPERTISES/Veille%20Agentique%20Tribe%20Produit/01-Matière-brute/Rapports-Emploi/SEYOS_BAROMETRE_DE_%20SALAIRES_IT_2026.pdf "SEYOS_BAROMETRE_DE_ SALAIRES_IT_2026.pdf"
-[6]: https://wefiitcom.sharepoint.com/sites/TribeExpertises/Documents%20partages/Général/2%20-%20OBSERVATOIRE%20DES%20EXPERTISES/Veille%20Agentique%20Tribe%20Produit/01-Matière-brute/Rapports-Emploi/SEYOS_BAROMETRE_DE_%20SALAIRES_IT_2026.pdf "SEYOS_BAROMETRE_DE_ SALAIRES_IT_2026.pdf"
-[7]: https://wefiitcom.sharepoint.com/sites/TribeExpertises/Documents%20partages/Général/2%20-%20OBSERVATOIRE%20DES%20EXPERTISES/Veille%20Agentique%20Tribe%20Produit/01-Matière-brute/Rapports-Emploi/SEYOS_BAROMETRE_DE_%20SALAIRES_IT_2026.pdf "SEYOS_BAROMETRE_DE_ SALAIRES_IT_2026.pdf"
-[8]: https://wefiitcom.sharepoint.com/sites/TribeExpertises/Documents%20partages/Général/2%20-%20OBSERVATOIRE%20DES%20EXPERTISES/Veille%20Agentique%20Tribe%20Produit/01-Matière-brute/Rapports-Emploi/Les%20metiers%20cadres%20porteurs%20edition%202026.pdf "Les metiers cadres porteurs edition 2026.pdf"
-[9]: https://wefiitcom.sharepoint.com/sites/TribeExpertises/Documents%20partages/Général/2%20-%20OBSERVATOIRE%20DES%20EXPERTISES/Veille%20Agentique%20Tribe%20Produit/01-Matière-brute/Rapports-Emploi/Les%20metiers%20cadres%20porteurs%20edition%202026.pdf "Les metiers cadres porteurs edition 2026.pdf"
-[10]: https://wefiitcom.sharepoint.com/sites/TribeExpertises/Documents%20partages/Général/2%20-%20OBSERVATOIRE%20DES%20EXPERTISES/Veille%20Agentique%20Tribe%20Produit/01-Matière-brute/Rapports-Emploi/SEYOS_BAROMETRE_DE_%20SALAIRES_IT_2026.pdf "SEYOS_BAROMETRE_DE_ SALAIRES_IT_2026.pdf"
+[5]: https://wefiitcom.sharepoint.com/sites/TribeExpertises/Documents%20partages/Général/2%20-%20OBSERVATOIRE%20DES%20EXPERTISES/Veille%20Agentique%20Tribe%20Produit/01-Matière-brute/Rapports-Emploi/Les%20metiers%20cadres%20porteurs%20edition%202026.pdf "Les metiers cadres porteurs edition 2026.pdf"

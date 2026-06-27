@@ -95,6 +95,10 @@
     "path": "Veille Agentique Tribe Produit/01-Matière-brute/Newsletters-pré-digérées/2026-06/2026-06-26_cutlefish_bac7.md",
     "modified": "2026-06-26T06:15:49Z"
   },
+  "veille-agentique-tribe-produit-01-matiere-brute-newsletters-pre-digerees-2026-06-2026-06-27-f2d42e2a": {
+    "path": "Veille Agentique Tribe Produit/01-Matière-brute/Newsletters-pré-digérées/2026-06/2026-06-27_thesetups_15cf.md",
+    "modified": "2026-06-27T08:06:57Z"
+  },
   "veille-agentique-tribe-produit-01-matiere-brute-notes-pad-retraitees-2026-06-synthese-deman-a2036bcd": {
     "path": "Veille Agentique Tribe Produit/01-Matière-brute/Notes-PAD-retraitées/2026-06/Synthese-demande-2026-06.md",
     "modified": "2026-06-14T21:31:05Z"
@@ -213,7 +217,7 @@
   },
   "veille-agentique-tribe-produit-01-matiere-brute-veille-concurrentielle-2026-t2-snapshot-con-f94f3b71": {
     "path": "Veille Agentique Tribe Produit/01-Matière-brute/Veille-concurrentielle/2026-T2/Snapshot-concurrentiel-T2-2026.md",
-    "modified": "2026-06-25T22:10:15Z"
+    "modified": "2026-06-26T23:28:53Z"
   },
   "veille-agentique-tribe-produit-01-matiere-brute-veille-emploi-2026-06-2026-06-19datapm101001": {
     "path": "Veille Agentique Tribe Produit/01-Matière-brute/Veille-emploi/2026-06/2026-06-19_datapm_101001.md",
@@ -241,27 +245,27 @@
   },
   "veille-agentique-tribe-produit-01-matiere-brute-veille-emploi-2026-t2-snapshot-emploi-datapm-t2-2026": {
     "path": "Veille Agentique Tribe Produit/01-Matière-brute/Veille-emploi/2026-T2/Snapshot-emploi-datapm-T2-2026.md",
-    "modified": "2026-06-20T14:02:40Z"
+    "modified": "2026-06-26T23:40:55Z"
   },
   "veille-agentique-tribe-produit-01-matiere-brute-veille-emploi-2026-t2-snapshot-emploi-pmm-t2-2026": {
     "path": "Veille Agentique Tribe Produit/01-Matière-brute/Veille-emploi/2026-T2/Snapshot-emploi-pmm-T2-2026.md",
-    "modified": "2026-06-20T13:55:45Z"
+    "modified": "2026-06-26T23:34:30Z"
   },
   "veille-agentique-tribe-produit-01-matiere-brute-veille-emploi-2026-t2-snapshot-emploi-pm-t2-2026": {
     "path": "Veille Agentique Tribe Produit/01-Matière-brute/Veille-emploi/2026-T2/Snapshot-emploi-pm-T2-2026.md",
-    "modified": "2026-06-20T13:34:52Z"
+    "modified": "2026-06-26T23:26:40Z"
   },
   "veille-agentique-tribe-produit-01-matiere-brute-veille-emploi-2026-t2-snapshot-emploi-produ-d55536dc": {
     "path": "Veille Agentique Tribe Produit/01-Matière-brute/Veille-emploi/2026-T2/Snapshot-emploi-productai-T2-2026.md",
-    "modified": "2026-06-20T13:51:24Z"
+    "modified": "2026-06-26T23:29:06Z"
   },
   "veille-agentique-tribe-produit-01-matiere-brute-veille-emploi-2026-t2-snapshot-emploi-produ-b09f3c8b": {
     "path": "Veille Agentique Tribe Produit/01-Matière-brute/Veille-emploi/2026-T2/Snapshot-emploi-productops-T2-2026.md",
-    "modified": "2026-06-20T13:53:40Z"
+    "modified": "2026-06-26T23:31:20Z"
   },
   "veille-agentique-tribe-produit-01-matiere-brute-veille-emploi-2026-t2-snapshot-emploi-qa-t2-2026": {
     "path": "Veille Agentique Tribe Produit/01-Matière-brute/Veille-emploi/2026-T2/Snapshot-emploi-qa-T2-2026.md",
-    "modified": "2026-06-20T14:00:20Z"
+    "modified": "2026-06-26T23:38:12Z"
   },
   "veille-agentique-tribe-produit-01-matiere-brute-prompt-relance-trimestrielle-veille-concurr-fad5a38b": {
     "path": "Veille Agentique Tribe Produit/01-Matière-brute/Prompt-relance-trimestrielle-veille-concurrence-et-emploi.md",
