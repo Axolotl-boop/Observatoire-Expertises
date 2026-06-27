@@ -20,7 +20,7 @@ export const { handlers, auth, signIn, signOut } = NextAuth({
   // (pas d'écran intermédiaire de choix de fournisseur).
   pages: { signIn: "/login" },
   // Session longue : évite de redemander la connexion à chaque visite.
-  session: { maxAge: 30 * 24 * 60 * 60 }, // 30 jours
+  session: { maxAge: 365 * 24 * 60 * 60 }, // 1 an
   callbacks: {
     // Seuls les utilisateurs authentifiés (donc du tenant WeFiiT) sont autorisés.
     authorized: async ({ auth }) => !!auth,
