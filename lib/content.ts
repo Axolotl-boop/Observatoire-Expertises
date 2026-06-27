@@ -449,17 +449,28 @@ export interface ConcurrenceQuarter {
   filename: string;
 }
 
-/** Retire les segments « · Surface(s) : … » et « · Source(s) : … » des puces. */
-function stripSurfaceSource(md: string): string {
+/**
+ * Nettoie les puces de la veille concurrentielle : retire les segments
+ * « surface : … », « source : … », « tag : … » et les verdicts inline
+ * [mode]/[tendance]/[structurel].
+ */
+function stripConcurrenceMeta(md: string): string {
   return md
     .split(/\r?\n/)
     .map((line) => {
-      if (!/\s[·•]\s/.test(line)) return line;
-      const parts = line.split(/\s[·•]\s/);
-      const kept = parts.filter(
-        (p, i) => i === 0 || !/^(surfaces?|sources?)\s*:/i.test(p.trim()),
-      );
-      return kept.join(" · ");
+      let l = line;
+      if (/\s[·•]\s/.test(l)) {
+        const parts = l.split(/\s[·•]\s/);
+        l = parts
+          .filter((p, i) => i === 0 || !/^(surfaces?|sources?|tags?)\s*:/i.test(p.trim()))
+          .join(" · ");
+      }
+      return l
+        .replace(/\[(mode|tendance|structurel)[^\]]*\]/gi, "") // verdicts inline
+        .replace(/\s+·\s*$/, "") // séparateur orphelin en fin
+        .replace(/[ \t]{2,}/g, " ")
+        .replace(/\s+([.,;])/g, "$1")
+        .trimEnd();
     })
     .join("\n");
 }
@@ -496,8 +507,10 @@ export async function getConcurrenceQuarters(): Promise<ConcurrenceQuarter[]> {
         if (/^##\s/.test(lines[j])) break;
         body.push(lines[j]);
       }
-      const md = stripSurfaceSource(body.join("\n").replace(/^\s*-{3,}\s*$/gm, "").trim());
-      axes.push({ title, html: colorizeTags(await renderMarkdown(md)) });
+      const md = stripConcurrenceMeta(
+        body.join("\n").replace(/^\s*-{3,}\s*$/gm, "").trim(),
+      );
+      axes.push({ title, html: await renderMarkdown(md) });
     }
 
     const lecture = sectionLines(lines, /^##\s*Lecture transverse/i);
