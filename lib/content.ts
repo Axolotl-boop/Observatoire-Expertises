@@ -387,26 +387,48 @@ const EMPLOI_LABELS: Record<string, string> = {
 };
 
 /**
- * Extrait une sous-section « **LABEL** » du tableau de synthèse, en colonnes.
- * Gère les deux formats rencontrés : tableau Markdown (| Item | État | … |) ou
- * liste à puces (« - item · statut · verdict · date »).
+ * Extrait les lignes de synthèse d'une dimension (Compétences / Outils), en colonnes.
+ * Gère trois formats rencontrés au fil des synchros :
+ *  1. Sous-section démarrée par une ligne « **LABEL** » autonome, puis tableau
+ *     Markdown (| Item | État | … |) ou puces « - item · statut · verdict · date ».
+ *  2. Puces où la dimension est préfixée dans le libellé et les colonnes séparées
+ *     par des « | » : « - **Compétences — libellé** | ✅ | [verdict] | date ».
  */
 function synthRows(lines: string[], labelRe: RegExp): SynthRow[] {
+  // Format 1 : en-tête de sous-section « **LABEL** » autonome.
   const start = lines.findIndex((l) => /^\*\*.+\*\*$/.test(l.trim()) && labelRe.test(l));
-  if (start < 0) return [];
-  const rows: SynthRow[] = [];
-  for (let i = start + 1; i < lines.length; i++) {
-    const l = lines[i].trim();
-    if (/^\*\*.+\*\*$/.test(l)) break; // sous-section suivante
-    if (l.startsWith("|")) {
-      const cells = l.replace(/^\|/, "").replace(/\|$/, "").split("|").map((c) => c.trim());
-      if (cells.length < 2) continue;
-      if (/^-+$/.test(cells[0].replace(/\s/g, ""))) continue; // séparateur |---|
-      if (/^(item|[ée]l[ée]ment)$/i.test(cells[0])) continue; // ligne d'en-tête
-      rows.push(cells);
-    } else if (l.startsWith("-")) {
-      rows.push(l.replace(/^-\s*/, "").split(/\s[·•]\s/).map((c) => c.trim()));
+  if (start >= 0) {
+    const rows: SynthRow[] = [];
+    for (let i = start + 1; i < lines.length; i++) {
+      const l = lines[i].trim();
+      if (/^\*\*.+\*\*$/.test(l)) break; // sous-section suivante
+      if (l.startsWith("|")) {
+        const cells = l.replace(/^\|/, "").replace(/\|$/, "").split("|").map((c) => c.trim());
+        if (cells.length < 2) continue;
+        if (/^-+$/.test(cells[0].replace(/\s/g, ""))) continue; // séparateur |---|
+        if (/^(item|[ée]l[ée]ment)$/i.test(cells[0])) continue; // ligne d'en-tête
+        rows.push(cells);
+      } else if (l.startsWith("-")) {
+        rows.push(l.replace(/^-\s*/, "").split(/\s[·•]\s/).map((c) => c.trim()));
+      }
     }
+    if (rows.length) return rows;
+  }
+
+  // Format 2 : puces « - **Dimension — libellé** | statut | verdict | date ».
+  const rows: SynthRow[] = [];
+  for (const raw of lines) {
+    const l = raw.trim();
+    if (!l.startsWith("-")) continue;
+    const cells = l.replace(/^-\s*/, "").split("|").map((c) => c.trim());
+    if (cells.length < 2) continue;
+    const head = cells[0].replace(/\*\*/g, "").trim(); // « Dimension — libellé »
+    const idx = head.search(/\s[—–]\s/);
+    if (idx < 0) continue;
+    const dim = head.slice(0, idx).trim();
+    if (!labelRe.test(dim)) continue;
+    const item = head.slice(idx).replace(/^\s*[—–]\s*/, "").trim();
+    rows.push([item, ...cells.slice(1)]);
   }
   return rows;
 }
