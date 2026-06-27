@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 import Link from "next/link";
+import Analytics from "@/components/Analytics";
 import SignOutButton from "@/components/SignOutButton";
 import "./globals.css";
 
@@ -30,6 +31,7 @@ export default function RootLayout({
   return (
     <html lang="fr" className={`${geomanist.variable} ${publica.variable}`}>
       <body className="min-h-screen flex flex-col">
+        <Analytics />
         <header className="border-b border-gray-200 bg-white">
           {/* Marque principale + feedback */}
           <div className="mx-auto flex max-w-5xl flex-wrap items-center justify-between gap-3 px-4 pt-4 pb-3">
@@ -84,7 +86,12 @@ export default function RootLayout({
         <footer className="border-t border-gray-200 bg-white">
           <div className="mx-auto flex max-w-5xl flex-wrap items-center justify-between gap-2 px-4 py-4 text-sm text-gray-500">
             <span>Contenu synchronisé automatiquement depuis SharePoint.</span>
-            <SignOutButton />
+            <div className="flex items-center gap-4">
+              <Link href="/admin/stats" className="text-gray-500 hover:text-electrique">
+                Statistiques
+              </Link>
+              <SignOutButton />
+            </div>
           </div>
         </footer>
       </body>
