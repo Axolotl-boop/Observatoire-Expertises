@@ -38,6 +38,9 @@ jobs:
 
       - name: Détecter un nouveau digest mensuel
         id: detect
+        env:
+          SITE_URL: ${{ secrets.SITE_URL }}
+          CRON_SECRET: ${{ secrets.CRON_SECRET }}
         run: node scripts/notify-digest.mjs
 
       - name: Notifier le nouveau digest par email
@@ -49,7 +52,8 @@ jobs:
           username: ${{ secrets.MAIL_USERNAME }}
           password: ${{ secrets.MAIL_PASSWORD }}
           from: Observatoire des Expertises <${{ secrets.MAIL_USERNAME }}>
-          to: ${{ secrets.MAIL_TO }}
+          to: ${{ secrets.MAIL_USERNAME }}
+          bcc: ${{ steps.detect.outputs.recipients || secrets.MAIL_TO }}
           subject: "Le digest de ${{ steps.detect.outputs.month_label }} est disponible"
           html_body: |
             <p>Bonjour,</p>

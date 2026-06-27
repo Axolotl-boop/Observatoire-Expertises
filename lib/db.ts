@@ -24,6 +24,12 @@ async function ensureSchema() {
   `;
   await sql`create index if not exists events_ts_idx on events (ts)`;
   await sql`create index if not exists events_event_idx on events (event)`;
+  await sql`
+    create table if not exists subscribers (
+      email text primary key,
+      subscribed_at timestamptz not null default now()
+    )
+  `;
   ensured = true;
 }
 
@@ -72,6 +78,43 @@ export async function purgeOldEvents(months: number): Promise<number> {
     select count(*)::int as n from del
   `) as { n: number }[];
   return rows[0]?.n ?? 0;
+}
+
+/** Abonne un email au récap mensuel (idempotent). */
+export async function addSubscriber(email: string): Promise<void> {
+  if (!sql) return;
+  await ensureSchema();
+  await sql`
+    insert into subscribers (email) values (${email.toLowerCase()})
+    on conflict (email) do nothing
+  `;
+}
+
+/** Désabonne un email du récap mensuel. */
+export async function removeSubscriber(email: string): Promise<void> {
+  if (!sql) return;
+  await ensureSchema();
+  await sql`delete from subscribers where email = ${email.toLowerCase()}`;
+}
+
+/** Indique si un email est abonné. */
+export async function isSubscribed(email: string): Promise<boolean> {
+  if (!sql) return false;
+  await ensureSchema();
+  const rows = (await sql`
+    select 1 from subscribers where email = ${email.toLowerCase()} limit 1
+  `) as { "?column?": number }[];
+  return rows.length > 0;
+}
+
+/** Liste des emails abonnés (pour l'envoi du récap). */
+export async function getSubscribers(): Promise<string[]> {
+  if (!sql) return [];
+  await ensureSchema();
+  const rows = (await sql`select email from subscribers order by email`) as {
+    email: string;
+  }[];
+  return rows.map((r) => r.email);
 }
 
 export interface Stats {

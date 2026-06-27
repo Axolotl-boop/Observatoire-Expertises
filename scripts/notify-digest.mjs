@@ -43,6 +43,34 @@ function setOutput(key, value) {
   if (f) fs.appendFileSync(f, `${key}=${value}\n`);
 }
 
+/**
+ * Récupère la liste des abonnés depuis le site déployé (table Postgres).
+ * Renvoie une chaîne « a@x,b@y » prête pour le champ `to:` de l'email.
+ * En cas d'absence de config ou d'erreur, renvoie "" (repli sur MAIL_TO).
+ */
+async function fetchRecipients() {
+  const base = (process.env.SITE_URL || "").replace(/\/+$/, "");
+  const secret = process.env.CRON_SECRET || "";
+  if (!base) return "";
+  try {
+    const url = `${base}/api/cron/subscribers`;
+    const res = await fetch(url, {
+      headers: secret ? { authorization: `Bearer ${secret}` } : {},
+    });
+    if (!res.ok) {
+      console.log(`Abonnés indisponibles (HTTP ${res.status}).`);
+      return "";
+    }
+    const data = await res.json();
+    const emails = Array.isArray(data.emails) ? data.emails : [];
+    console.log(`${emails.length} abonné(s) récupéré(s).`);
+    return emails.join(",");
+  } catch (e) {
+    console.log(`Échec de récupération des abonnés : ${e.message}`);
+    return "";
+  }
+}
+
 const latest = latestDigestMonth();
 if (!latest) {
   console.log("Aucun digest détecté.");
@@ -69,8 +97,10 @@ if (lastMonth === null) {
 if (latest > lastMonth) {
   fs.writeFileSync(notifiedPath, `${JSON.stringify({ lastMonth: latest }, null, 2)}\n`);
   console.log(`Nouveau digest détecté : ${latest} (précédent : ${lastMonth}).`);
+  const recipients = await fetchRecipients();
   setOutput("new_month", latest);
   setOutput("month_label", monthLabel(latest));
+  setOutput("recipients", recipients);
 } else {
   console.log(`Pas de nouveau digest (récent=${latest}, déjà notifié=${lastMonth}).`);
   setOutput("new_month", "");

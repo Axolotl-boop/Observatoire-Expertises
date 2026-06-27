@@ -3,6 +3,7 @@ import localFont from "next/font/local";
 import Link from "next/link";
 import Analytics from "@/components/Analytics";
 import SignOutButton from "@/components/SignOutButton";
+import SubscribeButton from "@/components/SubscribeButton";
 import SyncFreshness from "@/components/SyncFreshness";
 import { getLastSync } from "@/lib/content";
 import "./globals.css";
@@ -90,6 +91,7 @@ export default function RootLayout({
           <div className="mx-auto flex max-w-5xl flex-wrap items-center justify-between gap-2 px-4 py-4 text-sm text-gray-500">
             <SyncFreshness syncedAt={lastSync} />
             <div className="flex items-center gap-4">
+              <SubscribeButton />
               <Link href="/admin/stats" className="text-gray-500 hover:text-electrique">
                 Statistiques
               </Link>
