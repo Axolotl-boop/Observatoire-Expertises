@@ -30,6 +30,15 @@ async function ensureSchema() {
       subscribed_at timestamptz not null default now()
     )
   `;
+  await sql`
+    create table if not exists feedback (
+      id bigserial primary key,
+      ts timestamptz not null default now(),
+      user_email text,
+      message text not null,
+      path text
+    )
+  `;
   ensured = true;
 }
 
@@ -105,6 +114,32 @@ export async function isSubscribed(email: string): Promise<boolean> {
     select 1 from subscribers where email = ${email.toLowerCase()} limit 1
   `) as { "?column?": number }[];
   return rows.length > 0;
+}
+
+/** Enregistre un feedback laissé via le formulaire intégré. */
+export async function addFeedback(
+  message: string,
+  email?: string | null,
+  path?: string | null,
+): Promise<void> {
+  if (!sql) return;
+  await ensureSchema();
+  await sql`
+    insert into feedback (user_email, message, path)
+    values (${email ?? null}, ${message}, ${path ?? null})
+  `;
+}
+
+/** Derniers feedbacks (pour le dashboard admin). */
+export async function getFeedback(): Promise<
+  { ts: string; user_email: string | null; message: string; path: string | null }[]
+> {
+  if (!sql) return [];
+  await ensureSchema();
+  return (await sql`
+    select to_char(ts, 'YYYY-MM-DD HH24:MI') as ts, user_email, message, path
+    from feedback order by ts desc limit 200
+  `) as { ts: string; user_email: string | null; message: string; path: string | null }[];
 }
 
 /** Liste des emails abonnés (pour l'envoi du récap). */

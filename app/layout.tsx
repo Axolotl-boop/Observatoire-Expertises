@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import localFont from "next/font/local";
 import Link from "next/link";
 import Analytics from "@/components/Analytics";
+import FeedbackButton from "@/components/FeedbackButton";
 import SignOutButton from "@/components/SignOutButton";
 import SubscribeButton from "@/components/SubscribeButton";
 import SyncFreshness from "@/components/SyncFreshness";
@@ -45,14 +46,7 @@ export default function RootLayout({
                 Observatoire des Expertises
               </span>
             </Link>
-            <a
-              href="https://outlook.office.com/mail/deeplink/compose?to=axel.alizier@wefiit.com&subject=Feedback%20Observatoire%20des%20Expertises"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="rounded-full bg-orange px-4 py-2 text-sm font-medium text-white transition hover:bg-braise"
-            >
-              💌 Envoyez un feedback !
-            </a>
+            <FeedbackButton />
           </div>
           {/* Sous-navigation */}
           <nav className="border-t border-gray-100 bg-glace/60">

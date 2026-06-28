@@ -1,5 +1,5 @@
 import { auth } from "@/auth";
-import { dbEnabled, getStats } from "@/lib/db";
+import { dbEnabled, getFeedback, getStats } from "@/lib/db";
 
 export const dynamic = "force-dynamic";
 
@@ -48,6 +48,8 @@ export default async function StatsPage() {
   if (!stats) {
     return <div className="text-gray-500">Aucune donnée pour le moment.</div>;
   }
+
+  const feedback = await getFeedback();
 
   const maxDay = Math.max(...stats.visitorsByDay.map((d) => d.views), 1);
   const maxClick = Math.max(...stats.topClicks.map((c) => c.clicks), 1);
@@ -218,6 +220,29 @@ export default async function StatsPage() {
             ))}
           </tbody>
         </table>
+      </section>
+
+      {/* Feedbacks */}
+      <section className="mb-8 rounded-xl border border-gray-200 bg-white p-5">
+        <h2 className="mb-4 font-title text-lg font-bold text-marine">
+          💌 Feedbacks {feedback.length > 0 && <span className="text-gray-400">({feedback.length})</span>}
+        </h2>
+        {feedback.length === 0 ? (
+          <p className="text-sm text-gray-400">Aucun feedback pour le moment.</p>
+        ) : (
+          <ul className="space-y-3">
+            {feedback.map((f, i) => (
+              <li key={i} className="rounded-lg border border-gray-100 bg-glace/40 p-3">
+                <div className="mb-1 flex flex-wrap items-center gap-x-3 text-xs text-gray-500">
+                  <span className="font-medium text-marine">{f.user_email || "(anonyme)"}</span>
+                  <span>{f.ts}</span>
+                  {f.path && <span className="text-gray-400">· {f.path}</span>}
+                </div>
+                <p className="whitespace-pre-wrap text-sm text-gray-800">{f.message}</p>
+              </li>
+            ))}
+          </ul>
+        )}
       </section>
 
       {/* Activité par personne */}
