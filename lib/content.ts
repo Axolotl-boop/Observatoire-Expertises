@@ -765,15 +765,17 @@ export const EXPERTISES: { key: string; label: string; folder: string }[] = [
 /** Clés des 4 blocs « carte » de l'Observatoire. */
 export type DigestBlockKey = "avantVente" | "convictions" | "competences" | "contenus";
 
-/** Les 4 blocs (hors « matière » et « légende ») avec leur titre d'affichage. */
+/** Les 4 blocs (hors « hero », « matière ») avec leur titre d'affichage. */
 export const DIGEST_BLOCKS: { key: DigestBlockKey; title: string }[] = [
-  { key: "avantVente", title: "Pistes Business & Offres" },
+  { key: "avantVente", title: "Problématiques récurrentes & Offres" },
   { key: "convictions", title: "Convictions à challenger" },
   { key: "competences", title: "Compétences recherchées" },
-  { key: "contenus", title: "Contenus suggérés" },
+  { key: "contenus", title: "Contenus de notoriété suggérés" },
 ];
 
 export interface DigestSections {
+  /** « Les signaux importants du mois » (bloc hero). */
+  signaux: string;
   /** « Matière mobilisée ce cycle » (encart de bas de page). */
   matiere: string;
   avantVente: string;
@@ -852,6 +854,7 @@ function sliceDigestSections(body: string): DigestSections {
   const bloc = (n: number) =>
     extractBetween(lines, new RegExp(`^##\\s*Bloc\\s*${n}\\b`, "i"), [h2]);
   return {
+    signaux: extractBetween(lines, /^##\s*Les signaux importants/i, [h2]),
     matiere: extractMatiere(lines),
     avantVente: bloc(1),
     convictions: bloc(2),
@@ -922,14 +925,16 @@ export async function getExpertiseDigests(): Promise<ExpertiseDigest[]> {
       if (!parsed) continue;
       const secs = sliceDigestSections(parsed.body);
       const sections: DigestSections = {
+        signaux: await renderCard(secs.signaux),
         matiere: renderMatiereHtml(secs.matiere),
         avantVente: await renderCard(secs.avantVente),
         convictions: await renderCard(secs.convictions),
         competences: await renderCard(secs.competences),
         contenus: await renderCard(secs.contenus),
       };
-      // On n'expose que les mois au nouveau format (au moins une carte ou la matière).
+      // On n'expose que les mois au nouveau format (au moins un bloc rempli).
       const hasContent =
+        sections.signaux ||
         sections.matiere ||
         sections.avantVente ||
         sections.convictions ||

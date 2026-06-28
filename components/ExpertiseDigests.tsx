@@ -7,10 +7,10 @@ import { track } from "@/lib/track";
 
 type BlockKey = "avantVente" | "convictions" | "competences" | "contenus";
 const DIGEST_BLOCKS: { key: BlockKey; title: string }[] = [
-  { key: "avantVente", title: "Pistes Business & Offres" },
+  { key: "avantVente", title: "Problématiques récurrentes & Offres" },
   { key: "convictions", title: "Convictions à challenger" },
   { key: "competences", title: "Compétences recherchées" },
-  { key: "contenus", title: "Contenus suggérés" },
+  { key: "contenus", title: "Contenus de notoriété suggérés" },
 ];
 
 function monthLabel(key: string): string {
@@ -163,6 +163,17 @@ export default function ExpertiseDigests({ digests }: { digests: ExpertiseDigest
         <div className="mt-6">
           {/* Légende de confiance (tags & chips) */}
           <ConfidenceLegend />
+
+          {/* Bloc Hero : les signaux importants du mois */}
+          {entry.sections.signaux && (
+            <div className="mb-4 rounded-2xl border border-marine bg-marine p-6 text-white shadow-sm">
+              <h3 className="mb-3 font-title text-xl font-bold">Les signaux importants du mois</h3>
+              <div
+                className="prose prose-sm prose-invert max-w-none prose-strong:text-white prose-li:marker:text-lavande"
+                dangerouslySetInnerHTML={{ __html: entry.sections.signaux }}
+              />
+            </div>
+          )}
 
           {/* Les 4 blocs, ouverture synchronisée par ligne */}
           <div className="mt-4 grid items-start gap-4 md:grid-cols-2">
