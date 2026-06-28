@@ -736,9 +736,11 @@ export async function getEntry(slug: string): Promise<Entry | null> {
     // retirerait sur les fichiers commençant par « --- » (ligne # vue comme commentaire).
     const filePath = path.join(CONTENT_DIR, `${slug}.md`);
     if (!fs.existsSync(filePath)) return null;
-    bodyMd = fs
-      .readFileSync(filePath, "utf8")
-      .replace(/^﻿?---[ \t]*\r?\n/, ""); // retire un « --- » d'ouverture éventuel
+    const rawFile = fs.readFileSync(filePath, "utf8");
+    bodyMd = rawFile.replace(/^﻿?---[ \t]*\r?\n/, ""); // retire un « --- » d'ouverture éventuel
+    // Titre lisible = celui entre « … » de l'entête, plutôt que le nom de fichier.
+    const { title } = parseNewsletterHeading(rawFile);
+    if (title) meta.title = title;
   } else {
     const parsed = readRaw(slug);
     if (!parsed) return null;
