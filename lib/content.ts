@@ -828,24 +828,35 @@ function extractBetween(lines: string[], startRe: RegExp, endRes: RegExp[]): str
     .trim();
 }
 
-/** Découpe le corps d'un digest (nouveau format « cartes ») en ses sections. */
+/**
+ * Extrait l'encart « Matière mobilisée ce cycle » : les cases ☑/☐ (sur une seule
+ * ligne, séparées par « · ») et la ligne de conclusion « → … » qui suit.
+ */
+function extractMatiere(lines: string[]): string {
+  const i = lines.findIndex((l) => /Matière mobilisée ce cycle/i.test(l));
+  if (i < 0) return "";
+  const first = lines[i].replace(/^.*?Matière mobilisée ce cycle\s*\**\s*:?\s*/i, "");
+  const parts = [first];
+  for (let j = i + 1; j < lines.length; j++) {
+    const l = lines[j].trim();
+    if (!l || /^-{3,}$/.test(l) || /^#{1,4}\s/.test(l)) break;
+    parts.push(l);
+  }
+  return parts.join("\n").trim();
+}
+
+/** Découpe le corps d'un digest (format « Bloc 1-4 ») en ses sections. */
 function sliceDigestSections(body: string): DigestSections {
   const lines = body.split(/\r?\n/);
-  const heading = /^#{1,4}\s/; // toute ligne de titre Markdown
-  const carte = (name: RegExp) =>
-    extractBetween(lines, new RegExp(`^#{1,4}\\s*Carte\\s*[—–-]\\s*${name.source}`, "i"), [
-      heading,
-    ]);
+  const h2 = /^##\s/; // titre de bloc (les sous-titres ### ne matchent pas)
+  const bloc = (n: number) =>
+    extractBetween(lines, new RegExp(`^##\\s*Bloc\\s*${n}\\b`, "i"), [h2]);
   return {
-    matiere: extractBetween(lines, /^Matière mobilisée ce cycle/i, [
-      /^\s*Bloc\s*1\b/i,
-      /^\s*-{3,}\s*$/,
-      heading,
-    ]),
-    avantVente: carte(/Avant-vente/),
-    convictions: carte(/Convictions/),
-    competences: carte(/Comp[ée]tences/),
-    contenus: carte(/Contenus activables/),
+    matiere: extractMatiere(lines),
+    avantVente: bloc(1),
+    convictions: bloc(2),
+    competences: bloc(3),
+    contenus: bloc(4),
   };
 }
 
@@ -875,7 +886,9 @@ function colorizeTagsHtml(html: string): string {
 function renderMatiereHtml(md: string): string {
   const items: string[] = [];
   let note = "";
-  for (const raw of md.split(/\r?\n/)) {
+  // Les cases peuvent être sur une seule ligne séparées par « · » (format récent)
+  // ou une par ligne (ancien format).
+  for (const raw of md.split(/\n|·|•/)) {
     const l = raw.trim();
     if (!l) continue;
     if (/^→/.test(l)) {
