@@ -774,10 +774,8 @@ export const DIGEST_BLOCKS: { key: DigestBlockKey; title: string }[] = [
 ];
 
 export interface DigestSections {
-  /** « Matière mobilisée ce cycle » (encart du haut). */
+  /** « Matière mobilisée ce cycle » (encart de bas de page). */
   matiere: string;
-  /** « Légende de confiance (compacte) » (encart de légende). */
-  legende: string;
   avantVente: string;
   convictions: string;
   competences: string;
@@ -844,7 +842,6 @@ function sliceDigestSections(body: string): DigestSections {
       /^\s*-{3,}\s*$/,
       heading,
     ]),
-    legende: extractBetween(lines, /^#{1,4}\s*Légende de confiance/i, [heading]),
     avantVente: carte(/Avant-vente/),
     convictions: carte(/Convictions/),
     competences: carte(/Comp[ée]tences/),
@@ -913,7 +910,6 @@ export async function getExpertiseDigests(): Promise<ExpertiseDigest[]> {
       const secs = sliceDigestSections(parsed.body);
       const sections: DigestSections = {
         matiere: renderMatiereHtml(secs.matiere),
-        legende: await renderCard(secs.legende),
         avantVente: await renderCard(secs.avantVente),
         convictions: await renderCard(secs.convictions),
         competences: await renderCard(secs.competences),

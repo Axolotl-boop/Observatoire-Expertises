@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import ConfidenceLegend from "@/components/ConfidenceLegend";
 import type { ExpertiseDigest } from "@/lib/content";
 import { track } from "@/lib/track";
 
@@ -167,28 +168,8 @@ export default function ExpertiseDigests({ digests }: { digests: ExpertiseDigest
             </span>
           </h2>
 
-          {/* Légende de confiance (issue du digest) */}
-          {entry.sections.legende && (
-            <div className="mb-4 rounded-lg border border-gray-200 bg-white p-4 text-sm">
-              <div
-                className="prose prose-sm prose-slate max-w-none prose-strong:text-marine prose-blockquote:border-l-lavande prose-blockquote:not-italic prose-blockquote:text-gray-600"
-                dangerouslySetInnerHTML={{ __html: entry.sections.legende }}
-              />
-            </div>
-          )}
-
-          {/* Encart du haut : matière mobilisée ce cycle */}
-          {entry.sections.matiere && (
-            <div className="mb-4 rounded-xl border border-lavande bg-glace p-5">
-              <h3 className="mb-2 font-title font-semibold text-marine">
-                Matière mobilisée ce cycle
-              </h3>
-              <div
-                className="text-sm text-gray-700"
-                dangerouslySetInnerHTML={{ __html: entry.sections.matiere }}
-              />
-            </div>
-          )}
+          {/* Légende de confiance (tags & chips) */}
+          <ConfidenceLegend />
 
           {/* Les 4 blocs, ouverture synchronisée par ligne */}
           <div className="mt-4 grid items-start gap-4 md:grid-cols-2">
@@ -205,6 +186,19 @@ export default function ExpertiseDigests({ digests }: { digests: ExpertiseDigest
               );
             })}
           </div>
+
+          {/* Encart de bas de page : matière mobilisée ce cycle */}
+          {entry.sections.matiere && (
+            <div className="mt-4 rounded-xl border border-lavande bg-glace p-5">
+              <h3 className="mb-2 font-title font-semibold text-marine">
+                Matière mobilisée ce cycle
+              </h3>
+              <div
+                className="text-sm text-gray-700"
+                dangerouslySetInnerHTML={{ __html: entry.sections.matiere }}
+              />
+            </div>
+          )}
         </div>
       ) : (
         <p className="mt-6 text-sm text-gray-500">
