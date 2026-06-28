@@ -169,6 +169,7 @@ export interface Stats {
   visitorsByDay: { d: string; visitors: number; views: number }[];
   visitorsByMonth: { m: string; visitors: number; views: number }[];
   topClicks: { target: string; clicks: number; users: number }[];
+  topCopies: { target: string; copies: number; users: number }[];
   topPaths: { path: string; views: number }[];
   byUser: { user_email: string; events: number; lastSeen: string }[];
   topEvents: { event: string; count: number; users: number }[];
@@ -214,6 +215,14 @@ export async function getStats(): Promise<Stats | null> {
     group by 1 order by clicks desc limit 30
   `) as { target: string; clicks: number; users: number }[];
 
+  const topCopies = (await sql`
+    select coalesce(target, '(sans sélection)') as target,
+           count(*) as copies,
+           count(distinct user_email) as users
+    from events where event = 'copy'
+    group by 1 order by copies desc limit 30
+  `) as { target: string; copies: number; users: number }[];
+
   const topPaths = (await sql`
     select coalesce(path, '(inconnu)') as path, count(*) as views
     from events where event = 'pageview'
@@ -246,7 +255,7 @@ export async function getStats(): Promise<Stats | null> {
       select user_email,
         bool_or(event = 'pageview') as connected,
         bool_or(path ~ '^/(kiosque|pouls|concurrence|metiers|entries)') as section,
-        bool_or(event in ('download', 'filter', 'digest_expand', 'source_open')) as action
+        bool_or(event in ('download', 'filter', 'digest_expand', 'source_open', 'copy')) as action
       from events
       where ts > now() - interval '30 days' and user_email is not null
       group by user_email
@@ -274,6 +283,11 @@ export async function getStats(): Promise<Stats | null> {
     topClicks: topClicks.map((r) => ({
       target: r.target,
       clicks: Number(r.clicks),
+      users: Number(r.users),
+    })),
+    topCopies: topCopies.map((r) => ({
+      target: r.target,
+      copies: Number(r.copies),
       users: Number(r.users),
     })),
     topPaths: topPaths.map((r) => ({ path: r.path, views: Number(r.views) })),

@@ -57,6 +57,7 @@ export default async function StatsPage() {
 
   const maxFunnel = Math.max(stats.funnel.connected, 1);
   const maxEvent = Math.max(...stats.topEvents.map((e) => e.count), 1);
+  const maxCopy = Math.max(...stats.topCopies.map((c) => c.copies), 1);
 
   return (
     <div>
@@ -204,6 +205,28 @@ export default async function StatsPage() {
                 <Bar value={c.clicks} max={maxClick} color="#6abfa3" />
                 <span className="w-28 shrink-0 text-right text-gray-600">
                   {c.clicks} clic{c.clicks > 1 ? "s" : ""} · {c.users} pers.
+                </span>
+              </div>
+            ))}
+          </div>
+        )}
+      </section>
+
+      {/* Contenus copiés */}
+      <section className="mb-8 rounded-xl border border-gray-200 bg-white p-5">
+        <h2 className="mb-4 font-title text-lg font-bold text-marine">Contenus copiés</h2>
+        {stats.topCopies.length === 0 ? (
+          <p className="text-sm text-gray-400">Aucune copie enregistrée.</p>
+        ) : (
+          <div className="space-y-1.5">
+            {stats.topCopies.map((c) => (
+              <div key={c.target} className="flex items-center gap-3 text-sm">
+                <span className="w-64 shrink-0 truncate text-gray-700" title={c.target}>
+                  {c.target}
+                </span>
+                <Bar value={c.copies} max={maxCopy} color="#380066" />
+                <span className="w-28 shrink-0 text-right text-gray-600">
+                  {c.copies} copie{c.copies > 1 ? "s" : ""} · {c.users} pers.
                 </span>
               </div>
             ))}

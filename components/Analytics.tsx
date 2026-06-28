@@ -35,5 +35,16 @@ export default function Analytics() {
     return () => document.removeEventListener("click", onClick, true);
   }, []);
 
+  // Copie de texte (Ctrl/Cmd+C, clic droit → Copier, ou copie programmatique).
+  useEffect(() => {
+    function onCopy() {
+      const sel = window.getSelection?.()?.toString().replace(/\s+/g, " ").trim() ?? "";
+      const snippet = sel ? sel.slice(0, 80) : "(sans sélection)";
+      track("copy", snippet);
+    }
+    document.addEventListener("copy", onCopy, true);
+    return () => document.removeEventListener("copy", onCopy, true);
+  }, []);
+
   return null;
 }
