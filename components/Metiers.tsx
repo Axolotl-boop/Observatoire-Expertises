@@ -22,9 +22,9 @@ function downloadMd(filename: string, content: string) {
 }
 
 const VERDICTS = [
-  { key: "structurel", label: "[structurel]", cls: "tag-structurel" },
-  { key: "tendance", label: "[tendance]", cls: "tag-tendance" },
-  { key: "mode", label: "[mode]", cls: "tag-mode" },
+  { key: "structurel", label: "[structurel]", cls: "tagpill tagpill-structurel" },
+  { key: "tendance", label: "[tendance]", cls: "tagpill tagpill-tendance" },
+  { key: "mode", label: "[mode]", cls: "tagpill tagpill-mode" },
 ];
 
 function rowVerdictKey(row: string[]): string {
@@ -37,9 +37,9 @@ function rowVerdictKey(row: string[]): string {
 
 function Verdict({ value }: { value?: string }) {
   const v = (value ?? "").replace(/`/g, "").trim();
-  if (/\[structurel\]/i.test(v)) return <span className="tag-structurel">{v}</span>;
-  if (/\[tendance\]/i.test(v)) return <span className="tag-tendance">{v}</span>;
-  if (/\[mode\]/i.test(v)) return <span className="tag-mode">{v}</span>;
+  if (/\[structurel\]/i.test(v)) return <span className="tagpill tagpill-structurel">{v}</span>;
+  if (/\[tendance\]/i.test(v)) return <span className="tagpill tagpill-tendance">{v}</span>;
+  if (/\[mode\]/i.test(v)) return <span className="tagpill tagpill-mode">{v}</span>;
   return <span className="text-gray-400">{v || "—"}</span>;
 }
 
