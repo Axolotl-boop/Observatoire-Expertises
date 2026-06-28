@@ -1,74 +1,114 @@
-Pré-draft généré pour validation — le KR Owner relit et tranche, notamment les verdicts [structurel].
+Briefing d'expertise — matériau sourcé à exploiter au point d'usage ; les [structurel] sont des candidats à corroborer.
 
-| Expertise      | QA / Test logiciel                |
-|----------------|----------------------------------|
-| Période        | Juin 2026                        |
-| Cadence        | Mensuelle                        |
-| KR Owner       | [à compléter]                    |
-| Date           | [à compléter]                    |
-| Mode           | Pré-draft à valider              |
+| Expertise      | Période couverte | Cadence | Date de publication | Mode                  |
+|----------------|------------------|---------|---------------------|-----------------------|
+| QA             | 2026-06          | Mensuelle | 28/06/2026          | Briefing informatif   |
 
----
-
-§1 Les signaux du mois
-
-1. La demande de QA reste principalement intégrée à des missions de delivery produit, sans émergence de missions conseil QA autonomes ce mois ; la volumétrie brute (42 mentions) est à relativiser, car elle reflète surtout la fréquence du mot « recette » dans les contextes delivery. · Source : PAD · [mode]
-2. Le segment QA for AI / ML Testing émerge dans les offres d’emploi, porté par des éditeurs IA/ML (Mistral AI, Dataiku), mais reste un sous-segment étroit et non encore structurant. · Source : Snapshot emploi · [mode]
-3. La bipartition QA fonctionnel / QA automation s’impose comme ligne de base du marché, confirmée par la taxonomie Seyos 2026 et la structuration des offres (QA Engineer, Test Automation Engineer, Test Engineer, SET). · Source : Snapshot emploi + Seyos 2026 · [tendance]
-4. Les compétences d’automatisation (frameworks, E2E, scripts) dominent dans les offres, avec une montée en puissance du rôle de Software Engineer in Test (SET) dans les environnements IA/data, signalant une ingénierisation du test. · Source : Snapshot emploi · [tendance]
-5. Le marché QA n’est pas identifié comme pénurique dans les baromètres IT généralistes (Seyos, APEC), contrairement à l’IA, la cybersécurité et la data ; le QA for AI croise cependant la tension sur l’IA, à surveiller pour les profils hybrides. · Source : Snapshot emploi + Seyos 2026 · [mode]
+Matière mobilisée ce cycle :
+☑ Newsletters
+☑ Synthèse PAD
+☑ Snapshot concurrentiel
+☑ Snapshot emploi
+☑ State of X
+☐ REX / learning expeditions (non présent ce cycle)
 
 ---
 
-Bloc 1 — Problématiques clients & positionnement offre
+### Bloc 1 — Problématiques clients récurrentes & positionnement offre
 
-- La demande QA détectée ce mois est quasi-exclusivement adossée à des missions de delivery produit, sans formulation de besoins conseil QA autonomes. Les clients attendent des profils capables d’opérer dans des contextes à forte complexité opérationnelle (plateformes, delivery, analytics/KPI), mais la QA reste une composante transverse, rarement le cœur de la mission.
-- Les profils recherchés sont majoritairement seniors ou de pilotage (Head/Directeur, Lead), ce qui confirme une attente de structuration et d’encadrement, y compris sur la dimension QA.
-- Aucun concurrent n’est positionné explicitement sur une offre conseil QA différenciante ce mois ; la concurrence se concentre sur le Product Management et l’IA.
-- Ce que l’on ne bouge PAS : le positionnement QA reste intégré à l’offre produit globale, sans création d’une offre conseil QA autonome, faute de demande structurée et de différenciation marché ce cycle.
+**Problématiques clients récurrentes (PAD / REX) :**
+
+- **Demande d’intégration de l’IA dans le cycle de design produit (framework agentique, rétro-documentation, structuration discovery/artefacts)**
+  · Ce que l’externe ajoute : Les newsletters confirment l’émergence de l’agentique comme axe structurant du marché produit, avec une montée en maturité des architectures IA et des workflows agentiques, mais la demande reste marginale côté QA (aucun cabinet QA ne se positionne explicitement sur ce créneau selon le snapshot concurrentiel).
+  · Question pour creuser : « Quels sont aujourd’hui les points de friction ou d’incertitude dans la structuration de vos artefacts produit, et comment l’IA pourrait-elle y répondre concrètement ? »
+
+- **Recherche de profils QA en contexte plateforme/delivery complexe**
+  · Ce que l’externe ajoute : Les newsletters et le snapshot emploi confirment la dominance des contextes delivery/plateforme dans la demande, mais soulignent que la QA reste souvent intégrée comme composante transversale, rarement comme expertise autonome. Aucun signal d’offre QA dédiée n’est remonté côté conseil ce mois.
+  · Question pour creuser : « Sur vos projets plateforme, où identifiez-vous les plus gros risques de non-qualité ou de dette technique ? »
+
+- **Montée en séniorité et pilotage QA (Head/Lead/Manager)**
+  · Ce que l’externe ajoute : Le snapshot emploi montre une densité notable de rôles management QA (Head, Lead, Manager) sur le marché, cohérente avec la demande PAD tirée vers les profils seniors. Les newsletters n’apportent pas de signal contradictoire.
+  · Question pour creuser : « Quel est aujourd’hui le niveau d’autonomie et de pilotage de la fonction QA dans votre organisation ? »
+
+- **Acculturation à l’éco-conception et au numérique responsable**
+  · Ce que l’externe ajoute : Aucun signal externe ne corrobore ce besoin ce mois (signal faible, isolé dans la demande conseil).
+  · Question pour creuser : « L’éco-conception est-elle déjà intégrée à vos critères de qualité produit ? Si oui, comment la mesurez-vous ? »
+
+**Ce qu’en disent le marché & les concurrents :**
+- L’agentique est le principal axe de repositionnement d’offre sur le marché produit (Converteo, Hubvisory, Thiga), mais aucun cabinet QA ne s’y positionne explicitement. Sur la gouvernance IA et la conformité, Smartesting se distingue via l’intégration Yest × Polarion pour les secteurs régulés, mais là encore, la QA reste cantonnée à la traçabilité et à la conformité, pas à l’orchestration agentique.
+- Les cabinets PM (Thiga, Hubvisory) et Data/IA (Converteo, AI Builders) convergent sur l’agentique, mais le segment QA n’est pas représenté sur cet axe.
+
+**Notre position, par axe concurrentiel pertinent :**
+- [Axe 1 — Agentique] → on est en retard → Aucun signal d’offre QA agentique structurée ce trimestre ; argument avant-vente : « Nous pouvons accompagner la structuration QA dans des environnements agentiques, mais notre offre n’est pas encore packagée sur ce créneau. » [hypothèse — à valider]. Cabinets actifs : Converteo, Hubvisory, Thiga (PM/Data/IA), aucun QA.
+- [Axe 2 — Gouvernance IA/conformité] → alignés → Notre positionnement sur la conformité et la traçabilité est comparable à celui de Smartesting, mais sans outillage propriétaire type Yest × Polarion. Argument : « Nous maîtrisons la traçabilité et la conformité QA en environnement réglementé, avec une approche outillée et sectorielle. » [hypothèse — à valider]. Cabinets actifs : Smartesting, Converteo, AI Builders.
+- [Axe 3 — Verticalisation sectorielle] → en retard → Aucun signal de spécialisation sectorielle forte côté QA ce trimestre. Argument : « Nous intervenons sur des contextes variés, mais sans verticalisation sectorielle affichée. » [hypothèse — à valider]. Cabinets actifs : Converteo (Pharma), KP2i (Retail), Smartesting (Industrie régulée).
+- [Axe 4 — Internationalisation] → en retard → Aucun signal d’expansion géographique ou d’internationalisation côté QA. Argument : « Notre présence reste centrée sur le marché hexagonal. » [hypothèse — à valider]. Cabinets actifs : Converteo, Artefact, Qestit.
+
+**So what offre :**
+- Aucun mouvement d’offre QA agentique ou sectorielle n’est visible ce cycle. L’absence de cabinets QA positionnés sur l’agentique ou la gouvernance IA en environnement produit laisse un espace d’offre candidat, mais la demande reste marginale et non structurée côté conseil. Rien de neuf à acter pour l’instant, mais à surveiller si la demande agentique se confirme côté QA.
 
 ---
 
-Bloc 2 — Signaux qui challengent nos convictions
+### Bloc 2 — Signaux qui challengent nos convictions
 
-- L’émergence du segment QA for AI / ML Testing dans les offres d’emploi (Dataiku, Mistral AI) invite à anticiper une montée en compétence sur le test de modèles IA, mais le volume reste trop faible pour justifier un repositionnement immédiat. Recommandation : surveiller l’évolution du segment et préparer une veille active sur les compétences et outils associés.
-- La structuration du marché autour de la bipartition QA fonctionnel / QA automation est confirmée par la convergence offres + baromètre Seyos, mais n’appelle pas de rupture dans l’offre à ce stade. Recommandation : maintenir la veille sur l’ingénierisation du test (SET) et l’automatisation avancée, notamment dans les environnements IA/data.
-- Le marché QA n’est pas en tension selon les baromètres IT, ce qui suggère de ne pas surinvestir sur le recrutement QA généraliste. En revanche, le croisement QA × IA pourrait devenir un différenciateur à moyen terme si la tension IA se diffuse sur les profils hybrides.
-- Aucun signal [structurel] n’est posé ce mois ; la ligne de base reste valide, à réévaluer à la prochaine consolidation trimestrielle.
+- **L’IA ne remplace pas le jugement du Quality Engineer, elle l’amplifie** (newsletters, State of X, snapshot emploi) · Source : Newsletters 2026-06, State of Testing 2026, snapshot emploi QA T2-2026.
+  · Croisement : Les newsletters et le State of X convergent sur le fait que l’IA accélère la production d’artefacts QA (génération de tests, analyse de logs), mais ne remplace pas la capacité de jugement, la priorisation par le risque ou la décision go/no-go. Le snapshot emploi montre que les compétences IA sont recherchées, mais la séniorité et la posture stratégique restent différenciantes.
+  · Conviction touchée : qa-06 — sens : renforce ↑ → piste : Renforcer
 
----
+- **La QA est un levier de pilotage, pas un filtre de release** (State of X, snapshot emploi) · Source : State of Testing 2026, snapshot emploi QA T2-2026.
+  · Croisement : Les baromètres confirment que les équipes QA qui priorisent le leadership et la stratégie (pilotage par les KPIs qualité, implication dans la décision produit) bénéficient d’une prime de revenu et d’évolution, alors que la QA cantonnée à l’exécution technique plafonne. Le snapshot emploi montre une densité de rôles management/lead.
+  · Conviction touchée : qa-05 — sens : renforce ↑ → piste : Renforcer
 
-Bloc 3 — Skills, méthodes & outils
-
-- Socle inchangé — prochain delta emploi au T3 2026.
-- Les compétences d’automatisation (frameworks, E2E, scripts) restent dominantes et attendues.
-- Le rôle de Software Engineer in Test (SET) gagne en visibilité dans les environnements IA/data, mais reste concentré sur un sous-segment d’éditeurs.
-- Les outils d’AI-assisted testing (génération de tests par IA) et de test mobile (Detox, Maestro) apparaissent de façon marginale, sans mouvement de fond ce mois.
-- Le QA for AI/ML Testing est à surveiller pour anticiper les besoins de formation/recrutement sur ce créneau hybride.
+- **Automatiser sans cadre stratégique construit la dette de demain** (newsletters, State of X, snapshot emploi) · Source : Newsletters 2026-06, State of Test Automation 2026, snapshot emploi QA T2-2026.
+  · Croisement : Les newsletters et le State of X soulignent que l’automatisation QA progresse (57 % des tests automatisés), mais que l’absence d’architecture ou de stratégie claire crée une dette technique et une fausse sécurité. Le snapshot emploi montre la montée des rôles Test Automation Engineer, mais peu de signaux sur la structuration stratégique de l’automatisation.
+  · Conviction touchée : qa-04 — sens : renforce ↑ → piste : Renforcer
 
 ---
 
-Bloc 4 — Sujets éditoriaux & angle
+### Bloc 3 — Skills / méthodes / outils à maîtriser
 
-- Sujet proposé : « QA for AI : comment le test logiciel s’adapte à l’ère des modèles génératifs ? »
-  - Angle : partir des signaux émergents dans les offres d’emploi (Dataiku, Mistral AI) pour explorer les nouvelles compétences et méthodes requises pour tester des produits IA/ML, en mettant en avant la spécificité du test non-déterministe et les enjeux d’automatisation avancée. Espace de notoriété : peu de contenu structuré sur ce créneau, opportunité de prise de parole différenciante.
+**Ce qui monte :**
+- **Automatisation des tests (E2E, frameworks, scripts automatisés)** · Tag : [tendance]
+  · Niveau concerné : socle (attendu sur la majorité des offres, y compris junior/confirmé)
+  · Croisement emploi : Confirmé par WTTJ, APEC, Seyos 2026 — compétence structurante de l’Ingénieur Tests Automatisés/QA, présente dans la quasi-totalité des offres.
+  · Ce qu’on doit monter en compétence : Formation continue sur les frameworks d’automatisation (Selenium, Cypress, Playwright), veille sur les outils IA-assistés, structuration des pratiques d’automatisation pour éviter la dette.
+
+- **Encadrement d’équipe QA / management** · Tag : [tendance]
+  · Niveau concerné : séniorité (Head, Lead, Manager — attendu sur les offres management, progression de carrière structurée)
+  · Croisement emploi : Présence multi-entreprises sur WTTJ, confirmé par Seyos 2026 (évolution vers Lead QA, Head of QA).
+  · Ce qu’on doit monter en compétence : Développement des soft skills de leadership, pilotage par les KPIs qualité, accompagnement à la séniorisation des équipes.
+
+- **Test de modèles ML / produits IA** · Tag : [mode]
+  · Niveau concerné : séniorité (signal émergent, attendu sur les profils spécialisés ou en contexte IA)
+  · Croisement emploi : Signal marginal (Mistral AI, Dataiku), Seyos 2026 identifie l’IA comme compétence pénurique à surveiller.
+  · Ce qu’on doit monter en compétence : Veille active sur les pratiques de test IA, formation sur les outils de test de modèles ML, structuration de la QA pour les produits IA.
+
+- **AI-assisted testing (génération de tests assistée par IA)** · Tag : [mode]
+  · Niveau concerné : socle (signal émergent, à surveiller pour diffusion large)
+  · Croisement emploi : Présent chez WeWard, Tapbuy, cohérent avec la dynamique IA générale, mais volume encore faible.
+  · Ce qu’on doit monter en compétence : Expérimentation sur les outils IA-assistés, partage de REX internes, veille sur la maturité des solutions.
+
+Socle inchangé — prochain delta emploi au T3 2026.
 
 ---
 
-Garde-fous :
-- On ne résume jamais ; croisement prime sur l’accumulation.
-- [structurel] = verdict humain, jamais tranché ici.
-- Sponsoring : aucun signal vendor-driven n’a été promu sans flag.
-- Recommande sans toucher au deck d’expertise.
-- Un signal isolé ≠ certitude ; convergence explicitée.
+### Bloc 4 — Sujets éditoriaux & angles recommandés
 
-Sources utilisées :
-- SYNTHÈSE DEMANDE (PAD)
-- SNAPSHOT EMPLOI QA T2-2026
-- SNAPSHOT CONCURRENTIEL 2026-T2
-- SIGNAUX STATE OF X 2026
+- **Sujet → angle recommandé :** « L’agentique, angle mort de la QA : pourquoi la gouvernance des agents IA reste un terrain vierge pour la qualité produit »
+  · Sur quoi ça tient : Aucun cabinet QA ne se positionne sur l’agentique alors que le déplacement de valeur vers l’orchestration et la gouvernance IA est convergent côté PM/Data/IA (snapshot concurrentiel T2 2026, newsletters 2026-06). La QA reste cantonnée à la conformité et à la traçabilité, sans offre packagée sur la gouvernance des agents.
+  · Tag : [tendance]
+  · Lien avant-vente : Permet à un PAD d’ouvrir la discussion sur la capacité à accompagner la structuration QA dans des environnements agentiques, et de positionner une offre différenciante sur un terrain non occupé par les concurrents QA.
 
-Aucune brique attendue manquante ce cycle.
+- **Sujet → angle recommandé :** « Automatiser, oui — mais avec une architecture : comment éviter la dette QA à l’ère de l’IA »
+  · Sur quoi ça tient : Les baromètres et le snapshot emploi convergent sur la montée de l’automatisation, mais soulignent le risque de dette technique sans cadre stratégique (State of Test Automation 2026, snapshot emploi QA T2-2026).
+  · Tag : [tendance]
+  · Lien avant-vente : Sert à rassurer les clients sur la capacité à structurer l’automatisation QA de façon pérenne, et à challenger les approches « quick win » non outillées.
+
+---
+
+Garde-fous : on ne résume jamais ; le croisement prime ; [structurel] = candidat à corroborer ; sponsoring ⚠ visible ; on fournit des pistes sans consacrer de conviction ; un signal isolé ≠ certitude.
+
+Sources utilisées : Newsletters 2026-06, Synthèse PAD 06/2026, Snapshot concurrentiel T2 2026, Snapshot emploi QA T2-2026, Signaux State of X 2026. Pas de REX ce cycle.
 
 
 
@@ -78,86 +118,156 @@ Aucune brique attendue manquante ce cycle.
 
 > Cette couche dit *sur quoi tient* chaque signal — elle ne valide rien. Un signal « source unique » ou « non corroboré » est une **piste à creuser**, pas un argument client. Une conviction ne naît que quand un humain la pose dans un deck/article.
 
-**Indice de confiance du cycle** : Ancrage propriétaire : PAD (Bloc 1) et snapshot emploi (Blocs 2 et 3) ; le reste du cycle — Seyos 2026 — est externe-seul, non corroboré en interne ce mois ; 2 downgrades appliqués.
+**Indice de confiance du cycle** : Ancrage propriétaire : PAD (Bloc 1), snapshot emploi (Blocs 1, 2, 3), snapshot concurrentiel (Blocs 1, 4) ; le reste du cycle — newsletters et State of X — est externe-seul, non corroboré en interne ce mois ; 0 downgrade appliqué.
 
 **Provenance par signal :**
-- **[Bloc 1] Demande QA intégrée au delivery, pas de missions conseil QA autonomes** — propriétaire : PAD
-- **[Bloc 2] Émergence QA for AI/ML Testing dans les offres d’emploi** — propriétaire : snapshot emploi
-- **[Bloc 2] Bipartition QA fonctionnel / QA automation confirmée par offres + Seyos** — croisement sur 1 axe (snapshot emploi × Seyos 2026) · **tag corrigé** : `[structurel]` → `[tendance]` — corroboration interne absente (Seyos seul côté externe, pas de croisement avec PAD/concurrence)
-- **[Bloc 2] Compétences d’automatisation et rôle SET en IA/data** — propriétaire : snapshot emploi
-- **[Bloc 2] Marché QA non pénurique selon baromètres IT, tension IA à surveiller** — croisement sur 1 axe (snapshot emploi × Seyos 2026) · **tag corrigé** : `[structurel]` → `[mode]` — corroboration interne absente (Seyos seul côté externe, pas de croisement avec PAD/concurrence)
-- **[Bloc 3] Compétences d’automatisation dominantes, SET visible en IA/data** — propriétaire : snapshot emploi
+- **[Bloc 1] Demande d’intégration de l’IA dans le cycle de design produit** — propriétaire : PAD, propriétaire : snapshot concurrentiel, non corroboré (convergence externe)
+- **[Bloc 1] Recherche de profils QA en contexte plateforme/delivery complexe** — propriétaire : PAD, propriétaire : snapshot emploi, non corroboré (convergence externe)
+- **[Bloc 1] Montée en séniorité et pilotage QA (Head/Lead/Manager)** — propriétaire : PAD, propriétaire : snapshot emploi, non corroboré (convergence externe)
+- **[Bloc 1] Acculturation à l’éco-conception et au numérique responsable** — propriétaire : PAD, non corroboré (source unique)
+- **[Bloc 1] L’agentique, gouvernance IA/conformité, verticalisation sectorielle, internationalisation (axes concurrentiels)** — propriétaire : snapshot concurrentiel, non corroboré (convergence multi-cabinets)
+- **[Bloc 2] L’IA ne remplace pas le jugement du Quality Engineer, elle l’amplifie** — propriétaire : snapshot emploi, non corroboré (convergence externe), theme: "valeur-vers-orchestration"
+- **[Bloc 2] La QA est un levier de pilotage, pas un filtre de release** — propriétaire : snapshot emploi, non corroboré (convergence externe), theme: "valeur-vers-orchestration"
+- **[Bloc 2] Automatiser sans cadre stratégique construit la dette de demain** — propriétaire : snapshot emploi, non corroboré (convergence externe)
+- **[Bloc 3] Automatisation des tests (E2E, frameworks, scripts automatisés)** — propriétaire : snapshot emploi, non corroboré (convergence externe)
+- **[Bloc 3] Encadrement d’équipe QA / management** — propriétaire : snapshot emploi, non corroboré (convergence externe)
+- **[Bloc 3] Test de modèles ML / produits IA** — propriétaire : snapshot emploi, non corroboré (convergence externe)
+- **[Bloc 3] AI-assisted testing (génération de tests assistée par IA)** — propriétaire : snapshot emploi, non corroboré (convergence externe)
+- **[Bloc 4] L’agentique, angle mort de la QA** — propriétaire : snapshot concurrentiel, non corroboré (convergence externe), theme: "valeur-vers-orchestration"
+- **[Bloc 4] Automatiser, oui — mais avec une architecture** — propriétaire : snapshot emploi, non corroboré (convergence externe)
 
+<!-- Données dashboard — généré par l'agent-annotateur, ne pas éditer -->
 [[DASH_JSON]]
 {
   "slug": "qa",
   "thinCycle": false,
-  "confidenceSummary": "Ancrage propriétaire : PAD (Bloc 1) et snapshot emploi (Blocs 2 et 3) ; le reste du cycle — Seyos 2026 — est externe-seul, non corroboré en interne ce mois ; 2 downgrades appliqués.",
+  "confidenceSummary": "Ancrage propriétaire : PAD (Bloc 1), snapshot emploi (Blocs 1, 2, 3), snapshot concurrentiel (Blocs 1, 4) ; le reste du cycle — newsletters et State of X — est externe-seul, non corroboré en interne ce mois ; 0 downgrade appliqué.",
   "blocs": [
     {
       "n": "Bloc 1",
       "sigs": [
         {
           "tag": null,
-          "prov": ["propriétaire : PAD"],
+          "prov": ["propriétaire : PAD", "propriétaire : snapshot concurrentiel", "non corroboré (convergence externe)"],
           "vendor": null,
-          "x": "Demande QA intégrée au delivery, pas de missions conseil QA autonomes"
+          "theme": null,
+          "x": "Demande d’intégration de l’IA dans le design produit, émergence agentique mais offre QA marginale"
+        },
+        {
+          "tag": null,
+          "prov": ["propriétaire : PAD", "propriétaire : snapshot emploi", "non corroboré (convergence externe)"],
+          "vendor": null,
+          "theme": null,
+          "x": "Recherche de profils QA en contexte plateforme/delivery, QA souvent transverse"
+        },
+        {
+          "tag": null,
+          "prov": ["propriétaire : PAD", "propriétaire : snapshot emploi", "non corroboré (convergence externe)"],
+          "vendor": null,
+          "theme": null,
+          "x": "Montée en séniorité et pilotage QA, densité de rôles management"
+        },
+        {
+          "tag": null,
+          "prov": ["propriétaire : PAD", "non corroboré (source unique)"],
+          "vendor": null,
+          "theme": null,
+          "x": "Acculturation à l’éco-conception et numérique responsable, signal isolé"
+        },
+        {
+          "tag": null,
+          "prov": ["propriétaire : snapshot concurrentiel", "non corroboré (convergence multi-cabinets)"],
+          "vendor": null,
+          "theme": null,
+          "x": "Axes concurrentiels : agentique, gouvernance IA, verticalisation, internationalisation — pas de position QA"
         }
       ],
       "croise": null,
-      "conv": ["So what offre", "Le positionnement QA reste intégré à l’offre produit globale, sans création d’une offre conseil QA autonome ce cycle."]
+      "conv": ["So what offre", "Aucun mouvement d’offre QA agentique ou sectorielle n’est visible ce cycle. L’absence de cabinets QA positionnés sur l’agentique ou la gouvernance IA en environnement produit laisse un espace d’offre candidat, mais la demande reste marginale et non structurée côté conseil. Rien de neuf à acter pour l’instant, mais à surveiller si la demande agentique se confirme côté QA."]
     },
     {
       "n": "Bloc 2",
       "sigs": [
         {
-          "tag": "mode",
-          "prov": ["propriétaire : snapshot emploi"],
+          "tag": "tend",
+          "prov": ["propriétaire : snapshot emploi", "non corroboré (convergence externe)"],
           "vendor": null,
-          "x": "Émergence QA for AI/ML Testing dans les offres d’emploi"
+          "theme": "valeur-vers-orchestration",
+          "x": "L’IA amplifie le jugement du Quality Engineer, compétences IA recherchées mais posture stratégique différenciante"
         },
         {
           "tag": "tend",
-          "prov": ["croisement sur 1 axe (snapshot emploi × Seyos 2026)"],
+          "prov": ["propriétaire : snapshot emploi", "non corroboré (convergence externe)"],
           "vendor": null,
-          "x": "Bipartition QA fonctionnel / QA automation confirmée par offres + Seyos",
-          "tagCorrige": true
+          "theme": "valeur-vers-orchestration",
+          "x": "La QA est un levier de pilotage, pas un filtre de release, prime à la séniorité et au leadership"
         },
         {
-          "tag": "mode",
-          "prov": ["propriétaire : snapshot emploi"],
+          "tag": "tend",
+          "prov": ["propriétaire : snapshot emploi", "non corroboré (convergence externe)"],
           "vendor": null,
-          "x": "Compétences d’automatisation et rôle SET en IA/data"
-        },
-        {
-          "tag": "mode",
-          "prov": ["croisement sur 1 axe (snapshot emploi × Seyos 2026)"],
-          "vendor": null,
-          "x": "Marché QA non pénurique selon baromètres IT, tension IA à surveiller",
-          "tagCorrige": true
+          "theme": null,
+          "x": "Automatiser sans cadre stratégique construit la dette de demain, progression de l’automatisation mais peu de structuration"
         }
       ],
       "croise": null,
-      "conv": ["Conviction — à challenger", "Surveiller l’évolution du segment QA for AI/ML Testing et la montée en compétence sur l’automatisation avancée."]
+      "conv": ["Conviction — à challenger", "Renforcer la posture stratégique et la séniorité QA face à l’IA et à l’automatisation."]
     },
     {
       "n": "Bloc 3",
       "sigs": [
         {
           "tag": null,
-          "prov": ["propriétaire : snapshot emploi"],
+          "prov": ["propriétaire : snapshot emploi", "non corroboré (convergence externe)"],
           "vendor": null,
-          "x": "Compétences d’automatisation dominantes, SET visible en IA/data"
+          "theme": null,
+          "x": "Automatisation des tests (E2E, frameworks, scripts automatisés), compétence structurante"
+        },
+        {
+          "tag": null,
+          "prov": ["propriétaire : snapshot emploi", "non corroboré (convergence externe)"],
+          "vendor": null,
+          "theme": null,
+          "x": "Encadrement d’équipe QA / management, progression de carrière structurée"
+        },
+        {
+          "tag": null,
+          "prov": ["propriétaire : snapshot emploi", "non corroboré (convergence externe)"],
+          "vendor": null,
+          "theme": null,
+          "x": "Test de modèles ML / produits IA, signal émergent à surveiller"
+        },
+        {
+          "tag": null,
+          "prov": ["propriétaire : snapshot emploi", "non corroboré (convergence externe)"],
+          "vendor": null,
+          "theme": null,
+          "x": "AI-assisted testing (génération de tests assistée par IA), volume faible mais cohérent avec la dynamique IA"
         }
       ],
       "croise": null,
-      "conv": ["So what méthode", "Les compétences d’automatisation restent dominantes ; le rôle SET progresse dans les environnements IA/data."]
+      "conv": ["So what méthode", "Formation continue et veille sur l’automatisation, le management QA et les pratiques IA."]
     },
     {
       "n": "Bloc 4",
-      "sigs": [],
+      "sigs": [
+        {
+          "tag": null,
+          "prov": ["propriétaire : snapshot concurrentiel", "non corroboré (convergence externe)"],
+          "vendor": null,
+          "theme": "valeur-vers-orchestration",
+          "x": "L’agentique, angle mort de la QA, gouvernance IA non investie par les cabinets QA"
+        },
+        {
+          "tag": null,
+          "prov": ["propriétaire : snapshot emploi", "non corroboré (convergence externe)"],
+          "vendor": null,
+          "theme": null,
+          "x": "Automatiser, oui — mais avec une architecture, risque de dette QA sans cadre stratégique"
+        }
+      ],
       "croise": null,
-      "conv": ["So what édito", "Sujet proposé : QA for AI et test logiciel à l’ère des modèles génératifs."]
+      "conv": ["So what édito", "Focus éditorial sur l’agentique et la structuration de l’automatisation QA."]
     }
   ]
 }
