@@ -886,13 +886,13 @@ function renderMatiereHtml(md: string): string {
     if (!m) continue;
     const on = /[☑✅]/.test(m[1]);
     items.push(
-      `<li style="margin:.15rem 0;${on ? "" : "color:#9ca3af;"}">${on ? "☑" : "☐"} ${escapeHtml(
+      `<span style="white-space:nowrap;${on ? "" : "color:#9ca3af;"}">${on ? "☑" : "☐"} ${escapeHtml(
         m[2],
-      )}</li>`,
+      )}</span>`,
     );
   }
   if (!items.length && !note) return "";
-  const list = `<ul style="list-style:none;margin:0;padding:0">${items.join("")}</ul>`;
+  const list = `<div style="display:flex;flex-wrap:wrap;gap:.35rem 1.25rem">${items.join("")}</div>`;
   const n = note ? `<p style="margin-top:.5rem;color:#5b6472">${escapeHtml(note)}</p>` : "";
   return list + n;
 }

@@ -27,8 +27,6 @@ function Chip({ glyph, color }: { glyph: string; color: string }) {
   );
 }
 
-const mono = (t: string) => <span style={{ fontFamily: MONO }}>{t}</span>;
-
 /**
  * Légende du dashboard : comment lire les tags de maturité (ampleur du
  * mouvement) et les chips de solidité (adossement à nos données) d'un signal.
@@ -67,8 +65,7 @@ export default function ConfidenceLegend() {
           <div className="flex gap-2.5">
             <Pill label="[structurel]" bg="var(--color-jadeclair)" color="var(--color-foret)" />
             <span className="text-[13px] leading-snug text-gray-700">
-              Changement de fond, adossé à un baromètre <em>et</em> à une donnée propriétaire.{" "}
-              <span style={{ color: "var(--color-terre)" }}>Toujours validé par un humain.</span>
+              Changement de fond, adossé à un baromètre <em>et</em> à une donnée propriétaire.
             </span>
           </div>
         </div>
@@ -81,7 +78,7 @@ export default function ConfidenceLegend() {
             <Chip glyph="⬤" color="var(--color-succes)" />
             <span className="text-[13px] leading-snug text-gray-700">
               <strong className="font-medium">Solide</strong> — appuyé par une donnée propriétaire
-              (PAD, emploi, concurrence). Portable devant un client.
+              (PAD, emploi, concurrence). C&apos;est un signal portable devant un client.
             </span>
           </div>
 
@@ -89,7 +86,7 @@ export default function ConfidenceLegend() {
             <Chip glyph="◐" color="var(--color-avert)" />
             <span className="text-[13px] leading-snug text-gray-700">
               <strong className="font-medium">Piste</strong> — plusieurs sources externes alignées,
-              rien en interne. À creuser, pas un argument.
+              rien en interne. C&apos;est une piste à creuser, pas un argument client.
             </span>
           </div>
 
@@ -97,37 +94,9 @@ export default function ConfidenceLegend() {
             <Chip glyph="◯" color="var(--color-desactive)" />
             <span className="text-[13px] leading-snug text-gray-700">
               <strong className="font-medium">Isolé</strong> — une seule source externe, non
-              corroborée. Une curiosité à surveiller.
+              corroborée. C&apos;est juste une curiosité à surveiller.
             </span>
           </div>
-        </div>
-      </div>
-
-      <div className="mt-5 flex flex-col gap-2 border-t border-[#f1efe8] pt-4">
-        <div className="flex items-start gap-2">
-          <span style={{ color: "var(--color-electrique)", flex: "0 0 auto", fontSize: 14 }}>⇄</span>
-          <span className="text-[12.5px] leading-relaxed text-gray-500">
-            Tag et chip sont indépendants : un {mono("[mode] · ⬤")} (une hype que nos données
-            confirment) et un {mono("[tendance] · ◯")} (plausible, une seule source) se lisent
-            différemment. Un {mono("[structurel]")} est toujours{" "}
-            <span style={{ color: "var(--color-succes)" }}>⬤</span>.
-          </span>
-        </div>
-        <div className="flex items-start gap-2">
-          <span style={{ color: "var(--color-avert)", flex: "0 0 auto", fontSize: 14 }}>⚠</span>
-          <span className="text-[12.5px] leading-relaxed text-gray-500">
-            {mono("⚠ poussé par <acteur>")} signale que l&apos;émetteur a un intérêt commercial dans
-            ce récit — à lire avec prudence.
-          </span>
-        </div>
-        <div className="flex items-start gap-2">
-          <span style={{ color: "var(--color-braise)", flex: "0 0 auto", fontSize: 14 }}>⚑</span>
-          <span className="text-[12.5px] leading-relaxed text-gray-500">
-            Un <span style={{ color: "var(--color-desactive)" }}>◯</span> ou un{" "}
-            <span style={{ color: "var(--color-avert)" }}>◐</span> est une piste à creuser, pas un
-            argument client. Rien ici n&apos;est une conviction du cabinet tant qu&apos;un humain ne
-            l&apos;a pas forgée dans un deck ou un article.
-          </span>
         </div>
       </div>
     </div>

@@ -161,13 +161,6 @@ export default function ExpertiseDigests({ digests }: { digests: ExpertiseDigest
 
       {current?.available && entry ? (
         <div className="mt-6">
-          <h2 className="mb-4 font-title text-xl font-bold text-marine">
-            {current.label}
-            <span className="ml-2 text-sm font-normal text-gray-400">
-              · digest {monthLabel(entry.month)}
-            </span>
-          </h2>
-
           {/* Légende de confiance (tags & chips) */}
           <ConfidenceLegend />
 
