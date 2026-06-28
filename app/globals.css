@@ -67,6 +67,31 @@ h6,
   font-style: normal;
 }
 
+/* Tags « pastille » des blocs de digest (Observatoire) — charte par intensité */
+.tagpill {
+  font-family: ui-monospace, SFMono-Regular, Menlo, "Liberation Mono", monospace;
+  font-size: 0.82em;
+  font-weight: 500;
+  font-style: normal;
+  padding: 1px 7px;
+  border-radius: 6px;
+  white-space: nowrap;
+}
+.tagpill-mode {
+  background: var(--color-glace);
+  color: var(--color-desactive);
+  border: 1px solid #e5e7eb;
+}
+.tagpill-tendance {
+  background: #fdecd9;
+  color: var(--color-braise);
+}
+.tagpill-structurel {
+  background: var(--color-marine);
+  color: #fff;
+  border: 1px solid var(--color-lavande);
+}
+
 /* Texte de provenance (ce qui suit un « — ») */
 .signal-note {
   color: #475569;

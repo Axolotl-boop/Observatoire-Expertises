@@ -877,7 +877,10 @@ function escapeHtml(s: string): string {
 function colorizeTagsHtml(html: string): string {
   return html.replace(
     /(?:<code>)?\s*\[(mode|tendance|structurel)\]\s*(?:<\/code>)?/gi,
-    (_, t: string) => `<span class="tag-${t.toLowerCase()}">[${t.toLowerCase()}]</span>`,
+    (_, t: string) => {
+      const k = t.toLowerCase();
+      return `<span class="tagpill tagpill-${k}">[${k}]</span>`;
+    },
   );
 }
 

@@ -167,9 +167,11 @@ export default function ExpertiseDigests({ digests }: { digests: ExpertiseDigest
           {/* Bloc Hero : les signaux importants du mois */}
           {entry.sections.signaux && (
             <div className="mb-4 rounded-2xl border border-marine bg-marine p-6 text-white shadow-sm">
-              <h3 className="mb-3 font-title text-xl font-bold">Les signaux importants du mois</h3>
+              <h3 className="mb-4 font-title text-lg font-bold text-lavande">
+                Les signaux importants du mois
+              </h3>
               <div
-                className="prose prose-sm prose-invert max-w-none prose-strong:text-white prose-li:marker:text-lavande"
+                className="prose prose-invert max-w-none text-[15.5px] leading-relaxed prose-p:my-2 prose-strong:text-white prose-li:my-3 prose-li:pl-1 prose-li:marker:text-lavande prose-li:marker:content-['▸']"
                 dangerouslySetInnerHTML={{ __html: entry.sections.signaux }}
               />
             </div>
