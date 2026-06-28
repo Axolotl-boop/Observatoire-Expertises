@@ -84,7 +84,7 @@ function Block({
             )}
           </div>
         ) : (
-          <p className="text-sm text-gray-400">Section non disponible.</p>
+          <p className="text-sm text-gray-500">Section non disponible.</p>
         )}
       </div>
     </div>

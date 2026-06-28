@@ -123,7 +123,7 @@ export default function Kiosque({ newsletters }: { newsletters: Newsletter[] }) 
           >
             <h2 className="font-title text-xl font-bold text-marine">
               {displayName(opened.source)}
-              <span className="ml-2 text-sm font-normal text-gray-400">
+              <span className="ml-2 text-sm font-normal text-gray-500">
                 {opened.items.length} édition{opened.items.length > 1 ? "s" : ""}
               </span>
             </h2>
@@ -142,7 +142,7 @@ export default function Kiosque({ newsletters }: { newsletters: Newsletter[] }) 
                   className="block h-full rounded-lg border border-gray-200 bg-white p-5 transition hover:border-electrique hover:shadow-sm"
                 >
                   {n.date && (
-                    <span className="text-xs text-gray-400">{formatDate(n.date)}</span>
+                    <span className="text-xs text-gray-500">{formatDate(n.date)}</span>
                   )}
                   <h3 className="mt-1 font-semibold text-gray-900">{n.title}</h3>
                   {n.verdict && (
