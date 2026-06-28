@@ -13,14 +13,19 @@ const smtpReady = Boolean(process.env.MAIL_SERVER && process.env.MAIL_USERNAME);
 export const mailEnabled = Boolean(resendKey) || smtpReady;
 export const mailTransport = resendKey ? "resend" : smtpReady ? "smtp" : "aucun";
 
-/** Adresse d'expédition (Resend exige un domaine vérifié, sinon onboarding@resend.dev). */
+/** Adresse d'expédition selon le transport actif. */
 function fromAddress(): string {
-  return (
-    process.env.RESEND_FROM ||
-    (process.env.MAIL_USERNAME
-      ? `Observatoire des Expertises <${process.env.MAIL_USERNAME}>`
-      : "Observatoire des Expertises <onboarding@resend.dev>")
-  );
+  if (process.env.RESEND_FROM) return process.env.RESEND_FROM;
+  // Resend refuse tout domaine non vérifié → domaine de test obligatoire.
+  if (resendKey) return "Observatoire des Expertises <onboarding@resend.dev>";
+  if (process.env.MAIL_USERNAME)
+    return `Observatoire des Expertises <${process.env.MAIL_USERNAME}>`;
+  return "Observatoire des Expertises <onboarding@resend.dev>";
+}
+
+/** Expéditeur résolu (pour le diagnostic). */
+export function mailFrom(): string {
+  return fromAddress();
 }
 
 export async function sendMail(opts: {

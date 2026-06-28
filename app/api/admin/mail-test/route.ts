@@ -1,5 +1,5 @@
 import { auth } from "@/auth";
-import { mailEnabled, mailTransport, sendMail } from "@/lib/mail";
+import { mailEnabled, mailFrom, mailTransport, sendMail } from "@/lib/mail";
 
 export const dynamic = "force-dynamic";
 export const runtime = "nodejs";
@@ -34,7 +34,7 @@ export async function GET() {
     mailEnabled,
     transport: mailTransport,
     RESEND_API_KEY_present: Boolean(process.env.RESEND_API_KEY),
-    RESEND_FROM: process.env.RESEND_FROM || "(absent → onboarding@resend.dev)",
+    from_resolu: mailFrom(),
     MAIL_SERVER: process.env.MAIL_SERVER || "(absent)",
     MAIL_USERNAME_present: Boolean(process.env.MAIL_USERNAME),
     recipient_resolu: to || "(aucun — définir FEEDBACK_NOTIFY_TO)",
