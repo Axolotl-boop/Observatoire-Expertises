@@ -21,20 +21,6 @@ function downloadMd(filename: string, content: string) {
   URL.revokeObjectURL(url);
 }
 
-const VERDICTS = [
-  { key: "structurel", label: "[structurel]", cls: "tagpill tagpill-structurel" },
-  { key: "tendance", label: "[tendance]", cls: "tagpill tagpill-tendance" },
-  { key: "mode", label: "[mode]", cls: "tagpill tagpill-mode" },
-];
-
-function rowVerdictKey(row: string[]): string {
-  const v = (row[2] ?? "").toLowerCase();
-  if (v.includes("structurel")) return "structurel";
-  if (v.includes("tendance")) return "tendance";
-  if (v.includes("mode")) return "mode";
-  return "";
-}
-
 function Verdict({ value }: { value?: string }) {
   const v = (value ?? "").replace(/`/g, "").trim();
   if (/\[structurel\]/i.test(v)) return <span className="tagpill tagpill-structurel">{v}</span>;
@@ -92,16 +78,12 @@ export default function Metiers({ quarters }: { quarters: EmploiQuarter[] }) {
 
   const [expKey, setExpKey] = useState<string>(() => expertises[0]?.key ?? "");
   const [quarter, setQuarter] = useState<string>(() => quarterKeys[0] ?? "");
-  const [verdict, setVerdict] = useState("");
 
   const selectedQuarter = quarterKeys.includes(quarter) ? quarter : quarterKeys[0];
   const currentQuarter = quarters.find((q) => q.quarter === selectedQuarter);
   const exp =
     currentQuarter?.expertises.find((e) => e.key === expKey) ??
     currentQuarter?.expertises[0];
-
-  const filterRows = (rows: string[][]) =>
-    verdict ? rows.filter((r) => rowVerdictKey(r) === verdict) : rows;
 
   return (
     <div>
@@ -157,13 +139,7 @@ export default function Metiers({ quarters }: { quarters: EmploiQuarter[] }) {
         </div>
       ) : (
         <div className="mt-6">
-          <div className="mb-4 flex flex-wrap items-baseline justify-between gap-2">
-            <h2 className="font-title text-xl font-bold text-marine">
-              {exp.label}
-              <span className="ml-2 text-sm font-normal text-gray-400">
-                · {quarterLabel(selectedQuarter)}
-              </span>
-            </h2>
+          <div className="mb-4 flex justify-end">
             <button
               type="button"
               onClick={() => {
@@ -176,43 +152,9 @@ export default function Metiers({ quarters }: { quarters: EmploiQuarter[] }) {
             </button>
           </div>
 
-          {/* Filtre par verdict */}
-          <div className="mb-4 flex flex-wrap items-center gap-2">
-            <span className="text-xs uppercase tracking-wide text-gray-500">Verdict :</span>
-            <button
-              type="button"
-              onClick={() => setVerdict("")}
-              className={[
-                "rounded-full px-3 py-1.5 text-xs font-medium transition",
-                verdict === ""
-                  ? "bg-marine text-white"
-                  : "border border-gray-300 bg-white text-marine hover:border-marine",
-              ].join(" ")}
-            >
-              Tous
-            </button>
-            {VERDICTS.map((v) => (
-              <button
-                key={v.key}
-                type="button"
-                onClick={() => {
-                  const nv = verdict === v.key ? "" : v.key;
-                  setVerdict(nv);
-                  if (nv) track("filter", `Métiers · verdict:${nv}`);
-                }}
-                className={[
-                  "rounded-full border px-3 py-1.5 text-xs font-medium transition",
-                  verdict === v.key ? "border-marine bg-glace" : "border-gray-300 bg-white",
-                ].join(" ")}
-              >
-                <span className={v.cls}>{v.label}</span>
-              </button>
-            ))}
-          </div>
-
           <div className="space-y-4">
-            <SynthTable title="Compétences" rows={filterRows(exp.competences)} />
-            <SynthTable title="Outils" rows={filterRows(exp.outils)} />
+            <SynthTable title="Compétences" rows={exp.competences} />
+            <SynthTable title="Outils" rows={exp.outils} />
           </div>
         </div>
       )}
