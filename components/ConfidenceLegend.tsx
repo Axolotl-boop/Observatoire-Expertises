@@ -1,15 +1,26 @@
 const MONO = 'ui-monospace, SFMono-Regular, Menlo, "Liberation Mono", monospace';
 
-function Pill({ label, bg, color }: { label: string; bg: string; color: string }) {
+function TagPill({
+  label,
+  bg,
+  color,
+  border,
+}: {
+  label: string;
+  bg: string;
+  color: string;
+  border?: string;
+}) {
   return (
     <span
       style={{
         flex: "0 0 auto",
-        alignSelf: "flex-start",
         fontFamily: MONO,
         fontSize: 12,
+        fontWeight: 500,
         background: bg,
         color,
+        border: border ? `1px solid ${border}` : undefined,
         padding: "3px 9px",
         borderRadius: 6,
       }}
@@ -19,84 +30,78 @@ function Pill({ label, bg, color }: { label: string; bg: string; color: string }
   );
 }
 
-function Chip({ glyph, color }: { glyph: string; color: string }) {
-  return (
-    <span style={{ flex: "0 0 18px", textAlign: "center", fontSize: 16, lineHeight: 1.3, color }}>
-      {glyph}
-    </span>
-  );
-}
-
 /**
- * Légende du dashboard : comment lire les tags de maturité (ampleur du
- * mouvement) et les chips de solidité (adossement à nos données) d'un signal.
- * Légende statique, alignée sur la charte.
+ * Légende des tags de maturité d'un signal de veille, par intensité croissante :
+ * [mode] (effet de surface) · [tendance] (mouvement réel) · [structurel]
+ * (changement de fond, candidat à valider). Statique, alignée sur la charte.
  */
 export default function ConfidenceLegend() {
   return (
     <div className="mb-4 rounded-xl border border-lilas bg-white p-6">
-      <div className="mb-1 font-title text-lg font-medium text-marine">Comment lire un signal</div>
-      <p className="mb-5 text-[13px] leading-relaxed text-gray-500">
-        Chaque signal porte un{" "}
-        <strong className="font-medium text-gray-700">tag</strong> (l&apos;ampleur du mouvement dans
-        le marché) et un <strong className="font-medium text-gray-700">chip</strong> (sur quoi il
-        tient dans nos données). Ce sont deux lectures indépendantes.
-      </p>
+      <div className="mb-4 font-title text-lg font-medium text-marine">Légende</div>
 
-      <div className="grid grid-cols-1 gap-6 sm:grid-cols-2">
-        {/* Tags — l'ampleur du mouvement */}
+      <div className="flex flex-col gap-5">
+        {/* [mode] — basse intensité, doit « peser » le moins */}
         <div>
-          <div className="mb-3 text-xs font-medium text-marine">Tags — l&apos;ampleur du mouvement</div>
-
-          <div className="mb-3 flex gap-2.5">
-            <Pill label="[mode]" bg="#f1efe8" color="#5f5e5a" />
-            <span className="text-[13px] leading-snug text-gray-700">
-              Effet de surface, à ignorer le plus souvent.
-            </span>
+          <div className="mb-1.5 flex flex-wrap items-center gap-2.5">
+            <TagPill
+              label="[mode]"
+              bg="var(--color-glace)"
+              color="var(--color-desactive)"
+              border="#e5e7eb"
+            />
+            <span className="text-[13px] font-medium text-gray-700">effet de surface</span>
           </div>
-
-          <div className="mb-3 flex gap-2.5">
-            <Pill label="[tendance]" bg="var(--color-lavande)" color="var(--color-marine)" />
-            <span className="text-[13px] leading-snug text-gray-700">
-              Mouvement réel, mais pas encore structurant.
-            </span>
-          </div>
-
-          <div className="flex gap-2.5">
-            <Pill label="[structurel]" bg="var(--color-jadeclair)" color="var(--color-foret)" />
-            <span className="text-[13px] leading-snug text-gray-700">
-              Changement de fond, adossé à un baromètre <em>et</em> à une donnée propriétaire.
-            </span>
-          </div>
+          <p className="text-[13px] leading-relaxed text-gray-600">
+            Ça fait du bruit, mais ça repose sur peu : une source isolée, un discours marché, aucun
+            ancrage solide. C&rsquo;est le tag par défaut quand l&rsquo;adossement est faible.
+          </p>
+          <p className="mt-1 text-[13px] leading-relaxed text-gray-500">
+            → À lire avec recul, le plus souvent à ignorer.
+          </p>
         </div>
 
-        {/* Chips — la solidité chez nous */}
+        {/* [tendance] — intensité moyenne, couleur d'attention */}
         <div>
-          <div className="mb-3 text-xs font-medium text-marine">Chips — la solidité chez nous</div>
+          <div className="mb-1.5 flex flex-wrap items-center gap-2.5">
+            <TagPill label="[tendance]" bg="#fdecd9" color="var(--color-braise)" />
+            <span className="text-[13px] font-medium text-gray-700">mouvement réel</span>
+          </div>
+          <p className="text-[13px] leading-relaxed text-gray-600">
+            Un mouvement confirmé : le signal est repris par au moins une autre source indépendante,
+            mais il n&rsquo;est ni irréversible ni encore structurant.
+          </p>
+          <p className="mt-1 text-[13px] leading-relaxed text-gray-500">
+            → À suivre. Pas (encore) de quoi infléchir nos offres ou convictions.
+          </p>
+        </div>
 
-          <div className="mb-3 flex gap-2.5">
-            <Chip glyph="⬤" color="var(--color-succes)" />
-            <span className="text-[13px] leading-snug text-gray-700">
-              <strong className="font-medium">Solide</strong> — appuyé par une donnée propriétaire
-              (PAD, emploi, concurrence). C&apos;est un signal portable devant un client.
+        {/* [structurel] — intensité maximale (marine plein) + marqueur candidat */}
+        <div>
+          <div className="mb-1.5 flex flex-wrap items-center gap-2.5">
+            <TagPill label="[structurel]" bg="var(--color-marine)" color="#ffffff" />
+            <span className="text-[13px] font-medium text-gray-700">changement de fond</span>
+            <span
+              style={{
+                fontFamily: MONO,
+                fontSize: 11,
+                color: "var(--color-avert)",
+                border: "1px solid var(--color-avert)",
+                padding: "1px 7px",
+                borderRadius: 6,
+              }}
+            >
+              candidat — à valider
             </span>
           </div>
-
-          <div className="mb-3 flex gap-2.5">
-            <Chip glyph="◐" color="var(--color-avert)" />
-            <span className="text-[13px] leading-snug text-gray-700">
-              <strong className="font-medium">Piste</strong> — plusieurs sources externes alignées,
-              rien en interne. C&apos;est une piste à creuser, pas un argument client.
-            </span>
-          </div>
-
-          <div className="flex gap-2.5">
-            <Chip glyph="◯" color="var(--color-desactive)" />
-            <span className="text-[13px] leading-snug text-gray-700">
-              <strong className="font-medium">Isolé</strong> — une seule source externe, non
-              corroborée. C&apos;est juste une curiosité à surveiller.
-            </span>
-          </div>
+          <p className="text-[13px] leading-relaxed text-gray-600">
+            Un changement qui rebat les cartes du métier, appuyé sur un fait dur (étude/baromètre,
+            M&amp;A, levée…) et corroboré par nos propres données (demande commerciale, emploi,
+            concurrence).
+          </p>
+          <p className="mt-1 text-[13px] leading-relaxed text-gray-500">
+            → Le signal le plus lourd — à prendre au sérieux dans nos réflexions.
+          </p>
         </div>
       </div>
     </div>
