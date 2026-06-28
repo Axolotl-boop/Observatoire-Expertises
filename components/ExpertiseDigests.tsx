@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Chip from "@/components/Chip";
 import ConfidenceLegend from "@/components/ConfidenceLegend";
 import type { ExpertiseDigest } from "@/lib/content";
 import { track } from "@/lib/track";
@@ -84,7 +85,7 @@ function Block({
             )}
           </div>
         ) : (
-          <p className="text-sm text-gray-400">Section non disponible.</p>
+          <p className="text-sm text-gray-500">Section non disponible.</p>
         )}
       </div>
     </div>
@@ -95,9 +96,7 @@ export default function ExpertiseDigests({ digests }: { digests: ExpertiseDigest
   const firstAvailable = digests.find((d) => d.available) ?? digests[0];
   const [active, setActive] = useState<string>(firstAvailable?.key ?? "");
   const [month, setMonth] = useState<string>("");
-  const [openRows, setOpenRows] = useState<[boolean, boolean]>([false, false]);
-  const toggleRow = (i: 0 | 1) =>
-    setOpenRows((r) => (i === 0 ? [!r[0], r[1]] : [r[0], !r[1]]));
+  const [openMap, setOpenMap] = useState<Partial<Record<BlockKey, boolean>>>({});
 
   const current = digests.find((d) => d.key === active);
   const months = current?.entries.map((e) => e.month) ?? [];
@@ -108,53 +107,38 @@ export default function ExpertiseDigests({ digests }: { digests: ExpertiseDigest
     <section className="mb-12">
       {/* Filtre par expertise */}
       <div className="flex flex-wrap gap-2">
-        {digests.map((d) => {
-          const isActive = d.key === active;
-          return (
-            <button
-              key={d.key}
-              type="button"
-              disabled={!d.available}
-              onClick={() => {
-                setActive(d.key);
-                track("filter", `Observatoire · expertise:${d.label}`);
-              }}
-              className={[
-                "rounded-full px-4 py-2 text-sm font-medium transition",
-                isActive
-                  ? "bg-electrique text-white"
-                  : d.available
-                    ? "border border-gray-300 bg-white text-marine hover:border-electrique hover:text-electrique"
-                    : "cursor-not-allowed border border-gray-200 bg-gray-50 text-desactive",
-              ].join(" ")}
-              title={d.available ? undefined : "Aucun digest disponible"}
-            >
-              {d.label}
-            </button>
-          );
-        })}
+        {digests.map((d) => (
+          <Chip
+            key={d.key}
+            active={d.key === active}
+            disabled={!d.available}
+            title={d.available ? undefined : "Aucun digest disponible"}
+            onClick={() => {
+              setActive(d.key);
+              track("filter", `Observatoire · expertise:${d.label}`);
+            }}
+          >
+            {d.label}
+          </Chip>
+        ))}
       </div>
 
       {/* Filtre par mois */}
       {months.length > 0 && (
         <div className="mt-3 flex flex-wrap gap-2">
           {months.map((m) => (
-            <button
+            <Chip
               key={m}
-              type="button"
+              active={m === selectedMonth}
+              size="sm"
+              tone="marine"
               onClick={() => {
                 setMonth(m);
                 track("filter", `Observatoire · mois:${m}`);
               }}
-              className={[
-                "rounded-full px-3 py-1.5 text-xs font-medium transition",
-                m === selectedMonth
-                  ? "bg-marine text-white"
-                  : "border border-gray-300 bg-white text-marine hover:border-marine",
-              ].join(" ")}
             >
               {monthLabel(m)}
-            </button>
+            </Chip>
           ))}
         </div>
       )}
@@ -177,20 +161,19 @@ export default function ExpertiseDigests({ digests }: { digests: ExpertiseDigest
             </div>
           )}
 
-          {/* Les 4 blocs, ouverture synchronisée par ligne */}
+          {/* Les 4 blocs, ouverture indépendante par bloc */}
           <div className="mt-4 grid items-start gap-4 md:grid-cols-2">
-            {DIGEST_BLOCKS.map((block, i) => {
-              const row: 0 | 1 = i < 2 ? 0 : 1;
-              return (
-                <Block
-                  key={block.key}
-                  title={block.title}
-                  html={entry.sections[block.key]}
-                  open={openRows[row]}
-                  onToggle={() => toggleRow(row)}
-                />
-              );
-            })}
+            {DIGEST_BLOCKS.map((block) => (
+              <Block
+                key={block.key}
+                title={block.title}
+                html={entry.sections[block.key]}
+                open={!!openMap[block.key]}
+                onToggle={() =>
+                  setOpenMap((m) => ({ ...m, [block.key]: !m[block.key] }))
+                }
+              />
+            ))}
           </div>
 
           {/* Encart de bas de page : matière mobilisée ce cycle */}

@@ -54,8 +54,8 @@ export default async function EntryPage({
         {backLabel}
       </Link>
 
-      {!isNewsletter && (
-        <header className="mt-4 mb-6 border-b border-gray-200 pb-6">
+      <header className="mt-4 mb-6 border-b border-gray-200 pb-6">
+        {!isNewsletter && (
           <div className="flex flex-wrap items-center gap-2 text-xs">
             {entry.category && (
               <span className="rounded-full bg-lilas px-2 py-0.5 font-medium text-violet">
@@ -72,22 +72,19 @@ export default async function EntryPage({
                 {entry.agent}
               </span>
             )}
-            {entry.date && (
-              <span className="text-gray-400">{formatDate(entry.date)}</span>
-            )}
           </div>
-          <h1 className="mt-3 text-3xl font-bold text-gray-900">{entry.title}</h1>
-          {entry.description && (
-            <p className="mt-2 text-gray-600">{entry.description}</p>
-          )}
-        </header>
-      )}
+        )}
+        <h1 className="mt-3 text-3xl font-bold text-gray-900">{entry.title}</h1>
+        {entry.date && (
+          <p className="mt-2 text-sm text-gray-500">{formatDate(entry.date)}</p>
+        )}
+        {!isNewsletter && entry.description && (
+          <p className="mt-2 text-gray-600">{entry.description}</p>
+        )}
+      </header>
 
       <div
-        className={[
-          "prose prose-slate max-w-none prose-headings:scroll-mt-20 prose-headings:font-title prose-a:text-electrique",
-          isNewsletter ? "mt-6" : "",
-        ].join(" ")}
+        className="prose prose-slate max-w-none prose-headings:scroll-mt-20 prose-headings:font-title prose-a:text-electrique"
         dangerouslySetInnerHTML={{ __html: entry.html }}
       />
     </article>

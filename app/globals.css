@@ -50,6 +50,13 @@ h6,
   font-family: var(--font-publica), ui-sans-serif, system-ui, sans-serif;
 }
 
+/* Focus clavier visible et cohérent avec la charte (souris non affectée) */
+:where(a, button, [role="button"], input, textarea, select):focus-visible {
+  outline: 2px solid var(--color-electrique);
+  outline-offset: 2px;
+  border-radius: 6px;
+}
+
 /* Tags de signal (bloc « Les signaux importants du mois ») */
 .tag-structurel {
   color: var(--color-alerte);

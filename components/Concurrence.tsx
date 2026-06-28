@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Chip from "@/components/Chip";
 import type { ConcurrenceQuarter } from "@/lib/content";
 import { track } from "@/lib/track";
 
@@ -74,19 +75,13 @@ export default function Concurrence({ quarters }: { quarters: ConcurrenceQuarter
       <div className="mb-6 flex flex-wrap items-center justify-between gap-3">
         <div className="flex flex-wrap gap-2">
           {keys.map((q) => (
-            <button
+            <Chip
               key={q}
-              type="button"
+              active={q === current?.quarter}
               onClick={() => setQuarter(q)}
-              className={[
-                "rounded-full px-4 py-2 text-sm font-medium transition",
-                q === current?.quarter
-                  ? "bg-electrique text-white"
-                  : "border border-gray-300 bg-white text-marine hover:border-electrique hover:text-electrique",
-              ].join(" ")}
             >
               {quarterLabel(q)}
-            </button>
+            </Chip>
           ))}
         </div>
         {current && (

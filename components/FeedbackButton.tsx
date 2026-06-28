@@ -1,24 +1,55 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { track } from "@/lib/track";
 
 export default function FeedbackButton() {
   const [open, setOpen] = useState(false);
   const [message, setMessage] = useState("");
   const [status, setStatus] = useState<"idle" | "sending" | "sent" | "error">("idle");
+  const dialogRef = useRef<HTMLDivElement>(null);
+  // Élément déclencheur, pour lui rendre le focus à la fermeture.
+  const triggerRef = useRef<HTMLElement | null>(null);
 
-  // Fermeture à la touche Échap.
+  // Fermeture à la touche Échap + piégeage du focus dans la modale.
   useEffect(() => {
     if (!open) return;
     const onKey = (e: KeyboardEvent) => {
-      if (e.key === "Escape") setOpen(false);
+      if (e.key === "Escape") {
+        setOpen(false);
+        return;
+      }
+      if (e.key !== "Tab") return;
+      const dialog = dialogRef.current;
+      if (!dialog) return;
+      const focusable = dialog.querySelectorAll<HTMLElement>(
+        'a[href], button:not([disabled]), textarea:not([disabled]), input:not([disabled]), select:not([disabled]), [tabindex]:not([tabindex="-1"])',
+      );
+      if (focusable.length === 0) return;
+      const first = focusable[0];
+      const last = focusable[focusable.length - 1];
+      if (e.shiftKey) {
+        if (document.activeElement === first) {
+          e.preventDefault();
+          last.focus();
+        }
+      } else if (document.activeElement === last) {
+        e.preventDefault();
+        first.focus();
+      }
     };
     document.addEventListener("keydown", onKey);
     return () => document.removeEventListener("keydown", onKey);
   }, [open]);
 
-  function openModal() {
+  // À la fermeture, rendre le focus au bouton déclencheur.
+  useEffect(() => {
+    if (open) return;
+    triggerRef.current?.focus();
+  }, [open]);
+
+  function openModal(e: React.MouseEvent<HTMLButtonElement>) {
+    triggerRef.current = e.currentTarget;
     setStatus("idle");
     setMessage("");
     setOpen(true);
@@ -61,9 +92,17 @@ export default function FeedbackButton() {
             if (e.target === e.currentTarget) setOpen(false);
           }}
         >
-          <div className="w-full max-w-md rounded-2xl bg-white p-6 shadow-xl">
+          <div
+            ref={dialogRef}
+            role="dialog"
+            aria-modal="true"
+            aria-labelledby="feedback-title"
+            className="w-full max-w-md rounded-2xl bg-white p-6 shadow-xl"
+          >
             <div className="mb-1 flex items-start justify-between gap-3">
-              <h2 className="font-title text-lg font-bold text-marine">Votre feedback</h2>
+              <h2 id="feedback-title" className="font-title text-lg font-bold text-marine">
+                Votre feedback
+              </h2>
               <button
                 type="button"
                 onClick={() => setOpen(false)}

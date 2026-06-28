@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { useMemo, useState } from "react";
+import Chip from "@/components/Chip";
 import type { Newsletter } from "@/lib/content";
 import { SOURCE_INFO } from "@/lib/sources";
 import { track } from "@/lib/track";
@@ -74,35 +75,20 @@ export default function Kiosque({ newsletters }: { newsletters: Newsletter[] }) 
     <div>
       {/* Filtre par mois */}
       <div className="mb-6 flex flex-wrap gap-2">
-        <button
-          type="button"
-          onClick={() => setMonth("")}
-          className={[
-            "rounded-full px-4 py-2 text-sm font-medium transition",
-            month === ""
-              ? "bg-electrique text-white"
-              : "border border-gray-300 bg-white text-marine hover:border-electrique hover:text-electrique",
-          ].join(" ")}
-        >
+        <Chip active={month === ""} onClick={() => setMonth("")}>
           Tous les mois
-        </button>
+        </Chip>
         {months.map((m) => (
-          <button
+          <Chip
             key={m}
-            type="button"
+            active={month === m}
             onClick={() => {
               setMonth(m);
               track("filter", `Kiosque · mois:${m}`);
             }}
-            className={[
-              "rounded-full px-4 py-2 text-sm font-medium transition",
-              month === m
-                ? "bg-electrique text-white"
-                : "border border-gray-300 bg-white text-marine hover:border-electrique hover:text-electrique",
-            ].join(" ")}
           >
             {monthLabel(m)}
-          </button>
+          </Chip>
         ))}
       </div>
 
@@ -123,7 +109,7 @@ export default function Kiosque({ newsletters }: { newsletters: Newsletter[] }) 
           >
             <h2 className="font-title text-xl font-bold text-marine">
               {displayName(opened.source)}
-              <span className="ml-2 text-sm font-normal text-gray-400">
+              <span className="ml-2 text-sm font-normal text-gray-500">
                 {opened.items.length} édition{opened.items.length > 1 ? "s" : ""}
               </span>
             </h2>
@@ -142,7 +128,7 @@ export default function Kiosque({ newsletters }: { newsletters: Newsletter[] }) 
                   className="block h-full rounded-lg border border-gray-200 bg-white p-5 transition hover:border-electrique hover:shadow-sm"
                 >
                   {n.date && (
-                    <span className="text-xs text-gray-400">{formatDate(n.date)}</span>
+                    <span className="text-xs text-gray-500">{formatDate(n.date)}</span>
                   )}
                   <h3 className="mt-1 font-semibold text-gray-900">{n.title}</h3>
                   {n.verdict && (
