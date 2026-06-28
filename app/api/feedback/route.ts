@@ -3,6 +3,7 @@ import { addFeedback } from "@/lib/db";
 import { sendMail } from "@/lib/mail";
 
 export const dynamic = "force-dynamic";
+export const runtime = "nodejs";
 
 function escapeHtml(s: string): string {
   return s.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
@@ -52,8 +53,9 @@ export async function POST(req: Request) {
         `,
       });
     }
-  } catch {
-    // Email best-effort : on ignore tout échec d'envoi.
+  } catch (e) {
+    // Email best-effort : on ignore tout échec d'envoi (mais on le trace).
+    console.error("[feedback] échec d'envoi de l'email de notification:", e);
   }
 
   return Response.json({ ok: true });
