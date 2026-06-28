@@ -25,7 +25,10 @@ export default function AppLayout({
               Observatoire des Expertises
             </span>
           </Link>
-          <FeedbackButton />
+          <div className="flex flex-wrap items-center gap-3">
+            <SubscribeButton />
+            <FeedbackButton />
+          </div>
         </div>
         {/* Sous-navigation */}
         <nav className="border-t border-gray-100 bg-glace/60">
@@ -44,7 +47,6 @@ export default function AppLayout({
         <div className="mx-auto flex max-w-5xl flex-wrap items-center justify-between gap-2 px-4 py-4 text-sm text-gray-500">
           <SyncFreshness syncedAt={lastSync} />
           <div className="flex items-center gap-4">
-            <SubscribeButton />
             <Link href="/admin/stats" className="text-gray-500 hover:text-electrique">
               Statistiques
             </Link>

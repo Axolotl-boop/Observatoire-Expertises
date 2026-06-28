@@ -1,5 +1,4 @@
 import ExpertiseDigests from "@/components/ExpertiseDigests";
-import SectionCards from "@/components/SectionCards";
 import { getExpertiseDigests } from "@/lib/content";
 
 export const dynamic = "force-static";
@@ -15,8 +14,6 @@ export default async function HomePage() {
           Là où le discours du marché rencontre nos données.
         </p>
       </div>
-
-      <SectionCards />
 
       <ExpertiseDigests digests={digests} />
     </div>
