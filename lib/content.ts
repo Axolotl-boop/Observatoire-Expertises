@@ -741,6 +741,13 @@ export async function getEntry(slug: string): Promise<Entry | null> {
     // Titre lisible = celui entre « … » de l'entête, plutôt que le nom de fichier.
     const { title } = parseNewsletterHeading(rawFile);
     if (title) meta.title = title;
+    // L'entête « Digest de contenu — … » est déjà affichée comme titre de page :
+    // on la retire du corps (avec son séparateur) pour éviter la redite.
+    bodyMd = bodyMd
+      .replace(/^\s*#{0,6}\s*Digest de contenu\b[^\n]*\r?\n/i, "")
+      .replace(/^(?:\s*\r?\n)+/, "")
+      .replace(/^---[ \t]*\r?\n/, "")
+      .replace(/^(?:\s*\r?\n)+/, "");
   } else {
     const parsed = readRaw(slug);
     if (!parsed) return null;

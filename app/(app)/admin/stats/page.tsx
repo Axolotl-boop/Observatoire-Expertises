@@ -1,4 +1,5 @@
 import { auth } from "@/auth";
+import ClearStatsButton from "@/components/ClearStatsButton";
 import { dbEnabled, getFeedback, getStats } from "@/lib/db";
 
 export const dynamic = "force-dynamic";
@@ -64,12 +65,15 @@ export default async function StatsPage() {
           <h1 className="font-title text-2xl font-bold text-marine">📊 Statistiques d'usage</h1>
           <p className="mt-2 text-gray-600">Monitoring de l'utilisation du portail.</p>
         </div>
-        <a
-          href="/api/export"
-          className="rounded-full border border-gray-300 bg-white px-4 py-2 text-sm font-medium text-marine hover:border-electrique hover:text-electrique"
-        >
-          ⬇ Exporter en CSV
-        </a>
+        <div className="flex flex-wrap gap-2">
+          <a
+            href="/api/export"
+            className="rounded-full border border-gray-300 bg-white px-4 py-2 text-sm font-medium text-marine hover:border-electrique hover:text-electrique"
+          >
+            ⬇ Exporter en CSV
+          </a>
+          <ClearStatsButton />
+        </div>
       </div>
 
       {/* Actifs récents */}

@@ -45,7 +45,7 @@ export default function SubscribeButton() {
   if (subscribed === null) {
     return (
       <span
-        className="inline-flex min-w-[12rem] justify-center text-gray-400"
+        className="rounded-full border border-gray-200 px-4 py-2 text-sm font-medium text-gray-400"
         aria-hidden
       >
         🔔 Récap mensuel
@@ -64,10 +64,10 @@ export default function SubscribeButton() {
           : "Recevez un email à chaque nouveau digest mensuel"
       }
       className={[
-        "inline-flex min-w-[12rem] justify-center transition disabled:opacity-50",
+        "rounded-full border px-4 py-2 text-sm font-medium transition disabled:opacity-50",
         subscribed
-          ? "text-electrique hover:text-marine"
-          : "text-gray-500 hover:text-electrique",
+          ? "border-electrique bg-glace text-electrique hover:bg-lavande/40"
+          : "border-gray-300 bg-white text-marine hover:border-electrique hover:text-electrique",
       ].join(" ")}
     >
       {subscribed ? "🔔 Abonné au récap" : "🔕 S'abonner au récap"}

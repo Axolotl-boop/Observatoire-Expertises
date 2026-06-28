@@ -76,6 +76,17 @@ export async function exportEvents(): Promise<
   }[];
 }
 
+/** Efface TOUS les événements de tracking. Renvoie le nombre supprimé. */
+export async function clearEvents(): Promise<number> {
+  if (!sql) return 0;
+  await ensureSchema();
+  const rows = (await sql`
+    with del as (delete from events returning 1)
+    select count(*)::int as n from del
+  `) as { n: number }[];
+  return rows[0]?.n ?? 0;
+}
+
 /** Purge les événements plus vieux que N mois. Renvoie le nombre supprimé. */
 export async function purgeOldEvents(months: number): Promise<number> {
   if (!sql) return 0;
