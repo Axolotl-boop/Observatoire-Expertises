@@ -95,9 +95,7 @@ export default function ExpertiseDigests({ digests }: { digests: ExpertiseDigest
   const firstAvailable = digests.find((d) => d.available) ?? digests[0];
   const [active, setActive] = useState<string>(firstAvailable?.key ?? "");
   const [month, setMonth] = useState<string>("");
-  const [openRows, setOpenRows] = useState<[boolean, boolean]>([false, false]);
-  const toggleRow = (i: 0 | 1) =>
-    setOpenRows((r) => (i === 0 ? [!r[0], r[1]] : [r[0], !r[1]]));
+  const [openMap, setOpenMap] = useState<Partial<Record<BlockKey, boolean>>>({});
 
   const current = digests.find((d) => d.key === active);
   const months = current?.entries.map((e) => e.month) ?? [];
@@ -177,20 +175,19 @@ export default function ExpertiseDigests({ digests }: { digests: ExpertiseDigest
             </div>
           )}
 
-          {/* Les 4 blocs, ouverture synchronisée par ligne */}
+          {/* Les 4 blocs, ouverture indépendante par bloc */}
           <div className="mt-4 grid items-start gap-4 md:grid-cols-2">
-            {DIGEST_BLOCKS.map((block, i) => {
-              const row: 0 | 1 = i < 2 ? 0 : 1;
-              return (
-                <Block
-                  key={block.key}
-                  title={block.title}
-                  html={entry.sections[block.key]}
-                  open={openRows[row]}
-                  onToggle={() => toggleRow(row)}
-                />
-              );
-            })}
+            {DIGEST_BLOCKS.map((block) => (
+              <Block
+                key={block.key}
+                title={block.title}
+                html={entry.sections[block.key]}
+                open={!!openMap[block.key]}
+                onToggle={() =>
+                  setOpenMap((m) => ({ ...m, [block.key]: !m[block.key] }))
+                }
+              />
+            ))}
           </div>
 
           {/* Encart de bas de page : matière mobilisée ce cycle */}

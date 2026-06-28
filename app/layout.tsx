@@ -3,6 +3,7 @@ import localFont from "next/font/local";
 import Link from "next/link";
 import Analytics from "@/components/Analytics";
 import FeedbackButton from "@/components/FeedbackButton";
+import NavLink from "@/components/NavLink";
 import SignOutButton from "@/components/SignOutButton";
 import SubscribeButton from "@/components/SubscribeButton";
 import SyncFreshness from "@/components/SyncFreshness";
@@ -51,30 +52,10 @@ export default function RootLayout({
           {/* Sous-navigation */}
           <nav className="border-t border-gray-100 bg-glace/60">
             <div className="mx-auto flex max-w-5xl flex-wrap gap-x-6 gap-y-1 px-4 py-2 text-sm">
-              <Link
-                href="/kiosque"
-                className="font-title font-medium text-gray-600 transition hover:text-electrique"
-              >
-                🗞️ Le kiosque à journaux
-              </Link>
-              <Link
-                href="/pouls"
-                className="font-title font-medium text-gray-600 transition hover:text-electrique"
-              >
-                🩺 Le pouls du marché
-              </Link>
-              <Link
-                href="/concurrence"
-                className="font-title font-medium text-gray-600 transition hover:text-electrique"
-              >
-                💥 Concurrence
-              </Link>
-              <Link
-                href="/metiers"
-                className="font-title font-medium text-gray-600 transition hover:text-electrique"
-              >
-                💼 Métiers &amp; Compétences
-              </Link>
+              <NavLink href="/kiosque">🗞️ Le kiosque à journaux</NavLink>
+              <NavLink href="/pouls">🩺 Le pouls du marché</NavLink>
+              <NavLink href="/concurrence">💥 Concurrence</NavLink>
+              <NavLink href="/metiers">💼 Métiers &amp; Compétences</NavLink>
             </div>
           </nav>
         </header>
