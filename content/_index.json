@@ -227,6 +227,10 @@
     "path": "Veille Agentique Tribe Produit/01-Matière-brute/Veille-concurrentielle/2026-06/2026-06-27_kp2i_131937.md",
     "modified": "2026-06-27T13:20:09Z"
   },
+  "veille-agentique-tribe-produit-01-matiere-brute-veille-concurrentielle-2026-06-2026-06-28ar-baa47ec9": {
+    "path": "Veille Agentique Tribe Produit/01-Matière-brute/Veille-concurrentielle/2026-06/2026-06-28_artefact_130013.md",
+    "modified": "2026-06-28T13:01:11Z"
+  },
   "veille-agentique-tribe-produit-01-matiere-brute-veille-concurrentielle-2026-t2-snapshot-con-f94f3b71": {
     "path": "Veille Agentique Tribe Produit/01-Matière-brute/Veille-concurrentielle/2026-T2/Snapshot-concurrentiel-T2-2026.md",
     "modified": "2026-06-26T23:28:53Z"
@@ -289,7 +293,7 @@
   },
   "veille-agentique-tribe-produit-02-digests-par-expertise-data-pm-2026-06-format-b-datapm-2026-06": {
     "path": "Veille Agentique Tribe Produit/02-Digests-par-expertise/Data-PM/2026-06/Format-B-datapm-2026-06.md",
-    "modified": "2026-06-28T08:36:50Z"
+    "modified": "2026-06-28T11:59:23Z"
   },
   "veille-agentique-tribe-produit-02-digests-par-expertise-pmm-2026-05-format-b-pmm-2026-05": {
     "path": "Veille Agentique Tribe Produit/02-Digests-par-expertise/PMM/2026-05/Format-B-pmm-2026-05.md",
@@ -297,7 +301,7 @@
   },
   "veille-agentique-tribe-produit-02-digests-par-expertise-pmm-2026-06-format-b-pmm-2026-06": {
     "path": "Veille Agentique Tribe Produit/02-Digests-par-expertise/PMM/2026-06/Format-B-pmm-2026-06.md",
-    "modified": "2026-06-28T08:35:15Z"
+    "modified": "2026-06-28T11:58:05Z"
   },
   "veille-agentique-tribe-produit-02-digests-par-expertise-product-ai-2026-05-format-b-product-9b54b3d6": {
     "path": "Veille Agentique Tribe Produit/02-Digests-par-expertise/Product-AI/2026-05/Format-B-productai-2026-05.md",
@@ -305,7 +309,7 @@
   },
   "veille-agentique-tribe-produit-02-digests-par-expertise-product-ai-2026-06-format-b-product-a2169226": {
     "path": "Veille Agentique Tribe Produit/02-Digests-par-expertise/Product-AI/2026-06/Format-B-productai-2026-06.md",
-    "modified": "2026-06-28T08:33:41Z"
+    "modified": "2026-06-28T11:56:35Z"
   },
   "veille-agentique-tribe-produit-02-digests-par-expertise-product-management-2026-05-format-b-5e370294": {
     "path": "Veille Agentique Tribe Produit/02-Digests-par-expertise/Product-Management/2026-05/Format-B-pm-2026-05.md",
@@ -313,7 +317,7 @@
   },
   "veille-agentique-tribe-produit-02-digests-par-expertise-product-management-2026-06-format-b-c8bfa2dd": {
     "path": "Veille Agentique Tribe Produit/02-Digests-par-expertise/Product-Management/2026-06/Format-B-pm-2026-06.md",
-    "modified": "2026-06-28T08:32:56Z"
+    "modified": "2026-06-28T11:55:42Z"
   },
   "veille-agentique-tribe-produit-02-digests-par-expertise-product-ops-2026-05-format-b-produc-363dad3b": {
     "path": "Veille Agentique Tribe Produit/02-Digests-par-expertise/Product-Ops/2026-05/Format-B-productops-2026-05.md",
@@ -321,7 +325,7 @@
   },
   "veille-agentique-tribe-produit-02-digests-par-expertise-product-ops-2026-06-format-b-produc-54d2d67e": {
     "path": "Veille Agentique Tribe Produit/02-Digests-par-expertise/Product-Ops/2026-06/Format-B-productops-2026-06.md",
-    "modified": "2026-06-28T08:34:41Z"
+    "modified": "2026-06-28T11:57:20Z"
   },
   "veille-agentique-tribe-produit-02-digests-par-expertise-qa-2026-05-format-b-qa-2026-05": {
     "path": "Veille Agentique Tribe Produit/02-Digests-par-expertise/QA/2026-05/Format-B-qa-2026-05.md",
@@ -329,7 +333,7 @@
   },
   "veille-agentique-tribe-produit-02-digests-par-expertise-qa-2026-06-format-b-qa-2026-06": {
     "path": "Veille Agentique Tribe Produit/02-Digests-par-expertise/QA/2026-06/Format-B-qa-2026-06.md",
-    "modified": "2026-06-28T08:36:06Z"
+    "modified": "2026-06-28T11:58:41Z"
   },
   "veille-agentique-tribe-produit-04-convictions-expertises-convictions-datapm": {
     "path": "Veille Agentique Tribe Produit/04-Convictions-Expertises/Convictions-datapm.md",

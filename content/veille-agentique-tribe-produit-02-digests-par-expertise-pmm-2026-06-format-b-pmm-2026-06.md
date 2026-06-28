@@ -3,220 +3,226 @@ Briefing d'expertise — matériau sourcé à exploiter au point d'usage ; les [
 | Expertise      | pmm (Product Marketing Management) |
 |----------------|-----------------------------------|
 | Période        | 2026-06 (cadence mensuelle)        |
-| Date pub.      | 2026-06-30                         |
+| Date de pub    | 2026-06-30                         |
 | Mode           | briefing informatif                |
 
 Matière mobilisée ce cycle :
-☑ Newsletters
-☑ Synthèse PAD
-☑ Snapshot concurrentiel
-☑ Snapshot emploi
-☑ State of X
-☐ REX (non présent)
-→ Toutes les briques attendues sont présentes ; pas de trou de source ce cycle.
+☑ Newsletters 2026-06
+☑ Synthèse Demande (PAD)
+☑ Snapshot concurrentiel T2-2026
+☑ Snapshot emploi pmm T2-2026
+☑ Signaux State of X 2026
+☐ REX / learning expeditions (non fournis)
+☐ Registre convictions (indisponible)
+→ Registre convictions absent : Bloc 2 en mode repli. Toutes les briques attendues sont présentes sauf REX et registre convictions.
 
 ---
 
 Bloc 1 — Problématiques clients récurrentes & positionnement offre.
 
-- Problématiques clients récurrentes (PAD / REX) :
-  1. Intégration de l’IA dans le cycle de design produit (framework agentique, structuration discovery, artefacts, MVP sur greenfield) :
-     · Ce que l’externe ajoute : Les newsletters confirment la montée de l’agentique et des workflows IA dans le produit, mais signalent que la diffusion reste inégale et que la majorité des PMM n’a pas vocation à maîtriser la technique IA de bout en bout. Le snapshot concurrentiel montre que l’axe agentique est fortement investi par Converteo, Hubvisory, Thiga, mais pas encore par des cabinets PMM.
-     · Question pour creuser : Quels sont les points de friction ou d’opportunité dans l’intégration d’agents IA dans vos processus de conception produit ?
-  2. Coaching collectif PMM / montée en posture stratégique (passage du support à la décision, harmonisation post-fusion) :
-     · Ce que l’externe ajoute : Les newsletters et le State of X confirment l’ascension hiérarchique du PMM (rattachement CMO, élargissement du périmètre, KPI orientés revenu), mais la structuration du rôle reste hétérogène. Le snapshot emploi montre un penchant senior marqué, cohérent avec la demande de montée en posture.
-     · Question pour creuser : Quelles sont les attentes concrètes vis-à-vis du PMM dans la définition du positionnement et la prise de décision stratégique ?
-  3. Acculturation PM à l’éco-conception (intégration du numérique responsable dans la stratégie produit) :
-     · Ce que l’externe ajoute : Aucun signal convergent dans les newsletters ou le snapshot concurrentiel ; la demande reste isolée et non généralisable à ce stade.
-     · Question pour creuser : Quels sont les leviers et freins identifiés pour intégrer l’éco-conception dans vos cycles produit ?
-  4. Data PM / repositionnement de la donnée dans le cycle produit (diagnostic, acculturation PO, contribution opérationnelle) :
-     · Ce que l’externe ajoute : Les newsletters soulignent la confusion entre Buyer Research et User Research, générant des frictions PM/PMM, et la nécessité d’une pratique data plus amont. Le State of X pointe le déficit d’ownership des décisions et l’angle mort discovery.
-     · Question pour creuser : Comment la donnée est-elle actuellement mobilisée dans vos arbitrages produit et quelles sont les attentes vis-à-vis d’un PMM ou Data PM ?
+Problématiques clients récurrentes (PAD / REX) :
+- Passage du PMM d’un rôle support à une posture stratégique (définition du positionnement, pricing, leadership vis-à-vis du top management).  
+  · Ce que l’externe ajoute : Les newsletters confirment ce mouvement, en soulignant que le PMM cherche à influencer la roadmap via la Buyer Research et à se rapprocher du CEO, mais elles n’apportent pas de cas d’usage ou de méthodologie nouvelle ce mois.  
+  · Question pour creuser : « Quels sont les leviers qui permettraient à votre équipe PMM de peser sur les décisions stratégiques produit ? »
 
-- Ce qu’en disent le marché & les concurrents :
-  · L’axe agentique (intégration IA, orchestration, gouvernance) est fortement investi par Converteo, Hubvisory, Thiga, AI Builders, mais aucun cabinet n’affiche une offre PMM dédiée à l’agentique ou à la gouvernance IA. Sur la posture stratégique PMM, le State of X et les offres d’emploi confirment la montée du rattachement CMO et l’élargissement du périmètre, mais la structuration reste portée par les éditeurs SaaS, non par les cabinets conseil. L’éco-conception et la data restent des signaux faibles ou non structurés dans l’offre concurrente.
+- Intégration de l’IA dans le cycle de design produit (rétro-documentation, structuration des artefacts, framework agentique).  
+  · Ce que l’externe ajoute : Les newsletters et le snapshot concurrentiel convergent sur l’émergence de l’agentique comme axe structurant, mais la demande PAD reste isolée à une mission conseil hybride (Product AI/PMM).  
+  · Question pour creuser : « Quels usages IA souhaitez-vous industrialiser dans vos processus de conception produit ? »
 
-- Notre position, par axe concurrentiel pertinent :
-  · [Axe 1 — Agentique] → on est en retard → Les cabinets PM et Data/IA (Converteo, Hubvisory, Thiga, AI Builders) structurent déjà une offre agentique, alors que l’offre PMM reste absente de ce mouvement. [hypothèse — à valider]
-  · [Axe 2 — Gouvernance IA/conformité] → on est en retard → Converteo et Smartesting investissent la conformité IA et la gouvernance, mais aucun cabinet PMM ne se positionne sur ce créneau. [hypothèse — à valider]
-  · [Axe 3 — Verticalisation sectorielle] → angle propre possible → Aucun cabinet PMM ne revendique de spécialisation sectorielle forte, ce qui laisse un espace d’offre candidat sur l’accompagnement PMM verticalisé. [hypothèse — à valider]
-  · [Axe 4 — Internationalisation] → on est en retard → Les cabinets Data/IA et QA s’internationalisent (Converteo, Artefact, Qestit), alors que le conseil PMM reste hexagonal. [hypothèse — à valider]
+- Acculturation à l’éco-conception et intégration du numérique responsable dans la stratégie produit.  
+  · Ce que l’externe ajoute : Aucun signal externe ne corrobore ce besoin ce mois ; il reste un signal faible, non généralisé.  
+  · Question pour creuser : « Comment l’éco-conception s’intègre-t-elle aujourd’hui dans vos arbitrages produit et vos indicateurs de succès ? »
 
-- So what offre :
-  · L’absence d’offre PMM dédiée à l’agentique, à la gouvernance IA ou à la verticalisation sectorielle constitue un espace d’offre candidat. La demande de coaching stratégique PMM et d’intégration IA dans le design produit n’est pas couverte par une offre structurée côté conseil — opportunité de différenciation si confirmée par la demande à T+1. Rien de neuf sur l’éco-conception et la data côté offre, mais signaux à surveiller.
+- Repositionnement de la donnée dans le cycle produit (Data PM, diagnostic, acculturation PO à la data).  
+  · Ce que l’externe ajoute : Les newsletters insistent sur la montée de la data dans les workflows produit, mais le besoin d’un Data PM reste marginal dans la demande PAD.  
+  · Question pour creuser : « Quels freins rencontrez-vous pour exploiter la donnée en amont dans vos décisions produit ? »
+
+Ce qu’en disent le marché & les concurrents :
+- Le snapshot concurrentiel montre que l’agentique (orchestration, gouvernance, multi-agents) devient un axe d’offre central chez Converteo, Hubvisory et Thiga, avec des signaux coordonnés et des références clients. Aucun cabinet ne se positionne sur l’éco-conception ou la data PM côté PMM. La montée en posture stratégique du PMM est visible dans les newsletters (rattachement CEO, influence roadmap), mais peu d’offres concurrentes explicites sur ce créneau.
+
+Notre position, par axe concurrentiel pertinent :
+- [Axe Agentique] → on est alignés (si offre agentique structurée) → « Nous accompagnons la structuration de frameworks agentiques, en intégrant l’IA dans la chaîne de conception produit, à l’instar des leaders du marché. » [hypothèse — à valider]. Cabinets actifs : Converteo, Hubvisory, Thiga.
+- [Axe Gouvernance IA/conformité] → en retard (pas d’offre PMM dédiée) → « Nos concurrents investissent la gouvernance IA et la conformité réglementaire, un angle à explorer pour renforcer notre offre PMM. » [hypothèse — à valider]. Cabinets actifs : Converteo, Smartesting, AI Builders.
+- [Axe Verticalisation sectorielle] → angle propre possible (aucun cabinet PMM ne revendique de spécialisation sectorielle forte) → « Nous pouvons proposer un accompagnement PMM sectoriel différenciant, là où le marché reste généraliste. » [hypothèse — à valider]. Cabinets actifs : Converteo (Pharma), KP2i (Retail), Smartesting (Industrie régulée).
+- [Axe Internationalisation] → en retard (aucun signal d’expansion géographique PMM) → « Le conseil PMM reste hexagonal, un axe à investiguer si la demande internationale émerge. » [hypothèse — à valider]. Cabinets actifs : Converteo, Artefact, Qestit (hors PMM).
+
+So what offre :
+- L’agentique et l’intégration IA dans le design produit sont des axes d’offre à structurer ou renforcer, en s’alignant sur les cabinets les plus avancés. L’éco-conception et la data PM restent des signaux faibles, à surveiller mais sans offre dédiée à ce stade. L’absence d’offre PMM sur la gouvernance IA et la verticalisation sectorielle constitue un espace candidat à explorer.
 
 ---
 
 Bloc 2 — Signaux qui challengent nos convictions.
 
-1. Le déplacement du goulot d’étranglement vers la fonction produit/PMM et la gouvernance du jugement humain : Les newsletters et le snapshot concurrentiel convergent sur le fait que l’IA a déplacé la contrainte rare de l’exécution technique vers la priorisation, la curation et la capacité à arbitrer collectivement. Source : Newsletters 2026-06, Snapshot concurrentiel T2 2026. Croisement : Confirmé par le State of X (l’IA accélère la production mais n’améliore pas le jugement). Conviction touchée : La valeur du PMM se déplace de l’exécution vers l’orchestration du jugement collectif — [registre absent / clé à rattacher]. Tag : [tendance]
-2. L’ascension hiérarchique et la complexification du rôle PMM : Le State of X et le snapshot emploi montrent une montée du rattachement CMO, un élargissement du portefeuille produits et une demande accrue de séniorité, mais la structuration du métier reste hétérogène et non standardisée dans les référentiels. Source : State of Product Marketing 2026, Snapshot emploi PMM T2 2026. Croisement : Confirmé par les offres d’emploi (pyramide Junior → Head, skew SaaS/scale-up). Conviction touchée : Le PMM devient un rôle pivot entre produit et go-to-market, mais sa reconnaissance institutionnelle reste à construire — [registre absent / clé à rattacher]. Tag : [tendance]
-3. L’intégration IA dans les pratiques PMM reste superficielle : Les newsletters et le State of X montrent que l’IA est massivement adoptée pour accélérer la production d’artefacts (messaging, market research), mais n’a pas encore transformé la capacité de jugement ou la différenciation métier. Source : Newsletters 2026-06, State of Product Marketing 2026. Croisement : Confirmé par le snapshot emploi (signal PMM × IA isolé, Doctolib seul). Conviction touchée : L’IA outille le PMM mais ne remplace pas la compétence stratégique ou la capacité à influencer la roadmap — [registre absent / clé à rattacher]. Tag : [tendance]
-4. La confusion entre Buyer Research et User Research crée des frictions structurelles PM/PMM : Les newsletters identifient un écart entre l’analyse des usages et celle des ressorts d’achat, générant des tensions dans la priorisation produit. Source : Newsletters 2026-06. Croisement : Non confirmé par le snapshot emploi ou le State of X, mais cohérent avec la demande de repositionnement data dans le PAD. Conviction touchée : La clarification des rôles PM/PMM sur la recherche et la donnée est un enjeu de maturité organisationnelle — [registre absent / clé à rattacher]. Tag : [mode]
+Registre convictions indisponible — mode repli appliqué.
+
+- Signal : Le PMM cherche à se repositionner de fonction support à fonction décisionnelle, en s’appuyant sur la Buyer Research pour influencer la roadmap (newsletters 2026-06, snapshot concurrentiel T2-2026).  
+  Croisement : Confirmé par la demande PAD (coaching collectif PMM pour montée en posture stratégique) et par le State of X (ascension hiérarchique du PMM, rattachement CMO/CEO).  
+  Conviction touchée : Le rôle du PMM n’est plus cantonné à l’exécution go-to-market, il devient un acteur de la stratégie produit — [registre absent / clé à rattacher].  
+  Tag : [tendance]
+
+- Signal : L’agentique (orchestration d’agents, frameworks IA) devient un axe structurant de l’offre produit, avec une convergence multi-cabinets (Converteo, Hubvisory, Thiga) et une demande émergente en conseil (PAD).  
+  Croisement : Snapshot concurrentiel et newsletters convergent, State of X confirme l’industrialisation progressive de l’agentique, mais la réussite à l’échelle reste à démontrer.  
+  Conviction touchée : La valeur du PMM se déplace vers la capacité à orchestrer des systèmes IA et à gouverner la complexité agentique — [registre absent / clé à rattacher].  
+  Tag : [tendance]
+
+- Signal : L’intégration de l’IA dans les pratiques PMM est mainstream sur le messaging, le positionnement et la market research (>80 % des PMM l’utilisent régulièrement — State of Product Marketing), mais la valeur ajoutée réelle reste à prouver.  
+  Croisement : Snapshot emploi (signal faible d’intitulé PMM IA chez Doctolib), newsletters (pression sur l’employabilité IA), State of X (adoption massive mais jugement non garanti).  
+  Conviction touchée : L’IA est un outil incontournable pour le PMM, mais ne remplace pas la compétence stratégique ni le jugement métier — [registre absent / clé à rattacher].  
+  Tag : [tendance]
 
 ---
 
 Bloc 3 — Skills / méthodes / outils à maîtriser.
 
-- Ce qui monte :
-  · Expérience B2B SaaS exigée (socle) — présente dans la majorité des offres, tous niveaux.
-  · Positionnement, messaging, go-to-market (socle) — compétence centrale, attendue dès le niveau PMM confirmé.
-  · Expérience product/growth marketing 4–10 ans (séniorité) — la demande se séniorise sur les postes Senior PMM et Head of PMM.
-  · PMM × IA (mode) — signal émergent, isolé (Doctolib), à surveiller.
-  · Soft skills (curiosité, leadership, communication) (socle) — attendues à tous niveaux, mais particulièrement valorisées pour les postes seniors.
+Ce qui monte :
+- Compétence en positionnement stratégique et influence roadmap (niveau : séniorité) — la demande se séniorise sur la capacité à piloter le go-to-market, à définir le pricing et à dialoguer avec le top management.  
+  Croisement emploi : Les offres WTTJ et PMA Jobs sur-représentent les intitulés Senior PMM et Head of PMM, avec des exigences explicites en expérience B2B SaaS et en pilotage stratégique.
+- Maîtrise des frameworks agentiques et de l’intégration IA dans les process PMM (niveau : socle à séniorité selon contexte) — signal émergent, encore marginal dans les offres, mais cohérent avec la montée de l’IA dans les missions.  
+  Croisement emploi : Signal isolé d’un poste PMM Lead — AI products (Doctolib), à surveiller pour confirmer la tendance.
+- Soft skills (leadership, communication, capacité à convaincre sans lien hiérarchique) (niveau : socle) — récurrence dans les descriptifs d’offres, attendues à tous les niveaux.
 
-- Croisement emploi :
-  · Le delta des offres va dans ce sens : la pyramide Junior → PMM → Senior → Lead/Head est lisible sur WTTJ et PMA Jobs, avec un penchant senior marqué. Les compétences B2B SaaS, positionnement/messaging/GTM et expérience marketing sont récurrentes sur tous les intitulés. Le signal PMM × IA reste isolé (Doctolib, WTTJ seul). Aucun outil spécifique n’est documenté ce trimestre.
-
-- Ce qu’on doit monter en compétence :
-  · Recommandation : renforcer la maîtrise des frameworks de positionnement et de go-to-market, développer l’expertise B2B SaaS, et surveiller l’émergence des compétences IA appliquées au PMM (veille, formation ciblée sur les cas d’usage IA en marketing produit). Socle inchangé — prochain delta emploi au T3 2026.
+Ce qu’on doit monter en compétence :
+- Renforcer la capacité des PMM à influencer la stratégie produit et à dialoguer avec les directions générales.
+- Acculturer les équipes PMM aux frameworks agentiques et à l’intégration IA, en anticipant la diffusion de ces pratiques dans les offres.
+- Approfondir la maîtrise des environnements B2B SaaS et des méthodes de go-to-market avancées.
+- Socle inchangé — prochain delta emploi au T3 2026 pour validation des mouvements.
 
 ---
 
 Bloc 4 — Sujets éditoriaux & angles recommandés.
 
-- Sujet → angle recommandé : « PMM : orchestrateur du jugement collectif à l’ère de l’IA — pourquoi la valeur ne se joue plus sur l’exécution mais sur la capacité à arbitrer et à influencer la roadmap ».
-  · Sur quoi ça tient : convergence newsletters 2026-06 (déplacement du goulot vers la gouvernance du jugement), snapshot concurrentiel (absence d’offre PMM sur l’agentique), State of X (l’IA accélère la production mais ne remplace pas le jugement), snapshot emploi (penchant senior, rôle pivot). Tag : [tendance]
-- Lien avant-vente : Ce contenu outille le PAD pour positionner l’offre PMM sur la capacité à structurer la décision collective et à piloter la valeur business, au-delà de la simple exécution opérationnelle — argument différenciant face à la montée de l’IA et à la banalisation des outils.
+Sujet → angle recommandé :  
+- « PMM : de l’exécution à la stratégie — comment la Buyer Research devient un levier d’influence sur la roadmap »  
+  · Sur quoi ça tient : convergence entre la demande PAD (coaching collectif PMM pour montée en posture stratégique), les newsletters (PMM cherchant à influencer la roadmap via la Buyer Research), et le State of X (ascension hiérarchique du PMM, rattachement CMO/CEO).  
+  Tag : [tendance]
+  · Lien avant-vente : Permet à un PAD d’ouvrir la discussion sur la valeur ajoutée du PMM en amont des décisions produit, et de positionner l’offre conseil sur l’accompagnement à la montée en posture stratégique.
+
+- « Agentique et IA : le nouveau terrain de jeu du PMM ? »  
+  · Sur quoi ça tient : convergence newsletters (émergence de l’agentique, intégration IA dans le design produit), snapshot concurrentiel (offres structurées chez Converteo, Hubvisory, Thiga), et signal d’une mission conseil hybride dans le PAD.  
+  Tag : [tendance]
+  · Lien avant-vente : Sert à illustrer la capacité à accompagner la structuration de frameworks agentiques et à anticiper les besoins d’industrialisation IA côté client.
+
+- « PMM et éco-conception : signal faible ou future exigence ? »  
+  · Sur quoi ça tient : signal isolé dans la demande PAD (coaching PM sur l’éco-conception), absence de signaux externes ce mois, mais cohérent avec la montée des exigences RSE dans d’autres expertises produit.  
+  Tag : [mode]
+  · Lien avant-vente : Permet de sonder l’appétence client sur ce sujet et de se positionner en anticipation si la demande se confirme.
 
 ---
 
 Garde-fous : on ne résume jamais ; le croisement prime ; [structurel] = candidat à corroborer ; sponsoring ⚠ visible ; on fournit des pistes sans consacrer de conviction ; un signal isolé ≠ certitude.
 
-Sources utilisées : Newsletters 2026-06, Synthèse PAD 06/2026, Snapshot concurrentiel T2 2026, Snapshot emploi PMM T2 2026, Signaux State of X 2026. Toutes les briques attendues sont présentes ; pas de trou de source ce cycle.
+Sources utilisées : Newsletters 2026-06, Synthèse Demande (PAD), Snapshot concurrentiel T2-2026, Snapshot emploi pmm T2-2026, Signaux State of X 2026. Registre convictions absent. REX non fourni.
 
 
 
 ---
 
+## Légende de confiance (compacte)
+
+> **Tag** = ampleur du mouvement : `[mode]` surface · `[tendance]` mouvement réel · `[structurel]` changement de fond (baromètre/étude **+** donnée propriétaire). **Chip** = solidité de l'adossement : **⬤** notre data le porte (≥1 propriétaire : PAD/emploi/concurrence, croisé ou non) · **◐** convergence externe seule (marché aligné, rien en interne) · **◯** source unique. Les deux axes sont indépendants ; invariant : `[structurel] ⟹ ⬤`.
+
 ## Couche de confiance — posée par l'agent-annotateur
 
-> Cette couche dit *sur quoi tient* chaque signal — elle ne valide rien. Un signal « source unique » ou « non corroboré » est une **piste à creuser**, pas un argument client. Une conviction ne naît que quand un humain la pose dans un deck/article.
+> Cette couche dit *sur quoi tient* chaque signal — elle ne valide rien. Un signal ◯ ou ◐ est une **piste à creuser**, pas un argument client. Une conviction ne naît que quand un humain la pose dans un deck/article.
 
-**Indice de confiance du cycle** : Ancrage propriétaire : PAD (Bloc 1), snapshot concurrentiel (Bloc 1), snapshot emploi (Blocs 1 et 3) ; le reste du cycle — newsletters et State of X — est externe-seul, non corroboré en interne ce mois ; aucun downgrade appliqué.
+**Indice de confiance du cycle** : Ancrage propriétaire : PAD (Bloc 1), snapshot concurrentiel (Bloc 1, 2, 4), snapshot emploi (Bloc 2, 3), croisement multi-sources sur l’agentique et la montée en posture stratégique ; le reste — éco-conception, data PM — repose sur des signaux isolés PAD ou newsletters non corroborées ; 0 downgrade appliqué.
 
 **Provenance par signal :**
-- **[Bloc 1] Problématiques clients récurrentes & positionnement offre** — propriétaire : PAD · propriétaire : snapshot concurrentiel · propriétaire : snapshot emploi · non corroboré (newsletter) · non corroboré (State of X) · non corroboré (convergence externe)
-- **[Bloc 2] Déplacement du goulot d’étranglement vers l’orchestration/jugement** — propriétaire : snapshot concurrentiel · non corroboré (newsletter) · non corroboré (State of X) · non corroboré (convergence externe) · theme: "valeur-vers-orchestration"
-- **[Bloc 2] Ascension hiérarchique et complexification du rôle PMM** — propriétaire : snapshot emploi · non corroboré (State of X) · non corroboré (convergence externe)
-- **[Bloc 2] Intégration IA dans les pratiques PMM reste superficielle** — non corroboré (newsletter) · non corroboré (State of X) · propriétaire : snapshot emploi · non corroboré (convergence externe)
-- **[Bloc 2] Confusion Buyer Research / User Research** — non corroboré (newsletter) · non corroboré (convergence externe)
-- **[Bloc 3] Skills / méthodes / outils à maîtriser** — propriétaire : snapshot emploi
+- **[Bloc 1] ⬤ Passage du PMM à une posture stratégique** — croisement sur 1 axe (demande PAD × newsletters)
+- **[Bloc 1] ⬤ Intégration IA/agentique dans le design produit** — croisement sur 1 axe (newsletters × snapshot concurrentiel), appui PAD (mission conseil hybride)
+- **[Bloc 1] ◯ Acculturation à l’éco-conception** — non corroboré (signal isolé PAD)
+- **[Bloc 1] ◐ Repositionnement de la donnée dans le cycle produit** — non corroboré (convergence externe : newsletters), signal faible PAD
+- **[Bloc 1] ⬤ Agentique, gouvernance IA, verticalisation sectorielle, internationalisation** — croisement sur 1 axe (snapshot concurrentiel × newsletters), cabinets nommés
+- **[Bloc 2] ⬤ PMM vers fonction décisionnelle** — croisement sur 1 axe (newsletters × snapshot concurrentiel × demande PAD × State of X) · thème : valeur-vers-orchestration
+- **[Bloc 2] ⬤ Agentique comme axe structurant** — croisement multi-axes (snapshot concurrentiel × newsletters × State of X × PAD) · thème : valeur-vers-orchestration
+- **[Bloc 2] ⬤ IA mainstream dans les pratiques PMM** — croisement sur 1 axe (snapshot emploi × newsletters × State of X)
+- **[Bloc 3] ⬤ Compétence en positionnement stratégique** — propriétaire : emploi (offres WTTJ, PMA Jobs)
+- **[Bloc 3] ⬤ Maîtrise frameworks agentiques/IA** — croisement sur 1 axe (signal PAD × emploi Doctolib)
+- **[Bloc 3] ⬤ Soft skills leadership/communication** — propriétaire : emploi (descriptifs offres)
+- **[Bloc 4] ⬤ PMM : de l’exécution à la stratégie** — croisement sur 1 axe (demande PAD × newsletters × State of X) · thème : valeur-vers-orchestration
+- **[Bloc 4] ⬤ Agentique et IA, nouveau terrain de jeu PMM** — croisement sur 1 axe (newsletters × snapshot concurrentiel × PAD)
+- **[Bloc 4] ◯ PMM et éco-conception** — non corroboré (signal isolé PAD)
 
-<!-- Données dashboard — généré par l'agent-annotateur, ne pas éditer -->
-[[DASH_JSON]]
-{
-  "slug": "pmm",
-  "thinCycle": false,
-  "confidenceSummary": "Ancrage propriétaire : PAD (Bloc 1), snapshot concurrentiel (Bloc 1), snapshot emploi (Blocs 1 et 3) ; le reste du cycle — newsletters et State of X — est externe-seul, non corroboré en interne ce mois ; aucun downgrade appliqué.",
-  "blocs": [
-    {
-      "n": "Bloc 1",
-      "sigs": [
-        {
-          "tag": null,
-          "prov": [
-            "propriétaire : PAD",
-            "propriétaire : snapshot concurrentiel",
-            "propriétaire : snapshot emploi",
-            "non corroboré (newsletter)",
-            "non corroboré (State of X)",
-            "non corroboré (convergence externe)"
-          ],
-          "vendor": null,
-          "theme": null,
-          "x": "Problématiques clients récurrentes (intégration IA, coaching stratégique, éco-conception, data PM) et positionnement offre (retard sur agentique, gouvernance IA, internationalisation, verticalisation sectorielle)"
-        }
-      ],
-      "croise": null,
-      "conv": [
-        "So what offre",
-        "L’absence d’offre PMM dédiée à l’agentique, à la gouvernance IA ou à la verticalisation sectorielle constitue un espace d’offre candidat. La demande de coaching stratégique PMM et d’intégration IA dans le design produit n’est pas couverte par une offre structurée côté conseil — opportunité de différenciation si confirmée par la demande à T+1. Rien de neuf sur l’éco-conception et la data côté offre, mais signaux à surveiller."
-      ]
-    },
-    {
-      "n": "Bloc 2",
-      "sigs": [
-        {
-          "tag": "tend",
-          "prov": [
-            "propriétaire : snapshot concurrentiel",
-            "non corroboré (newsletter)",
-            "non corroboré (State of X)",
-            "non corroboré (convergence externe)"
-          ],
-          "vendor": null,
-          "theme": "valeur-vers-orchestration",
-          "x": "Le goulot d’étranglement se déplace vers l’orchestration/jugement collectif à l’ère de l’IA"
-        },
-        {
-          "tag": "tend",
-          "prov": [
-            "propriétaire : snapshot emploi",
-            "non corroboré (State of X)",
-            "non corroboré (convergence externe)"
-          ],
-          "vendor": null,
-          "theme": null,
-          "x": "Ascension hiérarchique et complexification du rôle PMM (rattachement CMO, séniorité, portefeuille élargi)"
-        },
-        {
-          "tag": "tend",
-          "prov": [
-            "non corroboré (newsletter)",
-            "non corroboré (State of X)",
-            "propriétaire : snapshot emploi",
-            "non corroboré (convergence externe)"
-          ],
-          "vendor": null,
-          "theme": null,
-          "x": "Intégration IA dans les pratiques PMM reste superficielle (accélération production, peu d’impact sur jugement)"
-        },
-        {
-          "tag": "mode",
-          "prov": [
-            "non corroboré (newsletter)",
-            "non corroboré (convergence externe)"
-          ],
-          "vendor": null,
-          "theme": null,
-          "x": "Confusion Buyer Research / User Research crée des frictions PM/PMM"
-        }
-      ],
-      "croise": null,
-      "conv": [
-        "Conviction — à challenger",
-        "Les signaux confirment le déplacement de la valeur vers l’orchestration et la gouvernance, la montée en séniorité du PMM, et la superficialité de l’intégration IA dans les pratiques PMM. La clarification des rôles sur la recherche et la donnée reste un enjeu de maturité organisationnelle."
-      ]
-    },
-    {
-      "n": "Bloc 3",
-      "sigs": [
-        {
-          "tag": null,
-          "prov": [
-            "propriétaire : snapshot emploi"
-          ],
-          "vendor": null,
-          "theme": null,
-          "x": "Skills et méthodes attendues : expérience B2B SaaS, positionnement/messaging/GTM, séniorité, soft skills, signal PMM × IA isolé"
-        }
-      ],
-      "croise": null,
-      "conv": [
-        "So what méthode",
-        "Recommandation : renforcer la maîtrise des frameworks de positionnement et de go-to-market, développer l’expertise B2B SaaS, et surveiller l’émergence des compétences IA appliquées au PMM (veille, formation ciblée sur les cas d’usage IA en marketing produit). Socle inchangé — prochain delta emploi au T3 2026."
-      ]
-    },
-    {
-      "n": "Bloc 4",
-      "sigs": [],
-      "croise": null,
-      "conv": [
-        "So what édito",
-        "Sujet éditorial : PMM orchestrateur du jugement collectif à l’ère de l’IA — la valeur ne se joue plus sur l’exécution mais sur la capacité à arbitrer et à influencer la roadmap."
-      ]
-    }
-  ]
-}
-[[/DASH_JSON]]
+---
+
+# PARTIE II — Cartes de restitution (surface)
+
+### Carte — Avant-vente
+
+**Passage du PMM d’un rôle support à une posture stratégique — cycle 2026-06**
+- **On entend** : Le PMM cherche à peser sur les décisions stratégiques produit → **ce que l'externe ajoute** : Les newsletters confirment ce mouvement, insistant sur l’influence roadmap et le rapprochement CEO, sans cas d’usage neuf ce mois.
+- **La question qui ouvre** : « Quels sont les leviers qui permettraient à votre équipe PMM de peser sur les décisions stratégiques produit ? »
+- **Face à Converteo, Hubvisory, Thiga** : bouge sur axe Agentique → **notre angle** : « Nous accompagnons la structuration de frameworks agentiques, en intégrant l’IA dans la chaîne de conception produit, à l’instar des leaders du marché. » [hypothèse — à valider] · ⬤
+- **Face à Converteo, Smartesting, AI Builders** : bouge sur axe Gouvernance IA/conformité → **notre angle** : « Nos concurrents investissent la gouvernance IA et la conformité réglementaire, un angle à explorer pour renforcer notre offre PMM. » [hypothèse — à valider] · ⬤
+- **Face à Converteo, KP2i, Smartesting** : bouge sur axe Verticalisation sectorielle → **notre angle** : « Nous pouvons proposer un accompagnement PMM sectoriel différenciant, là où le marché reste généraliste. » [hypothèse — à valider] · ⬤
+- **Face à Converteo, Artefact, Qestit** : bouge sur axe Internationalisation → **notre angle** : « Le conseil PMM reste hexagonal, un axe à investiguer si la demande internationale émerge. » [hypothèse — à valider] · ⬤
+- **Offre à déclencher** : L’agentique et l’intégration IA dans le design produit sont des axes d’offre à structurer ou renforcer, en s’alignant sur les cabinets les plus avancés. L’éco-conception et la data PM restent des signaux faibles, à surveiller mais sans offre dédiée à ce stade. L’absence d’offre PMM sur la gouvernance IA et la verticalisation sectorielle constitue un espace candidat à explorer.
+
+**Intégration de l’IA dans le cycle de design produit — cycle 2026-06**
+- **On entend** : Émergence de l’agentique comme axe structurant, demande PAD isolée à une mission conseil hybride → **ce que l'externe ajoute** : Newsletters et snapshot concurrentiel convergent sur l’agentique.
+- **La question qui ouvre** : « Quels usages IA souhaitez-vous industrialiser dans vos processus de conception produit ? »
+- **Face à Converteo, Hubvisory, Thiga** : bouge sur axe Agentique → **notre angle** : « Nous accompagnons la structuration de frameworks agentiques, en intégrant l’IA dans la chaîne de conception produit, à l’instar des leaders du marché. » [hypothèse — à valider] · ⬤
+- **Offre à déclencher** : L’agentique et l’intégration IA dans le design produit sont des axes d’offre à structurer ou renforcer.
+
+**Acculturation à l’éco-conception — cycle 2026-06**
+- **On entend** : Besoin non généralisé, signal faible dans la demande PAD → **ce que l'externe ajoute** : Aucun signal externe ne corrobore ce besoin ce mois.
+- **La question qui ouvre** : « Comment l’éco-conception s’intègre-t-elle aujourd’hui dans vos arbitrages produit et vos indicateurs de succès ? »
+
+**Repositionnement de la donnée dans le cycle produit — cycle 2026-06**
+- **On entend** : Montée de la data dans les workflows produit, besoin Data PM marginal dans la demande PAD → **ce que l'externe ajoute** : Newsletters insistent sur la montée de la data, mais peu d’offres PMM.
+- **La question qui ouvre** : « Quels freins rencontrez-vous pour exploiter la donnée en amont dans vos décisions produit ? »
+
+### Carte — Contenus activables
+
+**Sujet** : PMM : de l’exécution à la stratégie — comment la Buyer Research devient un levier d’influence sur la roadmap
+- **Angle** : La montée en posture stratégique du PMM via la Buyer Research.
+- **Sur quoi ça tient** : Croisement demande PAD (coaching collectif PMM), newsletters (influence roadmap), State of X (ascension hiérarchique PMM).
+- **Verdict de publication** : publiable comme lecture/observation
+- **Signal chaud à incarner** : Le PMM cherche à se repositionner de fonction support à fonction décisionnelle, en s’appuyant sur la Buyer Research pour influencer la roadmap · ⬤ — convergent
+
+**Sujet** : Agentique et IA : le nouveau terrain de jeu du PMM ?
+- **Angle** : Structuration de frameworks agentiques et anticipation des besoins d’industrialisation IA.
+- **Sur quoi ça tient** : Croisement newsletters (émergence agentique, IA design produit), snapshot concurrentiel (offres structurées Converteo, Hubvisory, Thiga), mission conseil hybride PAD.
+- **Verdict de publication** : publiable comme lecture/observation
+- **Signal chaud à incarner** : L’agentique (orchestration d’agents, frameworks IA) devient un axe structurant de l’offre produit, convergence multi-cabinets et demande émergente conseil · ⬤ — convergent
+
+**Sujet** : PMM et éco-conception : signal faible ou future exigence ?
+- **Angle** : Signal faible, anticipation possible sur la montée des exigences RSE.
+- **Sur quoi ça tient** : Signal isolé dans la demande PAD, absence de signaux externes ce mois.
+- **Verdict de publication** : ne pas en faire une prise de position publique
+
+### Carte — Compétences × séniorité
+
+**Compétence en positionnement stratégique et influence roadmap — pmm — T2-2026** · `[tendance]` · ⬤
+- **Niveau** : séniorité — capacité à piloter le go-to-market, définir le pricing, dialoguer avec le top management.
+- **Confirmation marché** : Offres WTTJ et PMA Jobs (Senior PMM, Head of PMM, expérience B2B SaaS, pilotage stratégique).
+- **Pour le catalogue** : Renforcer la capacité des PMM à influencer la stratégie produit et à dialoguer avec les directions générales.
+
+**Maîtrise des frameworks agentiques et intégration IA — pmm — T2-2026** · `[tendance]` · ⬤
+- **Niveau** : socle à séniorité selon contexte.
+- **Confirmation marché** : Signal isolé d’un poste PMM Lead — AI products (Doctolib).
+- **Pour le catalogue** : Acculturer les équipes PMM aux frameworks agentiques et à l’intégration IA, anticiper la diffusion de ces pratiques.
+
+**Soft skills (leadership, communication, capacité à convaincre) — pmm — T2-2026** · `[tendance]` · ⬤
+- **Niveau** : socle — attendues à tous les niveaux.
+- **Confirmation marché** : Récurrence dans les descriptifs d’offres.
+- **Pour le catalogue** : Approfondir la maîtrise des environnements B2B SaaS et des méthodes de go-to-market avancées.
+
+### Carte — Convictions (à réaffirmer / réviser)
+
+**pmm — convictions · 2026-06**
+
+▸ « Le rôle du PMM n’est plus cantonné à l’exécution go-to-market, il devient un acteur de la stratégie produit »
+- **Pression(s) du cycle** :
+  - ↑ Le PMM cherche à se repositionner de fonction support à fonction décisionnelle, en s’appuyant sur la Buyer Research pour influencer la roadmap · ⬤ — convergent
+- **Décision** : ⟶ [ en attente ]
+
+▸ « La valeur du PMM se déplace vers la capacité à orchestrer des systèmes IA et à gouverner la complexité agentique »
+- **Pression(s) du cycle** :
+  - ↑ L’agentique (orchestration d’agents, frameworks IA) devient un axe structurant de l’offre produit, convergence multi-cabinets et demande émergente conseil · ⬤ — convergent
+- **Décision** : ⟶ [ en attente ]
+
+▸ « L’IA est un outil incontournable pour le PMM, mais ne remplace pas la compétence stratégique ni le jugement métier »
+- **Pression(s) du cycle** :
+  - ↑ L’intégration de l’IA dans les pratiques PMM est mainstream sur le messaging, le positionnement et la market research, mais la valeur ajoutée réelle reste à prouver · ⬤ — convergent
+- **Décision** : ⟶ [ en attente ]

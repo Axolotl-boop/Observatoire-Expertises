@@ -18,279 +18,249 @@ Matière mobilisée ce cycle :
 Bloc 1 — Problématiques clients récurrentes & positionnement offre.
 
 Problématiques clients récurrentes (PAD / REX) :
-- Adoption de l’IA dans le cycle de design produit (mise en place de frameworks agentiques, structuration discovery, rédaction d’artefacts, outillage LLM non figé, MVP greenfield) : signal fort, mission hybride conseil/Product AI.  
-  · Ce que l’externe ajoute : Les newsletters confirment l’émergence de l’agentique comme axe structurant du marché, avec une montée en maturité des architectures et rituels d’adoption IA, et la diffusion de pratiques de prototypage rapide IA et de workflows agentiques.  
-  · Question pour creuser : « Quels sont aujourd’hui les points de friction ou d’inefficacité dans votre cycle de conception produit qui pourraient être adressés par des agents IA ? »
+- **Mise en place de frameworks agentiques dans le cycle de design produit** : Besoin d’accompagnement sur la structuration du discovery, la rédaction d’artefacts (PRD, Design Requirement Document, artefacts Data), et l’implémentation outillée par IA (LLM, agents). L’externe (newsletters, snapshot concurrentiel) confirme que la demande agentique n’est pas isolée : plusieurs cabinets (Converteo, Hubvisory, Thiga) structurent leur offre autour de l’orchestration et de la gouvernance IA, et le marché valorise la couche d’orchestration plutôt que la technique brute.  
+  · Question pour creuser : « Quels sont aujourd’hui vos points de friction dans la structuration et la documentation du cycle produit, et comment l’IA pourrait-elle y répondre concrètement ? »
 
-- Montée en posture stratégique des équipes PMM (passage de l’opérationnel au stratégique, harmonisation post-fusion, leadership sur le positionnement offre et pricing) : coaching collectif recherché.  
-  · Ce que l’externe ajoute : Les newsletters et State of X relèvent une ascension hiérarchique du PMM, une volonté de repositionnement vers la décision et la Buyer Research comme levier d’influence, mais peu de signaux sur l’harmonisation post-fusion.  
-  · Question pour creuser : « Quelles décisions stratégiques souhaitez-vous que vos PMM puissent influencer ou porter dans les 12 prochains mois ? »
+- **Coaching collectif PMM pour montée en posture stratégique** : Demande d’accompagnement pour repositionner le PMM sur des enjeux de leadership, de pricing et de pilotage de l’offre, au-delà du support opérationnel. L’externe (newsletters, State of X) corrobore la montée du PMM vers des fonctions décisionnelles et la complexification du portefeuille produit, mais ne signale pas de mouvement agentique spécifique sur ce segment.  
+  · Question pour creuser : « Quelles décisions stratégiques souhaitez-vous que vos PMM puissent influencer demain, et quels freins organisationnels identifiez-vous ? »
 
-- Acculturation PM à l’éco-conception (intégration dans la stratégie et le chiffrage produit, labellisation numérique responsable) : signal faible, sectoriel (logistique/livraison).  
-  · Ce que l’externe ajoute : Les newsletters n’apportent pas de signal convergent sur l’éco-conception côté Product AI ce mois ; la demande reste isolée.  
-  · Question pour creuser : « Quels sont les objectifs concrets de votre démarche numérique responsable, et comment le produit peut-il y contribuer ? »
+- **Acculturation PM à l’éco-conception** : Besoin émergent d’intégrer l’éco-conception dans la stratégie produit, en lien avec des démarches de labellisation numérique responsable. L’externe n’apporte pas de signal convergent ce mois sur ce sujet ; il s’agit d’un signal faible, à surveiller.  
+  · Question pour creuser : « Comment l’éco-conception est-elle aujourd’hui prise en compte dans vos arbitrages produit, et quels seraient les leviers pour en faire un critère structurant ? »
 
-- Repositionnement de la donnée dans le cycle produit (Data PM pour diagnostic, exploitation KPI, acculturation PO à la data amont) : besoin d’immersion, pas d’intervention ponctuelle.  
-  · Ce que l’externe ajoute : Les newsletters soulignent la dichotomie « Data In / Data Out » en Product Ops, la maturité data comme angle mort, et la nécessité de literacy data, mais pas de mouvement massif sur le repositionnement Data PM.  
-  · Question pour creuser : « Comment la donnée est-elle actuellement mobilisée dans vos décisions produit, et où identifiez-vous des angles morts ? »
+- **Repositionnement de la donnée dans le cycle produit (Data PM)** : Attente d’un diagnostic organisationnel et d’une montée en compétence des PO sur la data, pour passer d’une logique réactive à une pratique data-driven amont. L’externe (newsletters, State of X) confirme l’angle mort discovery et la nécessité d’ownership sur les insights marché, mais ne signale pas de mouvement structurant sur le Data PM ce mois.  
+  · Question pour creuser : « À quel moment la donnée intervient-elle dans vos décisions produit, et comment pourriez-vous renforcer son rôle en amont ? »
 
 Ce qu’en disent le marché & les concurrents :
-- L’agentique est le signal dominant du trimestre, convergent entre cabinets PM (Hubvisory, Thiga) et Data/IA (Converteo, AI Builders). Converteo porte la densité la plus élevée, avec des cas clients en production. Les newsletters confirment la diffusion de l’agentique, la montée de l’AI Enablement, et la structuration de la gouvernance IA.
-- La montée en posture stratégique du PMM est corroborée par les State of X (ascension hiérarchique, élargissement du périmètre, KPI orientés revenu).
-- L’éco-conception n’est pas reprise dans les signaux marché ce mois.
-- Le repositionnement data est traité côté Product Ops (maturité data, literacy), mais pas comme offre structurée.
+- Le snapshot concurrentiel montre une convergence nette sur l’axe agentique : Converteo, Hubvisory, Thiga et AI Builders structurent leur offre autour de l’orchestration IA, du raisonnement multi-agents et de la gouvernance, avec des références clients en production (ex : Orange/Sosh). Aucun cabinet QA ne se positionne sur l’agentique, ni sur la gouvernance IA appliquée au produit, ce qui laisse des espaces ouverts.
+- Sur la posture stratégique PMM, le State of X confirme l’ascension hiérarchique du PMM et l’élargissement du périmètre, mais la verticalisation sectorielle reste portée par d’autres acteurs (Converteo, KP2i, Smartesting) et non par les cabinets PMM.
+- L’éco-conception et la data dans le cycle produit restent des signaux faibles ou isolés, non repris par les concurrents ce mois.
 
 Notre position, par axe concurrentiel pertinent :
-- [Axe 1 — Agentique] → on est alignés sur la structuration de l’offre agentique, mais la densité de signaux Converteo (références clients, multi-axes) impose de renforcer la preuve d’impact en production [hypothèse — à valider]. Cabinets actifs : Converteo, Hubvisory, Thiga, AI Builders.
-- [Axe 2 — Gouvernance IA/conformité] → en retard sur la formalisation d’une offre dédiée gouvernance IA côté PM ; Converteo et Smartesting occupent le terrain sur la conformité et la traçabilité, aucun cabinet PM n’a de positionnement fort [hypothèse — à valider]. Cabinets actifs : Converteo, Smartesting, AI Builders.
-- [Axe 3 — Verticalisation sectorielle] → angle propre possible, aucun cabinet PM ne revendique de spécialisation sectorielle forte ; Converteo, KP2i, Smartesting bougent sur Pharma, Retail, Industrie régulée [hypothèse — à valider].
-- [Axe 4 — Internationalisation] → en retard, aucun signal d’expansion géographique sur le conseil PM ce trimestre ; Converteo, Artefact, Qestit seuls actifs [hypothèse — à valider].
+- [Axe Agentique] → on est alignés sur la structuration de l’offre autour de l’orchestration IA, mais la densité de signaux Converteo (5+ signaux coordonnés, référence client) impose de renforcer la preuve d’impact et la capacité à industrialiser. Parade avant-vente [hypothèse — à valider] : « Nous accompagnons la mise en place de frameworks agentiques du discovery à l’implémentation, avec un focus sur la gouvernance et la mesure d’impact, à l’instar des déploiements en production observés chez les leaders du marché. » Cabinets actifs : Converteo, Hubvisory, Thiga, AI Builders.
+- [Axe Gouvernance IA] → en retard sur la formalisation d’une offre dédiée à la conformité et à la gouvernance IA appliquée au produit. Parade avant-vente [hypothèse — à valider] : « Nous intégrons la gouvernance IA dans nos missions produit, mais une offre packagée dédiée reste à structurer pour répondre aux attentes des environnements réglementés. » Cabinets actifs : Converteo, Smartesting, AI Builders.
+- [Axe Verticalisation sectorielle] → angle propre à explorer, aucun cabinet PM ne revendique de spécialisation sectorielle forte ce trimestre. Parade avant-vente [hypothèse — à valider] : « Notre approche sectorielle est personnalisée, mais une verticalisation explicite pourrait renforcer notre différenciation sur certains marchés. » Cabinets actifs : Converteo (Pharma), KP2i (Retail), Smartesting (Industrie régulée).
+- [Axe Internationalisation] → en retard, aucun signal d’expansion géographique sur le segment PM ce trimestre. Parade avant-vente [hypothèse — à valider] : « Notre ancrage hexagonal garantit une proximité client, mais l’internationalisation reste un axe à investiguer selon la demande. » Cabinets actifs : Converteo, Artefact, Qestit.
 
 So what offre :
-- L’agentique comme cœur d’offre est un espace d’opportunité confirmé, mais la différenciation se jouera sur la capacité à industrialiser et à prouver l’impact (références, métriques, passage à l’échelle).
-- L’absence d’offre PM structurée sur la gouvernance IA et la conformité réglementaire est un trou identifié.
-- La verticalisation sectorielle et l’internationalisation restent des angles peu occupés côté PM — à explorer pour différenciation.
-- Rien de neuf sur l’éco-conception ou la data PM comme offre structurée ce cycle.
+- L’espace d’offre le plus net est la structuration de frameworks agentiques appliqués au cycle produit, avec une capacité à industrialiser et à mesurer l’impact (preuve client, outillage, gouvernance). L’absence d’offre packagée sur la gouvernance IA côté PM et la verticalisation sectorielle sont des angles candidats à explorer. Rien de neuf sur l’éco-conception et la data PM ce mois, signaux à surveiller.
 
 ---
 
 Bloc 2 — Signaux qui challengent nos convictions.
 
-- Le déplacement du goulot d’étranglement vers la fonction produit/PM et la gouvernance du jugement humain est le signal dominant du cycle (newsletters, snapshot concurrentiel, State of X) : l’IA a levé les contraintes techniques, mais la valeur se concentre désormais sur l’orchestration, la priorisation et la capacité à arbitrer dans l’incertitude.  
-  Croisement : convergence forte entre newsletters (signal dominant, 12+ sources), snapshot concurrentiel (Converteo, Hubvisory, Thiga, AI Builders), et State of X (pilotage stratégie ré-internalisé, IA comme défi n°1, ownership décisionnel).  
-  Conviction touchée : La valeur du PM se déplace de l’exécution vers la gouvernance du jugement et l’orchestration — [registre absent / clé à rattacher].  
-  Tag : [structurel] (candidat — à corroborer).
+1. **La valeur se déplace de l’exécution technique vers l’orchestration, le raisonnement et la gouvernance des agents IA.**  
+  - Signal : Le snapshot concurrentiel et les newsletters convergent sur le fait que l’agentique devient le cœur de l’offre, avec une densité de signaux coordonnés (Converteo, Hubvisory, Thiga, AI Builders) et des références clients en production.  
+  - Croisement : Confirmé par la demande PAD (mission agentique en conseil), par le State of X (l’agentique passe du discours à la visibilité réelle en entreprise), et par la structuration de l’emploi (intitulés AI PM/GenAI PM distincts).  
+  - Conviction touchée : La capacité à créer de la valeur ne réside plus dans la seule exécution technique, mais dans l’orchestration et la gouvernance IA — [registre absent / clé à rattacher].  
+  - Tag : [tendance]
 
-- L’agentique passe du discours à la réalité opérationnelle, mais la réussite à l’échelle reste rare et dépendante de la fiabilité, des métriques et de la supervision humaine (State of X, newsletters, snapshot concurrentiel).  
-  Croisement : newsletters (adoption agentique, AI Enablement, MCP), snapshot concurrentiel (Converteo, cas client Orange/Sosh), State of X (besoin de métriques, POC ≠ production, passage à l’échelle difficile).  
-  Conviction touchée : L’industrialisation de l’agentique requiert des garde-fous humains et des métriques robustes — [registre absent / clé à rattacher].  
-  Tag : [tendance].
+2. **La gouvernance IA et la conformité deviennent des offres structurantes, pas seulement des contraintes.**  
+  - Signal : Converteo publie un guide AI Act et intègre la gouvernance IA comme ligne de service ; Smartesting cible la traçabilité en secteurs régulés ; AI Builders porte la souveraineté IA au niveau DG.  
+  - Croisement : Le PAD ne fait pas remonter ce besoin côté PM, mais le State of X confirme la montée de la conformité et de la gouvernance comme axes de structuration, notamment dans les environnements à forte contrainte.  
+  - Conviction touchée : La gouvernance IA est un actif stratégique à part entière, pas un simple enjeu de conformité — [registre absent / clé à rattacher].  
+  - Tag : [tendance]
 
-- La séniorisation du segment AI PM est structurelle : la demande se concentre sur des profils expérimentés (Staff/Senior), la compétence IA est pénurique et la capacité à piloter la stratégie produit est valorisée (snapshot emploi, State of X, newsletters).  
-  Croisement : snapshot emploi (Staff/Senior AI PM fréquents, baromètres Seyos/TPC), State of X (prime au leadership, hiring/rétention défi n°1), newsletters (montée du PM IA spécialiste, leadership stratégique).  
-  Conviction touchée : La séniorité et la capacité à piloter la stratégie IA deviennent des critères de différenciation majeurs — [registre absent / clé à rattacher].  
-  Tag : [tendance].
+3. **La séniorisation du segment AI PM/GenAI PM s’accélère, la compétence IA devient le facteur limitant.**  
+  - Signal : Snapshot emploi et baromètres (Seyos IT, TPC 2026) confirment la montée des intitulés Senior/Staff AI PM, la pénurie de compétences IA, et la demande de profils expérimentés.  
+  - Croisement : Le PAD montre une demande tirée vers les profils Head/Directeur et Lead, le State of X corrobore la prime à la posture stratégique/leadership sur l’exécution technique pure.  
+  - Conviction touchée : La séniorité et la compétence IA sont désormais les principaux critères de différenciation sur le marché Product AI — [registre absent / clé à rattacher].  
+  - Tag : [tendance]
 
-- L’IA accélère la production d’artefacts mais n’améliore pas automatiquement la qualité du jugement ou la valeur business ; le risque de decision fatigue et de perte de sens s’accroît (newsletters, State of X).  
-  Croisement : newsletters (automatisation, volume d’artefacts, goulot sur le jugement), State of X (l’IA accélère la production mais n’aiguise pas le jugement, convergence 3 sources).  
-  Conviction touchée : L’IA doit être encadrée par des principes de gouvernance du jugement pour éviter la dérive vers le bruit décisionnel — [registre absent / clé à rattacher].  
-  Tag : [tendance].
+4. **L’industrialisation de l’agentique bute sur la fiabilité et la mesure d’impact à l’échelle.**  
+  - Signal : State of X et newsletters soulignent que le passage à l’échelle des agents IA révèle des limites de fiabilité, de supervision et de métriques, avec un besoin de mécanismes d’escalade et de gouvernance humaine.  
+  - Croisement : Le PAD (mission agentique) et le snapshot concurrentiel (Converteo, Orange/Sosh) montrent que la production réelle reste limitée, et que la valeur se mesure après déploiement à l’échelle.  
+  - Conviction touchée : L’industrialisation de l’agentique nécessite des garde-fous et une gouvernance humaine forte — [registre absent / clé à rattacher].  
+  - Tag : [tendance]
 
 ---
 
 Bloc 3 — Skills / méthodes / outils à maîtriser.
 
 Ce qui monte :
-- Maîtrise du cycle de vie produit IA (discovery → déploiement de features IA) — [tendance]  
-  Niveau concerné : socle (attendu sur la majorité des offres, y compris junior/standard).
-- Compréhension des LLM et de leur mise en œuvre produit (GPT, Claude, Mistral) — [tendance]  
-  Niveau concerné : socle.
-- Collaboration étroite avec data scientists/chercheurs/ingénieurs IA — [tendance]  
-  Niveau concerné : socle.
-- Outils LLM (GPT, Claude, Mistral), RAG/vectorisation — [tendance]  
-  Niveau concerné : socle.
-- Orchestration d’agents IA/multi-modèles, MCP — [mode]  
-  Niveau concerné : séniorité (signal émergent, offres Staff/Senior, faible corroboration multi-boards).
-- Expérience préalable PM sur produit IA (≥2 ans) — [mode]  
-  Niveau concerné : séniorité.
+- **Cycle de vie produit IA (discovery → déploiement de features IA)**  
+  · Niveau concerné : socle (attendu sur la majorité des offres, y compris junior/confirmé).  
+  · Croisement emploi : Répété sur WTTJ (Safran.AI, Back Market, Hubvisory, Orus), confirmé par les baromètres (Seyos IT, TPC 2026).  
+  · Reco : Formation systématique à la gestion de cycle de vie produit IA, y compris la structuration du discovery et la priorisation des features IA.
 
-Croisement emploi :
-- Le snapshot emploi confirme la montée des intitulés AI Product Manager/GenAI PM, Staff/Senior AI PM, et la demande de compétences IA appliquée au produit (WTTJ, Indeed, baromètres Seyos/TPC).  
-- Les offres sont concentrées sur Paris/IDF, avec une bicéphalité conseil/ESN vs éditeur à surveiller.
+- **Compréhension des LLM et de leur mise en œuvre produit (GPT, Claude, Mistral)**  
+  · Niveau concerné : socle (présent sur la majorité des offres, tous niveaux).  
+  · Croisement emploi : Présent sur WTTJ, multi-employeurs.  
+  · Reco : Montée en compétence sur les fondamentaux LLM, prompt engineering, et intégration dans les workflows produit.
 
-Ce qu’on doit monter en compétence :
-- Renforcer la maîtrise des frameworks agentiques et des protocoles d’orchestration (MCP, multi-agents).
-- Approfondir la capacité à piloter la stratégie IA et à encadrer l’adoption (leadership, gouvernance du jugement).
-- Développer la literacy data et la capacité à collaborer avec des équipes techniques avancées.
-- Socle inchangé — prochain delta emploi au T3 2026.
+- **Collaboration étroite avec data scientists / ingénieurs IA**  
+  · Niveau concerné : socle (attendu sur la majorité des offres).  
+  · Croisement emploi : Répété sur WTTJ (Safran.AI, Webnet, Doctolib).  
+  · Reco : Développer la capacité à travailler en binôme avec des experts IA, y compris sur la validation des modèles et la gouvernance des données.
+
+- **Orchestration d’agents IA / multi-modèles (MCP, RAG, vectorisation)**  
+  · Niveau concerné : séniorité (demandé sur les offres Senior/Staff, segment émergent).  
+  · Croisement emploi : Présent sur WTTJ (Skapa, Hubvisory), mais corroboration faible inter-boards.  
+  · Reco : Approfondir la maîtrise des protocoles d’orchestration (MCP), des architectures multi-agents, et des outils de vectorisation pour les profils confirmés.
+
+- **Expérience préalable PM sur produit IA (≥ 2 ans exigée explicitement)**  
+  · Niveau concerné : séniorité (signal sur les offres Senior/Staff).  
+  · Croisement emploi : Vu sur WTTJ (Hubvisory), signal qualitatif.  
+  · Reco : Valoriser l’expérience sur des produits IA en production, y compris la gestion de la fiabilité et de la mesure d’impact.
+
+Socle inchangé — prochain delta emploi au T3-2026.
 
 ---
 
 Bloc 4 — Sujets éditoriaux & angles recommandés.
 
-- Sujet → angle recommandé : « L’agentique : du buzz à la réalité opérationnelle — comment industrialiser et mesurer l’impact des agents IA dans le cycle produit ? »  
-  Sur quoi ça tient : convergence newsletters (signal dominant du cycle, 12+ sources), snapshot concurrentiel (Converteo, cas client Orange/Sosh), State of X (besoin de métriques, passage à l’échelle difficile).  
-  Tag : [tendance].
-  Lien avant-vente : Permet à un PAD de positionner l’offre sur la capacité à industrialiser l’agentique, à prouver l’impact (références, métriques), et à rassurer sur la gouvernance humaine.
+- **Sujet : L’agentique comme nouveau cœur de valeur produit — comment orchestrer, gouverner et industrialiser les agents IA au-delà du POC.**  
+  · Angle recommandé : Montrer, à partir de cas concrets (ex : Orange/Sosh, Converteo), comment la valeur se déplace de la technique brute vers la gouvernance, la supervision et la mesure d’impact à l’échelle. Insister sur les garde-fous humains et la nécessité d’une preuve d’impact réelle.  
+  · Sur quoi ça tient : Convergence newsletters (Converteo, Hubvisory, Thiga), snapshot concurrentiel (référence client en production), State of X (industrialisation, fiabilité, besoin de métriques).  
+  · Tag : [tendance]  
+  · Lien avant-vente : Permet à un PAD de positionner l’offre sur la capacité à accompagner l’industrialisation de l’agentique, à sécuriser la gouvernance et à délivrer une preuve d’impact, différenciant face aux discours purement techniques ou POC.
 
-- Sujet → angle recommandé : « Gouvernance IA et conformité : le trou du marché PM — pourquoi la fonction produit doit structurer sa propre approche de la conformité IA »  
-  Sur quoi ça tient : snapshot concurrentiel (Converteo, Smartesting actifs sur la conformité, aucun cabinet PM positionné), newsletters (montée de la gouvernance IA, AI Act).  
-  Tag : [tendance].
-  Lien avant-vente : Sert à ouvrir des discussions sur la différenciation possible en conseil PM, et à anticiper les attentes réglementaires des clients.
+- **Sujet : La séniorisation et la pénurie de compétences IA dans le Product Management — comment attirer, former et retenir les profils clés.**  
+  · Angle recommandé : Analyser la montée des exigences de séniorité et la rareté des compétences IA, en s’appuyant sur les baromètres emploi et les offres récentes. Proposer des pistes concrètes de formation et de valorisation des parcours.  
+  · Sur quoi ça tient : Snapshot emploi (WTTJ, Indeed), baromètres Seyos IT et TPC 2026, State of X (prime à la posture stratégique).  
+  · Tag : [tendance]  
+  · Lien avant-vente : Sert à rassurer les clients sur la capacité à mobiliser des profils expérimentés et à structurer des parcours de montée en compétence adaptés à la tension du marché.
 
-- Sujet → angle recommandé : « Séniorisation et rareté des profils AI PM : comment attirer et fidéliser les talents sur un marché en tension ? »  
-  Sur quoi ça tient : snapshot emploi (Staff/Senior AI PM fréquents, baromètres Seyos/TPC), State of X (hiring/rétention défi n°1, prime au leadership).  
-  Tag : [tendance].
-  Lien avant-vente : Argumente la valeur ajoutée d’un cabinet capable de mobiliser des profils seniors, et de structurer des parcours de montée en compétence.
+- **Sujet : Gouvernance IA et conformité — transformer la contrainte réglementaire en avantage compétitif pour les équipes produit.**  
+  · Angle recommandé : Illustrer comment la gouvernance IA et la conformité (AI Act, traçabilité) deviennent des axes d’offre différenciants, en s’appuyant sur les initiatives Converteo et Smartesting.  
+  · Sur quoi ça tient : Snapshot concurrentiel (offre Converteo, Smartesting), State of X (gouvernance IA, conformité).  
+  · Tag : [tendance]  
+  · Lien avant-vente : Permet de positionner l’offre sur la capacité à anticiper et à structurer la conformité IA, au-delà de la simple réponse à la contrainte.
 
 ---
 
 Garde-fous : on ne résume jamais ; le croisement prime ; [structurel] = candidat à corroborer ; sponsoring ⚠ visible ; on fournit des pistes sans consacrer de conviction ; un signal isolé ≠ certitude.
 
-Sources utilisées : newsletters 2026-06, synthèse PAD 06/2026, snapshot concurrentiel T2 2026, snapshot emploi productai T2 2026, signaux State of X 2026. Toutes les briques attendues sont présentes ; pas de trou de source ce cycle.
+Sources utilisées : Newsletters 2026-06, Synthèse PAD 06/2026, Snapshot concurrentiel 2026-T2, Snapshot emploi productai T2-2026, Signaux State of X 2026. REX non présent ce cycle.
 
 
 
 ---
 
+## Légende de confiance (compacte)
+
+> **Tag** = ampleur du mouvement : `[mode]` surface · `[tendance]` mouvement réel · `[structurel]` changement de fond (baromètre/étude **+** donnée propriétaire). **Chip** = solidité de l'adossement : **⬤** notre data le porte (≥1 propriétaire : PAD/emploi/concurrence, croisé ou non) · **◐** convergence externe seule (marché aligné, rien en interne) · **◯** source unique. Les deux axes sont indépendants ; invariant : `[structurel] ⟹ ⬤`.
+
 ## Couche de confiance — posée par l'agent-annotateur
 
-> Cette couche dit *sur quoi tient* chaque signal — elle ne valide rien. Un signal « source unique » ou « non corroboré » est une **piste à creuser**, pas un argument client. Une conviction ne naît que quand un humain la pose dans un deck/article.
+> Cette couche dit *sur quoi tient* chaque signal — elle ne valide rien. Un signal ◯ ou ◐ est une **piste à creuser**, pas un argument client. Une conviction ne naît que quand un humain la pose dans un deck/article.
 
-**Indice de confiance du cycle** : Ancrage propriétaire : PAD (Bloc 1), snapshot concurrentiel (Bloc 1, Bloc 2, Bloc 4), snapshot emploi (Bloc 1, Bloc 2, Bloc 3, Bloc 4) ; State of X et newsletters mobilisées sur tous les blocs, mais plusieurs signaux majeurs du Bloc 2 reposent sur des convergences externes sans croisement interne, d’où 1 downgrade appliqué.
+**Indice de confiance du cycle** : Ancrage propriétaire : PAD (Bloc 1, Bloc 2), snapshot concurrentiel (Bloc 1, Bloc 2, Bloc 4), snapshot emploi (Bloc 2, Bloc 3, Bloc 4) ; State of X mobilisé en croisement sur plusieurs signaux ; newsletters en appui externe. Aucun signal n’est porté par une source unique externe ; 0 downgrade appliqué.
 
 **Provenance par signal :**
-- **[Bloc 1] Adoption IA, agentique, posture PMM, éco-conception, data PM** — propriétaire : PAD · propriétaire : concurrence · propriétaire : emploi · non corroboré (convergence externe) · convergence multi-cabinets
-- **[Bloc 2] Déplacement de la valeur vers l’orchestration/jugement** — non corroboré (convergence externe) · convergence multi-cabinets · theme: "valeur-vers-orchestration" · **tag corrigé** : `[structurel]` → `[tendance]` — absence de croisement avec une donnée propriétaire interne
-- **[Bloc 2] Passage agentique à l’opérationnel, industrialisation difficile** — propriétaire : concurrence · non corroboré (convergence externe)
-- **[Bloc 2] Séniorisation AI PM, rareté profils** — propriétaire : emploi · non corroboré (convergence externe)
-- **[Bloc 2] IA accélère artefacts, pas le jugement** — non corroboré (convergence externe)
-- **[Bloc 3] Montée des intitulés AI PM, compétences IA produit** — propriétaire : emploi · non corroboré (convergence externe)
-- **[Bloc 4] Industrialisation agentique, impact mesurable** — propriétaire : concurrence · non corroboré (convergence externe)
-- **[Bloc 4] Gouvernance IA/conformité, trou marché PM** — propriétaire : concurrence · non corroboré (convergence externe)
-- **[Bloc 4] Séniorisation/rareté AI PM** — propriétaire : emploi · non corroboré (convergence externe)
+- **[Bloc 1] ⬤ Mise en place de frameworks agentiques dans le cycle de design produit** — croisement sur 1 axe (PAD × snapshot concurrentiel × newsletters) · thème : valeur-vers-orchestration
+- **[Bloc 1] ◯ Coaching collectif PMM pour montée en posture stratégique** — non corroboré (convergence externe : newsletters, State of X)
+- **[Bloc 1] ◯ Acculturation PM à l’éco-conception** — non corroboré (source unique, signal faible)
+- **[Bloc 1] ◯ Repositionnement de la donnée dans le cycle produit (Data PM)** — non corroboré (convergence externe : newsletters, State of X)
+- **[Bloc 1] ⬤ Convergence concurrentielle sur l’axe agentique** — croisement sur 1 axe (snapshot concurrentiel × PAD)
+- **[Bloc 1] ◯ Posture stratégique PMM, verticalisation sectorielle** — non corroboré (State of X + convergence multi-cabinets, pas de donnée interne)
+- **[Bloc 1] ◯ Éco-conception et data non reprises par les concurrents** — non corroboré (source unique, signal faible)
+- **[Bloc 2] ⬤ Valeur déplacée vers orchestration/gouvernance IA** — croisement multi-axes (snapshot concurrentiel × PAD × State of X × emploi) · thème : valeur-vers-orchestration
+- **[Bloc 2] ⬤ Gouvernance IA et conformité deviennent offres structurantes** — croisement sur 1 axe (snapshot concurrentiel × State of X)
+- **[Bloc 2] ⬤ Séniorisation AI PM/GenAI PM, compétence IA facteur limitant** — croisement sur 1 axe (snapshot emploi × PAD × State of X)
+- **[Bloc 2] ⬤ Industrialisation agentique : fiabilité/impact à l’échelle** — croisement multi-axes (State of X × PAD × snapshot concurrentiel)
+- **[Bloc 3] ⬤ Cycle de vie produit IA (discovery → déploiement)** — propriétaire : emploi (WTTJ, baromètres Seyos IT, TPC 2026)
+- **[Bloc 3] ⬤ Compréhension des LLM et mise en œuvre produit** — propriétaire : emploi (WTTJ multi-employeurs)
+- **[Bloc 3] ⬤ Collaboration avec data scientists/ingénieurs IA** — propriétaire : emploi (WTTJ multi-employeurs)
+- **[Bloc 3] ⬤ Orchestration d’agents IA/multi-modèles** — propriétaire : emploi (WTTJ, corroboration faible inter-boards)
+- **[Bloc 3] ⬤ Expérience préalable PM sur produit IA (≥2 ans)** — propriétaire : emploi (WTTJ, signal qualitatif)
+- **[Bloc 4] ⬤ L’agentique comme nouveau cœur de valeur produit** — croisement multi-axes (newsletters × snapshot concurrentiel × State of X) · thème : valeur-vers-orchestration
+- **[Bloc 4] ⬤ Séniorisation et pénurie de compétences IA** — croisement sur 1 axe (snapshot emploi × baromètres × State of X)
+- **[Bloc 4] ⬤ Gouvernance IA et conformité, avantage compétitif** — croisement sur 1 axe (snapshot concurrentiel × State of X)
 
-<!-- Données dashboard — généré par l'agent-annotateur, ne pas éditer -->
-[[DASH_JSON]]
-{
-  "slug": "productai",
-  "thinCycle": false,
-  "confidenceSummary": "Ancrage propriétaire : PAD (Bloc 1), snapshot concurrentiel (Bloc 1, Bloc 2, Bloc 4), snapshot emploi (Bloc 1, Bloc 2, Bloc 3, Bloc 4) ; State of X et newsletters mobilisées sur tous les blocs, mais plusieurs signaux majeurs du Bloc 2 reposent sur des convergences externes sans croisement interne, d’où 1 downgrade appliqué.",
-  "blocs": [
-    {
-      "n": "Bloc 1",
-      "sigs": [
-        {
-          "tag": null,
-          "prov": [
-            "propriétaire : PAD",
-            "propriétaire : concurrence",
-            "propriétaire : emploi",
-            "non corroboré (convergence externe)",
-            "convergence multi-cabinets"
-          ],
-          "vendor": null,
-          "theme": null,
-          "x": "Adoption IA, agentique, posture PMM, éco-conception, data PM : signaux croisés PAD, snapshot concurrentiel, emploi, newsletters, State of X"
-        }
-      ],
-      "croise": "Croisement entre PAD, snapshot concurrentiel, snapshot emploi, newsletters, State of X sur l’agentique et la posture PMM ; signaux isolés sur éco-conception et data PM.",
-      "conv": [
-        "So what offre",
-        "L’agentique comme cœur d’offre est confirmé, différenciation sur industrialisation/impact ; gouvernance IA et conformité restent des angles à structurer."
-      ]
-    },
-    {
-      "n": "Bloc 2",
-      "sigs": [
-        {
-          "tag": "tend",
-          "prov": [
-            "non corroboré (convergence externe)",
-            "convergence multi-cabinets"
-          ],
-          "vendor": null,
-          "theme": "valeur-vers-orchestration",
-          "x": "La valeur produit se déplace vers l’orchestration et la gouvernance du jugement humain",
-          "tagCorrige": true,
-          "tagOrigine": "struct"
-        },
-        {
-          "tag": "tend",
-          "prov": [
-            "propriétaire : concurrence",
-            "non corroboré (convergence externe)"
-          ],
-          "vendor": null,
-          "theme": null,
-          "x": "L’agentique passe à l’opérationnel mais l’industrialisation reste difficile"
-        },
-        {
-          "tag": "tend",
-          "prov": [
-            "propriétaire : emploi",
-            "non corroboré (convergence externe)"
-          ],
-          "vendor": null,
-          "theme": null,
-          "x": "Séniorisation du segment AI PM, rareté des profils expérimentés"
-        },
-        {
-          "tag": "tend",
-          "prov": [
-            "non corroboré (convergence externe)"
-          ],
-          "vendor": null,
-          "theme": null,
-          "x": "L’IA accélère la production d’artefacts mais pas la qualité du jugement"
-        }
-      ],
-      "croise": "Convergences entre newsletters, snapshot concurrentiel, State of X ; croisement interne sur l’agentique et la séniorisation via snapshot concurrentiel et emploi.",
-      "conv": [
-        "Conviction — à challenger",
-        "La valeur du PM se déplace vers l’orchestration et la gouvernance du jugement ; industrialisation agentique et séniorisation AI PM à surveiller."
-      ]
-    },
-    {
-      "n": "Bloc 3",
-      "sigs": [
-        {
-          "tag": null,
-          "prov": [
-            "propriétaire : emploi",
-            "non corroboré (convergence externe)"
-          ],
-          "vendor": null,
-          "theme": null,
-          "x": "Montée des intitulés AI PM et compétences IA produit confirmée par snapshot emploi"
-        }
-      ],
-      "croise": "Snapshot emploi confirme la montée des intitulés AI PM et la demande de compétences IA produit.",
-      "conv": [
-        "So what méthode",
-        "Renforcer la maîtrise des frameworks agentiques, pilotage stratégie IA, literacy data ; socle inchangé ce cycle."
-      ]
-    },
-    {
-      "n": "Bloc 4",
-      "sigs": [
-        {
-          "tag": "tend",
-          "prov": [
-            "propriétaire : concurrence",
-            "non corroboré (convergence externe)"
-          ],
-          "vendor": null,
-          "theme": null,
-          "x": "Industrialisation agentique et impact mesurable : convergence newsletters, snapshot concurrentiel, State of X"
-        },
-        {
-          "tag": "tend",
-          "prov": [
-            "propriétaire : concurrence",
-            "non corroboré (convergence externe)"
-          ],
-          "vendor": null,
-          "theme": null,
-          "x": "Gouvernance IA/conformité : snapshot concurrentiel et newsletters, trou marché PM"
-        },
-        {
-          "tag": "tend",
-          "prov": [
-            "propriétaire : emploi",
-            "non corroboré (convergence externe)"
-          ],
-          "vendor": null,
-          "theme": null,
-          "x": "Séniorisation/rareté AI PM : snapshot emploi, State of X"
-        }
-      ],
-      "croise": "Convergences newsletters, snapshot concurrentiel, State of X sur l’agentique ; snapshot emploi et State of X sur la séniorisation.",
-      "conv": [
-        "So what édito",
-        "Industrialisation agentique, gouvernance IA/conformité et séniorisation AI PM sont les angles éditoriaux recommandés ce cycle."
-      ]
-    }
-  ]
-}
-[[/DASH_JSON]]
+---
+
+# PARTIE II — Cartes de restitution (surface)
+
+### Carte — Avant-vente
+
+**Mise en place de frameworks agentiques dans le cycle de design produit — cycle 2026-06**
+- **On entend** : Besoin d’accompagnement sur la structuration du discovery, la rédaction d’artefacts, et l’implémentation outillée par IA → **ce que l’externe ajoute** : Plusieurs cabinets structurent leur offre autour de l’orchestration et de la gouvernance IA, le marché valorise la couche d’orchestration plutôt que la technique brute.
+- **La question qui ouvre** : « Quels sont aujourd’hui vos points de friction dans la structuration et la documentation du cycle produit, et comment l’IA pourrait-elle y répondre concrètement ? »
+- **Face à Converteo, Hubvisory, Thiga, AI Builders** : bouge sur axe agentique → **notre angle** : « Nous accompagnons la mise en place de frameworks agentiques du discovery à l’implémentation, avec un focus sur la gouvernance et la mesure d’impact, à l’instar des déploiements en production observés chez les leaders du marché. » `[hypothèse — à valider]` · ⬤
+- **Offre à déclencher** : Structuration de frameworks agentiques appliqués au cycle produit, capacité à industrialiser et à mesurer l’impact (preuve client, outillage, gouvernance).
+
+**Coaching collectif PMM pour montée en posture stratégique — cycle 2026-06**
+- **On entend** : Demande d’accompagnement pour repositionner le PMM sur des enjeux de leadership, de pricing et de pilotage de l’offre → **ce que l’externe ajoute** : L’externe corrobore la montée du PMM vers des fonctions décisionnelles, complexification du portefeuille produit, mais pas de mouvement agentique spécifique.
+- **La question qui ouvre** : « Quelles décisions stratégiques souhaitez-vous que vos PMM puissent influencer demain, et quels freins organisationnels identifiez-vous ? »
+- **Face à Converteo, KP2i, Smartesting** : bouge sur axe verticalisation sectorielle → **notre angle** : « Notre approche sectorielle est personnalisée, mais une verticalisation explicite pourrait renforcer notre différenciation sur certains marchés. » `[hypothèse — à valider]` · ◯
+
+**Acculturation PM à l’éco-conception — cycle 2026-06**
+- **On entend** : Besoin émergent d’intégrer l’éco-conception dans la stratégie produit → **ce que l’externe ajoute** : Aucun signal convergent ce mois, signal faible à surveiller.
+- **La question qui ouvre** : « Comment l’éco-conception est-elle aujourd’hui prise en compte dans vos arbitrages produit, et quels seraient les leviers pour en faire un critère structurant ? »
+- **Offre à déclencher** : (aucune offre déclarée ce cycle)
+
+**Repositionnement de la donnée dans le cycle produit (Data PM) — cycle 2026-06**
+- **On entend** : Attente d’un diagnostic organisationnel et d’une montée en compétence des PO sur la data → **ce que l’externe ajoute** : L’externe confirme l’angle mort discovery et la nécessité d’ownership sur les insights marché, mais pas de mouvement structurant sur le Data PM ce mois.
+- **La question qui ouvre** : « À quel moment la donnée intervient-elle dans vos décisions produit, et comment pourriez-vous renforcer son rôle en amont ? »
+- **Offre à déclencher** : (aucune offre déclarée ce cycle)
+
+### Carte — Contenus activables
+
+**Sujet** : L’agentique comme nouveau cœur de valeur produit — comment orchestrer, gouverner et industrialiser les agents IA au-delà du POC.
+- **Angle** : Montrer, à partir de cas concrets, comment la valeur se déplace de la technique brute vers la gouvernance, la supervision et la mesure d’impact à l’échelle.
+- **Sur quoi ça tient** : Convergence newsletters (Converteo, Hubvisory, Thiga), snapshot concurrentiel (référence client en production), State of X (industrialisation, fiabilité, besoin de métriques).
+- **Verdict de publication** : publiable comme lecture/observation, pas comme vérité du cabinet.
+- **Signal chaud à incarner** : Valeur déplacée vers orchestration/gouvernance IA · ⬤ · convergent
+
+**Sujet** : La séniorisation et la pénurie de compétences IA dans le Product Management — comment attirer, former et retenir les profils clés.
+- **Angle** : Analyser la montée des exigences de séniorité et la rareté des compétences IA, en s’appuyant sur les baromètres emploi et les offres récentes.
+- **Sur quoi ça tient** : Snapshot emploi (WTTJ, Indeed), baromètres Seyos IT et TPC 2026, State of X (prime à la posture stratégique).
+- **Verdict de publication** : publiable comme lecture/observation, pas comme vérité du cabinet.
+- **Signal chaud à incarner** : Séniorisation AI PM/GenAI PM, compétence IA facteur limitant · ⬤ · convergent
+
+**Sujet** : Gouvernance IA et conformité — transformer la contrainte réglementaire en avantage compétitif pour les équipes produit.
+- **Angle** : Illustrer comment la gouvernance IA et la conformité deviennent des axes d’offre différenciants, en s’appuyant sur les initiatives Converteo et Smartesting.
+- **Sur quoi ça tient** : Snapshot concurrentiel (offre Converteo, Smartesting), State of X (gouvernance IA, conformité).
+- **Verdict de publication** : publiable comme lecture/observation, pas comme vérité du cabinet.
+- **Signal chaud à incarner** : Gouvernance IA et conformité deviennent offres structurantes · ⬤ · convergent
+
+### Carte — Compétences × séniorité
+
+**Cycle de vie produit IA (discovery → déploiement de features IA) — Product AI — 2026-T2** · `[tendance]` · ⬤
+- **Niveau** : **socle** — attendu sur la majorité des offres, y compris junior/confirmé.
+- **Confirmation marché** : Répété sur WTTJ (Safran.AI, Back Market, Hubvisory, Orus), confirmé par baromètres (Seyos IT, TPC 2026).
+- **Pour le catalogue** : Formation systématique à la gestion de cycle de vie produit IA, structuration du discovery et priorisation des features IA.
+
+**Compréhension des LLM et de leur mise en œuvre produit (GPT, Claude, Mistral) — Product AI — 2026-T2** · `[tendance]` · ⬤
+- **Niveau** : **socle** — présent sur la majorité des offres, tous niveaux.
+- **Confirmation marché** : Présent sur WTTJ, multi-employeurs.
+- **Pour le catalogue** : Montée en compétence sur les fondamentaux LLM, prompt engineering, intégration dans les workflows produit.
+
+**Collaboration étroite avec data scientists / ingénieurs IA — Product AI — 2026-T2** · `[tendance]` · ⬤
+- **Niveau** : **socle** — attendu sur la majorité des offres.
+- **Confirmation marché** : Répété sur WTTJ (Safran.AI, Webnet, Doctolib).
+- **Pour le catalogue** : Développer la capacité à travailler en binôme avec des experts IA, validation des modèles, gouvernance des données.
+
+**Orchestration d’agents IA / multi-modèles (MCP, RAG, vectorisation) — Product AI — 2026-T2** · `[tendance]` · ⬤
+- **Niveau** : **séniorité** — demandé sur les offres Senior/Staff, segment émergent.
+- **Confirmation marché** : Présent sur WTTJ (Skapa, Hubvisory), corroboration faible inter-boards.
+- **Pour le catalogue** : Approfondir la maîtrise des protocoles d’orchestration (MCP), architectures multi-agents, outils de vectorisation.
+
+**Expérience préalable PM sur produit IA (≥ 2 ans exigée explicitement) — Product AI — 2026-T2** · `[tendance]` · ⬤
+- **Niveau** : **séniorité** — signal sur les offres Senior/Staff.
+- **Confirmation marché** : Vu sur WTTJ (Hubvisory), signal qualitatif.
+- **Pour le catalogue** : Valoriser l’expérience sur des produits IA en production, gestion de la fiabilité et mesure d’impact.
+
+### Carte — Convictions (à réaffirmer / réviser)
+
+**productai — convictions · 2026-06**
+
+▸ « La capacité à créer de la valeur ne réside plus dans la seule exécution technique, mais dans l’orchestration et la gouvernance IA »
+- **Pression(s) du cycle** :
+  - ↑ Valeur déplacée vers orchestration/gouvernance IA ⬤ — convergent
+- **Décision** : ⟶ [ en attente ]
+
+▸ « La gouvernance IA est un actif stratégique à part entière, pas un simple enjeu de conformité »
+- **Pression(s) du cycle** :
+  - ↑ Gouvernance IA et conformité deviennent offres structurantes ⬤ — convergent
+- **Décision** : ⟶ [ en attente ]
+
+▸ « La séniorité et la compétence IA sont désormais les principaux critères de différenciation sur le marché Product AI »
+- **Pression(s) du cycle** :
+  - ↑ Séniorisation AI PM/GenAI PM, compétence IA facteur limitant ⬤ — convergent
+- **Décision** : ⟶ [ en attente ]
+
+▸ « L’industrialisation de l’agentique nécessite des garde-fous et une gouvernance humaine forte »
+- **Pression(s) du cycle** :
+  - ↑ Industrialisation agentique : fiabilité/impact à l’échelle ⬤ — convergent
+- **Décision** : ⟶ [ en attente ]
