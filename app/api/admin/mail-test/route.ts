@@ -1,5 +1,5 @@
 import { auth } from "@/auth";
-import { mailEnabled, sendMail } from "@/lib/mail";
+import { mailEnabled, mailTransport, sendMail } from "@/lib/mail";
 
 export const dynamic = "force-dynamic";
 export const runtime = "nodejs";
@@ -32,17 +32,18 @@ export async function GET() {
   const to = recipient();
   const config = {
     mailEnabled,
+    transport: mailTransport,
+    RESEND_API_KEY_present: Boolean(process.env.RESEND_API_KEY),
+    RESEND_FROM: process.env.RESEND_FROM || "(absent → onboarding@resend.dev)",
     MAIL_SERVER: process.env.MAIL_SERVER || "(absent)",
-    MAIL_PORT: process.env.MAIL_PORT || "(absent → 587 par défaut)",
     MAIL_USERNAME_present: Boolean(process.env.MAIL_USERNAME),
-    MAIL_PASSWORD_present: Boolean(process.env.MAIL_PASSWORD),
     recipient_resolu: to || "(aucun — définir FEEDBACK_NOTIFY_TO)",
   };
 
   if (!mailEnabled) {
     return Response.json({
       ...config,
-      result: "non envoyé : MAIL_SERVER et/ou MAIL_USERNAME manquant côté Vercel",
+      result: "non envoyé : ni RESEND_API_KEY ni SMTP (MAIL_SERVER+MAIL_USERNAME) côté Vercel",
     });
   }
   if (!to) {
