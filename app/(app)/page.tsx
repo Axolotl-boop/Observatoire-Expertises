@@ -10,10 +10,8 @@ export default async function HomePage() {
   return (
     <div>
       <div className="mb-8">
-        <h1 className="font-title text-2xl font-bold text-marine">
-          Observatoire des Expertises
-        </h1>
-        <p className="mt-2 text-gray-600">
+        <h1 className="sr-only">Observatoire des Expertises</h1>
+        <p className="font-title text-2xl font-bold text-marine">
           Là où le discours du marché rencontre nos données.
         </p>
       </div>

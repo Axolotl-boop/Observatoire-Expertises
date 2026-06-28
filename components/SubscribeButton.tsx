@@ -44,7 +44,10 @@ export default function SubscribeButton() {
 
   if (subscribed === null) {
     return (
-      <span className="text-gray-400" aria-hidden>
+      <span
+        className="inline-flex min-w-[12rem] justify-center text-gray-400"
+        aria-hidden
+      >
         🔔 Récap mensuel
       </span>
     );
@@ -61,7 +64,7 @@ export default function SubscribeButton() {
           : "Recevez un email à chaque nouveau digest mensuel"
       }
       className={[
-        "transition disabled:opacity-50",
+        "inline-flex min-w-[12rem] justify-center transition disabled:opacity-50",
         subscribed
           ? "text-electrique hover:text-marine"
           : "text-gray-500 hover:text-electrique",

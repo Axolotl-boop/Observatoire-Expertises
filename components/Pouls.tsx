@@ -1,6 +1,7 @@
 "use client";
 
 import { useMemo, useState } from "react";
+import Chip from "@/components/Chip";
 import type { PadChartRow, PadMonth } from "@/lib/content";
 import { track } from "@/lib/track";
 
@@ -17,18 +18,26 @@ function BarChart({ rows, color }: { rows: PadChartRow[]; color: string }) {
   return (
     <div className="space-y-2">
       {rows.map((r) => (
-        <div key={r.label} className="flex items-center gap-3">
-          <div className="w-36 shrink-0 truncate text-sm text-gray-700" title={r.label}>
+        <div
+          key={r.label}
+          className="flex flex-col gap-1 sm:flex-row sm:items-center sm:gap-3"
+        >
+          <div
+            className="w-full text-sm text-gray-700 sm:w-36 sm:shrink-0 sm:truncate"
+            title={r.label}
+          >
             {r.label}
           </div>
-          <div className="h-5 flex-1 overflow-hidden rounded bg-glace">
-            <div
-              className="h-full rounded"
-              style={{ width: `${(r.value / max) * 100}%`, backgroundColor: color }}
-            />
-          </div>
-          <div className="w-8 shrink-0 text-right text-sm font-semibold text-marine">
-            {r.value}
+          <div className="flex flex-1 items-center gap-3">
+            <div className="h-5 flex-1 overflow-hidden rounded bg-glace">
+              <div
+                className="h-full rounded"
+                style={{ width: `${(r.value / max) * 100}%`, backgroundColor: color }}
+              />
+            </div>
+            <div className="w-8 shrink-0 text-right text-sm font-semibold text-marine">
+              {r.value}
+            </div>
           </div>
         </div>
       ))}
@@ -46,22 +55,16 @@ export default function Pouls({ months }: { months: PadMonth[] }) {
       {/* Filtre par mois */}
       <div className="mb-6 flex flex-wrap gap-2">
         {monthKeys.map((m) => (
-          <button
+          <Chip
             key={m}
-            type="button"
+            active={m === current?.month}
             onClick={() => {
               setMonth(m);
               track("filter", `Pouls · mois:${m}`);
             }}
-            className={[
-              "rounded-full px-4 py-2 text-sm font-medium transition",
-              m === current?.month
-                ? "bg-electrique text-white"
-                : "border border-gray-300 bg-white text-marine hover:border-electrique hover:text-electrique",
-            ].join(" ")}
           >
             {monthLabel(m)}
-          </button>
+          </Chip>
         ))}
       </div>
 

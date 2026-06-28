@@ -1,6 +1,7 @@
 "use client";
 
 import { useMemo, useState } from "react";
+import Chip from "@/components/Chip";
 import type { EmploiQuarter, SynthRow } from "@/lib/content";
 import { track } from "@/lib/track";
 
@@ -90,22 +91,16 @@ export default function Metiers({ quarters }: { quarters: EmploiQuarter[] }) {
       {/* Filtre par expertise */}
       <div className="flex flex-wrap gap-2">
         {expertises.map((e) => (
-          <button
+          <Chip
             key={e.key}
-            type="button"
+            active={e.key === exp?.key}
             onClick={() => {
               setExpKey(e.key);
               track("filter", `Métiers · expertise:${e.label}`);
             }}
-            className={[
-              "rounded-full px-4 py-2 text-sm font-medium transition",
-              e.key === exp?.key
-                ? "bg-electrique text-white"
-                : "border border-gray-300 bg-white text-marine hover:border-electrique hover:text-electrique",
-            ].join(" ")}
           >
             {e.label}
-          </button>
+          </Chip>
         ))}
       </div>
 
@@ -113,22 +108,18 @@ export default function Metiers({ quarters }: { quarters: EmploiQuarter[] }) {
       {quarterKeys.length > 0 && (
         <div className="mt-3 flex flex-wrap gap-2">
           {quarterKeys.map((q) => (
-            <button
+            <Chip
               key={q}
-              type="button"
+              active={q === selectedQuarter}
+              size="sm"
+              tone="marine"
               onClick={() => {
                 setQuarter(q);
                 track("filter", `Métiers · trimestre:${q}`);
               }}
-              className={[
-                "rounded-full px-3 py-1.5 text-xs font-medium transition",
-                q === selectedQuarter
-                  ? "bg-marine text-white"
-                  : "border border-gray-300 bg-white text-marine hover:border-marine",
-              ].join(" ")}
             >
               {quarterLabel(q)}
-            </button>
+            </Chip>
           ))}
         </div>
       )}
