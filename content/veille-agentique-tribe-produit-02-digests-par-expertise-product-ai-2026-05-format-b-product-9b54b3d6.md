@@ -1,139 +1,111 @@
-Pré-draft généré pour validation — le KR Owner relit et tranche, notamment les verdicts [structurel].
+# Digest productai — Juin 2026
 
-| Expertise   | Période      | Cadence         | KR Owner           | Date       | Mode                       |
-|-------------|--------------|-----------------|--------------------|------------|----------------------------|
-| productai   | 2026-05      | Mensuelle       | [à compléter]      | [à compléter] | Pré-draft à valider        |
+> **Briefing d'expertise** — matériau sourcé à exploiter au point d'usage ; les `[structurel]` sont des candidats à corroborer.
 
-§1 Les signaux du mois
+| | |
+|---|---|
+| **Expertise** | productai |
+| **Période** | 06/2026 — cadence mensuelle |
+| **Date de publication** | 2026-06 |
+| **Mode** | briefing informatif |
 
-1. L’IA s’impose comme défi n°1 anticipé pour les PM, avec une forte progression de sa perception comme enjeu central (12,6 % → 24,2 % en un an) — Source : SoPM 2025 · [structurel] (à valider)
-2. L’adoption de l’IA se généralise dans les organisations produit, mais reste prudente : 92,4 % ont entamé le parcours, 46,4 % l’utilisent sur au moins un cas d’usage, et la posture dominante reste « l’IA assiste le PM, ne le remplace pas » — Source : SoPM 2025 · [tendance] (à valider)
-3. L’IA accélère la production sur les tâches routinières, mais n’améliore pas automatiquement la qualité du jugement ou de la décision produit — convergence PM, Product Teams, QA · [tendance] (à valider)
-4. Consolidation des outils : les équipes cherchent à rationaliser leur stack autour de plateformes couvrant stratégie, roadmap et priorisation, sous contrainte de coût — Source : SoPM 2025 · [tendance] (à valider)
-5. Prime à la posture stratégique et au leadership : montée du senior leadership en PM, ascension du PMM vers le CMO, et plafond de carrière pour les profils purement techniques — convergence SoPM 2025, State of Product Marketing, State of Testing 2026 · [tendance] (à valider)
-
-Bloc 1 — Problématiques clients & positionnement offre
-
-Rien de neuf ce mois — synthèse PAD et snapshot concurrentiel indisponibles. Absence de signal propriétaire : pas de problématique client ni de mouvement d’offre détecté ce cycle. Positionnement et type d’offre inchangés par défaut, en attente de matière propriétaire pour ajustement. Ce qu’on ne bouge PAS : toute évolution du positionnement ou de l’offre est suspendue à la remontée de signaux clients ou concurrents.
-
-Bloc 2 — Signaux qui challengent nos convictions
-
-- L’intégration massive de l’IA dans les pratiques produit est désormais un fait, mais la valeur ajoutée réelle dépend de la capacité à dépasser l’automatisation des tâches routinières pour renforcer le jugement et la prise de décision. Recommandation : renforcer l’accompagnement sur l’usage stratégique de l’IA, au-delà de la simple adoption outillée. Force du signal : convergence forte (3 sources).
-- La consolidation des outils et la recherche d’une plateforme unique sont des tendances à surveiller, mais la contrainte budgétaire impose de prioriser l’efficience sur la sophistication. Recommandation : challenger la pertinence de l’empilement d’outils et privilégier l’intégration.
-- La montée du leadership stratégique (CPO, PMM rattachés au CMO) et la « Specialist Penalty » en QA invitent à valoriser les parcours hybrides et à investir dans le développement des compétences transverses. Recommandation : intégrer ces dimensions dans les parcours de formation et d’accompagnement.
-- [structurel] (candidat — validation humaine requise) : la ré-internalisation du pilotage stratégique produit et la montée de l’IA comme défi central pourraient justifier une évolution de l’offre, sous réserve de confirmation par signaux clients/concurrents.
-
-Bloc 3 — Skills, méthodes & outils
-
-Rien de neuf ce mois — snapshot emploi indisponible, pas de signal frais sur les compétences, méthodes ou outils. Socle inchangé — prochain delta emploi au T3-2026. Les benchmarks confirment la demande croissante de compétences en pilotage stratégique, en adoption raisonnée de l’IA, et en consolidation outillage, mais sans mouvement détecté ce cycle.
-
-Bloc 4 — Sujets éditoriaux & angle
-
-- Sujet proposé : « IA produit : accélération massive, mais la valeur se joue dans le jugement, pas dans l’outillage ».
-  Angle : Montrer, à partir des convergences de benchmarks, que l’enjeu n’est plus d’adopter l’IA mais de l’intégrer intelligemment pour renforcer la prise de décision produit, en évitant le piège de l’automatisation sans valeur ajoutée. Espace de notoriété : fort, car la majorité des discours restent centrés sur l’outillage ou la nouveauté technologique.
-
-Garde-fous : on ne résume jamais ; croisement prime ; [structurel] = humain ; sponsoring signalé ; recommande sans toucher au deck ; un signal isolé ≠ certitude.
-
-Sources utilisées : SIGNAUX STATE OF X 2026. Signale l’absence de NEWSLETTERS, SYNTHÈSE PAD, SNAPSHOT CONCURRENTIEL, SNAPSHOT EMPLOI ce cycle.
-
-
+**Matière mobilisée ce cycle** : ☐ Newsletters · ☐ Synthèse PAD · ☑ Snapshot concurrentiel · ☑ Snapshot emploi · ☑ State of X · ☐ REX  
+→ Trou de source : Newsletters, Synthèse PAD, REX absentes ce cycle.  
+Cycle calme — peu de signaux nouveaux ce mois ; matériau limité, à lire comme tel.
 
 ---
 
-## Couche de confiance — posée par l'agent-annotateur
+## Bloc 1 — Problématiques récurrentes & Offres
 
-> Cette couche dit *sur quoi tient* chaque signal — elle ne valide rien. Un signal « source unique » ou « non corroboré » est une **piste à creuser**, pas un argument client. Une conviction ne naît que quand un humain la pose dans un deck/article.
+### 1. Déplacement de la valeur vers l’agentique et l’orchestration IA
+- **Description** : Les cabinets Data/IA et certains cabinets PM constatent que la valeur ne réside plus dans la simple exécution technique (développement, delivery), mais dans l’orchestration, le raisonnement multi-agents et la gouvernance des systèmes IA. Les clients cherchent à industrialiser l’IA, à fiabiliser les déploiements et à piloter l’attention humaine plutôt que le code.
+- **Sources** : Snapshot concurrentiel T2 2026 (Converteo, Hubvisory, Thiga, AI Builders) · State of X 2026 (Panorama IA, SoPM 2025) · `[tendance]`
+- **Offre activable** : Positionner des offres d’accompagnement à l’orchestration agentique, à la gouvernance IA et à la supervision humaine des systèmes multi-agents.
 
-**Indice de confiance du cycle** : Aucun ancrage propriétaire ce mois (absence de PAD, snapshot emploi, snapshot concurrentiel) ; l’ensemble du cycle repose sur des signaux externes non corroborés, principalement issus de SoPM 2025, State of Product Marketing et State of Testing 2026 ; 1 downgrade appliqué ([structurel] → [tendance]).
+### 2. Gouvernance IA et conformité réglementaire (AI Act, secteurs régulés)
+- **Description** : Les enjeux de conformité (AI Act, traçabilité, souveraineté) deviennent des axes d’offre structurants, notamment dans les secteurs à forte contrainte (pharma, industrie, finance). Les clients anticipent l’échéance réglementaire et recherchent des solutions de gouvernance et de conformité comme leviers stratégiques, pas seulement comme contraintes.
+- **Sources** : Snapshot concurrentiel T2 2026 (Converteo, Smartesting, AI Builders) · State of X 2026 (State of Testing, Panorama IA) · `[tendance]`
+- **Offre activable** : Développer des offres de cadrage conformité IA, de gouvernance des risques et de traçabilité bout-en-bout, en particulier pour les environnements régulés.
 
-**Provenance par signal :**
-- **[Bloc 1] Problématiques clients & positionnement offre** — non corroboré (absence de signal propriétaire, synthèse PAD et snapshot concurrentiel indisponibles)
-- **[Bloc 2] Intégration massive de l’IA, valeur ajoutée dépendant du jugement** — non corroboré (convergence externe)
-- **[Bloc 2] Consolidation des outils, contrainte budgétaire** — non corroboré (source unique SoPM 2025)
-- **[Bloc 2] Montée du leadership stratégique, Specialist Penalty** — non corroboré (convergence externe, SoPM 2025 + State of Product Marketing + State of Testing 2026)
-- **[Bloc 2] Ré-internalisation du pilotage stratégique produit et IA comme défi central** — non corroboré (convergence externe) · **tag corrigé** : `[structurel]` → `[tendance]` — absence de corroboration interne (pas de donnée propriétaire)
-- **[Bloc 3] Skills, méthodes & outils** — non corroboré (absence de snapshot emploi, benchmarks externes seuls)
-- **[Bloc 4] Sujet éditorial IA produit** — non corroboré (convergence externe, benchmarks)
+### 3. Verticalisation sectorielle des offres IA/produit
+- **Description** : Les cabinets Data/IA et QA structurent leurs offres autour de verticales sectorielles (pharma, retail, industrie régulée), avec des practices dédiées et des recrutements ciblés. Les clients attendent une expertise métier et une adaptation des solutions IA à leurs contraintes spécifiques.
+- **Sources** : Snapshot concurrentiel T2 2026 (Converteo, KP2i, Smartesting) · Snapshot emploi T2 2026 · `[tendance]`
+- **Offre activable** : Proposer des practices sectorielles IA/produit, avec des équipes mixtes métier/technique et des références sectorielles explicites.
 
-**Cycle maigre** — Cycle calme : aucun signal propriétaire ni croisement interne ce mois, tous les signaux reposent sur des sources externes non corroborées.
+### 4. Internationalisation des offres et structuration managériale
+- **Description** : Les cabinets Data/IA accélèrent leur expansion internationale (ouvertures de bureaux, recrutements de Partners, structuration managériale France/international). Les clients internationaux recherchent des partenaires capables d’accompagner des déploiements multi-pays et de garantir la cohérence des pratiques IA à l’échelle.
+- **Sources** : Snapshot concurrentiel T2 2026 (Converteo, Artefact, Qestit) · `[structurel]` candidat — à corroborer
+- **Offre activable** : Structurer des offres d’accompagnement à l’internationalisation des produits IA, avec des équipes transverses et des référentiels harmonisés.
 
-[[DASH_JSON]]
-{
-  "slug": "productai",
-  "thinCycle": true,
-  "confidenceSummary": "Aucun ancrage propriétaire ce mois (absence de PAD, snapshot emploi, snapshot concurrentiel) ; l’ensemble du cycle repose sur des signaux externes non corroborés, principalement issus de SoPM 2025, State of Product Marketing et State of Testing 2026 ; 1 downgrade appliqué ([structurel] → [tendance]).",
-  "blocs": [
-    {
-      "n": "Bloc 1",
-      "sigs": [
-        {
-          "tag": null,
-          "prov": ["non corroboré (absence de signal propriétaire, synthèse PAD et snapshot concurrentiel indisponibles)"],
-          "vendor": null,
-          "x": "Aucun signal propriétaire ni mouvement d’offre détecté ce cycle"
-        }
-      ],
-      "croise": null,
-      "conv": ["So what offre", "Positionnement et offre inchangés, en attente de signaux clients ou concurrents"]
-    },
-    {
-      "n": "Bloc 2",
-      "sigs": [
-        {
-          "tag": "tend",
-          "prov": ["non corroboré (convergence externe)"],
-          "vendor": null,
-          "x": "Intégration massive de l’IA, valeur ajoutée dépendant du jugement"
-        },
-        {
-          "tag": "tend",
-          "prov": ["non corroboré (source unique SoPM 2025)"],
-          "vendor": null,
-          "x": "Consolidation des outils, contrainte budgétaire"
-        },
-        {
-          "tag": "tend",
-          "prov": ["non corroboré (convergence externe, SoPM 2025 + State of Product Marketing + State of Testing 2026)"],
-          "vendor": null,
-          "x": "Montée du leadership stratégique, Specialist Penalty"
-        },
-        {
-          "tag": "tend",
-          "prov": ["non corroboré (convergence externe)"],
-          "vendor": null,
-          "x": "Ré-internalisation du pilotage stratégique produit et IA comme défi central",
-          "tagCorrige": true
-        }
-      ],
-      "croise": null,
-      "conv": ["Conviction — à challenger", "Renforcer l’accompagnement stratégique IA, challenger l’empilement d’outils, intégrer leadership et parcours hybrides"]
-    },
-    {
-      "n": "Bloc 3",
-      "sigs": [
-        {
-          "tag": null,
-          "prov": ["non corroboré (absence de snapshot emploi, benchmarks externes seuls)"],
-          "vendor": null,
-          "x": "Pas de signal frais sur compétences, méthodes ou outils ce cycle"
-        }
-      ],
-      "croise": null,
-      "conv": ["So what méthode", "Socle inchangé, prochain delta emploi au T3-2026"]
-    },
-    {
-      "n": "Bloc 4",
-      "sigs": [
-        {
-          "tag": null,
-          "prov": ["non corroboré (convergence externe, benchmarks)"],
-          "vendor": null,
-          "x": "Sujet éditorial IA produit : enjeu du jugement vs automatisation"
-        }
-      ],
-      "croise": null,
-      "conv": ["So what édito", "Montrer que la valeur IA se joue dans le jugement, pas l’outillage"]
-    }
-  ]
-}
-[[/DASH_JSON]]
+### 5. Tension sur les compétences IA et séniorisation des profils recherchés
+- **Description** : Le marché de l’emploi AI/GenAI PM est très actif, avec une forte demande de profils seniors et une pénurie de compétences techniques (LLM, orchestration, cycle de vie produit IA). Les clients peinent à recruter et attendent des partenaires capables de fournir des experts immédiatement opérationnels.
+- **Sources** : Snapshot emploi T2 2026 (WTTJ, Indeed, Seyos IT 2026, TPC 2026) · State of X 2026 · `[tendance]`
+- **Offre activable** : Mettre en avant la capacité à mobiliser des profils seniors, à former en continu sur les outils IA, et à accompagner la montée en compétence des équipes client.
+
+---
+
+## Bloc 2 — Convictions à challenger
+
+Registre des convictions non renseigné pour cette expertise ce cycle — aucune conviction à challenger ; à rattacher par le KR Owner.
+
+---
+
+## Bloc 3 — Compétences recherchées
+
+### 1. Maîtrise du cycle de vie produit IA (discovery → déploiement de features IA)
+- **Sources** : Snapshot emploi T2 2026 (WTTJ, multi-employeurs) · `[tendance]`
+- **Pour le catalogue** : Formation approfondie sur le cycle de vie produit IA, incluant discovery, delivery, monitoring et amélioration continue.
+
+### 2. Compréhension des LLM et de leur mise en œuvre produit (GPT, Claude, Mistral)
+- **Sources** : Snapshot emploi T2 2026 (WTTJ) · `[tendance]`
+- **Pour le catalogue** : Module dédié à l’intégration des LLM dans les produits, choix de modèles, limitations, évaluation et monitoring.
+
+### 3. Collaboration étroite avec data scientists / chercheurs / ingénieurs IA
+- **Sources** : Snapshot emploi T2 2026 (WTTJ, multi-employeurs) · `[tendance]`
+- **Pour le catalogue** : Parcours sur la collaboration interdisciplinaire, gestion de projets IA, communication et alignement des équipes.
+
+### 4. IA comme compétence en tension structurelle (pénurie, salaires à la hausse)
+- **Sources** : Seyos IT 2026 (baromètre), TPC 2026 · `[tendance]`
+- **Pour le catalogue** : Programme d’upskilling IA pour PM, PO et équipes produit, avec focus sur les compétences techniques pénuriques.
+
+### 5. Séniorisation dominante du segment AI PM (Staff/Senior fréquents)
+- **Sources** : Snapshot emploi T2 2026 (WTTJ, Indeed) · `[tendance]`
+- **Pour le catalogue** : Parcours de développement pour PM expérimentés visant des rôles Staff/Senior, mentoring et leadership IA.
+
+---
+
+## Bloc 4 — Contenus de notoriété suggérés
+
+### 1. Orchestration agentique : de la hype à la production
+- **Pourquoi le traiter** : Sujet central du trimestre, convergence cabinets PM et Data/IA, mais peu de retours d’expérience concrets sur le passage à l’échelle et la supervision humaine.
+- **Sources** : Snapshot concurrentiel T2 2026 (Converteo, Hubvisory, Thiga, AI Builders) · State of X 2026 (Panorama IA) · `[tendance]`
+- **Angle & format** : Article ou webinar « Orchestration agentique : lessons learned, pièges et métriques pour la supervision humaine »
+
+### 2. Gouvernance IA et conformité : transformer la contrainte en avantage compétitif
+- **Pourquoi le traiter** : Demande croissante sur la conformité AI Act, peu de contenus orientés « actif stratégique » vs. « contrainte » ; angle différenciant.
+- **Sources** : Snapshot concurrentiel T2 2026 (Converteo, Smartesting, AI Builders) · State of X 2026 · `[tendance]`
+- **Angle & format** : Post LinkedIn ou guide pratique « Gouvernance IA : comment la conformité devient un levier business »
+
+### 3. Verticalisation sectorielle : IA produit dans la pharma, le retail, l’industrie régulée
+- **Pourquoi le traiter** : Mouvement de fond chez les cabinets Data/IA et QA, peu de benchmarks sectoriels partagés ; forte attente côté clients.
+- **Sources** : Snapshot concurrentiel T2 2026 (Converteo, KP2i, Smartesting) · `[tendance]`
+- **Angle & format** : Série d’articles « IA produit : retours d’expérience sectoriels (pharma, retail, industrie) »
+
+### 4. Internationalisation des offres IA/produit : enjeux et bonnes pratiques
+- **Pourquoi le traiter** : Expansion géographique marquée, mais peu de contenus sur la structuration managériale et la cohérence multi-pays.
+- **Sources** : Snapshot concurrentiel T2 2026 (Converteo, Artefact, Qestit) · `[structurel]` candidat — à corroborer
+- **Angle & format** : Podcast ou table ronde « Déployer l’IA produit à l’international : lessons learned et pièges à éviter »
+
+### 5. Bicéphalité marché : conseil/ESN vs. éditeurs — quelles réalités pour le métier d’AI PM ?
+- **Pourquoi le traiter** : Le marché AI PM est structuré autour de deux logiques (conseil/ESN vs. éditeurs), mais la distinction reste floue pour beaucoup de clients et candidats.
+- **Sources** : Snapshot emploi T2 2026 (WTTJ, Indeed), State of X 2026 · `[tendance]`
+- **Angle & format** : Article d’analyse « AI PM : deux marchés, deux réalités ? »
+
+---
+
+## Les signaux importants du mois
+
+- L’agentique s’impose comme axe de repositionnement d’offre, avec une convergence cabinets PM et Data/IA, mais la valeur réelle se mesure après déploiement à l’échelle.
+- La conformité IA (AI Act, traçabilité) devient un levier d’offre structurant, en particulier dans les secteurs régulés ; la gouvernance IA est de plus en plus valorisée comme actif stratégique.
+- Le segment AI/GenAI PM s’affirme comme une catégorie autonome sur le marché français, avec une forte séniorisation et une tension sur les compétences techniques IA.
+

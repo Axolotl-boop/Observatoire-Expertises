@@ -1,49 +1,128 @@
-Pré-draft généré pour validation — le KR Owner relit et tranche, notamment les verdicts [structurel].
+# Digest Product Management — Juin 2026
 
-| Expertise      | Période      | Cadence      | KR Owner           | Date       | Mode                       |
-|----------------|-------------|--------------|--------------------|------------|----------------------------|
-| pm             | 2026-05     | Mensuelle    | [à compléter]      | [à compléter] | Pré-draft à valider        |
+> **Briefing d'expertise** — matériau sourcé à exploiter au point d'usage ; les `[structurel]` sont des candidats à corroborer.
 
-§1 Les signaux du mois
+| | |
+|---|---|
+| **Expertise** | pm |
+| **Période** | 06/2026 — cadence mensuelle |
+| **Date de publication** | 2026-06 |
+| **Mode** | briefing informatif |
 
-1. Le pilotage de la stratégie produit se ré-internalise, avec une montée en puissance de la direction senior comme moteur principal de la stratégie produit, au détriment de l’influence du marché/concurrence (SoPM 2025, N≈400, 2024→2025) · [structurel] (à valider)
-2. L’IA s’impose comme défi n°1 anticipé des PM, avec une forte progression de sa perception comme enjeu central, tandis que l’incertitude économique recule (SoPM 2025, N≈400, 2024→2025) · [structurel] (à valider)
-3. L’adoption de l’IA se généralise mais reste prudente : la quasi-totalité des organisations ont entamé le parcours, mais l’usage reste ciblé et l’IA est vue comme un assistant, non un substitut du PM (SoPM 2025, N≈400, 2024→2025) · [tendance] (à valider)
-4. Le recrutement et la rétention de talents PM demeurent le défi opérationnel le plus cité, devant l’IA et l’incertitude économique (SoPM 2025, N≈400, 2025) · [tendance] (à valider)
-5. Consolidation des outils : recherche d’une plateforme unique couvrant stratégie, roadmap et priorisation, sous contrainte de coût (SoPM 2025, N≈400, 2025) · [tendance] (à valider)
+**Matière mobilisée ce cycle** : ☐ Newsletters · ☐ Synthèse PAD · ☑ Snapshot concurrentiel · ☑ Snapshot emploi · ☑ State of X · ☐ REX  
+→ Trou de source : Newsletters, Synthèse PAD absentes ce cycle.
 
-Bloc 1 — Problématiques clients & positionnement offre
+---
 
-Rien de neuf ce mois — synthèse PAD et snapshot concurrentiel indisponibles. Aucun signal propriétaire du cycle n’est exploitable. Positionnement et offres inchangés par défaut, en attente de signaux clients ou marché internes pour ajustement. Ce qu’on ne bouge PAS : toute évolution du positionnement ou de l’offre reste suspendue à la validation de signaux propriétaires (demandes clients, retours terrain, mouvements concurrents).
+## Bloc 1 — Problématiques récurrentes & Offres
 
-Bloc 2 — Signaux qui challengent nos convictions
+### 1. Déplacement de la valeur produit vers l’orchestration et la gouvernance (agentique)
+- **Description** : Les cabinets PM et Data/IA convergent sur le constat que la valeur ne réside plus dans l’exécution technique, mais dans l’orchestration, le raisonnement et la gouvernance des systèmes (notamment agentiques). Les clients cherchent à comprendre comment structurer, piloter et fiabiliser des environnements multi-agents, plutôt qu’à optimiser la delivery pure.
+- **Sources** : Snapshot concurrentiel T2 2026 (Converteo, Hubvisory, Thiga, AI Builders) · `[tendance]`
+- **Offre activable** : Positionner des offres d’accompagnement à la gouvernance agentique, à l’orchestration multi-agents et à la structuration de la prise de décision produit.
 
-- La ré-internalisation de la stratégie produit par la direction senior, au détriment de l’écoute marché/concurrence, questionne la place réelle de la voix du client dans la priorisation. Recommandation : surveiller l’équilibre entre pilotage top-down et ancrage marché, et anticiper les risques de déconnexion client. Signal fort, mais [structurel] à valider humainement.
-- L’IA s’impose comme enjeu central, mais la prudence domine : l’adoption massive ne garantit ni différenciation ni amélioration du jugement produit. Recommandation : renforcer l’accompagnement sur l’intégration raisonnée de l’IA, en évitant l’écueil du gadget. Signal convergent, corroboré par plusieurs rapports.
-- La consolidation des outils, sous contrainte de coût, peut remettre en cause la diversité des solutions et la granularité des process. Recommandation : challenger la promesse d’une plateforme unique, notamment sur la capacité à couvrir l’ensemble des besoins sans perte de finesse métier. Signal à surveiller, tendance confirmée mais pas encore structurelle.
+### 2. Gouvernance IA et conformité réglementaire
+- **Description** : La conformité (AI Act, exigences sectorielles) et la gouvernance de l’IA deviennent des demandes explicites, non plus subies mais recherchées comme leviers de confiance et d’avantage compétitif. Les clients attendent des PM une capacité à cadrer et piloter l’intégration de l’IA dans des environnements contraints.
+- **Sources** : Snapshot concurrentiel T2 2026 (Converteo, Smartesting, AI Builders) · `[tendance]`
+- **Offre activable** : Développer des offres de cadrage IA, de gouvernance produit en environnement réglementé, et de conformité-by-design.
 
-Bloc 3 — Skills, méthodes & outils
+### 3. Verticalisation sectorielle des offres produit
+- **Description** : Les cabinets Data/IA et QA structurent des offres verticalisées (Pharma, Retail, Industrie régulée), mais aucun cabinet PM ne revendique de spécialisation sectorielle forte. Les clients des secteurs régulés ou à forte contrainte attendent une expertise produit adaptée à leur contexte.
+- **Sources** : Snapshot concurrentiel T2 2026 (Converteo, KP2i, Smartesting) · `[tendance]`
+- **Offre activable** : Explorer des offres PM verticalisées (Pharma, Retail, Industrie), en s’appuyant sur des référentiels sectoriels et des cas d’usage concrets.
 
-Rien de neuf ce mois — snapshot emploi indisponible, aucun signal frais sur les compétences, méthodes ou outils côté PM. Socle inchangé — prochain delta emploi au prochain snapshot trimestriel ou à réception de signaux complémentaires. Les signaux State of X confirment la montée en valeur des compétences stratégiques et la nécessité d’une maîtrise raisonnée de l’IA, mais sans mouvement détecté ce mois.
+### 4. Internationalisation des pratiques produit
+- **Description** : Les cabinets Data/IA et QA accélèrent leur expansion internationale (ouvertures de bureaux, recrutements multi-zones), alors que le conseil PM reste centré sur le marché français. Les clients internationaux ou en croissance hors France pourraient attendre un accompagnement produit globalisé.
+- **Sources** : Snapshot concurrentiel T2 2026 (Converteo, Artefact, Qestit) · `[structurel]` candidat — à corroborer
+- **Offre activable** : Structurer une offre PM à dimension internationale, ou des missions d’accompagnement à l’internationalisation produit.
 
-Bloc 4 — Sujets éditoriaux & angle
+### 5. Bifurcation du marché PM : généraliste vs. AI PM
+- **Description** : Le marché de l’emploi PM se scinde entre un segment généraliste (PM, Lead, Head, CPO) et un segment AI PM, ce dernier étant tiré par les ESN/conseil et pure players IA. Les clients expriment des besoins différenciés selon le niveau de séniorité et la dimension IA.
+- **Sources** : Snapshot emploi T2 2026 (WTTJ, Indeed, Seyos 2026, Noé 2026) · `[tendance]`
+- **Offre activable** : Adapter les offres de staffing et de formation selon le segment (généraliste vs. AI PM), clarifier les parcours et les attentes.
 
-- Sujet proposé : « Ré-internalisation de la stratégie produit : vers un nouveau rapport à la voix du client ? »
-  Angle : Interroger la montée du pilotage stratégique par la direction senior et ses impacts sur la prise en compte des signaux marché/clients dans la priorisation produit. Mettre en débat les risques et opportunités de ce recentrage, à la lumière des benchmarks 2026.
+---
 
-Garde-fous :
-- On ne résume jamais ; croisement prime sur l’accumulation.
-- Les verdicts [structurel] sont candidats — validation humaine requise.
-- Les signaux sponsorisés sont signalés ; aucune blanchiment de contenu vendor-driven.
-- Recommandations sans toucher au deck d’expertise.
-- Un signal isolé n’est jamais une certitude.
+## Bloc 2 — Convictions à challenger
 
-Sources utilisées : 
-- SIGNAUX STATE OF X 2026
+### 1. PM-01 — L’IA ne remplace pas le PM​
+- **Ce que disent les signaux** : Les benchmarks (State of X 2026) et le snapshot concurrentiel confirment que l’IA accélère l’exécution mais ne remplace pas la clarté stratégique ni le jugement du PM. L’agentique renforce la nécessité d’une gouvernance humaine, et la valeur du PM se déplace vers l’orchestration et la décision. · `[structurel]` candidat — à corroborer
+- **Proposition d'action** : Réaffirmer la conviction, tout en surveillant l’évolution des cas d’usage agentiques en production.
 
-Sources attendues mais absentes :
-- SYNTHÈSE PAD 2026-05 (indisponible)
-- SNAPSHOT CONCURRENTIEL T1-2026 (indisponible)
-- SNAPSHOT EMPLOI pm T2-2026 (indisponible)
-- NEWSLETTERS 2026-05 (aucun signal transmis)
+### 2. PM-02 — Le PM peut désormais builder.​
+- **Ce que disent les signaux** : Les offres emploi et les signaux concurrentiels montrent que le PM est attendu sur des capacités de prototypage rapide (notamment IA), mais le build reste au service de la décision, pas de l’exécution. · `[tendance]`
+- **Proposition d'action** : Nuancer la conviction : valoriser le build comme outil d’apprentissage et de décision, pas comme finalité.
+
+### 3. PM-04 — L’IA n’a d’impact que si elle est intégrée à l’organisation​
+- **Ce que disent les signaux** : Les benchmarks (State of X 2026) soulignent que l’IA n’apporte de valeur que si elle est intégrée aux workflows réels et mesurée sur des gains tangibles. Les offres concurrentielles insistent sur la gouvernance et la conformité-by-design. · `[tendance]`
+- **Proposition d'action** : Réaffirmer, en insistant sur l’accompagnement à l’intégration organisationnelle.
+
+### 4. PM-06 — Le métier de PM se différencie​
+- **Ce que disent les signaux** : Le snapshot emploi documente la bifurcation entre PM généraliste et AI PM, confirmant la coexistence de deux trajectoires. · `[tendance]`
+- **Proposition d'action** : Réaffirmer, en clarifiant les parcours et les attentes selon le segment.
+
+### 5. PM-05 — L’IA rebat le modèle opératoire​
+- **Ce que disent les signaux** : Les signaux concurrentiels et State of X convergent sur la nécessité de repenser les modèles opératoires (découpage, décision, livraison) à l’ère de l’IA et de l’agentique. · `[tendance]`
+- **Proposition d'action** : Mettre en veille pour observation, en attendant des cas d’usage plus matures.
+
+---
+
+## Bloc 3 — Compétences recherchées
+
+### 1. Séniorité élevée pour les rôles de tête (Head/CPO)
+- **Sources** : Snapshot emploi T2 2026 (WTTJ, Seyos 2026) · `[tendance]`
+- **Pour le catalogue** : Renforcer les modules de leadership produit et de pilotage stratégique.
+
+### 2. Conception AI-first / intégration IA dans la roadmap
+- **Sources** : Snapshot emploi T2 2026 (WTTJ, Indeed, Seyos 2026) · `[tendance]`
+- **Pour le catalogue** : Développer des formations à la conception de produits AI-first et à l’intégration de l’IA dans la roadmap produit.
+
+### 3. Gouvernance et conformité IA
+- **Sources** : Snapshot concurrentiel T2 2026 (Converteo, Smartesting), State of X 2026 · `[tendance]`
+- **Pour le catalogue** : Créer des modules sur la gouvernance IA, la conformité réglementaire et la gestion des risques.
+
+### 4. Orchestration multi-agents et pilotage de systèmes complexes
+- **Sources** : Snapshot concurrentiel T2 2026 (Converteo, Hubvisory), State of X 2026 · `[tendance]`
+- **Pour le catalogue** : Monter en puissance sur l’orchestration de systèmes agentiques et la supervision de l’IA en production.
+
+### 5. Compétences IA/data/cloud en tension
+- **Sources** : Seyos 2026 · `[tendance]`
+- **Pour le catalogue** : Proposer des parcours de montée en compétence sur l’IA, la data et le cloud pour PM.
+
+---
+
+## Bloc 4 — Contenus de notoriété suggérés
+
+### 1. Gouvernance produit à l’ère de l’agentique
+- **Pourquoi le traiter** : Sujet en forte montée, peu couvert côté PM, alors que la demande s’exprime côté Data/IA et que la valeur se déplace vers l’orchestration.
+- **Sources** : Snapshot concurrentiel T2 2026 (Converteo, Hubvisory, AI Builders), State of X 2026 · `[tendance]`
+- **Angle & format** : Article ou webinar « Gouverner un produit à l’ère des agents : retours d’expérience et pièges à éviter »
+
+### 2. PM et conformité IA : du frein à l’avantage compétitif
+- **Pourquoi le traiter** : La conformité IA devient un argument d’offre, pas seulement une contrainte ; angle peu traité côté PM.
+- **Sources** : Snapshot concurrentiel T2 2026 (Converteo, Smartesting), State of X 2026 · `[tendance]`
+- **Angle & format** : Post LinkedIn ou guide pratique « Intégrer la conformité IA dans la roadmap produit »
+
+### 3. Bifurcation des parcours PM : généraliste vs. AI PM
+- **Pourquoi le traiter** : Signal fort sur l’emploi, peu explicité dans les contenus de place.
+- **Sources** : Snapshot emploi T2 2026 (WTTJ, Indeed, Seyos 2026), State of X 2026 · `[tendance]`
+- **Angle & format** : Article « Deux carrières PM, deux réalités : comment choisir et se positionner ? »
+
+### 4. Internationalisation des pratiques produit : enjeux et opportunités
+- **Pourquoi le traiter** : Mouvement structurant côté Data/IA, angle absent côté PM — trou concurrentiel.
+- **Sources** : Snapshot concurrentiel T2 2026 (Converteo, Artefact, Qestit) · `[structurel]` candidat — à corroborer
+- **Angle & format** : Podcast ou table ronde « PM à l’international : retours d’expérience et défis »
+
+### 5. Orchestration multi-agents : du POC à la production
+- **Pourquoi le traiter** : L’industrialisation de l’agentique est un enjeu émergent, peu documenté en dehors des discours techniques.
+- **Sources** : State of X 2026, Snapshot concurrentiel T2 2026 (Converteo) · `[tendance]`
+- **Angle & format** : Article technique ou retour d’expérience « Orchestrer des agents en production : lessons learned »
+
+---
+
+## Les signaux importants du mois
+
+- L’agentique s’impose comme axe de repositionnement d’offre, avec une convergence inédite PM × Data/IA, mais reste à confirmer comme mouvement structurel.
+- La gouvernance IA et la conformité réglementaire deviennent des offres à part entière, non plus des contraintes subies.
+- Le marché PM se bifurque entre généralistes et AI PM, avec des attentes et des parcours différenciés — la séniorité et la compétence IA sont en tension.
 

@@ -1,100 +1,111 @@
-Pré-draft généré pour validation — le KR Owner relit et tranche, notamment les verdicts [structurel].
+# Digest PMM — 06/2026
 
-| Expertise      | Période      | Cadence      | KR Owner           | Date       | Mode                         |
-|----------------|-------------|--------------|--------------------|------------|------------------------------|
-| PMM            | 2026-05     | Mensuelle    | [à compléter]      | [à compléter] | Pré-draft à valider         |
+> **Briefing d'expertise** — matériau sourcé à exploiter au point d'usage ; les `[structurel]` sont des candidats à corroborer.
 
-§1 Les signaux du mois
+| | |
+|---|---|
+| **Expertise** | pmm |
+| **Période** | 06/2026 — cadence mensuelle |
+| **Date de publication** | 2026-06 |
+| **Mode** | briefing informatif |
 
-1. Ascension hiérarchique du PMM : 20,2 % des PMM rapportent désormais directement au CMO, renforçant le rôle de connecteur entre produit et go-to-market (State of Product Marketing 2026) · [tendance] (à valider)
-2. Complexification du portefeuille : 35,1 % des PMM gèrent ≥6 produits, signalant un élargissement du périmètre et une montée en complexité des missions (State of Product Marketing 2026) · [tendance] (à valider)
-3. Adoption massive de l’IA : plus de 80 % des PMM utilisent l’IA régulièrement pour le messaging, le positionnement et la market research, mais la valeur ajoutée reste à qualifier (State of Product Marketing 2026) · [tendance] (à valider)
-4. KPI orientés revenu : la génération de revenu nouveau (55,4 %) et l’augmentation du win rate (37 %) deviennent les mesures de succès dominantes pour les PMM (State of Product Marketing 2026) · [tendance] (à valider)
-5. Budget PMM orienté outils : le poste « software & outils » devient le premier poste de dépense (42,6 %) (State of Product Marketing 2026) · [mode] (à valider)
-
-Bloc 1 — Problématiques clients & positionnement offre
-
-Rien de neuf ce mois — synthèse PAD indisponible, aucun snapshot concurrentiel transmis. Aucun signal propriétaire du cycle n’est exploitable. Positionnement et offres inchangés par défaut, en attente de signaux clients ou concurrents pour ajustement. Ce qu’on ne bouge PAS : toute évolution du positionnement ou de l’offre reste suspendue à la réception de signaux propriétaires (demande client, concurrence, emploi).
-
-Bloc 2 — Signaux qui challengent nos convictions
-
-- L’ascension hiérarchique du PMM et la complexification du portefeuille invitent à reconsidérer la structuration des équipes et la répartition des responsabilités. Recommandation : surveiller l’évolution des organigrammes et anticiper les besoins en coordination transverse, mais attendre confirmation par signaux clients/concurrents avant d’ajuster le deck.
-- L’adoption massive de l’IA par les PMM, bien que mainstream, n’est pas encore synonyme de différenciation ou de valeur ajoutée garantie. Recommandation : ne pas surinvestir dans l’outillage IA sans preuve d’impact sur la performance business ; privilégier les cas d’usage éprouvés.
-- L’orientation des KPI vers le revenu et le win rate pourrait nécessiter une adaptation des offres d’accompagnement, mais la décision doit rester conditionnée à la validation par la demande réelle.
-- Le budget croissant alloué aux outils doit être mis en perspective avec l’efficience réelle obtenue ; attention à l’effet de mode.
-
-Bloc 3 — Skills, méthodes & outils
-
-Rien de neuf ce mois — snapshot emploi indisponible, aucun signal frais sur les compétences, méthodes ou outils au-delà des tendances marché issues des benchmarks annuels. Socle inchangé — prochain delta emploi au prochain snapshot trimestriel ou à réception de signaux propriétaires.
-
-Bloc 4 — Sujets éditoriaux & angle
-
-Aucun sujet éditorial proposé ce mois : absence de signaux propriétaires et de convergence forte avec un espace de notoriété identifié. Attendre un croisement entre signaux marché et demande client pour formuler un angle pertinent.
-
-Garde-fous : on ne résume jamais ; croisement prime ; [structurel] = humain ; sponsoring signalé ; recommande sans toucher au deck ; un signal isolé ≠ certitude.
-
-Sources utilisées : 
-- SIGNAUX STATE OF X 2026 (State of Product Marketing 2026)
-Sources attendues mais absentes : SYNTHÈSE PAD 2026-05, SNAPSHOT CONCURRENTIEL T1-2026, SNAPSHOT EMPLOI pmm T2-2026, NEWSLETTERS 2026-05.
-
-
+**Matière mobilisée ce cycle** : ☐ Newsletters · ☐ Synthèse PAD · ☑ Snapshot concurrentiel · ☑ Snapshot emploi · ☑ State of X · ☐ REX  
+→ Trou de source : Newsletters, Synthèse PAD absentes ce cycle.  
+Cycle calme — peu de signaux nouveaux ce mois ; matériau limité, à lire comme tel.
 
 ---
 
-## Couche de confiance — posée par l'agent-annotateur
+## Bloc 1 — Problématiques récurrentes & Offres
 
-> Cette couche dit *sur quoi tient* chaque signal — elle ne valide rien. Un signal « source unique » ou « non corroboré » est une **piste à creuser**, pas un argument client. Une conviction ne naît que quand un humain la pose dans un deck/article.
+### 1. Invisibilité du PMM dans les référentiels emploi et baromètres IT
+- **Description** : Le métier de Product Marketing Manager reste absent des taxonomies majeures (Seyos 2026, APEC 2026), ce qui limite sa reconnaissance institutionnelle et la lisibilité de ses trajectoires de carrière. Les offres sont portées quasi exclusivement par les boards spécialisés et les éditeurs SaaS, avec une quasi-absence d’ESN/conseil.
+- **Sources** : Snapshot emploi PMM T2-2026 (analyse offres WTTJ, PMA Jobs, APEC, Seyos 2026, APEC Métiers Cadres Porteurs 2026) · `[tendance]`
+- **Offre activable** : Accompagnement à la structuration de la fonction PMM (benchmark, définition de rôle, outillage RH) pour les scale-ups et éditeurs SaaS ; sensibilisation des acteurs institutionnels à la spécificité du PMM.
 
-**Indice de confiance du cycle** : Aucun ancrage propriétaire ce mois (ni PAD, ni emploi, ni concurrence) ; l’ensemble des signaux repose exclusivement sur la source externe State of Product Marketing 2026, non corroborée en interne ; 0 downgrade appliqué (tous les signaux étaient déjà tagués [tendance] ou [mode], aucun [structurel] à corriger).
+### 2. Penchant senior marqué et difficulté d’accès pour les profils juniors
+- **Description** : Les offres PMM sont dominées par des intitulés Senior/Head, avec peu de postes juniors ou alternance. La progression de carrière est lisible mais l’accès initial reste difficile, ce qui peut freiner le renouvellement des talents.
+- **Sources** : Snapshot emploi PMM T2-2026 (WTTJ, PMA Jobs, Noé PMM 2026) · `[tendance]`
+- **Offre activable** : Programmes de formation et de mentoring ciblés pour accélérer la montée en compétence des profils juniors et faciliter leur intégration.
 
-**Provenance par signal :**
-- **[Bloc 1] Problématiques clients & positionnement offre** — non corroboré (absence de source propriétaire, synthèse PAD et snapshot concurrentiel non transmis)
-- **[Bloc 2] Ascension hiérarchique du PMM** — non corroboré (source unique : State of Product Marketing 2026)
-- **[Bloc 2] Complexification du portefeuille** — non corroboré (source unique : State of Product Marketing 2026)
-- **[Bloc 2] Adoption massive de l’IA** — non corroboré (source unique : State of Product Marketing 2026)
-- **[Bloc 2] KPI orientés revenu** — non corroboré (source unique : State of Product Marketing 2026)
-- **[Bloc 2] Budget PMM orienté outils** — non corroboré (source unique : State of Product Marketing 2026)
-- **[Bloc 3] Skills, méthodes & outils** — non corroboré (absence de source propriétaire, snapshot emploi non transmis)
-- **[Bloc 4] Sujets éditoriaux & angle** — non corroboré (absence de source propriétaire, absence de convergence forte)
+### 3. Spécialisation émergente PMM × IA, mais signaux encore isolés
+- **Description** : L’apparition d’intitulés dédiés à l’IA (ex : PMM Lead — AI products chez Doctolib) reste marginale et portée par un seul board, mais elle reflète la montée de l’IA dans les attentes des organisations SaaS.
+- **Sources** : Snapshot emploi PMM T2-2026 (WTTJ seul), State of Product Marketing 2026 · `[mode]`
+- **Offre activable** : Veille active et construction d’une offre de formation/acculturation PMM × IA, en anticipation d’une montée en puissance à T+1/T+2.
 
-**Cycle maigre** — Aucun signal propriétaire ni croisement interne ce mois, tous les signaux reposent sur une source unique externe (State of Product Marketing 2026).
+### 4. Complexification du portefeuille produit et élargissement du périmètre PMM
+- **Description** : Les PMM gèrent de plus en plus de produits (≥6 pour 35 % d’entre eux), ce qui accroît la complexité du rôle et la nécessité de structurer les méthodes de priorisation et de go-to-market.
+- **Sources** : State of Product Marketing 2026 · `[tendance]`
+- **Offre activable** : Ateliers de structuration du portefeuille, outils d’aide à la priorisation et à la gestion multi-produits.
 
-[[DASH_JSON]]
-{
-  "slug": "pmm",
-  "thinCycle": true,
-  "confidenceSummary": "Aucun ancrage propriétaire ce mois (ni PAD, ni emploi, ni concurrence) ; l’ensemble des signaux repose exclusivement sur la source externe State of Product Marketing 2026, non corroborée en interne ; 0 downgrade appliqué.",
-  "blocs": [
-    {
-      "n": "Bloc 1",
-      "sigs": [],
-      "croise": null,
-      "conv": ["So what offre", "Rien de neuf ce mois — synthèse PAD indisponible, aucun snapshot concurrentiel transmis."]
-    },
-    {
-      "n": "Bloc 2",
-      "sigs": [
-        { "tag": "tend", "prov": ["non corroboré (source unique : State of Product Marketing 2026)"], "vendor": null, "x": "Part des PMM rattachés au CMO en hausse" },
-        { "tag": "tend", "prov": ["non corroboré (source unique : State of Product Marketing 2026)"], "vendor": null, "x": "Proportion de PMM gérant ≥6 produits en hausse" },
-        { "tag": "tend", "prov": ["non corroboré (source unique : State of Product Marketing 2026)"], "vendor": null, "x": "Usage régulier de l’IA par les PMM" },
-        { "tag": "tend", "prov": ["non corroboré (source unique : State of Product Marketing 2026)"], "vendor": null, "x": "KPI PMM orientés revenu et win rate" },
-        { "tag": "mode", "prov": ["non corroboré (source unique : State of Product Marketing 2026)"], "vendor": null, "x": "Budget PMM : outils premier poste de dépense" }
-      ],
-      "croise": null,
-      "conv": ["Conviction — à challenger", "Recommandations prudentes, en attente de signaux clients/concurrents pour ajustement."]
-    },
-    {
-      "n": "Bloc 3",
-      "sigs": [],
-      "croise": null,
-      "conv": ["So what méthode", "Rien de neuf ce mois — snapshot emploi indisponible."]
-    },
-    {
-      "n": "Bloc 4",
-      "sigs": [],
-      "croise": null,
-      "conv": ["So what édito", "Aucun sujet éditorial proposé ce mois."]
-    }
-  ]
-}
-[[/DASH_JSON]]
+### 5. Absence de visibilité sur la pile outillage PMM
+- **Description** : Aucun outil n’est cité dans les offres analysées ce trimestre, rendant difficile l’identification des standards outillage PMM en France.
+- **Sources** : Snapshot emploi PMM T2-2026 (WTTJ, PMA Jobs) · `[mode]`
+- **Offre activable** : Audit outillage auprès des clients existants, production d’un benchmark outillage PMM à destination des scale-ups.
+
+---
+
+## Bloc 2 — Convictions à challenger
+
+Registre des convictions non renseigné pour cette expertise ce cycle — aucune conviction à challenger ; à rattacher par le KR Owner.
+
+---
+
+## Bloc 3 — Compétences recherchées
+
+### 1. Expérience B2B SaaS
+- **Sources** : Snapshot emploi PMM T2-2026 (WTTJ, multi-annonces) · `[tendance]`
+- **Pour le catalogue** : Formation « PMM en environnement SaaS » (spécificités, enjeux, best practices).
+
+### 2. Positionnement, messaging, go-to-market
+- **Sources** : Snapshot emploi PMM T2-2026 (WTTJ, PMA Jobs), State of Product Marketing 2026 · `[tendance]`
+- **Pour le catalogue** : Parcours « Architecture du positionnement produit et stratégie go-to-market ».
+
+### 3. Expérience product/growth marketing (4–10 ans selon séniorité)
+- **Sources** : Snapshot emploi PMM T2-2026 (WTTJ) · `[tendance]`
+- **Pour le catalogue** : Modules avancés « Growth marketing pour PMM » (segmentation, activation, mesure).
+
+### 4. Soft skills (curiosité, leadership, communication)
+- **Sources** : Snapshot emploi PMM T2-2026 (WTTJ, Noé PMM 2026) · `[tendance]`
+- **Pour le catalogue** : Ateliers « Leadership transversal et communication d’influence pour PMM ».
+
+### 5. Spécialisation PMM × IA (signal émergent)
+- **Sources** : Snapshot emploi PMM T2-2026 (WTTJ seul, Doctolib), State of Product Marketing 2026 · `[mode]`
+- **Pour le catalogue** : Capsule « IA pour PMM : cas d’usage, limites, posture critique ».
+
+---
+
+## Bloc 4 — Contenus de notoriété suggérés
+
+### 1. Cartographie du métier PMM en France : invisibilité institutionnelle et réalité terrain
+- **Pourquoi le traiter** : Sujet peu couvert, répond à une demande de clarification des trajectoires et à la difficulté de reconnaissance du métier.
+- **Sources** : Snapshot emploi PMM T2-2026, Seyos 2026, APEC 2026 · `[tendance]`
+- **Angle & format** : Article « PMM : le métier invisible des référentiels, clé de voûte des scale-ups SaaS » — publication blog ou LinkedIn.
+
+### 2. Parcours de carrière PMM : comment passer de junior à Head of PMM ?
+- **Pourquoi le traiter** : Demande récurrente des candidats et RH, peu de ressources structurées sur la progression réelle.
+- **Sources** : Snapshot emploi PMM T2-2026, Noé PMM 2026 · `[tendance]`
+- **Angle & format** : Podcast ou table ronde « De PMM junior à Head : trajectoires, obstacles, accélérateurs ».
+
+### 3. PMM × IA : premiers signaux, quelles compétences anticiper ?
+- **Pourquoi le traiter** : Sujet émergent, peu traité, enjeu de différenciation pour les cabinets et les candidats.
+- **Sources** : Snapshot emploi PMM T2-2026 (Doctolib), State of Product Marketing 2026 · `[mode]`
+- **Angle & format** : Article ou post LinkedIn « PMM et IA : effet de mode ou vraie bascule de métier ? »
+
+### 4. Outillage PMM : état des lieux et attentes du marché
+- **Pourquoi le traiter** : Trou de connaissance identifié, enjeu d’efficience et de structuration pour les équipes PMM.
+- **Sources** : Snapshot emploi PMM T2-2026 (absence d’outils cités) · `[mode]`
+- **Angle & format** : Enquête ou benchmark « Quels outils pour les PMM en 2026 ? » — à lancer auprès de la communauté.
+
+### 5. Complexification du portefeuille produit : comment outiller la gestion multi-produits ?
+- **Pourquoi le traiter** : Problématique croissante, peu de ressources pratiques, enjeu de performance pour les PMM.
+- **Sources** : State of Product Marketing 2026 · `[tendance]`
+- **Angle & format** : Webinar ou guide pratique « Gérer 6+ produits en PMM : méthodes et outils ».
+
+---
+
+## Les signaux importants du mois
+
+- Le métier de PMM reste structurellement invisible dans les référentiels emploi français, mais s’impose comme fonction clé dans l’écosystème SaaS/scale-up.
+- Le marché PMM est dominé par des profils seniors, avec une progression de carrière lisible mais un accès difficile pour les juniors.
+- La spécialisation PMM × IA émerge timidement, portée par quelques offres isolées, mais pourrait devenir un axe différenciant à surveiller dès le prochain trimestre.
+
