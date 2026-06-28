@@ -16,30 +16,30 @@
 
 ## Bloc 1 — Problématiques récurrentes & Offres
 
-### 1. Adoption de frameworks agentiques dans le cycle de design produit
-- **Description** : Les clients expriment une demande explicite pour la mise en place de frameworks agentiques intégrant l’IA dans la structuration du discovery, la rédaction d’artefacts (PRD, Design Requirement Document, Data artefacts) et le découpage en features, avec outillage LLM non figé. L’objectif est de rendre le cycle de conception produit requêtable et automatisable par des agents IA, sur des périmètres greenfield.
-- **Sources** : Synthèse PAD (mission conseil détaillée), Newsletters (émergence du Spec-Driven Development, adoption LLM dans les pratiques Product), Snapshot concurrentiel (Converteo, Hubvisory, Thiga — repositionnement agentique) · `[tendance]`
-- **Offre activable** : Conseil en structuration agentique du cycle produit (audit, cadrage, MVP, outillage LLM, formation à la gouvernance des agents).
+### 1. Demande croissante de profils Product AI expérimentés pour piloter la transformation IA
+- **Description** : Les clients recherchent des profils confirmés à lead/principal pour structurer la roadmap IA, piloter la delivery et accompagner la montée en maturité produit. L’IA est vue comme un levier de transformation, mais la séniorité est clé pour cadrer l’acculturation et la gouvernance.
+- **Sources** : Synthèse PAD (5/13 offres régie Product AI, séniorité lead/principal/head), Snapshot emploi (séniorisation dominante, Staff/Senior AI PM), Newsletters (fonction Product AI = catalyseur de transformation) · `[tendance]`
+- **Offre activable** : Positionner des profils seniors Product AI sur des missions de cadrage stratégique, acculturation IA et structuration de la roadmap.
 
-### 2. Complexité plateforme et delivery en environnement IA
-- **Description** : Forte demande sur des contextes produits complexes (plateformes, delivery, analytics/KPI, Jira/Confluence), avec une attente de séniorité (Head/Directeur, Lead) et une hybridation des compétences (delivery + discovery). Les clients cherchent à piloter des produits IA à fort enjeu opérationnel, souvent en régie.
-- **Sources** : Synthèse PAD (vocabulaire plateforme/delivery, séniorité), Newsletters (fonction produit = nouveau goulot, déplacement de la valeur vers l’orchestration), Snapshot emploi (séniorisation dominante AI PM) · `[tendance]`
-- **Offre activable** : Staffing de profils AI PM seniors, accompagnement à la structuration de plateformes IA, coaching sur la gouvernance du delivery augmenté par l’IA.
+### 2. Besoin d’acculturation IA et de montée en maturité produit
+- **Description** : Les missions conseil gagnées portent sur l’acculturation IA (keynote, formation, audit de maturité produit), avec une attente de transformation des pratiques et de certification. Les clients cherchent à comprendre comment intégrer l’IA dans leur organisation produit.
+- **Sources** : Synthèse PAD (missions conseil IA × Produit, acculturation, formation certifiante), Newsletters (cycle d’adoption IA, AI Enablement, gouvernance IA) · `[tendance]`
+- **Offre activable** : Déployer des formats d’acculturation sur-mesure (conférences, ateliers, audits de maturité, parcours certifiants) pour accompagner la transformation IA des équipes produit.
 
-### 3. Gouvernance et monitoring de l’IA en production
-- **Description** : Les organisations cherchent à industrialiser l’IA, avec des besoins en monitoring, gestion des coûts tokens, adoption de standards (MCP), et gouvernance des agents. L’AI Enablement émerge comme fonction dédiée, distincte de l’IT/Data/Product.
-- **Sources** : Newsletters (AI Enablement, MCP, monitoring), Snapshot concurrentiel (Converteo — offre gouvernance IA, Smartesting — traçabilité IA), State of X (industrialisation, fiabilité, passage à l’échelle) · `[tendance]`
-- **Offre activable** : Conseil en gouvernance IA, mise en place de protocoles MCP, formation à l’AI Enablement, audit de monitoring et de coûts IA.
+### 3. Orchestration et gouvernance des agents IA comme nouveau goulot d’étranglement
+- **Description** : L’automatisation IA déplace le goulot de l’exécution technique vers l’orchestration, la gouvernance et la prise de décision. Les clients expriment des besoins sur la structuration des workflows agentiques et la gestion du contexte.
+- **Sources** : Newsletters (déplacement du goulot vers Product/AI Enablement, MCP, workflows agentiques), Snapshot concurrentiel (Converteo, Hubvisory, Thiga — repositionnement sur l’agentique), State of X (l’agentique passe du discours à la réalité, mais la valeur se mesure après déploiement) · `[structurel]` candidat — à corroborer
+- **Offre activable** : Proposer des missions d’architecture et de gouvernance agentique (MCP, orchestration multi-agents, monitoring, gestion du contexte) pour fiabiliser l’industrialisation IA.
 
-### 4. Acculturation et montée en posture stratégique des équipes produit
-- **Description** : Besoin d’accompagnement des équipes PM/PMM pour passer d’un rôle opérationnel à une posture stratégique (positionnement offre, pricing, leadership, harmonisation post-fusion). La demande inclut l’acculturation à l’IA et à l’éco-conception.
-- **Sources** : Synthèse PAD (coaching PMM, acculturation éco-conception), Newsletters (revalorisation du qualitatif, leadership stratégique), State of X (prime à la posture stratégique) · `[tendance]`
-- **Offre activable** : Coaching collectif, ateliers de montée en posture stratégique, acculturation IA/éco-conception, formation à la gouvernance produit.
+### 4. Pression sur la preuve de valeur et la traçabilité des gains IA
+- **Description** : Les clients deviennent sceptiques face au narratif productivité IA et exigent des preuves tangibles de valeur (time to evidence, ROI, traçabilité). L’écart entre investissement IA et valeur perçue devient un enjeu explicite.
+- **Sources** : Newsletters (scepticisme sur la productivité IA, time to evidence, traçabilité, cas Uber), State of X (l’IA accélère la production mais n’améliore pas le jugement), Snapshot concurrentiel (Converteo — conformité et gouvernance comme offre) · `[tendance]`
+- **Offre activable** : Structurer des offres de mesure d’impact, de traçabilité et de pilotage de la valeur IA (KPI, dashboards, audits de ROI).
 
-### 5. Repositionnement Data PM et intégration de la donnée dans le cycle produit
-- **Description** : Les équipes PO très delivery cherchent à repositionner la donnée en amont du cycle produit, avec un besoin de Data PM capables de diagnostic, exploitation KPI, formulation d’hypothèses et acculturation des équipes.
-- **Sources** : Synthèse PAD (mission Data PM), Newsletters (dichotomie Data In/Data Out, démocratisation data, literacy), State of X (ownership insight marché) · `[tendance]`
-- **Offre activable** : Conseil Data PM, diagnostic organisationnel, formation à la data literacy produit, accompagnement à la structuration des workflows data.
+### 5. Tension sur la séniorité et la rareté des compétences Product AI
+- **Description** : Le marché est en tension sur les profils expérimentés capables de piloter des produits IA complexes. La séniorisation est visible dans les offres, et la compétence IA est identifiée comme pénurique.
+- **Sources** : Synthèse PAD (profils lead/principal/head demandés), Snapshot emploi (séniorisation, IA compétence n°1, baromètre Seyos/TPC), State of X (hiring/rétention défi n°1) · `[tendance]`
+- **Offre activable** : Valoriser l’accès à un vivier de profils seniors Product AI, proposer des missions de mentoring/coaching pour accélérer la montée en compétences.
 
 ---
 
@@ -52,59 +52,59 @@ Registre des convictions non renseigné pour cette expertise ce cycle — aucune
 ## Bloc 3 — Compétences recherchées
 
 ### 1. Maîtrise du cycle de vie produit IA (discovery → déploiement de features IA)
-- **Sources** : Snapshot emploi (WTTJ, Indeed, baromètres Seyos/TPC), Newsletters (adoption LLM, Spec-Driven Development, prototypage rapide IA), State of X (industrialisation IA, passage à l’échelle) · `[tendance]`
-- **Pour le catalogue** : Formation complète au cycle de vie produit IA, incluant discovery, delivery, monitoring et itération IA.
+- **Sources** : Snapshot emploi (WTTJ multi-employeurs), Newsletters (discovery inversée, prototypage rapide IA, delivery orchestrée), State of X (cycle de vie IA, adoption structurée) · `[tendance]`
+- **Pour le catalogue** : Formation « Product AI : discovery, delivery et déploiement de features IA » — focus sur la spécificité IA vs produit classique.
 
-### 2. Compréhension et mise en œuvre des LLM (GPT, Claude, Mistral) et agents IA
-- **Sources** : Snapshot emploi (présence dans les offres, outils nommés), Newsletters (adoption LLM, orchestration agents, MCP), State of X (protocoles agentiques) · `[tendance]`
-- **Pour le catalogue** : Parcours de formation LLM appliqué produit, orchestration d’agents, intégration MCP.
+### 2. Compréhension des LLM et de leur mise en œuvre produit (GPT, Claude, Mistral)
+- **Sources** : Snapshot emploi (WTTJ), Newsletters (PM IA spécialiste, LLM, fine-tuning, evals), State of X (LLM comme socle technique) · `[tendance]`
+- **Pour le catalogue** : Module « LLM pour Product Managers : de la compréhension à l’intégration produit ».
 
-### 3. Collaboration étroite avec data scientists/ingénieurs IA
-- **Sources** : Snapshot emploi (récurrence dans les offres), Newsletters (collaboration multi-profils, AI Enablement), State of X (industrialisation IA, ownership insight) · `[tendance]`
-- **Pour le catalogue** : Module de collaboration interdisciplinaire produit/data/IA, ateliers pratiques.
+### 3. Orchestration d’agents IA et protocoles (MCP, multi-agents, workflows agentiques)
+- **Sources** : Newsletters (MCP, orchestration, workflows agentiques), Snapshot emploi (AI agents, orchestration multi-modèles), State of X (protocoles agentiques, industrialisation) · `[structurel]` candidat — à corroborer
+- **Pour le catalogue** : Parcours « Orchestration d’agents IA et protocoles MCP pour PM/PO ».
 
-### 4. Gouvernance, monitoring et évaluation des systèmes IA en production
-- **Sources** : Newsletters (AI Enablement, monitoring, MCP), Snapshot concurrentiel (Converteo, Smartesting), State of X (fiabilité, passage à l’échelle) · `[tendance]`
-- **Pour le catalogue** : Formation à la gouvernance IA, monitoring, gestion des coûts tokens, évaluation continue.
+### 4. Collaboration étroite avec data scientists / ingénieurs IA
+- **Sources** : Snapshot emploi (WTTJ), Newsletters (collaboration interdisciplinaire, hybridation des rôles), State of X (humain requis pour fiabiliser l’IA) · `[tendance]`
+- **Pour le catalogue** : Atelier « Travailler avec les data scientists et ingénieurs IA : bonnes pratiques pour PM ».
 
-### 5. Posture stratégique et leadership produit en environnement IA
-- **Sources** : Snapshot emploi (séniorisation, Staff/Senior AI PM), Synthèse PAD (coaching PMM, Head/Directeur), State of X (prime à la posture stratégique) · `[tendance]`
-- **Pour le catalogue** : Parcours de leadership produit IA, coaching à la prise de décision stratégique, acculturation à la gouvernance IA.
+### 5. Gouvernance, traçabilité et mesure d’impact IA
+- **Sources** : Newsletters (gouvernance IA, traçabilité, conformité), Snapshot concurrentiel (Converteo — offre gouvernance IA), State of X (besoin de métriques, supervision, escalade) · `[tendance]`
+- **Pour le catalogue** : Formation « Gouvernance et mesure d’impact IA pour équipes produit ».
 
 ---
 
 ## Bloc 4 — Contenus de notoriété suggérés
 
-### 1. L’agentique comme nouveau cœur de valeur produit : retours d’expérience et limites
-- **Pourquoi le traiter** : Sujet central du trimestre, convergence cabinets, demande client émergente, peu de retours concrets sur la mise en production et les limites réelles.
-- **Sources** : Newsletters (adoption frameworks agentiques, Spec-Driven Development), Snapshot concurrentiel (Converteo, Hubvisory, Thiga), State of X (industrialisation, fiabilité) · `[tendance]`
-- **Angle & format** : REX croisés (clients, cabinets, échecs/limites) — article ou table ronde.
+### 1. « Orchestration d’agents IA : du POC à la production »
+- **Pourquoi le traiter** : Sujet en forte montée, peu documenté côté PM ; enjeu central pour l’industrialisation IA, identifié comme nouveau goulot d’étranglement.
+- **Sources** : Newsletters (orchestration, MCP, workflows agentiques), Snapshot concurrentiel (Converteo, Hubvisory, Thiga), State of X (industrialisation, passage à l’échelle) · `[structurel]` candidat — à corroborer
+- **Angle & format** : Décryptage des architectures agentiques, retours d’expérience, pièges à éviter — article long ou webinar.
 
-### 2. Gouvernance IA et monitoring : de la théorie à la pratique
-- **Pourquoi le traiter** : Besoin client récurrent, émergence de l’AI Enablement, adoption MCP, peu de contenus opérationnels sur la gouvernance réelle.
-- **Sources** : Newsletters (AI Enablement, monitoring, MCP), Snapshot concurrentiel (Converteo, Smartesting), State of X (fiabilité, passage à l’échelle) · `[tendance]`
-- **Angle & format** : Guide pratique, retours terrain, checklist — article ou webinar.
+### 2. « Mesurer la valeur réelle de l’IA produit : du narratif à la preuve »
+- **Pourquoi le traiter** : Scepticisme croissant sur la productivité IA, demande client de traçabilité et de ROI, enjeu de crédibilité pour les offres conseil.
+- **Sources** : Newsletters (time to evidence, ROI, cas Uber), State of X (accélération ≠ jugement), Snapshot concurrentiel (offres gouvernance/mesure) · `[tendance]`
+- **Angle & format** : Méthodologies de mesure d’impact, retours d’expérience, outils — article ou post LinkedIn.
 
-### 3. Posture stratégique et leadership produit à l’ère de l’IA
-- **Pourquoi le traiter** : Demande de montée en posture, séniorisation du marché, enjeu de différenciation, peu de contenus sur le leadership produit IA.
-- **Sources** : Synthèse PAD (coaching PMM, Head/Directeur), Snapshot emploi (Staff/Senior AI PM), State of X (prime à la posture stratégique) · `[tendance]`
-- **Angle & format** : Témoignages de leaders, analyse de trajectoires, coaching — podcast ou article.
+### 3. « Acculturation IA : réussir la transformation produit au-delà de la technique »
+- **Pourquoi le traiter** : Demande client récurrente (missions conseil, formation), enjeu de transformation culturelle et organisationnelle, peu traité en profondeur.
+- **Sources** : Synthèse PAD (missions acculturation IA), Newsletters (cycle d’adoption, AI Enablement), State of X (adoption structurée) · `[tendance]`
+- **Angle & format** : Guide pratique, témoignages, checklists — article ou mini-guide téléchargeable.
 
-### 4. Data PM et acculturation data dans le cycle produit IA
-- **Pourquoi le traiter** : Besoin émergent, peu de ressources sur le repositionnement Data PM dans l’IA, enjeu d’ownership insight marché.
-- **Sources** : Synthèse PAD (mission Data PM), Newsletters (dichotomie Data In/Data Out), State of X (ownership insight) · `[tendance]`
-- **Angle & format** : Cas pratiques, interviews Data PM, frameworks d’acculturation — article ou atelier.
+### 4. « Le PM augmenté : mythe, réalité et trajectoires d’évolution »
+- **Pourquoi le traiter** : Notion en construction, hype vs réalité, questionnement sur la légitimité et la trajectoire des profils PM face à l’IA.
+- **Sources** : Newsletters (taxonomie PM IA, PM augmenté, No PM, Product Builder), Snapshot emploi (intitulés émergents), State of X (posture stratégique) · `[tendance]`
+- **Angle & format** : Débat d’experts, table ronde, podcast.
 
-### 5. Éco-conception et IA : intégrer le numérique responsable dans la stratégie produit
-- **Pourquoi le traiter** : Signal faible mais inédit, enjeu de différenciation, peu de contenus sur l’articulation IA/éco-conception.
-- **Sources** : Synthèse PAD (coaching éco-conception), Newsletters (aucun contenu structuré, signal à surveiller) · `[mode]`
-- **Angle & format** : Exploration, benchmark, retours d’expérience — article ou table ronde.
+### 5. « Gouvernance IA et conformité : transformer la contrainte en avantage produit »
+- **Pourquoi le traiter** : Gouvernance et conformité deviennent des offres différenciantes, peu couvertes côté PM, enjeu fort pour les secteurs régulés.
+- **Sources** : Snapshot concurrentiel (Converteo, Smartesting), Newsletters (gouvernance IA, conformité AI Act), State of X (gouvernance, traçabilité) · `[tendance]`
+- **Angle & format** : Cas d’usage, interview d’experts, article sectoriel.
 
 ---
 
 ## Les signaux importants du mois
 
-- L’agentique s’impose comme axe de repositionnement central, avec une convergence cabinets et une demande client émergente sur l’intégration d’agents IA dans le cycle produit.
-- La séniorisation du segment AI PM se confirme, avec une demande accrue pour des profils capables d’orchestrer, gouverner et monitorer l’IA en production.
-- La gouvernance IA (AI Enablement, monitoring, MCP) devient un enjeu opérationnel, mais la maturité réelle reste hétérogène ; la demande de contenus et de formations pratiques est forte.
+- Le déplacement du goulot d’étranglement de l’exécution technique vers l’orchestration, la gouvernance et la prise de décision produit s’accélère, porté par l’industrialisation IA et l’émergence de l’agentique.
+- La séniorisation et la rareté des compétences Product AI deviennent structurantes : le marché valorise les profils expérimentés capables de piloter la transformation IA.
+- La demande client se concentre sur l’acculturation IA, la preuve de valeur et la gouvernance, avec une attente de formats d’accompagnement concrets et mesurables.
 

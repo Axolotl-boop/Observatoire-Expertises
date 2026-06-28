@@ -17,112 +17,112 @@
 ## Bloc 1 — Problématiques récurrentes & Offres
 
 ### 1. Surévaluation de la demande QA en régie (effet « recette »)
-- **Description** : Le volume d’opportunités QA (42 mentions) est gonflé par la détection lexicale du mot « recette » dans les contextes delivery, sans mission QA dédiée confirmée côté conseil. La QA reste une composante transversale, rarement une demande autonome ce mois.
-- **Sources** : Synthèse PAD · Snapshot emploi · `[mode]`
-- **Offre activable** : Repositionner l’offre QA sur l’accompagnement transverse (pilotage qualité, culture d’équipe) plutôt que sur la fourniture de profils QA isolés.
+- **Description** : Le volume d’opportunités QA détecté en régie (4 mentions) est gonflé par la captation du terme « recette » dans des contextes delivery, sans qu’il s’agisse de missions QA spécialisées. Aucune mission conseil QA structurée n’est documentée ce mois.
+- **Sources** : Synthèse PAD (analyse fine du pipe), Snapshot emploi (absence de signal ESN/conseil) · `[mode]`
+- **Offre activable** : Repositionner l’offre QA sur l’accompagnement à la structuration de la démarche qualité, pas sur la simple exécution de la recette/delivery.
 
-### 2. Demande croissante de séniorité et de management QA
-- **Description** : Les profils Head/Directeur et Lead dominent la demande en régie, et la couche management (QA Manager, Head of QA) est dense sur le marché. Les clients attendent des QA capables d’encadrer, structurer et piloter la qualité à l’échelle.
-- **Sources** : Synthèse PAD · Snapshot emploi · `[tendance]`
-- **Offre activable** : Proposer des missions de structuration QA, coaching de leads, et accompagnement à la séniorisation des équipes.
+### 2. Absence de positionnement QA sur l’agentique et l’IA
+- **Description** : Aucun cabinet QA ne se positionne sur l’agentique (tests de systèmes agentiques, gouvernance QA de l’IA), alors que la demande et l’offre se structurent sur ce terrain côté Product/IA.
+- **Sources** : Snapshot concurrentiel (trou QA sur l’agentique), Newsletters (montée de l’IA et des workflows agentiques) · `[tendance]`
+- **Offre activable** : Créer une offre QA dédiée à la validation et à la gouvernance des systèmes IA/agentiques (tests non-déterministes, traçabilité, robustesse).
 
-### 3. Automatisation des tests : attente généralisée, structuration inégale
-- **Description** : L’automatisation des tests (E2E, frameworks) est une compétence attendue et structurante, mais la maturité d’automatisation reste hétérogène selon les équipes et les secteurs.
-- **Sources** : Snapshot emploi · State of X · Newsletters · `[tendance]`
-- **Offre activable** : Audit de maturité automatisation, accompagnement au choix et à l’architecture des frameworks, formation ciblée.
+### 3. Demande de séniorisation et de management QA
+- **Description** : Les rôles de QA Manager/Head of QA sont présents sur un nombre significatif d’entreprises produit, signalant une attente de séniorisation et d’encadrement au-delà de la simple exécution.
+- **Sources** : Snapshot emploi (WTTJ, APEC, Seyos 2026), Synthèse PAD (profils lead/principal/head en régie) · `[tendance]`
+- **Offre activable** : Proposer des missions de structuration d’équipe QA, mentoring, et accompagnement à la montée en maturité qualité.
 
-### 4. QA-for-AI : segment émergent, demande encore marginale
-- **Description** : Les besoins de test sur produits IA (ML/LLM) apparaissent dans quelques offres (Mistral AI, Dataiku), mais restent un segment étroit, non structurant à ce stade.
-- **Sources** : Snapshot emploi · Newsletters · `[mode]`
-- **Offre activable** : Veille active, construction d’une offre QA-for-AI à tester sur des POC, sans industrialisation immédiate.
+### 4. Pression sur l’automatisation des tests
+- **Description** : L’automatisation des tests (E2E, frameworks) est la compétence la plus recherchée, confirmée par les boards emploi et les baromètres. La demande s’oriente vers des profils capables de piloter l’automatisation avec discernement.
+- **Sources** : Snapshot emploi (WTTJ, Seyos 2026), State of X (State of Test Automation 2026) · `[tendance]`
+- **Offre activable** : Positionner l’offre QA sur l’audit et la stratégie d’automatisation, pas seulement sur la production de scripts.
 
-### 5. Gouvernance et orchestration : la QA absente du repositionnement agentique
-- **Description** : Aucun cabinet QA ne se positionne sur l’agentique (test de systèmes agentiques, gouvernance QA de l’IA), alors que la valeur se déplace vers l’orchestration et la gouvernance dans les offres concurrentes PM/Data/IA.
-- **Sources** : Snapshot concurrentiel · Newsletters · `[tendance]`
-- **Offre activable** : Explorer une offre QA orientée gouvernance des systèmes IA/agentiques, en partenariat avec les practices Product AI.
+### 5. QA-for-AI : signal réel mais encore étroit
+- **Description** : Les besoins de test sur les produits IA/ML émergent (Mistral AI, Dataiku), mais restent marginaux et concentrés sur peu d’acteurs. La tension IA est identifiée comme pénurique à horizon 2030.
+- **Sources** : Snapshot emploi (WTTJ, APEC, Seyos 2026), State of X (State of Testing 2026) · `[mode]`
+- **Offre activable** : Construire une offre de veille et de formation sur la QA appliquée à l’IA, en anticipation d’une montée en volume.
 
 ---
 
 ## Bloc 2 — Convictions à challenger
 
 ### 1. QA-01 — Sans vision du risque, la QA sécurise ce qui importe peu.
-- **Ce que disent les signaux** : Les newsletters et State of X confirment que la priorisation par le risque reste la clé de la valeur QA, surtout face à l’explosion des artefacts générés par l’IA et la pression sur l’automatisation. La tentation d’automatiser massivement sans pilotage du risque est documentée comme génératrice de dette.
-- **Proposition d'action** : Réaffirmer la conviction, en insistant sur la nécessité d’un cadrage stratégique du risque dans les missions QA.
+- **Ce que disent les signaux** : Les baromètres (State of Testing 2026, Seyos 2026) et les offres emploi confirment que la priorisation par le risque reste structurante, mais la pression IA (automatisation massive, nouveaux artefacts à tester) complexifie la hiérarchisation. Les missions orientées « recette » en régie montrent un risque de dilution de la valeur stratégique de la QA. · `[tendance]`
+- **Proposition d'action** : Nuancer — réaffirmer la centralité du risque, mais intégrer la nécessité de requalifier la QA face à la multiplication des artefacts IA.
 
 ### 2. QA-02 — La qualité est une responsabilité d'équipe, pas d'une fonction.
-- **Ce que disent les signaux** : La demande de séniorité et de management QA, couplée à la structuration des équipes autour de la culture qualité (newsletters, snapshot emploi), conforte l’idée que la QA doit irriguer toute l’équipe, pas être un silo.
-- **Proposition d'action** : Réaffirmer, en outillant les QA pour jouer un rôle de catalyseur de culture qualité.
+- **Ce que disent les signaux** : Les offres emploi (WTTJ, Seyos 2026) et les newsletters insistent sur la séniorisation et l’encadrement, mais la QA reste souvent cantonnée à l’exécution. La montée des rôles de management QA montre une attente de diffusion de la culture qualité, mais la réalité terrain reste hétérogène. · `[tendance]`
+- **Proposition d'action** : Nuancer — encourager la diffusion de la culture qualité, mais reconnaître la persistance d’une QA perçue comme silo.
 
 ### 3. QA-03 — Le shift-left n'est pas une méthode, c'est une culture.
-- **Ce que disent les signaux** : Les signaux State of X et newsletters montrent que l’intervention QA dès la discovery reste rare, mais que les équipes qui l’adoptent gagnent en efficacité et en réduction de coût. Le shift-left est cité comme moteur de valeur, mais sa diffusion reste incomplète.
-- **Proposition d'action** : Nuancer : maintenir la conviction mais renforcer l’accompagnement au changement culturel dans les offres.
+- **Ce que disent les signaux** : Le State of Testing 2026 montre que le shift-left est tiré par la régulation dans certains secteurs, mais reste peu intégré dans la pratique courante (sauf finance). Les offres emploi mentionnent l’agile/Scrum comme contexte, mais sans preuve d’un shift-left généralisé. · `[mode]`
+- **Proposition d'action** : Mettre en veille — le shift-left reste un idéal plus qu’une réalité généralisée.
 
 ### 4. QA-04 — Sans architecture, l'automatisation construit la dette de demain.
-- **Ce que disent les signaux** : L’automatisation est omniprésente, mais la maturité d’architecture varie fortement. Les State of X et snapshot emploi pointent le risque de dette QA si l’automatisation est menée sans cadre.
-- **Proposition d'action** : Réaffirmer, en proposant systématiquement un diagnostic d’architecture avant tout projet d’automatisation.
+- **Ce que disent les signaux** : L’automatisation progresse (State of Test Automation 2026, snapshot emploi), mais l’impact réel des outils IA reste faible (17 % constatent un impact significatif). Le risque de dette par automatisation non maîtrisée est confirmé. · `[tendance]`
+- **Proposition d'action** : Réaffirmer — la structuration de l’automatisation est critique, surtout avec l’arrivée des outils IA.
 
 ### 5. QA-06 — L'IA ne remplace pas le jugement du Quality Engineer elle l'amplifie.
-- **Ce que disent les signaux** : Les State of X et newsletters convergent : l’IA accélère la génération de tests, mais ne remplace ni la stratégie de risque, ni le go/no-go. L’anxiété sur l’IA en QA est élevée, mais diminue avec l’usage raisonné.
-- **Proposition d'action** : Réaffirmer, en outillant les QA pour challenger et superviser les outputs IA.
+- **Ce que disent les signaux** : Les baromètres et les offres emploi convergent : l’IA accélère la production de tests, mais la stratégie, le go/no-go et la priorisation restent humains. L’anxiété IA est forte chez les testeurs, sauf chez les utilisateurs actifs. · `[tendance]`
+- **Proposition d'action** : Réaffirmer — l’IA est un levier, pas un substitut au jugement QA.
 
 ---
 
 ## Bloc 3 — Compétences recherchées
 
-### 1. Automatisation des tests (E2E, frameworks)
-- **Sources** : Snapshot emploi · Seyos 2026 · State of X · `[tendance]`
-- **Pour le catalogue** : Formation avancée à l’automatisation, choix et architecture des frameworks, bonnes pratiques de maintenance.
+### 1. Automatisation des tests (E2E, frameworks, scripts)
+- **Sources** : Snapshot emploi (WTTJ, Seyos 2026), State of Test Automation 2026 · `[tendance]`
+- **Pour le catalogue** : Formation avancée à la stratégie d’automatisation (choix des frameworks, maintenance, debt management).
 
-### 2. Management et encadrement d’équipe QA
-- **Sources** : Snapshot emploi · WTTJ · Seyos 2026 · `[tendance]`
-- **Pour le catalogue** : Parcours de montée en compétences pour QA Lead/Manager, coaching à la structuration d’équipe.
+### 2. Management QA / Encadrement d’équipe
+- **Sources** : Snapshot emploi (WTTJ, APEC, Seyos 2026) · `[tendance]`
+- **Pour le catalogue** : Parcours de montée en compétences pour QA Manager/Head of QA (leadership, mentoring, pilotage qualité).
 
 ### 3. Test de modèles ML / produits IA
-- **Sources** : Snapshot emploi · Seyos 2026 · `[mode]`
-- **Pour le catalogue** : Module d’initiation au test de systèmes IA, veille sur les pratiques émergentes.
+- **Sources** : Snapshot emploi (WTTJ, APEC), Seyos 2026 (signal pénurie IA) · `[mode]`
+- **Pour le catalogue** : Module d’initiation à la QA pour l’IA (spécificités du test non-déterministe, oracles, robustesse).
 
-### 4. Ingénierisation du test (Software Engineer in Test)
-- **Sources** : Snapshot emploi · WTTJ · `[tendance]`
-- **Pour le catalogue** : Formation croisée QA/dev, outillage pour SET, bonnes pratiques d’intégration continue.
+### 4. Software Engineer in Test (SET) / Ingénierisation du test
+- **Sources** : Snapshot emploi (WTTJ, Dataiku, Mistral AI) · `[tendance]`
+- **Pour le catalogue** : Formation croisée QA/dev (outillage, pipelines CI/CD, testabilité du code).
 
-### 5. Gouvernance de la qualité et pilotage par les KPIs
-- **Sources** : State of X · Newsletters · `[tendance]`
-- **Pour le catalogue** : Formation à la lecture, au storytelling et à l’exploitation des KPIs qualité pour dialoguer avec le CPO/CTO.
+### 5. Test mobile et web (iOS/Android/Web)
+- **Sources** : Snapshot emploi (WTTJ) · `[tendance]`
+- **Pour le catalogue** : Parcours spécifique test mobile (outils, frameworks, bonnes pratiques).
 
 ---
 
 ## Bloc 4 — Contenus de notoriété suggérés
 
-### 1. QA et IA : mythe, réalité et anxiété
-- **Pourquoi le traiter** : Sujet qui monte, anxiété élevée dans la communauté QA, besoin de démystification et de retours d’expérience concrets.
-- **Sources** : State of X · Newsletters · Snapshot emploi · `[tendance]`
-- **Angle & format** : Table ronde ou article « L’IA va-t-elle tuer la QA ? » — focus sur l’amplification, pas le remplacement.
+### 1. QA et agentique : pourquoi la QA doit investir le test des systèmes IA/agents
+- **Pourquoi le traiter** : Angle peu couvert, trou concurrentiel identifié (aucun cabinet QA positionné), enjeu croissant avec la montée de l’agentique.
+- **Sources** : Snapshot concurrentiel, Newsletters, State of X · `[tendance]`
+- **Angle & format** : Article expert ou webinar — « Tester l’agentique : nouveaux défis, nouvelles méthodes »
 
-### 2. Automatisation : comment éviter la dette QA ?
-- **Pourquoi le traiter** : Demande client récurrente, maturité hétérogène, risque de fausse sécurité.
-- **Sources** : State of X · Snapshot emploi · `[tendance]`
-- **Angle & format** : Guide pratique ou webinar « Automatiser sans s’enfermer : l’architecture avant tout ».
+### 2. Automatisation intelligente : éviter la dette QA à l’ère de l’IA
+- **Pourquoi le traiter** : Demande client récurrente, enjeu de différenciation, confirmation par les baromètres et l’emploi.
+- **Sources** : Snapshot emploi, State of Test Automation 2026 · `[tendance]`
+- **Angle & format** : Post LinkedIn ou guide pratique — « Automatiser sans s’enfermer : bonnes pratiques et pièges à éviter »
 
-### 3. QA-for-AI : premiers retours terrain
-- **Pourquoi le traiter** : Segment émergent, peu couvert, curiosité forte sur les pratiques de test IA.
-- **Sources** : Snapshot emploi · Newsletters · `[mode]`
-- **Angle & format** : Article ou post LinkedIn « Tester un LLM, c’est quoi ? » — retours d’expérience, limites, outils.
+### 3. Management QA : structurer et faire grandir une équipe qualité
+- **Pourquoi le traiter** : Montée de la séniorisation, besoin de leadership QA, peu de ressources francophones sur le sujet.
+- **Sources** : Snapshot emploi, Seyos 2026 · `[tendance]`
+- **Angle & format** : Podcast ou table ronde — « De QA Engineer à Head of QA : parcours, enjeux, conseils »
 
-### 4. Le rôle du QA Manager dans la transformation produit
-- **Pourquoi le traiter** : Densité management sur le marché, besoin de structuration, peu de contenus francophones.
-- **Sources** : Snapshot emploi · Seyos 2026 · `[tendance]`
-- **Angle & format** : Podcast ou interview « De QA Engineer à Head of QA : trajectoires et défis ».
+### 4. QA-for-AI : la nouvelle frontière du test logiciel
+- **Pourquoi le traiter** : Sujet émergent, tension IA identifiée comme pénurique, anticipation d’une montée en volume.
+- **Sources** : Snapshot emploi, Seyos 2026, State of Testing 2026 · `[mode]`
+- **Angle & format** : Article de fond ou mini-série vidéo — « Tester l’IA : oracles, robustesse, limites »
 
-### 5. Orchestration et gouvernance QA dans les systèmes agentiques
-- **Pourquoi le traiter** : Trou concurrentiel, aucun cabinet QA positionné, valeur en déplacement vers l’orchestration.
-- **Sources** : Snapshot concurrentiel · Newsletters · `[tendance]`
-- **Angle & format** : Article d’opinion ou webinar « QA et agentique : le chaînon manquant ? ».
+### 5. Le shift-left en QA : mythe ou réalité ?
+- **Pourquoi le traiter** : Décalage entre discours et pratique, baromètres nuancés, sujet de débat dans la communauté.
+- **Sources** : State of Testing 2026, Snapshot emploi · `[mode]`
+- **Angle & format** : Article d’opinion ou débat live — « Shift-left : où en est-on vraiment ? »
 
 ---
 
 ## Les signaux importants du mois
 
-- La demande QA reste majoritairement transverse et intégrée à la delivery, sans missions spécialisées autonomes ce mois.
-- L’automatisation des tests est attendue partout, mais la maturité d’architecture et de pilotage du risque est très variable.
-- Le segment QA-for-AI émerge mais reste marginal ; la gouvernance QA des systèmes agentiques est un angle encore inoccupé par les cabinets spécialisés.
+- La QA reste cantonnée à l’exécution/delivery dans la demande régie, mais la séniorisation (management, pilotage) monte en puissance côté emploi.
+- Aucun acteur QA ne se positionne sur le test des systèmes IA/agentiques, alors que la demande et l’offre se structurent sur ce terrain côté Product/IA — trou concurrentiel à saisir.
+- L’automatisation des tests est la compétence structurante, mais l’impact réel des outils IA reste limité ; la vigilance sur la dette d’automatisation est confirmée.
 

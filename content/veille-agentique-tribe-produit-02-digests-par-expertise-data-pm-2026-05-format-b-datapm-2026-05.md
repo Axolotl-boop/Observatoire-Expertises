@@ -9,121 +9,120 @@
 | **Date de publication** | 2026-06 |
 | **Mode** | briefing informatif |
 
-**Matière mobilisée ce cycle** : ☐ Newsletters · ☐ Synthèse PAD · ☑ Snapshot concurrentiel · ☑ Snapshot emploi · ☑ State of X · ☐ REX  
-→ Trou de source : Newsletters, Synthèse PAD, REX absentes ce cycle.  
-Cycle calme — peu de signaux nouveaux ce mois ; matériau limité, à lire comme tel.
+**Matière mobilisée ce cycle** : ☑ Newsletters · ☑ Synthèse PAD · ☑ Snapshot concurrentiel · ☑ Snapshot emploi · ☑ State of X · ☐ REX  
+→ Toutes les briques attendues sont présentes — pas de trou de source.
 
 ---
 
 ## Bloc 1 — Problématiques récurrentes & Offres
 
-### 1. Bifurcation des profils Data PM : ESN/conseil vs. produit/éditeur
-- **Description** : Les offres d’emploi révèlent deux sous-segments distincts sous l’étiquette Data PM : d’un côté, des Data Product Owner/Manager à skew conseil/ESN, centrés sur le delivery client et l’expérience data ; de l’autre, des ML/AI PM et Analytics PM, portés par des éditeurs/scale-ups, avec un périmètre plus stratégique et des compétences IA/ML. Cette dualité n’est pas encore reconnue dans les baromètres, mais elle structure la demande réelle.
-- **Sources** : Snapshot emploi datapm T2-2026 (WTTJ, Indeed), baromètres Seyos/Noé (absence de sous-catégorie dédiée), snapshot concurrentiel (absence de mouvement structurant sur ce point) · `[tendance]`
-- **Offre activable** : Adapter le positionnement et la communication selon le segment visé (conseil/ESN vs. produit/éditeur) ; clarifier les parcours et attentes en entretien.
+### 1. Positionnement du Data PM dans des contextes delivery à forte complexité technique
+- **Description** : Les demandes de Data PM sont principalement tirées par des environnements de delivery client complexes, où la donnée est souvent traitée de façon réactive (support, tickets) et la séniorité attendue est élevée (Head/Directeur, Lead). Les clients expriment le besoin d’un diagnostic organisationnel, d’une exploitation des KPI existants et d’une acculturation des PO à une pratique data plus amont.
+- **Sources** : Synthèse PAD (motif Data PM, séniorité, delivery/plateforme), Snapshot emploi (skew conseil/ESN, expérience exigée) · `[tendance]`
+- **Offre activable** : Positionner une offre d’immersion Data PM, combinant diagnostic, acculturation et contribution opérationnelle directe, avec un focus sur la montée en maturité data des équipes PO.
 
-### 2. Tension sur l’expérience préalable en data produit
-- **Description** : Les annonces exigent un niveau d’expérience élevé sur des produits data (2 à 8 ans selon les structures), particulièrement côté conseil/ESN. La rareté des profils expérimentés accentue la tension sur le recrutement.
-- **Sources** : Snapshot emploi datapm T2-2026 (WTTJ, Indeed), baromètre Noé 2026, Seyos 2026 · `[tendance]`
-- **Offre activable** : Valoriser l’accompagnement à la montée en compétence et la formation continue pour sécuriser les recrutements.
+### 2. Émergence de l’agentique dans le cycle de design produit
+- **Description** : Un besoin de conseil explicite sur la mise en place d’un framework agentique (structuration du discovery, rédaction d’artefacts, découpage en features, outillage LLM) apparaît, avec une attente de rétro-documentation requêtable par IA. Ce signal reste isolé mais détaillé.
+- **Sources** : Synthèse PAD (motif IA/agentique), Snapshot concurrentiel (Converteo, Hubvisory, Thiga, AI Builders sur l’agentique) · `[tendance]`
+- **Offre activable** : Proposer une offre conseil « Data PM × agentique » pour structurer la chaîne de conception produit avec des agents IA, en s’appuyant sur des MVP greenfield et l’intégration Atlassian.
 
-### 3. Delivery client et définition de besoins data (spécificité conseil)
-- **Description** : Les missions côté ESN/conseil mettent l’accent sur la capacité à identifier les besoins, collecter la donnée et assurer le delivery chez le client, plus que sur la construction de produits data internes.
-- **Sources** : Snapshot emploi datapm T2-2026 (WTTJ, Indeed) · `[tendance]`
-- **Offre activable** : Proposer des modules de formation ou d’accompagnement spécifiques à la gestion de projet data en environnement client.
+### 3. Acculturation à l’éco-conception pour les PM
+- **Description** : Demande d’accompagnement pour intégrer l’éco-conception dans la stratégie produit, en vue de labellisation numérique responsable (RGESN). Les PM sont ciblés comme relais internes pour porter le sujet devant la direction.
+- **Sources** : Synthèse PAD (motif éco-conception), Snapshot emploi (aucun signal structurant, observation qualitative) · `[mode]`
+- **Offre activable** : Construire un module d’acculturation/formation à l’éco-conception pour PM, adossé à la démarche de labellisation et à la présentation de résultats à la direction.
 
-### 4. Gouvernance data et data platform : signaux faibles
-- **Description** : Quelques offres mentionnent la gouvernance data ou la gestion de data platforms, mais le signal reste ponctuel et non généralisé.
-- **Sources** : Snapshot emploi datapm T2-2026 (WTTJ) · `[mode]`
-- **Offre activable** : Surveiller l’évolution de la demande sur ce sujet pour ajuster l’offre si la tendance se confirme.
+### 4. Montée en posture stratégique des équipes PMM/PM
+- **Description** : Besoin de coaching collectif pour faire évoluer des équipes historiquement opérationnelles vers une posture stratégique (positionnement offre, pricing, leadership, harmonisation post-fusion).
+- **Sources** : Synthèse PAD (motif coaching PMM), Snapshot concurrentiel (absence de positionnement fort sur ce créneau) · `[mode]`
+- **Offre activable** : Déployer des parcours de coaching collectif axés sur la stratégie produit et l’alignement post-fusion, avec un volet leadership et harmonisation des pratiques.
 
-### 5. Cycle de vie ML (évaluation, A/B, monitoring) : besoin émergent
-- **Description** : Un besoin ponctuel d’expertise sur le cycle de vie des modèles ML (évaluation, A/B testing, monitoring post-déploiement) apparaît dans quelques offres, mais sans masse critique.
-- **Sources** : Snapshot emploi datapm T2-2026 (Indeed) · `[mode]`
-- **Offre activable** : Positionner des experts ou des formations ciblées sur le monitoring et la gouvernance des modèles ML.
+### 5. Demande de profils Data PM/PO à séniorité élevée, rareté sur le marché
+- **Description** : Les offres d’emploi Data PM/PO exigent une expérience significative sur des produits data, avec une tension sur la disponibilité des profils seniors, principalement en Île-de-France.
+- **Sources** : Snapshot emploi (WTTJ, Indeed, baromètres Seyos/Noé, France Travail) · `[tendance]`
+- **Offre activable** : Valoriser l’expertise senior Data PM/PO dans les réponses à appel d’offres et renforcer le sourcing sur le segment Paris/IDF.
 
 ---
 
 ## Bloc 2 — Convictions à challenger
 
-### 1. DATAPM-01 — À l'ère de l'IA, la qualité de la donnée est un actif produit — pas un sujet technique.​ Le Data PM est garant de la gouvernance, la traçabilité et la couverture des cas d’usage. Il s’agit alors de documenter et communiquer les métadonnées, le lineage, les règles de gestion et les actions mises en place sur les données sensibles afin d’augmenter la confiance en une source de données unique (“golden source”). ​
-- **Ce que disent les signaux** : Les offres côté conseil/ESN insistent sur la gouvernance et la traçabilité, mais le snapshot emploi montre que la gouvernance data reste un signal faible et non généralisé. Les baromètres n’isolent pas encore ce point pour le Data PM. · `[mode]`
-- **Proposition d'action** : Nuancer — la gouvernance data est attendue mais pas encore structurante dans toutes les offres ; surveiller l’évolution.
+### 1. DATAPM-01 — « À l'ère de l'IA, la qualité de la donnée est un actif produit — pas un sujet technique.​ Le Data PM est garant de la gouvernance, la traçabilité et la couverture des cas d’usage. Il s’agit alors de documenter et communiquer les métadonnées, le lineage, les règles de gestion et les actions mises en place sur les données sensibles afin d’augmenter la confiance en une source de données unique (“golden source”). ​»
+- **Ce que disent les signaux** : Les besoins de diagnostic organisationnel, de gouvernance et d’acculturation à la donnée (PAD, emploi) confirment la centralité de la gouvernance data pour le Data PM. Les offres d’emploi et missions conseil attendent explicitement cette posture. · `[tendance]`
+- **Proposition d'action** : Réaffirmer — la demande réelle et les attentes marché convergent sur ce rôle de garant de la gouvernance data.
 
-### 2. DATAPM-02 — On ne part pas nécessairement de profils data engineers pour en faire des PM, mais plutôt de profils produit solides que l'on ancre dans les contraintes réelles de la donnée : qualité, gouvernance, pipelines, modèles sémantiques. La différence se joue dans la compréhension du métier ET de la technique et dans la capacité à arbitrer.
-- **Ce que disent les signaux** : La bifurcation des profils (conseil/ESN vs. produit/éditeur) et l’exigence d’expérience PM/PO sur produits data confirment que la culture produit prime, avec un ancrage data renforcé. · `[tendance]`
-- **Proposition d'action** : Réaffirmer — la tendance du marché valide la conviction, à maintenir.
+### 2. DATAPM-02 — « On ne part pas nécessairement de profils data engineers pour en faire des PM, mais plutôt de profils produit solides que l'on ancre dans les contraintes réelles de la donnée : qualité, gouvernance, pipelines, modèles sémantiques. La différence se joue dans la compréhension du métier ET de la technique et dans la capacité à arbitrer. »
+- **Ce que disent les signaux** : Les offres d’emploi privilégient des profils PM/PO expérimentés sur des produits data, plutôt que des data engineers reconvertis. Le besoin d’arbitrage métier/technique est récurrent. · `[tendance]`
+- **Proposition d'action** : Réaffirmer — la structuration du marché emploi et la demande client valident ce positionnement.
 
-### 3. DATAPM-03 — Des dizaines de dashboards livrés pour zéro usage réel. Le vrai succès d'un produit data se mesure à l'adoption et à l'impact business — pas par la vélocité ou au nombre de tickets fermés. ​
-- **Ce que disent les signaux** : Les offres et le snapshot concurrentiel n’apportent pas de signaux nouveaux ce cycle sur la mesure de l’impact business ; la conviction reste valide mais non challengée. · `[mode]`
-- **Proposition d'action** : Mettre en veille — à réévaluer si des signaux d’évolution apparaissent.
+### 3. DATAPM-03 — « Des dizaines de dashboards livrés pour zéro usage réel. Le vrai succès d'un produit data se mesure à l'adoption et à l'impact business — pas par la vélocité ou au nombre de tickets fermés. ​»
+- **Ce que disent les signaux** : Les missions conseil et les offres d’emploi insistent sur l’impact business, l’acculturation et l’adoption, plutôt que sur la simple livraison de dashboards ou la vélocité. · `[tendance]`
+- **Proposition d'action** : Réaffirmer — la logique d’impact business est attendue et valorisée.
 
-### 4. DATAPM-04 — Les roadmaps data sont trop souvent arbitrées par le rapport de force interne ou la simple capacité à livrer. Un modèle explicite, chiffré et partagé entre toutes les directions — avec des Business Owners accountables — change tout. ​
-- **Ce que disent les signaux** : Pas de signaux nouveaux ce cycle sur la gouvernance de la roadmap data ou la responsabilisation des Business Owners. · `[mode]`
-- **Proposition d'action** : Mettre en veille — à réactiver si la gouvernance de la roadmap émerge dans les offres ou benchmarks.
+### 4. DATAPM-04 — « Les roadmaps data sont trop souvent arbitrées par le rapport de force interne ou la simple capacité à livrer. Un modèle explicite, chiffré et partagé entre toutes les directions — avec des Business Owners accountables — change tout. ​»
+- **Ce que disent les signaux** : Les besoins de diagnostic organisationnel et d’acculturation à la data (PAD) pointent la nécessité d’une gouvernance partagée et d’une responsabilisation transverse. · `[tendance]`
+- **Proposition d'action** : Nuancer — la demande existe mais reste centrée sur l’acculturation et la structuration, la mise en place de modèles chiffrés partagés n’est pas encore dominante.
 
-### 5. DATAPM-05 — Sans adhésion des parties prenantes à la logique d'impact, aucun produit data ne survit à la mise en production. Guides utilisateurs, ambassadeurs, formations par profil — c'est du delivery produit, pas de la conduite du changement. ​
-- **Ce que disent les signaux** : Aucun signal nouveau sur l’acculturation métier ou la formation des parties prenantes dans les offres ou le snapshot concurrentiel. · `[mode]`
-- **Proposition d'action** : Mettre en veille — à surveiller lors des prochains cycles.
+### 5. DATAPM-05 — « Sans adhésion des parties prenantes à la logique d'impact, aucun produit data ne survit à la mise en production. Guides utilisateurs, ambassadeurs, formations par profil — c'est du delivery produit, pas de la conduite du changement. ​»
+- **Ce que disent les signaux** : Les missions d’acculturation et de formation (PAD, emploi) confirment l’importance de l’adhésion des parties prenantes et de la formation continue. · `[tendance]`
+- **Proposition d'action** : Réaffirmer — la formation et l’acculturation sont des attentes explicites du marché.
 
 ---
 
 ## Bloc 3 — Compétences recherchées
 
-### 1. Expérience PM/PO sur produits data (seuil élevé)
-- **Sources** : Snapshot emploi datapm T2-2026 (WTTJ, Indeed), baromètre Noé 2026 · `[tendance]`
-- **Pour le catalogue** : Formation avancée en gestion de produits data, parcours de montée en séniorité.
+### 1. Expérience PM/PO sur produits data (seuil élevé exigé)
+- **Sources** : Snapshot emploi (WTTJ, Indeed, baromètres), Synthèse PAD (profils Head/Directeur, Lead) · `[tendance]`
+- **Pour le catalogue** : Renforcer les modules de formation avancée Data PM/PO, avec focus sur la gestion de produits data complexes et la séniorité.
 
-### 2. Delivery client & définition produit data (spécificité conseil)
-- **Sources** : Snapshot emploi datapm T2-2026 (WTTJ, Indeed) · `[tendance]`
-- **Pour le catalogue** : Modules sur la gestion de projet data en environnement client, cadrage des besoins et delivery.
+### 2. Delivery client & définition produit data
+- **Sources** : Snapshot emploi (annonces ESN/conseil), Synthèse PAD (delivery, plateforme, discovery) · `[tendance]`
+- **Pour le catalogue** : Développer des parcours sur la définition de besoins data et le delivery client, adaptés au contexte ESN/conseil.
 
-### 3. ML/AI Product Management (périmètre partagé avec productai)
-- **Sources** : Snapshot emploi datapm T2-2026 (WTTJ, Indeed) · `[tendance]`
-- **Pour le catalogue** : Formations sur la gestion de produits IA/ML, monitoring et évaluation de modèles.
+### 3. Acculturation data et diagnostic organisationnel
+- **Sources** : Synthèse PAD (acculturation PO, diagnostic), Snapshot emploi (compétence attendue) · `[tendance]`
+- **Pour le catalogue** : Proposer des modules d’acculturation data pour PO/PM, incluant diagnostic organisationnel et montée en maturité data.
 
 ### 4. Gouvernance data / Data Platform
-- **Sources** : Snapshot emploi datapm T2-2026 (WTTJ) · `[mode]`
-- **Pour le catalogue** : Initiation à la gouvernance data, bonnes pratiques de gestion de data platforms.
+- **Sources** : Snapshot emploi (signal ponctuel WTTJ, eXalt, Pernod Ricard) · `[mode]`
+- **Pour le catalogue** : Module optionnel sur la gouvernance data et la gestion de plateformes data, à étoffer si la demande se confirme.
 
-### 5. Tension IA + data (pénurie qualitative, baromètre)
-- **Sources** : Baromètre Seyos 2026 · `[tendance]`
-- **Pour le catalogue** : Parcours d’acculturation IA/data pour PM, focus sur les compétences pénuriques.
+### 5. Compétences IA/ML (cycle de vie, monitoring, fine-tuning)
+- **Sources** : Snapshot emploi (viewjob Indeed, cluster ML/AI PM), State of X (tension IA/data) · `[tendance]`
+- **Pour le catalogue** : Intégrer des modules sur le cycle de vie des modèles ML/AI, à destination des Data PM/PO en contexte produit/éditeur.
 
 ---
 
 ## Bloc 4 — Contenus de notoriété suggérés
 
-### 1. Cartographie des sous-segments Data PM : ESN/conseil vs. produit/éditeur
-- **Pourquoi le traiter** : Sujet structurant, peu couvert dans la littérature, répond à une vraie question de positionnement pour les candidats et les clients.
-- **Sources** : Snapshot emploi datapm T2-2026, baromètres Seyos/Noé · `[tendance]`
-- **Angle & format** : Article de fond ou post LinkedIn — « Data PM : deux marchés, deux réalités ? »
+### 1. Data PM : deux marchés, deux réalités — ESN/conseil vs. produit/éditeur
+- **Pourquoi le traiter** : La bifurcation des intitulés et des attentes (Data PM/PO côté ESN/conseil vs. ML/AI PM côté produit/éditeur) est la structuration la plus nette du trimestre, mais peu documentée dans les baromètres.
+- **Sources** : Snapshot emploi (WTTJ, Indeed), State of X (absence de taxonomie dédiée), Synthèse PAD · `[tendance]`
+- **Angle & format** : Article de fond ou post LinkedIn — « Data PM : pourquoi le marché se scinde en deux ? »
 
-### 2. Tension sur les profils expérimentés en data produit
-- **Pourquoi le traiter** : Demande client récurrente, enjeu de recrutement et de formation, tension confirmée par les baromètres.
-- **Sources** : Snapshot emploi datapm T2-2026, baromètre Noé 2026, Seyos 2026 · `[tendance]`
-- **Angle & format** : Article ou webinar — « Pourquoi les Data PM expérimentés sont-ils si rares ? »
+### 2. L’agentique dans la chaîne produit : du MVP à la production
+- **Pourquoi le traiter** : Signal émergent en conseil (PAD) et mouvement concurrentiel fort (Converteo, Hubvisory, Thiga, AI Builders) ; peu de contenus opérationnels sur la structuration agentique côté Data PM.
+- **Sources** : Synthèse PAD, Snapshot concurrentiel, State of X (Panorama IA) · `[tendance]`
+- **Angle & format** : Webinar ou article — « Structurer un framework agentique pour le Data PM : retours d’expérience et pièges à éviter »
 
-### 3. Gouvernance data : de la théorie à la pratique
-- **Pourquoi le traiter** : Sujet émergent, peu d’offres structurées, enjeu de différenciation pour les cabinets.
-- **Sources** : Snapshot emploi datapm T2-2026 (signaux faibles), conviction DATAPM-01 · `[mode]`
-- **Angle & format** : Guide pratique ou mini-série vidéo — « Gouvernance data : comment l’incarner dans le rôle de Data PM ? »
+### 3. Gouvernance data et conformité IA : du buzzword à la pratique
+- **Pourquoi le traiter** : La gouvernance et la conformité (AI Act, traçabilité) montent en puissance dans les offres concurrentes, mais restent peu traitées côté Data PM.
+- **Sources** : Snapshot concurrentiel (Converteo, Smartesting), State of X · `[tendance]`
+- **Angle & format** : Article ou podcast — « Gouvernance data et conformité IA : comment le Data PM peut-il piloter la transformation ? »
 
-### 4. Delivery client en data : spécificités et bonnes pratiques
-- **Pourquoi le traiter** : Spécificité du segment conseil/ESN, peu documentée, enjeu d’efficacité opérationnelle.
-- **Sources** : Snapshot emploi datapm T2-2026 · `[tendance]`
-- **Angle & format** : Article ou formation courte — « Delivery data en ESN : les clés du succès »
+### 4. Acculturation data : former les PO/PM à la culture data en contexte delivery
+- **Pourquoi le traiter** : Demande client récurrente (PAD), enjeu d’adoption et d’impact business, peu de ressources pratiques sur l’acculturation des équipes produit à la data.
+- **Sources** : Synthèse PAD, Snapshot emploi · `[tendance]`
+- **Angle & format** : Guide pratique ou formation en ligne — « Acculturer les équipes produit à la data : méthodes et outils pour Data PM »
 
-### 5. ML/AI Product Management : où tracer la frontière avec le Product AI ?
-- **Pourquoi le traiter** : Périmètre partagé entre Data PM et Product AI, besoin de clarification pour les clients et les candidats.
-- **Sources** : Snapshot emploi datapm T2-2026, recoupement avec la fiche productai · `[tendance]`
-- **Angle & format** : Article comparatif ou table ronde — « Data PM vs. Product AI : qui fait quoi ? »
+### 5. Éco-conception et numérique responsable : le nouveau terrain d’action des Data PM
+- **Pourquoi le traiter** : Signal faible mais inédit ce mois (PAD), peu de contenus spécialisés pour les Data PM sur l’intégration de l’éco-conception.
+- **Sources** : Synthèse PAD · `[mode]`
+- **Angle & format** : Article ou post LinkedIn — « Data PM et éco-conception : comment intégrer le numérique responsable dans la roadmap produit ? »
 
 ---
 
 ## Les signaux importants du mois
 
-- La bifurcation ESN/conseil vs. produit/éditeur s’impose comme structuration du marché Data PM, mais n’est pas encore reconnue dans les baromètres.
-- La tension sur les profils expérimentés en data produit se confirme, avec des exigences d’expérience élevées et une rareté des candidats.
-- Les signaux sur la gouvernance data et le cycle de vie ML restent faibles ou ponctuels ; à surveiller pour détecter une montée en puissance lors des prochains cycles.
+- La demande Data PM reste tirée par des contextes delivery complexes, avec une exigence de séniorité élevée et une tension sur les profils expérimentés.
+- L’agentique s’impose comme axe de repositionnement d’offre, mais la demande côté Data PM reste émergente et à surveiller pour confirmer sa diffusion.
+- La bifurcation du marché Data PM (ESN/conseil vs. produit/éditeur) s’affirme dans les offres, sans être encore reconnue dans les baromètres — structuration à suivre.
 

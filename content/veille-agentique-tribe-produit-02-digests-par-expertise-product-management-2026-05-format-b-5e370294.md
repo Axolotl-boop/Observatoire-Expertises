@@ -1,4 +1,4 @@
-# Digest Product Management — Juin 2026
+# Digest Product Management — 06/2026
 
 > **Briefing d'expertise** — matériau sourcé à exploiter au point d'usage ; les `[structurel]` sont des candidats à corroborer.
 
@@ -9,120 +9,121 @@
 | **Date de publication** | 2026-06 |
 | **Mode** | briefing informatif |
 
-**Matière mobilisée ce cycle** : ☐ Newsletters · ☐ Synthèse PAD · ☑ Snapshot concurrentiel · ☑ Snapshot emploi · ☑ State of X · ☐ REX  
-→ Trou de source : Newsletters, Synthèse PAD absentes ce cycle.
+**Matière mobilisée ce cycle** : ☐ Newsletters · ☑ Synthèse PAD · ☑ Snapshot concurrentiel · ☑ Snapshot emploi · ☑ State of X · ☐ REX  
+→ Trou de source : Newsletters absentes ce cycle.  
+Cycle calme — peu de signaux nouveaux ce mois ; matériau limité, à lire comme tel.
 
 ---
 
 ## Bloc 1 — Problématiques récurrentes & Offres
 
-### 1. Déplacement de la valeur produit vers l’orchestration et la gouvernance (agentique)
-- **Description** : Les cabinets PM et Data/IA convergent sur le constat que la valeur ne réside plus dans l’exécution technique, mais dans l’orchestration, le raisonnement et la gouvernance des systèmes (notamment agentiques). Les clients cherchent à comprendre comment structurer, piloter et fiabiliser des environnements multi-agents, plutôt qu’à optimiser la delivery pure.
-- **Sources** : Snapshot concurrentiel T2 2026 (Converteo, Hubvisory, Thiga, AI Builders) · `[tendance]`
-- **Offre activable** : Positionner des offres d’accompagnement à la gouvernance agentique, à l’orchestration multi-agents et à la structuration de la prise de décision produit.
+### 1. Demande agentique dans le cycle de design produit
+- **Description** : Besoin de structurer la conception produit autour d’un framework agentique, incluant la rétro-documentation technico-fonctionnelle et la mise en place d’artefacts requêtables par IA. L’objectif est d’outiller le discovery et la delivery avec des agents, sur un périmètre MVP.
+- **Sources** : Synthèse PAD (mission conseil détaillée), Snapshot concurrentiel (Converteo, Hubvisory, Thiga — positionnement agentique) · `[tendance]`
+- **Offre activable** : Positionner une offre conseil « Product Agentique » : diagnostic, structuration de la chaîne discovery/delivery, outillage LLM, accompagnement MVP.
 
-### 2. Gouvernance IA et conformité réglementaire
-- **Description** : La conformité (AI Act, exigences sectorielles) et la gouvernance de l’IA deviennent des demandes explicites, non plus subies mais recherchées comme leviers de confiance et d’avantage compétitif. Les clients attendent des PM une capacité à cadrer et piloter l’intégration de l’IA dans des environnements contraints.
-- **Sources** : Snapshot concurrentiel T2 2026 (Converteo, Smartesting, AI Builders) · `[tendance]`
-- **Offre activable** : Développer des offres de cadrage IA, de gouvernance produit en environnement réglementé, et de conformité-by-design.
+### 2. Montée en posture stratégique des PMM et harmonisation post-fusion
+- **Description** : Équipes PMM cherchant à passer d’un rôle opérationnel à un leadership stratégique (positionnement offre, pricing, influence top management), avec besoin d’harmonisation des pratiques après fusion d’équipes.
+- **Sources** : Synthèse PAD (coaching collectif PMM), Snapshot concurrentiel (ascension PMM, State of Product Marketing) · `[tendance]`
+- **Offre activable** : Coaching collectif PMM, ateliers de repositionnement stratégique, accompagnement à la fusion des pratiques.
 
-### 3. Verticalisation sectorielle des offres produit
-- **Description** : Les cabinets Data/IA et QA structurent des offres verticalisées (Pharma, Retail, Industrie régulée), mais aucun cabinet PM ne revendique de spécialisation sectorielle forte. Les clients des secteurs régulés ou à forte contrainte attendent une expertise produit adaptée à leur contexte.
-- **Sources** : Snapshot concurrentiel T2 2026 (Converteo, KP2i, Smartesting) · `[tendance]`
-- **Offre activable** : Explorer des offres PM verticalisées (Pharma, Retail, Industrie), en s’appuyant sur des référentiels sectoriels et des cas d’usage concrets.
+### 3. Acculturation PM à l’éco-conception et au numérique responsable
+- **Description** : Demande d’accompagnement pour intégrer l’éco-conception dans la stratégie produit, en vue d’une labellisation numérique responsable (RGESN), avec attente de restitution devant la direction.
+- **Sources** : Synthèse PAD (mission conseil PM éco-conception), Snapshot concurrentiel (aucun concurrent PM positionné sur ce créneau) · `[mode]`
+- **Offre activable** : Offre d’acculturation et de formation « PM & Numérique Responsable », ciblée sur la stratégie et le chiffrage produit.
 
-### 4. Internationalisation des pratiques produit
-- **Description** : Les cabinets Data/IA et QA accélèrent leur expansion internationale (ouvertures de bureaux, recrutements multi-zones), alors que le conseil PM reste centré sur le marché français. Les clients internationaux ou en croissance hors France pourraient attendre un accompagnement produit globalisé.
-- **Sources** : Snapshot concurrentiel T2 2026 (Converteo, Artefact, Qestit) · `[structurel]` candidat — à corroborer
-- **Offre activable** : Structurer une offre PM à dimension internationale, ou des missions d’accompagnement à l’internationalisation produit.
+### 4. Repositionnement de la donnée dans le cycle produit (Data PM)
+- **Description** : Besoin d’un Data PM pour diagnostiquer l’organisation, exploiter les KPI, formuler des hypothèses et acculturer les PO à une pratique data plus amont, dans une logique d’immersion.
+- **Sources** : Synthèse PAD (mission Data PM), Snapshot emploi (émergence AI PM/Data PM), State of X (compétence IA pénurique) · `[tendance]`
+- **Offre activable** : Offre Data PM : diagnostic organisationnel, formation PO à la data, accompagnement à l’industrialisation des pratiques data.
 
-### 5. Bifurcation du marché PM : généraliste vs. AI PM
-- **Description** : Le marché de l’emploi PM se scinde entre un segment généraliste (PM, Lead, Head, CPO) et un segment AI PM, ce dernier étant tiré par les ESN/conseil et pure players IA. Les clients expriment des besoins différenciés selon le niveau de séniorité et la dimension IA.
-- **Sources** : Snapshot emploi T2 2026 (WTTJ, Indeed, Seyos 2026, Noé 2026) · `[tendance]`
-- **Offre activable** : Adapter les offres de staffing et de formation selon le segment (généraliste vs. AI PM), clarifier les parcours et les attentes.
+### 5. Demande de profils seniors et de pilotage en régie
+- **Description** : Forte demande de profils Head/Directeur et Lead PM, signalant une attente de séniorité et de pilotage, au-delà de l’exécution.
+- **Sources** : Synthèse PAD (séniorité Head/Directeur dominante), Snapshot emploi (Head/CPO « perle rare »), State of X (montée du leadership PM) · `[tendance]`
+- **Offre activable** : Positionner l’offre sur l’accompagnement de transformation produit par des profils seniors, valoriser l’expertise pilotage/leadership.
 
 ---
 
 ## Bloc 2 — Convictions à challenger
 
 ### 1. PM-01 — L’IA ne remplace pas le PM​
-- **Ce que disent les signaux** : Les benchmarks (State of X 2026) et le snapshot concurrentiel confirment que l’IA accélère l’exécution mais ne remplace pas la clarté stratégique ni le jugement du PM. L’agentique renforce la nécessité d’une gouvernance humaine, et la valeur du PM se déplace vers l’orchestration et la décision. · `[structurel]` candidat — à corroborer
-- **Proposition d'action** : Réaffirmer la conviction, tout en surveillant l’évolution des cas d’usage agentiques en production.
+- **Ce que disent les signaux** : State of X (92,4 % des organisations ont entamé l’IA, mais posture « l’IA assiste, ne remplace pas »), Synthèse PAD (missions où l’IA outille le PM, mais ne prend pas la décision), Snapshot concurrentiel (l’agentique déplace la valeur vers le jugement, pas l’exécution) · `[structurel]` candidat — à corroborer
+- **Proposition d'action** : Réaffirmer — convergence forte sur le fait que l’IA accélère mais ne remplace pas la valeur de jugement du PM.
 
 ### 2. PM-02 — Le PM peut désormais builder.​
-- **Ce que disent les signaux** : Les offres emploi et les signaux concurrentiels montrent que le PM est attendu sur des capacités de prototypage rapide (notamment IA), mais le build reste au service de la décision, pas de l’exécution. · `[tendance]`
-- **Proposition d'action** : Nuancer la conviction : valoriser le build comme outil d’apprentissage et de décision, pas comme finalité.
+- **Ce que disent les signaux** : State of X (adoption IA pour accélérer le build, mais le build sert la décision), Synthèse PAD (missions où le PM outille le discovery/delivery avec IA), Snapshot emploi (AI PM, compétences IA pénuriques) · `[tendance]`
+- **Proposition d'action** : Nuancer — le build facilité par l’IA est réel, mais la différenciation reste sur la capacité à décider, pas à exécuter.
 
-### 3. PM-04 — L’IA n’a d’impact que si elle est intégrée à l’organisation​
-- **Ce que disent les signaux** : Les benchmarks (State of X 2026) soulignent que l’IA n’apporte de valeur que si elle est intégrée aux workflows réels et mesurée sur des gains tangibles. Les offres concurrentielles insistent sur la gouvernance et la conformité-by-design. · `[tendance]`
-- **Proposition d'action** : Réaffirmer, en insistant sur l’accompagnement à l’intégration organisationnelle.
+### 3. PM-03 — Le contexte est l’avantage durable​
+- **Ce que disent les signaux** : State of X (la valeur du PM se déplace vers la construction de contexte, pas la simple accélération), Synthèse PAD (missions de diagnostic, acculturation, structuration de la donnée) · `[tendance]`
+- **Proposition d'action** : Réaffirmer — la construction de contexte (data, discovery, éco-conception) est au cœur des demandes.
 
-### 4. PM-06 — Le métier de PM se différencie​
-- **Ce que disent les signaux** : Le snapshot emploi documente la bifurcation entre PM généraliste et AI PM, confirmant la coexistence de deux trajectoires. · `[tendance]`
-- **Proposition d'action** : Réaffirmer, en clarifiant les parcours et les attentes selon le segment.
+### 4. PM-04 — L’IA n’a d’impact que si elle est intégrée à l’organisation​
+- **Ce que disent les signaux** : State of X (l’IA n’a d’impact que branchée sur les workflows réels), Synthèse PAD (missions d’intégration IA dans les process discovery/delivery), Snapshot concurrentiel (offres agentiques structurées) · `[tendance]`
+- **Proposition d'action** : Réaffirmer — l’intégration organisationnelle est la condition de la valeur IA.
 
-### 5. PM-05 — L’IA rebat le modèle opératoire​
-- **Ce que disent les signaux** : Les signaux concurrentiels et State of X convergent sur la nécessité de repenser les modèles opératoires (découpage, décision, livraison) à l’ère de l’IA et de l’agentique. · `[tendance]`
-- **Proposition d'action** : Mettre en veille pour observation, en attendant des cas d’usage plus matures.
+### 5. PM-06 — Le métier de PM se différencie​
+- **Ce que disent les signaux** : Snapshot emploi (bifurcation PM généraliste vs. AI PM), State of X (trajectoires différenciées PM augmenté vs. Product Builder), Synthèse PAD (profils Data PM, AI PM) · `[tendance]`
+- **Proposition d'action** : Réaffirmer — la différenciation des trajectoires PM est visible et s’accentue.
 
 ---
 
 ## Bloc 3 — Compétences recherchées
 
-### 1. Séniorité élevée pour les rôles de tête (Head/CPO)
-- **Sources** : Snapshot emploi T2 2026 (WTTJ, Seyos 2026) · `[tendance]`
-- **Pour le catalogue** : Renforcer les modules de leadership produit et de pilotage stratégique.
+### 1. Leadership produit / séniorité (Head, Lead, CPO)
+- **Sources** : Synthèse PAD (Head/Directeur, Lead PM en tête), Snapshot emploi (Head/CPO « perle rare »), State of X (montée du leadership PM) · `[tendance]`
+- **Pour le catalogue** : Formation « Leadership produit » : pilotage, stratégie, influence, gestion d’équipe.
 
-### 2. Conception AI-first / intégration IA dans la roadmap
-- **Sources** : Snapshot emploi T2 2026 (WTTJ, Indeed, Seyos 2026) · `[tendance]`
-- **Pour le catalogue** : Développer des formations à la conception de produits AI-first et à l’intégration de l’IA dans la roadmap produit.
+### 2. Compétences IA / AI-first
+- **Sources** : Snapshot emploi (AI PM, compétences IA pénuriques), State of X (IA défi n°1, adoption massive), Synthèse PAD (missions agentiques, Data PM) · `[tendance]`
+- **Pour le catalogue** : Parcours « Product Management & IA » : intégration IA dans la roadmap, outillage LLM, acculturation IA.
 
-### 3. Gouvernance et conformité IA
-- **Sources** : Snapshot concurrentiel T2 2026 (Converteo, Smartesting), State of X 2026 · `[tendance]`
-- **Pour le catalogue** : Créer des modules sur la gouvernance IA, la conformité réglementaire et la gestion des risques.
+### 3. Structuration discovery / delivery outillée par IA
+- **Sources** : Synthèse PAD (framework agentique, artefacts IA), State of X (l’IA outille le discovery/delivery), Snapshot concurrentiel (offres agentiques) · `[tendance]`
+- **Pour le catalogue** : Module « Discovery & Delivery augmentés par IA » : structuration, outils, bonnes pratiques.
 
-### 4. Orchestration multi-agents et pilotage de systèmes complexes
-- **Sources** : Snapshot concurrentiel T2 2026 (Converteo, Hubvisory), State of X 2026 · `[tendance]`
-- **Pour le catalogue** : Monter en puissance sur l’orchestration de systèmes agentiques et la supervision de l’IA en production.
+### 4. Acculturation à la data et à la mesure produit
+- **Sources** : Synthèse PAD (Data PM, acculturation PO à la data), State of X (mesure, KPI, data-driven), Snapshot emploi (exigence data/IA) · `[tendance]`
+- **Pour le catalogue** : Formation « Data pour PM » : diagnostic, exploitation KPI, formulation d’hypothèses.
 
-### 5. Compétences IA/data/cloud en tension
-- **Sources** : Seyos 2026 · `[tendance]`
-- **Pour le catalogue** : Proposer des parcours de montée en compétence sur l’IA, la data et le cloud pour PM.
+### 5. Éco-conception et numérique responsable
+- **Sources** : Synthèse PAD (mission PM éco-conception), Snapshot concurrentiel (aucun concurrent PM positionné), State of X (non documenté ce cycle) · `[mode]`
+- **Pour le catalogue** : Atelier « Éco-conception produit » : référentiel RGESN, intégration dans la stratégie produit.
 
 ---
 
 ## Bloc 4 — Contenus de notoriété suggérés
 
-### 1. Gouvernance produit à l’ère de l’agentique
-- **Pourquoi le traiter** : Sujet en forte montée, peu couvert côté PM, alors que la demande s’exprime côté Data/IA et que la valeur se déplace vers l’orchestration.
-- **Sources** : Snapshot concurrentiel T2 2026 (Converteo, Hubvisory, AI Builders), State of X 2026 · `[tendance]`
-- **Angle & format** : Article ou webinar « Gouverner un produit à l’ère des agents : retours d’expérience et pièges à éviter »
+### 1. L’agentique dans le cycle produit : du MVP à l’industrialisation
+- **Pourquoi le traiter** : Sujet émergent en mission conseil, convergence concurrentielle, peu couvert côté PM pur.
+- **Sources** : Synthèse PAD (mission agentique), Snapshot concurrentiel (Converteo, Hubvisory, Thiga), State of X (industrialisation agentique) · `[tendance]`
+- **Angle & format** : Retour d’expérience sur la structuration d’un framework agentique en discovery/delivery — article ou webinar.
 
-### 2. PM et conformité IA : du frein à l’avantage compétitif
-- **Pourquoi le traiter** : La conformité IA devient un argument d’offre, pas seulement une contrainte ; angle peu traité côté PM.
-- **Sources** : Snapshot concurrentiel T2 2026 (Converteo, Smartesting), State of X 2026 · `[tendance]`
-- **Angle & format** : Post LinkedIn ou guide pratique « Intégrer la conformité IA dans la roadmap produit »
+### 2. Leadership produit : comment positionner le Head/CPO dans la transformation
+- **Pourquoi le traiter** : Forte demande de profils seniors, enjeu de pilotage, rareté sur le marché.
+- **Sources** : Synthèse PAD (Head/Directeur), Snapshot emploi (Head/CPO « perle rare »), State of X (ascension du leadership PM) · `[tendance]`
+- **Angle & format** : Décryptage des attentes Head/CPO, témoignages de transformation — post LinkedIn ou table ronde.
 
-### 3. Bifurcation des parcours PM : généraliste vs. AI PM
-- **Pourquoi le traiter** : Signal fort sur l’emploi, peu explicité dans les contenus de place.
-- **Sources** : Snapshot emploi T2 2026 (WTTJ, Indeed, Seyos 2026), State of X 2026 · `[tendance]`
-- **Angle & format** : Article « Deux carrières PM, deux réalités : comment choisir et se positionner ? »
+### 3. Acculturation à la data pour PM et PO
+- **Pourquoi le traiter** : Besoin récurrent d’acculturation data, émergence Data PM, enjeu de montée en compétence.
+- **Sources** : Synthèse PAD (Data PM), Snapshot emploi (exigence data/IA), State of X (data-driven) · `[tendance]`
+- **Angle & format** : Guide pratique pour PM/PO sur l’exploitation des KPI et la formulation d’hypothèses — article ou mini-série vidéo.
 
-### 4. Internationalisation des pratiques produit : enjeux et opportunités
-- **Pourquoi le traiter** : Mouvement structurant côté Data/IA, angle absent côté PM — trou concurrentiel.
-- **Sources** : Snapshot concurrentiel T2 2026 (Converteo, Artefact, Qestit) · `[structurel]` candidat — à corroborer
-- **Angle & format** : Podcast ou table ronde « PM à l’international : retours d’expérience et défis »
+### 4. Éco-conception produit : du référentiel RGESN à la pratique
+- **Pourquoi le traiter** : Signal faible mais inédit, aucun concurrent PM positionné, enjeu de différenciation.
+- **Sources** : Synthèse PAD (mission éco-conception), Snapshot concurrentiel (trou identifié) · `[mode]`
+- **Angle & format** : Cas d’usage d’intégration de l’éco-conception dans la roadmap produit — article ou atelier.
 
-### 5. Orchestration multi-agents : du POC à la production
-- **Pourquoi le traiter** : L’industrialisation de l’agentique est un enjeu émergent, peu documenté en dehors des discours techniques.
-- **Sources** : State of X 2026, Snapshot concurrentiel T2 2026 (Converteo) · `[tendance]`
-- **Angle & format** : Article technique ou retour d’expérience « Orchestrer des agents en production : lessons learned »
+### 5. Bifurcation des trajectoires PM : généraliste vs. AI PM
+- **Pourquoi le traiter** : Émergence de l’AI PM comme segment, enjeu de positionnement carrière.
+- **Sources** : Snapshot emploi (AI PM, PM généraliste), State of X (trajectoires différenciées) · `[tendance]`
+- **Angle & format** : Comparatif des parcours, témoignages, conseils d’orientation — podcast ou article.
 
 ---
 
 ## Les signaux importants du mois
 
-- L’agentique s’impose comme axe de repositionnement d’offre, avec une convergence inédite PM × Data/IA, mais reste à confirmer comme mouvement structurel.
-- La gouvernance IA et la conformité réglementaire deviennent des offres à part entière, non plus des contraintes subies.
-- Le marché PM se bifurque entre généralistes et AI PM, avec des attentes et des parcours différenciés — la séniorité et la compétence IA sont en tension.
+- L’agentique s’impose comme axe de repositionnement d’offre, avec une convergence multi-cabinet et une première demande concrète en conseil PM.
+- La demande de profils seniors (Head/Directeur, Lead PM) se confirme, tirant l’offre vers le pilotage et la transformation plutôt que l’exécution.
+- L’AI PM et la compétence IA deviennent des segments à part entière, portés par la tension sur le marché de l’emploi et la structuration des offres concurrentes.
 

@@ -1,4 +1,4 @@
-# Digest productai — Juin 2026
+# Digest ProductAI — Juin 2026
 
 > **Briefing d'expertise** — matériau sourcé à exploiter au point d'usage ; les `[structurel]` sont des candidats à corroborer.
 
@@ -9,38 +9,38 @@
 | **Date de publication** | 2026-06 |
 | **Mode** | briefing informatif |
 
-**Matière mobilisée ce cycle** : ☐ Newsletters · ☐ Synthèse PAD · ☑ Snapshot concurrentiel · ☑ Snapshot emploi · ☑ State of X · ☐ REX  
-→ Trou de source : Newsletters, Synthèse PAD, REX absentes ce cycle.  
+**Matière mobilisée ce cycle** : ☐ Newsletters · ☑ Synthèse PAD · ☑ Snapshot concurrentiel · ☑ Snapshot emploi · ☑ State of X · ☐ REX  
+→ Trou de source : Newsletters absentes ce cycle.  
 Cycle calme — peu de signaux nouveaux ce mois ; matériau limité, à lire comme tel.
 
 ---
 
 ## Bloc 1 — Problématiques récurrentes & Offres
 
-### 1. Déplacement de la valeur vers l’agentique et l’orchestration IA
-- **Description** : Les cabinets Data/IA et certains cabinets PM constatent que la valeur ne réside plus dans la simple exécution technique (développement, delivery), mais dans l’orchestration, le raisonnement multi-agents et la gouvernance des systèmes IA. Les clients cherchent à industrialiser l’IA, à fiabiliser les déploiements et à piloter l’attention humaine plutôt que le code.
-- **Sources** : Snapshot concurrentiel T2 2026 (Converteo, Hubvisory, Thiga, AI Builders) · State of X 2026 (Panorama IA, SoPM 2025) · `[tendance]`
-- **Offre activable** : Positionner des offres d’accompagnement à l’orchestration agentique, à la gouvernance IA et à la supervision humaine des systèmes multi-agents.
+### 1. Mise en place de frameworks agentiques dans le cycle de design produit
+- **Description** : Besoin d’accompagnement sur la rétro-documentation technico-fonctionnelle et la structuration du discovery produit, avec outillage LLM et agents IA pour rendre le cycle de conception requêtable et automatisable. MVP sur périmètre greenfield, environnement Atlassian.
+- **Sources** : Synthèse PAD (mission conseil détaillée), Snapshot concurrentiel (Converteo, Hubvisory, Thiga, AI Builders — positionnement agentique) · `[tendance]`
+- **Offre activable** : Conseil structurant sur l’agentique appliquée au discovery, cadrage de MVP, outillage LLM, formation à la gouvernance des agents.
 
-### 2. Gouvernance IA et conformité réglementaire (AI Act, secteurs régulés)
-- **Description** : Les enjeux de conformité (AI Act, traçabilité, souveraineté) deviennent des axes d’offre structurants, notamment dans les secteurs à forte contrainte (pharma, industrie, finance). Les clients anticipent l’échéance réglementaire et recherchent des solutions de gouvernance et de conformité comme leviers stratégiques, pas seulement comme contraintes.
-- **Sources** : Snapshot concurrentiel T2 2026 (Converteo, Smartesting, AI Builders) · State of X 2026 (State of Testing, Panorama IA) · `[tendance]`
-- **Offre activable** : Développer des offres de cadrage conformité IA, de gouvernance des risques et de traçabilité bout-en-bout, en particulier pour les environnements régulés.
+### 2. Acculturation des équipes produit à l’éco-conception et au numérique responsable
+- **Description** : Demande émergente d’accompagnement PM pour intégrer l’éco-conception dans la stratégie produit, en vue de labellisation RGESN. Ciblage sectoriel (logistique/livraison), attente de résultats présentables à la direction.
+- **Sources** : Synthèse PAD (mission conseil), absence de relais concurrentiel ou barométrique ce cycle · `[mode]`
+- **Offre activable** : Coaching/formation sur l’éco-conception produit, ateliers d’acculturation, support à la labellisation.
 
-### 3. Verticalisation sectorielle des offres IA/produit
-- **Description** : Les cabinets Data/IA et QA structurent leurs offres autour de verticales sectorielles (pharma, retail, industrie régulée), avec des practices dédiées et des recrutements ciblés. Les clients attendent une expertise métier et une adaptation des solutions IA à leurs contraintes spécifiques.
-- **Sources** : Snapshot concurrentiel T2 2026 (Converteo, KP2i, Smartesting) · Snapshot emploi T2 2026 · `[tendance]`
-- **Offre activable** : Proposer des practices sectorielles IA/produit, avec des équipes mixtes métier/technique et des références sectorielles explicites.
+### 3. Repositionnement de la donnée dans le cycle produit (Data PM)
+- **Description** : Besoin d’un Data PM pour diagnostiquer l’organisation, exploiter les KPI, formuler des hypothèses et acculturer les PO à une pratique data plus amont. Logique d’immersion, pas d’intervention ponctuelle.
+- **Sources** : Synthèse PAD (mission conseil), Snapshot emploi (intitulés Data PM, compétences data) · `[tendance]`
+- **Offre activable** : Diagnostic organisationnel, formation Data PM, accompagnement à l’intégration de la data dans le discovery produit.
 
-### 4. Internationalisation des offres et structuration managériale
-- **Description** : Les cabinets Data/IA accélèrent leur expansion internationale (ouvertures de bureaux, recrutements de Partners, structuration managériale France/international). Les clients internationaux recherchent des partenaires capables d’accompagner des déploiements multi-pays et de garantir la cohérence des pratiques IA à l’échelle.
-- **Sources** : Snapshot concurrentiel T2 2026 (Converteo, Artefact, Qestit) · `[structurel]` candidat — à corroborer
-- **Offre activable** : Structurer des offres d’accompagnement à l’internationalisation des produits IA, avec des équipes transverses et des référentiels harmonisés.
+### 4. Séniorisation de la demande en régie sur les profils ProductAI
+- **Description** : Forte demande de profils Head/Directeur et Lead sur les missions ProductAI, signalant une attente de pilotage et d’orchestration, pas seulement d’exécution.
+- **Sources** : Synthèse PAD (répartition séniorité), Snapshot emploi (intitulés Staff/Senior AI PM) · `[tendance]`
+- **Offre activable** : Positionnement sur l’accompagnement stratégique, staffing de profils seniors, offre de coaching/mentorat.
 
-### 5. Tension sur les compétences IA et séniorisation des profils recherchés
-- **Description** : Le marché de l’emploi AI/GenAI PM est très actif, avec une forte demande de profils seniors et une pénurie de compétences techniques (LLM, orchestration, cycle de vie produit IA). Les clients peinent à recruter et attendent des partenaires capables de fournir des experts immédiatement opérationnels.
-- **Sources** : Snapshot emploi T2 2026 (WTTJ, Indeed, Seyos IT 2026, TPC 2026) · State of X 2026 · `[tendance]`
-- **Offre activable** : Mettre en avant la capacité à mobiliser des profils seniors, à former en continu sur les outils IA, et à accompagner la montée en compétence des équipes client.
+### 5. Complexité technique et multi-périmètres (plateformes, delivery)
+- **Description** : Les contextes de mission sont marqués par la complexité technique (plateformes, delivery, analytics/KPI, outils Atlassian), avec une attente de structuration et d’orchestration.
+- **Sources** : Synthèse PAD (vocabulaire mission), Snapshot concurrentiel (offres agentiques, orchestration multi-agents) · `[tendance]`
+- **Offre activable** : Conseil en structuration de plateformes, outillage analytics, accompagnement à la priorisation et à la gouvernance technique.
 
 ---
 
@@ -53,59 +53,59 @@ Registre des convictions non renseigné pour cette expertise ce cycle — aucune
 ## Bloc 3 — Compétences recherchées
 
 ### 1. Maîtrise du cycle de vie produit IA (discovery → déploiement de features IA)
-- **Sources** : Snapshot emploi T2 2026 (WTTJ, multi-employeurs) · `[tendance]`
-- **Pour le catalogue** : Formation approfondie sur le cycle de vie produit IA, incluant discovery, delivery, monitoring et amélioration continue.
+- **Sources** : Snapshot emploi (WTTJ, Indeed, multi-employeurs), State of X (SoPM 2025, TPC 2026) · `[tendance]`
+- **Pour le catalogue** : Formation complète sur le cycle de vie produit IA, incluant discovery, delivery, et déploiement de features IA.
 
-### 2. Compréhension des LLM et de leur mise en œuvre produit (GPT, Claude, Mistral)
-- **Sources** : Snapshot emploi T2 2026 (WTTJ) · `[tendance]`
-- **Pour le catalogue** : Module dédié à l’intégration des LLM dans les produits, choix de modèles, limitations, évaluation et monitoring.
+### 2. Compréhension et mise en œuvre des LLM (GPT, Claude, Mistral)
+- **Sources** : Snapshot emploi (WTTJ, intitulés et compétences), State of X (SoPM 2025) · `[tendance]`
+- **Pour le catalogue** : Module dédié à l’intégration des LLM dans les produits, cas d’usage, limites, outillage.
 
-### 3. Collaboration étroite avec data scientists / chercheurs / ingénieurs IA
-- **Sources** : Snapshot emploi T2 2026 (WTTJ, multi-employeurs) · `[tendance]`
-- **Pour le catalogue** : Parcours sur la collaboration interdisciplinaire, gestion de projets IA, communication et alignement des équipes.
+### 3. Collaboration étroite avec data scientists, chercheurs, ingénieurs IA
+- **Sources** : Snapshot emploi (WTTJ, multi-employeurs), State of X (SoPM 2025) · `[tendance]`
+- **Pour le catalogue** : Parcours sur la collaboration interdisciplinaire produit/data/IA, méthodes de travail et communication.
 
-### 4. IA comme compétence en tension structurelle (pénurie, salaires à la hausse)
-- **Sources** : Seyos IT 2026 (baromètre), TPC 2026 · `[tendance]`
-- **Pour le catalogue** : Programme d’upskilling IA pour PM, PO et équipes produit, avec focus sur les compétences techniques pénuriques.
+### 4. Séniorisation et leadership produit IA (Staff/Senior AI PM)
+- **Sources** : Snapshot emploi (WTTJ, Indeed), State of X (SoPM 2025, Noé 2026) · `[tendance]`
+- **Pour le catalogue** : Coaching leadership produit IA, prise de décision, gouvernance, mentoring.
 
-### 5. Séniorisation dominante du segment AI PM (Staff/Senior fréquents)
-- **Sources** : Snapshot emploi T2 2026 (WTTJ, Indeed) · `[tendance]`
-- **Pour le catalogue** : Parcours de développement pour PM expérimentés visant des rôles Staff/Senior, mentoring et leadership IA.
+### 5. Outils et méthodes : LLM, RAG, orchestration multi-agents
+- **Sources** : Snapshot emploi (WTTJ, Skapa, ILLUIN), State of X (Panorama 2026 IA) · `[tendance]`
+- **Pour le catalogue** : Ateliers pratiques sur l’orchestration multi-agents, RAG, intégration LLM, prompt engineering.
 
 ---
 
 ## Bloc 4 — Contenus de notoriété suggérés
 
-### 1. Orchestration agentique : de la hype à la production
-- **Pourquoi le traiter** : Sujet central du trimestre, convergence cabinets PM et Data/IA, mais peu de retours d’expérience concrets sur le passage à l’échelle et la supervision humaine.
-- **Sources** : Snapshot concurrentiel T2 2026 (Converteo, Hubvisory, Thiga, AI Builders) · State of X 2026 (Panorama IA) · `[tendance]`
-- **Angle & format** : Article ou webinar « Orchestration agentique : lessons learned, pièges et métriques pour la supervision humaine »
+### 1. L’agentique dans le cycle produit : de la théorie à la production
+- **Pourquoi le traiter** : Sujet en montée rapide, convergence offres conseil et positionnement concurrentiel, peu de retours d’expérience concrets publiés.
+- **Sources** : Synthèse PAD (mission agentique), Snapshot concurrentiel (Converteo, Hubvisory, Thiga, AI Builders), State of X (Panorama 2026 IA) · `[tendance]`
+- **Angle & format** : Retour d’expérience sur la mise en place d’un framework agentique, focus sur discovery et orchestration — article ou webinar.
 
-### 2. Gouvernance IA et conformité : transformer la contrainte en avantage compétitif
-- **Pourquoi le traiter** : Demande croissante sur la conformité AI Act, peu de contenus orientés « actif stratégique » vs. « contrainte » ; angle différenciant.
-- **Sources** : Snapshot concurrentiel T2 2026 (Converteo, Smartesting, AI Builders) · State of X 2026 · `[tendance]`
-- **Angle & format** : Post LinkedIn ou guide pratique « Gouvernance IA : comment la conformité devient un levier business »
+### 2. Gouvernance IA et conformité réglementaire : comment outiller les équipes produit ?
+- **Pourquoi le traiter** : Montée de la conformité (AI Act, RGESN), absence d’offre PM structurée sur la gouvernance IA, trou concurrentiel identifié.
+- **Sources** : Snapshot concurrentiel (Converteo, Smartesting), Synthèse PAD (mission éco-conception), State of X (SoPM 2025) · `[tendance]`
+- **Angle & format** : Guide pratique pour PM sur la gouvernance IA, conformité et acculturation — article ou toolkit téléchargeable.
 
-### 3. Verticalisation sectorielle : IA produit dans la pharma, le retail, l’industrie régulée
-- **Pourquoi le traiter** : Mouvement de fond chez les cabinets Data/IA et QA, peu de benchmarks sectoriels partagés ; forte attente côté clients.
-- **Sources** : Snapshot concurrentiel T2 2026 (Converteo, KP2i, Smartesting) · `[tendance]`
-- **Angle & format** : Série d’articles « IA produit : retours d’expérience sectoriels (pharma, retail, industrie) »
+### 3. Data PM : repositionner la donnée comme levier de discovery produit
+- **Pourquoi le traiter** : Demande client explicite, besoin d’acculturation PO/PM à la data, peu de contenus opérationnels sur ce sujet.
+- **Sources** : Synthèse PAD (mission Data PM), Snapshot emploi (intitulés Data PM), State of X (SoPM 2025) · `[tendance]`
+- **Angle & format** : Cas d’usage et méthodes pour intégrer la data dans le discovery — post LinkedIn ou mini-série vidéo.
 
-### 4. Internationalisation des offres IA/produit : enjeux et bonnes pratiques
-- **Pourquoi le traiter** : Expansion géographique marquée, mais peu de contenus sur la structuration managériale et la cohérence multi-pays.
-- **Sources** : Snapshot concurrentiel T2 2026 (Converteo, Artefact, Qestit) · `[structurel]` candidat — à corroborer
-- **Angle & format** : Podcast ou table ronde « Déployer l’IA produit à l’international : lessons learned et pièges à éviter »
+### 4. Éco-conception et numérique responsable : le rôle du PM dans la transformation
+- **Pourquoi le traiter** : Signal émergent, enjeu de labellisation, peu de ressources pratiques pour les PM.
+- **Sources** : Synthèse PAD (mission éco-conception), Snapshot concurrentiel (absence d’offre structurée) · `[mode]`
+- **Angle & format** : Témoignage d’accompagnement, checklist pour PM — article ou infographie.
 
-### 5. Bicéphalité marché : conseil/ESN vs. éditeurs — quelles réalités pour le métier d’AI PM ?
-- **Pourquoi le traiter** : Le marché AI PM est structuré autour de deux logiques (conseil/ESN vs. éditeurs), mais la distinction reste floue pour beaucoup de clients et candidats.
-- **Sources** : Snapshot emploi T2 2026 (WTTJ, Indeed), State of X 2026 · `[tendance]`
-- **Angle & format** : Article d’analyse « AI PM : deux marchés, deux réalités ? »
+### 5. Bicéphalité conseil/ESN vs éditeur : quelles réalités pour le métier d’AI PM ?
+- **Pourquoi le traiter** : Marché structuré en deux logiques, confusion possible sur les attentes et les pratiques, besoin de clarification.
+- **Sources** : Snapshot emploi (WTTJ, Indeed), State of X (SoPM 2025) · `[tendance]`
+- **Angle & format** : Analyse comparative, interviews croisés — article ou table ronde.
 
 ---
 
 ## Les signaux importants du mois
 
-- L’agentique s’impose comme axe de repositionnement d’offre, avec une convergence cabinets PM et Data/IA, mais la valeur réelle se mesure après déploiement à l’échelle.
-- La conformité IA (AI Act, traçabilité) devient un levier d’offre structurant, en particulier dans les secteurs régulés ; la gouvernance IA est de plus en plus valorisée comme actif stratégique.
-- Le segment AI/GenAI PM s’affirme comme une catégorie autonome sur le marché français, avec une forte séniorisation et une tension sur les compétences techniques IA.
+- L’agentique s’impose comme axe de repositionnement d’offre, avec convergence multi-cabinets et premières missions conseil structurantes.
+- La séniorisation de la demande ProductAI se confirme, avec une attente de leadership et d’orchestration, pas seulement d’exécution technique.
+- Le segment AI PM/GenAI PM s’affirme comme une catégorie autonome sur le marché français, avec une diffusion sectorielle réelle et des compétences IA en tension.
 

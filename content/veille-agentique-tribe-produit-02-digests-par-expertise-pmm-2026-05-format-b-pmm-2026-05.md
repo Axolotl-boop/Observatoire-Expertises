@@ -9,38 +9,38 @@
 | **Date de publication** | 2026-06 |
 | **Mode** | briefing informatif |
 
-**Matière mobilisée ce cycle** : ☐ Newsletters · ☐ Synthèse PAD · ☑ Snapshot concurrentiel · ☑ Snapshot emploi · ☑ State of X · ☐ REX  
-→ Trou de source : Newsletters, Synthèse PAD absentes ce cycle.  
+**Matière mobilisée ce cycle** : ☐ Newsletters · ☑ Synthèse PAD · ☑ Snapshot concurrentiel · ☑ Snapshot emploi · ☑ State of X · ☐ REX  
+→ Trou de source : Newsletters absentes ce cycle.  
 Cycle calme — peu de signaux nouveaux ce mois ; matériau limité, à lire comme tel.
 
 ---
 
 ## Bloc 1 — Problématiques récurrentes & Offres
 
-### 1. Invisibilité du PMM dans les référentiels emploi et baromètres IT
-- **Description** : Le métier de Product Marketing Manager reste absent des taxonomies majeures (Seyos 2026, APEC 2026), ce qui limite sa reconnaissance institutionnelle et la lisibilité de ses trajectoires de carrière. Les offres sont portées quasi exclusivement par les boards spécialisés et les éditeurs SaaS, avec une quasi-absence d’ESN/conseil.
-- **Sources** : Snapshot emploi PMM T2-2026 (analyse offres WTTJ, PMA Jobs, APEC, Seyos 2026, APEC Métiers Cadres Porteurs 2026) · `[tendance]`
-- **Offre activable** : Accompagnement à la structuration de la fonction PMM (benchmark, définition de rôle, outillage RH) pour les scale-ups et éditeurs SaaS ; sensibilisation des acteurs institutionnels à la spécificité du PMM.
+### 1. Montée en posture stratégique des équipes PMM
+- **Description** : Les équipes PMM, historiquement cantonnées à l’opérationnel (go-to-market, support ventes, veille), cherchent à s’affirmer sur des sujets stratégiques : positionnement offre, pricing, leadership auprès du top management. Besoin d’harmonisation des pratiques suite à fusion d’équipes.
+- **Sources** : Synthèse PAD (coaching collectif PMM, montée en posture stratégique) · `[tendance]`
+- **Offre activable** : Coaching collectif PMM axé stratégie, harmonisation post-fusion, accompagnement à la prise de leadership.
 
-### 2. Penchant senior marqué et difficulté d’accès pour les profils juniors
-- **Description** : Les offres PMM sont dominées par des intitulés Senior/Head, avec peu de postes juniors ou alternance. La progression de carrière est lisible mais l’accès initial reste difficile, ce qui peut freiner le renouvellement des talents.
-- **Sources** : Snapshot emploi PMM T2-2026 (WTTJ, PMA Jobs, Noé PMM 2026) · `[tendance]`
-- **Offre activable** : Programmes de formation et de mentoring ciblés pour accélérer la montée en compétence des profils juniors et faciliter leur intégration.
+### 2. Complexification des portefeuilles produits à piloter
+- **Description** : Les PMM gèrent de plus en plus de produits (≥6), ce qui accroît la complexité du positionnement, du messaging et du go-to-market à orchestrer.
+- **Sources** : Snapshot emploi PMM (élargissement du périmètre, State of Product Marketing) · `[tendance]`
+- **Offre activable** : Ateliers de structuration portefeuille, formation à la priorisation et à la gestion multi-produits.
 
-### 3. Spécialisation émergente PMM × IA, mais signaux encore isolés
-- **Description** : L’apparition d’intitulés dédiés à l’IA (ex : PMM Lead — AI products chez Doctolib) reste marginale et portée par un seul board, mais elle reflète la montée de l’IA dans les attentes des organisations SaaS.
-- **Sources** : Snapshot emploi PMM T2-2026 (WTTJ seul), State of Product Marketing 2026 · `[mode]`
-- **Offre activable** : Veille active et construction d’une offre de formation/acculturation PMM × IA, en anticipation d’une montée en puissance à T+1/T+2.
+### 3. Spécialisation PMM sur l’IA : émergence de rôles dédiés
+- **Description** : Signal isolé d’un poste PMM dédié aux produits IA (Doctolib), en cohérence avec la montée de l’IA dans les offres SaaS. Demande encore marginale mais à surveiller.
+- **Sources** : Snapshot emploi PMM (WTTJ, Doctolib), State of X (adoption IA mainstream PMM) · `[mode]`
+- **Offre activable** : Veille et formation sur le Product Marketing appliqué à l’IA, accompagnement à la spécialisation.
 
-### 4. Complexification du portefeuille produit et élargissement du périmètre PMM
-- **Description** : Les PMM gèrent de plus en plus de produits (≥6 pour 35 % d’entre eux), ce qui accroît la complexité du rôle et la nécessité de structurer les méthodes de priorisation et de go-to-market.
-- **Sources** : State of Product Marketing 2026 · `[tendance]`
-- **Offre activable** : Ateliers de structuration du portefeuille, outils d’aide à la priorisation et à la gestion multi-produits.
+### 4. Demande de séniorité et de leadership
+- **Description** : Les offres PMM privilégient les profils seniors (Senior PMM, Head of PMM), avec une attente forte sur le leadership, la capacité à embarquer et à influencer sans lien hiérarchique direct.
+- **Sources** : Snapshot emploi PMM (WTTJ, PMA Jobs), State of X (ascension hiérarchique PMM) · `[tendance]`
+- **Offre activable** : Parcours de développement du leadership PMM, mentoring, formation soft skills.
 
-### 5. Absence de visibilité sur la pile outillage PMM
-- **Description** : Aucun outil n’est cité dans les offres analysées ce trimestre, rendant difficile l’identification des standards outillage PMM en France.
-- **Sources** : Snapshot emploi PMM T2-2026 (WTTJ, PMA Jobs) · `[mode]`
-- **Offre activable** : Audit outillage auprès des clients existants, production d’un benchmark outillage PMM à destination des scale-ups.
+### 5. Positionnement SaaS/scale-up, absence ESN/conseil
+- **Description** : Le marché PMM reste dominé par les éditeurs SaaS et scale-ups, quasi-absence d’opportunités en ESN/conseil. Le PMM est un rôle de l’écosystème produit, pas du service externalisé.
+- **Sources** : Snapshot emploi PMM (WTTJ, PMA Jobs), State of X · `[tendance]`
+- **Offre activable** : Positionner l’offre PMM sur les besoins des scale-ups et éditeurs, adapter le discours pour l’écosystème SaaS.
 
 ---
 
@@ -53,59 +53,59 @@ Registre des convictions non renseigné pour cette expertise ce cycle — aucune
 ## Bloc 3 — Compétences recherchées
 
 ### 1. Expérience B2B SaaS
-- **Sources** : Snapshot emploi PMM T2-2026 (WTTJ, multi-annonces) · `[tendance]`
-- **Pour le catalogue** : Formation « PMM en environnement SaaS » (spécificités, enjeux, best practices).
+- **Sources** : Snapshot emploi PMM (WTTJ, multi-annonces), State of X · `[tendance]`
+- **Pour le catalogue** : Formation « Product Marketing B2B SaaS » — focus sur les spécificités marché, cycles de vente, GTM SaaS.
 
 ### 2. Positionnement, messaging, go-to-market
-- **Sources** : Snapshot emploi PMM T2-2026 (WTTJ, PMA Jobs), State of Product Marketing 2026 · `[tendance]`
-- **Pour le catalogue** : Parcours « Architecture du positionnement produit et stratégie go-to-market ».
+- **Sources** : Snapshot emploi PMM (WTTJ, PMA Jobs), State of X · `[tendance]`
+- **Pour le catalogue** : Parcours « Architecture du positionnement produit et stratégie GTM » — ateliers pratiques, cas réels.
 
-### 3. Expérience product/growth marketing (4–10 ans selon séniorité)
-- **Sources** : Snapshot emploi PMM T2-2026 (WTTJ) · `[tendance]`
-- **Pour le catalogue** : Modules avancés « Growth marketing pour PMM » (segmentation, activation, mesure).
+### 3. Expérience product/growth marketing (4–10 ans)
+- **Sources** : Snapshot emploi PMM (WTTJ), State of X · `[tendance]`
+- **Pour le catalogue** : Module « Growth marketing avancé pour PMM » — acquisition, activation, rétention, pilotage KPI.
 
-### 4. Soft skills (curiosité, leadership, communication)
-- **Sources** : Snapshot emploi PMM T2-2026 (WTTJ, Noé PMM 2026) · `[tendance]`
-- **Pour le catalogue** : Ateliers « Leadership transversal et communication d’influence pour PMM ».
+### 4. Leadership, soft skills, communication
+- **Sources** : Snapshot emploi PMM (WTTJ, descriptifs), State of X (ascension hiérarchique PMM) · `[tendance]`
+- **Pour le catalogue** : Formation « Leadership et influence pour PMM » — communication, embarquement, posture stratégique.
 
-### 5. Spécialisation PMM × IA (signal émergent)
-- **Sources** : Snapshot emploi PMM T2-2026 (WTTJ seul, Doctolib), State of Product Marketing 2026 · `[mode]`
-- **Pour le catalogue** : Capsule « IA pour PMM : cas d’usage, limites, posture critique ».
+### 5. Spécialisation PMM × IA (émergent)
+- **Sources** : Snapshot emploi PMM (WTTJ, Doctolib), State of X (adoption IA PMM) · `[mode]`
+- **Pour le catalogue** : Capsule « Product Marketing pour produits IA » — veille, cas d’usage, différenciation IA.
 
 ---
 
 ## Bloc 4 — Contenus de notoriété suggérés
 
-### 1. Cartographie du métier PMM en France : invisibilité institutionnelle et réalité terrain
-- **Pourquoi le traiter** : Sujet peu couvert, répond à une demande de clarification des trajectoires et à la difficulté de reconnaissance du métier.
-- **Sources** : Snapshot emploi PMM T2-2026, Seyos 2026, APEC 2026 · `[tendance]`
-- **Angle & format** : Article « PMM : le métier invisible des référentiels, clé de voûte des scale-ups SaaS » — publication blog ou LinkedIn.
+### 1. PMM : de l’opérationnel à la stratégie — réussir la montée en posture
+- **Pourquoi le traiter** : Sujet récurrent dans la demande client, enjeu de maturité des équipes PMM, peu traité en profondeur par les concurrents.
+- **Sources** : Synthèse PAD (coaching collectif PMM), Snapshot emploi PMM, State of X · `[tendance]`
+- **Angle & format** : Retour d’expérience sur la transformation d’une équipe PMM, focus sur les leviers de passage à la stratégie — article ou webinar.
 
-### 2. Parcours de carrière PMM : comment passer de junior à Head of PMM ?
-- **Pourquoi le traiter** : Demande récurrente des candidats et RH, peu de ressources structurées sur la progression réelle.
-- **Sources** : Snapshot emploi PMM T2-2026, Noé PMM 2026 · `[tendance]`
-- **Angle & format** : Podcast ou table ronde « De PMM junior à Head : trajectoires, obstacles, accélérateurs ».
+### 2. Complexifier son portefeuille produit sans perdre en impact
+- **Pourquoi le traiter** : Élargissement du périmètre PMM (≥6 produits), enjeu de priorisation et de clarté du messaging.
+- **Sources** : Snapshot emploi PMM, State of Product Marketing · `[tendance]`
+- **Angle & format** : Guide pratique « Orchestrer un portefeuille produit complexe » — article ou toolkit téléchargeable.
 
-### 3. PMM × IA : premiers signaux, quelles compétences anticiper ?
-- **Pourquoi le traiter** : Sujet émergent, peu traité, enjeu de différenciation pour les cabinets et les candidats.
-- **Sources** : Snapshot emploi PMM T2-2026 (Doctolib), State of Product Marketing 2026 · `[mode]`
-- **Angle & format** : Article ou post LinkedIn « PMM et IA : effet de mode ou vraie bascule de métier ? »
+### 3. Product Marketing & IA : premiers retours sur la spécialisation des PMM
+- **Pourquoi le traiter** : Signal émergent d’intitulés PMM dédiés IA, sujet en veille active, peu couvert par les acteurs français.
+- **Sources** : Snapshot emploi PMM (Doctolib), State of X · `[mode]`
+- **Angle & format** : Interview croisée PMM/PM IA, analyse des compétences requises — post LinkedIn ou podcast.
 
-### 4. Outillage PMM : état des lieux et attentes du marché
-- **Pourquoi le traiter** : Trou de connaissance identifié, enjeu d’efficience et de structuration pour les équipes PMM.
-- **Sources** : Snapshot emploi PMM T2-2026 (absence d’outils cités) · `[mode]`
-- **Angle & format** : Enquête ou benchmark « Quels outils pour les PMM en 2026 ? » — à lancer auprès de la communauté.
+### 4. Leadership PMM : soft skills et influence au service du produit
+- **Pourquoi le traiter** : Attente forte sur le leadership dans les offres, enjeu de différenciation pour les profils seniors.
+- **Sources** : Snapshot emploi PMM, State of X · `[tendance]`
+- **Angle & format** : Série de posts LinkedIn « Les soft skills du PMM moderne » — focus sur la communication et l’embarquement.
 
-### 5. Complexification du portefeuille produit : comment outiller la gestion multi-produits ?
-- **Pourquoi le traiter** : Problématique croissante, peu de ressources pratiques, enjeu de performance pour les PMM.
-- **Sources** : State of Product Marketing 2026 · `[tendance]`
-- **Angle & format** : Webinar ou guide pratique « Gérer 6+ produits en PMM : méthodes et outils ».
+### 5. Cartographie du marché PMM France : où sont les opportunités ?
+- **Pourquoi le traiter** : Marché PMM très concentré SaaS/scale-up, invisibilité dans les référentiels cadres, besoin de lisibilité pour les candidats et les clients.
+- **Sources** : Snapshot emploi PMM, State of X · `[tendance]`
+- **Angle & format** : Infographie ou article « Le marché PMM en France en 2026 » — focus SaaS, absence ESN/conseil.
 
 ---
 
 ## Les signaux importants du mois
 
-- Le métier de PMM reste structurellement invisible dans les référentiels emploi français, mais s’impose comme fonction clé dans l’écosystème SaaS/scale-up.
-- Le marché PMM est dominé par des profils seniors, avec une progression de carrière lisible mais un accès difficile pour les juniors.
-- La spécialisation PMM × IA émerge timidement, portée par quelques offres isolées, mais pourrait devenir un axe différenciant à surveiller dès le prochain trimestre.
+- La demande PMM reste tirée par la montée en posture stratégique et l’élargissement du périmètre produit, avec une attente forte sur le leadership et la séniorité.
+- Le marché PMM français est structurellement dominé par les éditeurs SaaS et scale-ups, avec une quasi-absence d’opportunités en ESN/conseil.
+- L’émergence de rôles PMM spécialisés IA reste marginale mais cohérente avec la dynamique d’adoption IA dans l’écosystème produit ; à surveiller pour confirmer une tendance.
 

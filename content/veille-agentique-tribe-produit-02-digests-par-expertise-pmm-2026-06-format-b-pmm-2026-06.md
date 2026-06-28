@@ -1,4 +1,4 @@
-# Digest PMM — Juin 2026
+# Digest PMM — 06/2026
 
 > **Briefing d'expertise** — matériau sourcé à exploiter au point d'usage ; les `[structurel]` sont des candidats à corroborer.
 
@@ -16,30 +16,30 @@
 
 ## Bloc 1 — Problématiques récurrentes & Offres
 
-### 1. Passage du PMM d’une fonction support à une posture stratégique
-- **Description** : Les équipes PMM cherchent à s’extraire du rôle d’exécution (go-to-market, support ventes) pour peser sur la définition du positionnement, la logique de pricing et le leadership auprès du top management. Ce besoin est accentué par des fusions d’équipes et la nécessité d’harmoniser les pratiques.
-- **Sources** : Synthèse PAD (coaching collectif PMM, montée en posture stratégique), Newsletters (PMM repositionnement stratégique, buyer research comme levier d’influence) · `[tendance]`
-- **Offre activable** : Coaching collectif PMM axé sur la stratégie, l’influence interne et la structuration des pratiques post-fusion.
+### 1. Repositionnement du PMM : de fonction support à fonction décisionnelle
+- **Description** : Les PMM cherchent à s’affirmer comme acteurs de la roadmap produit, non plus simples relais du go-to-market. Cette aspiration à la décision se heurte à la structuration actuelle des organisations, où le PMM reste souvent cantonné à l’exécution marketing.
+- **Sources** : Newsletters 2026-06 (« le PMM cherche à se repositionner de fonction support à fonction décisionnelle » · [tendance]), Snapshot emploi PMM T2-2026 (ascension hiérarchique, Head/Senior PMM surreprésentés) · `[tendance]`
+- **Offre activable** : Accompagnement à la montée en posture stratégique du PMM (coaching, formation à la prise de décision, implication dans la roadmap).
 
-### 2. Buyer Research vs User Research : friction structurante PM/PMM
-- **Description** : La confusion entre analyse des usages (user research) et analyse des ressorts d’achat (buyer research) génère des tensions entre PM et PMM, avec des impacts sur la roadmap et la priorisation.
-- **Sources** : Newsletters (friction buyer/user research, repositionnement PMM), Synthèse PAD (motif conseil Data PM, acculturation PO à la data) · `[tendance]`
-- **Offre activable** : Ateliers de clarification des rôles et formation à la buyer research pour aligner PM et PMM sur la prise de décision.
+### 2. Complexification du portefeuille produit et surcharge du PMM
+- **Description** : Les PMM gèrent un nombre croissant de produits (≥6 pour 35 % d’entre eux), ce qui accroît la complexité du positionnement, du messaging et du suivi des KPIs, tout en diluant leur impact.
+- **Sources** : State of X 2026 (élargissement du périmètre PMM), Snapshot emploi PMM T2-2026 (multi-produits, complexification) · `[tendance]`
+- **Offre activable** : Diagnostic d’organisation PMM, outillage pour la gestion multi-produits, formation à la priorisation et à la gestion de portefeuille.
 
-### 3. Acculturation IA et repositionnement du PMM dans l’organisation
-- **Description** : L’IA reconfigure les rattachements PMM (rapprochement du CEO, émergence de rôles hybrides PM IA), créant des enjeux de légitimité et de redéfinition des missions.
-- **Sources** : Newsletters (rattachement PMM, nouveaux rôles hybrides), Snapshot concurrentiel (Hubvisory, Thiga — campagnes IA) · `[tendance]`
-- **Offre activable** : Diagnostic organisationnel et accompagnement au repositionnement du PMM dans les organisations impactées par l’IA.
+### 3. Pression à l’adoption de l’IA dans les pratiques PMM
+- **Description** : L’IA s’impose comme outil de messaging, de market research et d’automatisation, mais la valeur réelle reste à démontrer. Les PMM sont incités à intégrer l’IA sans toujours disposer de repères clairs sur les usages différenciants.
+- **Sources** : Newsletters 2026-06 (adoption IA mainstream, >80 % des PMM l’utilisent), State of X 2026 (adoption IA, usage régulier sur messaging/positionnement), Snapshot emploi PMM T2-2026 (signal émergent PMM × IA) · `[tendance]`
+- **Offre activable** : Ateliers d’acculturation IA pour PMM, audit des usages IA, accompagnement à l’identification des cas d’usage à valeur ajoutée.
 
-### 4. Complexification du portefeuille produit et surcharge des PMM
-- **Description** : Les PMM gèrent un nombre croissant de produits (≥6), ce qui complexifie la priorisation, le messaging et la coordination avec les équipes produit.
-- **Sources** : State of X (élargissement du périmètre PMM), Snapshot emploi (multiplicité des produits par PMM) · `[tendance]`
-- **Offre activable** : Formation à la gestion de portefeuille produit et à l’orchestration du go-to-market multi-produits.
+### 4. Scepticisme sur la mesure de la valeur IA et la traçabilité des résultats
+- **Description** : Les promesses de productivité IA sont remises en question ; la demande se déplace vers la preuve d’impact et la traçabilité des actions marketing pilotées par IA.
+- **Sources** : Newsletters 2026-06 (inflation et décrédibilisation du narratif productivité IA, déplacement de la demande vers la preuve), State of X 2026 (KPI orientés revenu, besoin de traçabilité) · `[tendance]`
+- **Offre activable** : Mise en place de frameworks de mesure d’impact, formation à la data literacy pour PMM, accompagnement à la définition de KPIs pertinents.
 
-### 5. Manque de standardisation et invisibilité du métier PMM dans les référentiels
-- **Description** : Le métier de PMM reste absent des taxonomies cadres (Seyos, APEC), ce qui limite la reconnaissance, la mobilité et la structuration des parcours.
-- **Sources** : Snapshot emploi (PMM absent des référentiels), State of X (signal transverse) · `[tendance]`
-- **Offre activable** : Accompagnement RH pour la structuration des parcours PMM et la reconnaissance interne/externe du métier.
+### 5. Tension entre Buyer Research et User Research
+- **Description** : La confusion entre analyse des usages (user research) et analyse des ressorts d’achat (buyer research) génère des frictions entre PM et PMM, avec un impact sur la pertinence des actions marketing.
+- **Sources** : Newsletters 2026-06 (« Buyer Research ≠ User Research »), Snapshot concurrentiel 2026-T2 (absence d’offre structurée sur ce point chez les concurrents) · `[tendance]`
+- **Offre activable** : Formation croisée PM/PMM sur la distinction et l’articulation entre buyer et user research, ateliers de clarification des rôles.
 
 ---
 
@@ -52,59 +52,59 @@ Registre des convictions non renseigné pour cette expertise ce cycle — aucune
 ## Bloc 3 — Compétences recherchées
 
 ### 1. Expérience B2B SaaS
-- **Sources** : Snapshot emploi (WTTJ, PMA Jobs — exigence explicite), State of X (complexification portefeuille, skew SaaS) · `[tendance]`
-- **Pour le catalogue** : Module de formation « Spécificités du PMM en environnement SaaS B2B »
+- **Sources** : Snapshot emploi PMM T2-2026 (exigence explicite dans les offres WTTJ, PMA Jobs), State of X 2026 (marché PMM dominé par SaaS/scale-ups) · `[tendance]`
+- **Pour le catalogue** : Formation à la spécificité du marketing produit en environnement SaaS B2B (cycle de vente, adoption, métriques).
 
 ### 2. Positionnement, messaging et go-to-market
-- **Sources** : Snapshot emploi (WTTJ, PMA Jobs — récurrence), State of X (PMM comme tissu connectif produit↔GTM) · `[tendance]`
-- **Pour le catalogue** : Parcours « Architecture du positionnement et stratégie de lancement produit »
+- **Sources** : Snapshot emploi PMM T2-2026 (présence dominante dans les offres), State of X 2026 (messaging, positionnement, GTM comme cœur de métier PMM) · `[tendance]`
+- **Pour le catalogue** : Parcours avancé sur l’architecture du positionnement, la construction du messaging et la stratégie GTM.
 
-### 3. Leadership, influence et soft skills
-- **Sources** : Snapshot emploi (soft skills récurrents), State of X (ascension hiérarchique PMM, leadership stratégique) · `[tendance]`
-- **Pour le catalogue** : Ateliers « Leadership transversal et influence sans lien hiérarchique »
+### 3. Séniorité et leadership
+- **Sources** : Snapshot emploi PMM T2-2026 (penchant senior, Head/Senior PMM surreprésentés), State of X 2026 (ascension hiérarchique du PMM) · `[tendance]`
+- **Pour le catalogue** : Modules de développement du leadership, formation à la gestion d’équipe et à la prise de décision stratégique.
 
-### 4. Compétence PMM × IA (spécialisation émergente)
-- **Sources** : Snapshot emploi (Doctolib — PMM IA), Newsletters (rôles hybrides PM IA), State of X (adoption IA mainstream PMM) · `[mode]`
-- **Pour le catalogue** : Capsule « IA pour PMM : outils, positionnement, enjeux »
+### 4. Compétence émergente : PMM × IA
+- **Sources** : Snapshot emploi PMM T2-2026 (signal isolé Doctolib, PMM Lead — AI products), Newsletters 2026-06 (adoption IA mainstream), State of X 2026 (usage IA sur messaging, market research) · `[mode]`
+- **Pour le catalogue** : Capsule dédiée « IA pour PMM » (outils, cas d’usage, limites, éthique).
 
-### 5. Gestion de portefeuille multi-produits
-- **Sources** : State of X (élargissement du périmètre PMM), Snapshot emploi (plusieurs produits par PMM) · `[tendance]`
-- **Pour le catalogue** : Formation « Orchestration du go-to-market multi-produits »
+### 5. Soft skills : curiosité, communication, influence
+- **Sources** : Snapshot emploi PMM T2-2026 (récurrence dans les descriptifs), State of X 2026 (capacité à convaincre, embarquer, poser les bonnes questions) · `[tendance]`
+- **Pour le catalogue** : Ateliers de communication, influence sans lien hiérarchique, posture de facilitateur.
 
 ---
 
 ## Bloc 4 — Contenus de notoriété suggérés
 
-### 1. Buyer Research vs User Research : clarifier les frontières
-- **Pourquoi le traiter** : Sujet de friction récurrent PM/PMM, peu couvert en profondeur, enjeu d’alignement stratégique.
-- **Sources** : Newsletters (friction buyer/user research), Synthèse PAD (acculturation data) · `[tendance]`
-- **Angle & format** : Décryptage des impacts organisationnels et des bonnes pratiques — article ou webinar
+### 1. PMM : de l’exécution à la décision — comment peser sur la roadmap ?
+- **Pourquoi le traiter** : Sujet récurrent dans la demande et le discours marché, peu couvert par les concurrents ; enjeu d’attractivité pour les profils seniors.
+- **Sources** : Newsletters 2026-06 (aspiration à la décision), Snapshot emploi PMM T2-2026 (Head/Senior PMM), Snapshot concurrentiel 2026-T2 (peu de cabinets positionnés sur ce créneau) · `[tendance]`
+- **Angle & format** : Retour d’expérience de PMM ayant pris un rôle décisionnel — article ou webinar.
 
-### 2. PMM × IA : nouveaux rattachements, nouveaux rôles
-- **Pourquoi le traiter** : L’IA rebat les cartes du positionnement PMM, sujet émergent et peu documenté.
-- **Sources** : Newsletters (rattachement PMM, rôles hybrides), Snapshot emploi (Doctolib PMM IA) · `[mode]`
-- **Angle & format** : Témoignages croisés PMM/PM IA — podcast ou table ronde
+### 2. IA et PMM : usages réels, mythes et limites
+- **Pourquoi le traiter** : Forte attente sur l’IA, mais scepticisme croissant sur la valeur réelle ; besoin de repères concrets.
+- **Sources** : Newsletters 2026-06 (adoption IA, remise en cause des promesses), State of X 2026 (usage IA, besoin de preuve), Snapshot emploi PMM T2-2026 (signal émergent PMM × IA) · `[tendance]`
+- **Angle & format** : Décryptage d’usages IA à impact mesuré, témoignages croisés — article ou podcast.
 
-### 3. Structurer la fonction PMM dans les scale-ups SaaS
-- **Pourquoi le traiter** : Le PMM reste invisible dans les référentiels, mais central dans les scale-ups ; besoin de benchmarks et de retours d’expérience.
-- **Sources** : Snapshot emploi (skew SaaS, absence ESN), State of X (ascension hiérarchique PMM) · `[tendance]`
-- **Angle & format** : Benchmark de pratiques et modèles d’organisation — article ou infographie
+### 3. Buyer Research vs User Research : clarifier les rôles pour mieux performer
+- **Pourquoi le traiter** : Friction récurrente PM/PMM, peu d’outillage méthodologique disponible, angle différenciant.
+- **Sources** : Newsletters 2026-06 (friction Buyer/User Research), Snapshot concurrentiel 2026-T2 (trou d’offre) · `[tendance]`
+- **Angle & format** : Guide pratique, cas d’usage, matrice de responsabilités — article ou toolkit téléchargeable.
 
-### 4. Gestion de portefeuille multi-produits : outiller la complexité
-- **Pourquoi le traiter** : La surcharge des PMM sur plusieurs produits est un enjeu opérationnel croissant.
-- **Sources** : State of X (élargissement du périmètre), Snapshot emploi (multi-produits) · `[tendance]`
-- **Angle & format** : Guide pratique et retours d’expérience — article ou mini-série vidéo
+### 4. Gérer un portefeuille multi-produits : méthodes et outils pour PMM
+- **Pourquoi le traiter** : Complexification du périmètre PMM, demande de solutions concrètes, peu de benchmarks partagés.
+- **Sources** : State of X 2026 (élargissement du portefeuille), Snapshot emploi PMM T2-2026 (multi-produits) · `[tendance]`
+- **Angle & format** : Benchmark d’outils, retours d’expérience, bonnes pratiques — article ou table ronde.
 
-### 5. Reconnaissance et structuration du métier PMM
-- **Pourquoi le traiter** : Le manque de standardisation freine la mobilité et la valorisation du métier.
-- **Sources** : Snapshot emploi (absence dans les taxonomies), State of X (signal transverse) · `[tendance]`
-- **Angle & format** : Tribune ou dossier RH — article LinkedIn ou publication sectorielle
+### 5. Soft skills du PMM : influence, communication et leadership en environnement SaaS
+- **Pourquoi le traiter** : Compétence clé, peu formalisée, enjeu d’employabilité et de progression de carrière.
+- **Sources** : Snapshot emploi PMM T2-2026 (soft skills), State of X 2026 (leadership, communication) · `[tendance]`
+- **Angle & format** : Série de posts LinkedIn ou mini-vidéos, focus sur des situations concrètes.
 
 ---
 
 ## Les signaux importants du mois
 
-- Le repositionnement stratégique du PMM (passage du support à la décision) devient une demande explicite, portée par la transformation des organisations et la montée de l’IA.
-- La friction entre buyer research et user research structure les relations PM/PMM et impacte la roadmap ; l’alignement sur ces pratiques devient critique.
-- Le métier de PMM reste un marché de niche, très concentré sur les scale-ups SaaS, avec une absence persistante dans les référentiels cadres — la structuration du métier reste à consolider.
+- Le repositionnement du PMM vers un rôle décisionnel s’affirme dans la demande et le discours marché, mais reste freiné par la structuration des organisations.
+- L’adoption de l’IA par les PMM est massive sur les outils de messaging et de market research, mais la valeur réelle et la traçabilité des gains sont questionnées.
+- Le marché PMM reste une niche structurée autour des éditeurs SaaS et scale-ups, avec une forte demande de séniorité et une absence de reconnaissance dans les référentiels cadres généralistes.
 
