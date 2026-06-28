@@ -1,14 +1,15 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { useState } from "react";
 import type { ExpertiseDigest } from "@/lib/content";
 import { track } from "@/lib/track";
 
-const DIGEST_BLOCKS: { key: "bloc1" | "bloc2" | "bloc3" | "bloc4"; title: string }[] = [
-  { key: "bloc1", title: "Problématiques clients & positionnement offre" },
-  { key: "bloc2", title: "Signaux qui challengent nos convictions" },
-  { key: "bloc3", title: "Skills, méthodes & outils" },
-  { key: "bloc4", title: "Sujets éditoriaux & angle" },
+type BlockKey = "avantVente" | "convictions" | "competences" | "contenus";
+const DIGEST_BLOCKS: { key: BlockKey; title: string }[] = [
+  { key: "avantVente", title: "Pistes Business & Offres" },
+  { key: "convictions", title: "Convictions à challenger" },
+  { key: "competences", title: "Compétences recherchées" },
+  { key: "contenus", title: "Contenus suggérés" },
 ];
 
 function monthLabel(key: string): string {
@@ -93,24 +94,9 @@ export default function ExpertiseDigests({ digests }: { digests: ExpertiseDigest
   const firstAvailable = digests.find((d) => d.available) ?? digests[0];
   const [active, setActive] = useState<string>(firstAvailable?.key ?? "");
   const [month, setMonth] = useState<string>("");
-  const [openSignaux, setOpenSignaux] = useState(false);
-  const [showInfo, setShowInfo] = useState(false);
   const [openRows, setOpenRows] = useState<[boolean, boolean]>([false, false]);
   const toggleRow = (i: 0 | 1) =>
     setOpenRows((r) => (i === 0 ? [!r[0], r[1]] : [r[0], !r[1]]));
-
-  // Fermeture de l'infobulle au clic à l'extérieur.
-  const infoRef = useRef<HTMLDivElement>(null);
-  useEffect(() => {
-    if (!showInfo) return;
-    function onDoc(e: MouseEvent) {
-      if (infoRef.current && !infoRef.current.contains(e.target as Node)) {
-        setShowInfo(false);
-      }
-    }
-    document.addEventListener("mousedown", onDoc);
-    return () => document.removeEventListener("mousedown", onDoc);
-  }, [showInfo]);
 
   const current = digests.find((d) => d.key === active);
   const months = current?.entries.map((e) => e.month) ?? [];
@@ -181,92 +167,28 @@ export default function ExpertiseDigests({ digests }: { digests: ExpertiseDigest
             </span>
           </h2>
 
-          {/* Légende des verdicts */}
-          <div className="mb-4 rounded-lg border border-gray-200 bg-white p-3 text-sm">
-            <div className="flex items-start justify-between gap-2">
-              <ul className="space-y-1">
-                <li>
-                  <span className="tag-mode">[mode]</span>{" "}
-                  <span className="text-gray-600">— Buzz ou signal isolé. Rien à acter.</span>
-                </li>
-                <li>
-                  <span className="tag-tendance">[tendance]</span>{" "}
-                  <span className="text-gray-600">
-                    — Mouvement réel mais pas acquis. À surveiller.
-                  </span>
-                </li>
-                <li>
-                  <span className="tag-structurel">[structurel]</span>{" "}
-                  <span className="text-gray-600">
-                    — Fait dur croisé à une donnée interne. À acter.
-                  </span>
-                </li>
-              </ul>
-              <div className="relative shrink-0" ref={infoRef}>
-                <button
-                  type="button"
-                  onClick={() => setShowInfo((v) => !v)}
-                  aria-expanded={showInfo}
-                  aria-label="En savoir plus sur les verdicts"
-                  title="En savoir plus"
-                  className="text-gray-400 transition hover:text-electrique"
-                >
-                  <svg className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-                    <path
-                      fillRule="evenodd"
-                      d="M10 18a8 8 0 100-16 8 8 0 000 16zM9 9a1 1 0 012 0v4a1 1 0 11-2 0V9zm1-4.25a1.1 1.1 0 100 2.2 1.1 1.1 0 000-2.2z"
-                      clipRule="evenodd"
-                    />
-                  </svg>
-                </button>
-
-                {showInfo && (
-                  <div
-                    role="tooltip"
-                    className="absolute right-0 top-8 z-20 w-[min(24rem,90vw)] space-y-3 rounded-lg border border-gray-200 bg-white p-4 text-gray-600 shadow-lg"
-                  >
-                    <p>
-                      <span className="tag-mode">[mode]</span> — Signal repéré dans une ou
-                      deux sources, sans mouvement observable derrière. On le note sans lui
-                      prêter de portée. Tant qu'un signal n'a pas fait la preuve du
-                      contraire, il reste ici.
-                    </p>
-                    <p>
-                      <span className="tag-tendance">[tendance]</span> — Le signal se
-                      répète, converge depuis plusieurs sources indépendantes ou s'installe
-                      dans la durée. C'est un déplacement réel du marché, mais qui peut
-                      encore refluer. On le suit, on ne le grave pas.
-                    </p>
-                    <div>
-                      <p>
-                        <span className="tag-structurel">[structurel]</span> — Réservé aux
-                        signaux qui réunissent deux conditions cumulatives :
-                      </p>
-                      <ul className="ml-5 mt-1 list-disc space-y-0.5">
-                        <li>
-                          Une preuve quantitative dure (étude chiffrée, opération M&amp;A,
-                          fait mesurable) ;
-                        </li>
-                        <li>
-                          Une corroboration par nos données propriétaires (PAD, emploi,
-                          concurrence).
-                        </li>
-                      </ul>
-                    </div>
-                  </div>
-                )}
-              </div>
+          {/* Légende de confiance (issue du digest) */}
+          {entry.sections.legende && (
+            <div className="mb-4 rounded-lg border border-gray-200 bg-white p-4 text-sm">
+              <div
+                className="prose prose-sm prose-slate max-w-none prose-strong:text-marine prose-blockquote:border-l-lavande prose-blockquote:not-italic prose-blockquote:text-gray-600"
+                dangerouslySetInnerHTML={{ __html: entry.sections.legende }}
+              />
             </div>
-          </div>
+          )}
 
-          {/* Bloc principal : les signaux du mois */}
-          <Block
-            title="Les signaux importants du mois"
-            html={entry.sections.signaux}
-            open={openSignaux}
-            onToggle={() => setOpenSignaux((v) => !v)}
-            accent
-          />
+          {/* Encart du haut : matière mobilisée ce cycle */}
+          {entry.sections.matiere && (
+            <div className="mb-4 rounded-xl border border-lavande bg-glace p-5">
+              <h3 className="mb-2 font-title font-semibold text-marine">
+                Matière mobilisée ce cycle
+              </h3>
+              <div
+                className="text-sm text-gray-700"
+                dangerouslySetInnerHTML={{ __html: entry.sections.matiere }}
+              />
+            </div>
+          )}
 
           {/* Les 4 blocs, ouverture synchronisée par ligne */}
           <div className="mt-4 grid items-start gap-4 md:grid-cols-2">

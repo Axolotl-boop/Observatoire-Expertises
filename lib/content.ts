@@ -762,20 +762,26 @@ export const EXPERTISES: { key: string; label: string; folder: string }[] = [
   { key: "ia-pm", label: "IA PM", folder: "Product-AI" },
 ];
 
-/** Les 4 blocs (hors « signaux ») avec leur titre d'affichage. */
-export const DIGEST_BLOCKS: { key: "bloc1" | "bloc2" | "bloc3" | "bloc4"; title: string }[] = [
-  { key: "bloc1", title: "Problématiques clients & positionnement offre" },
-  { key: "bloc2", title: "Signaux qui challengent nos convictions" },
-  { key: "bloc3", title: "Skills, méthodes & outils" },
-  { key: "bloc4", title: "Sujets éditoriaux & angle" },
+/** Clés des 4 blocs « carte » de l'Observatoire. */
+export type DigestBlockKey = "avantVente" | "convictions" | "competences" | "contenus";
+
+/** Les 4 blocs (hors « matière » et « légende ») avec leur titre d'affichage. */
+export const DIGEST_BLOCKS: { key: DigestBlockKey; title: string }[] = [
+  { key: "avantVente", title: "Pistes Business & Offres" },
+  { key: "convictions", title: "Convictions à challenger" },
+  { key: "competences", title: "Compétences recherchées" },
+  { key: "contenus", title: "Contenus suggérés" },
 ];
 
 export interface DigestSections {
-  signaux: string;
-  bloc1: string;
-  bloc2: string;
-  bloc3: string;
-  bloc4: string;
+  /** « Matière mobilisée ce cycle » (encart du haut). */
+  matiere: string;
+  /** « Légende de confiance (compacte) » (encart de légende). */
+  legende: string;
+  avantVente: string;
+  convictions: string;
+  competences: string;
+  contenus: string;
 }
 
 export interface DigestEntry {
@@ -803,37 +809,47 @@ function digestSlugsForFolder(folder: string): { slug: string; date: string }[] 
     .sort((a, b) => b.date.localeCompare(a.date) || b.slug.localeCompare(a.slug));
 }
 
-/** Découpe le corps d'un digest en ses 5 sections (texte Markdown brut). */
-function sliceDigestSections(body: string): Record<string, string> {
-  const lines = body.split(/\r?\n/);
-  const markers: { key: string; re: RegExp }[] = [
-    { key: "signaux", re: /^\s*§\s*1\b/ },
-    { key: "bloc1", re: /^\s*Bloc\s*1\b/i },
-    { key: "bloc2", re: /^\s*Bloc\s*2\b/i },
-    { key: "bloc3", re: /^\s*Bloc\s*3\b/i },
-    { key: "bloc4", re: /^\s*Bloc\s*4\b/i },
-    { key: "__end", re: /^\s*(Garde-fous|Sources utilis|#{2,}\s)/i },
-  ];
-  const found: { key: string; line: number }[] = [];
-  for (const m of markers) {
-    const idx = lines.findIndex((l) => m.re.test(l));
-    if (idx >= 0) found.push({ key: m.key, line: idx });
+/**
+ * Extrait le texte situé entre une ligne de début (exclue) et la première ligne
+ * suivante qui matche l'une des bornes de fin. Nettoie les séparateurs « --- ».
+ */
+function extractBetween(lines: string[], startRe: RegExp, endRes: RegExp[]): string {
+  const start = lines.findIndex((l) => startRe.test(l));
+  if (start < 0) return "";
+  let end = lines.length;
+  for (let i = start + 1; i < lines.length; i++) {
+    if (endRes.some((re) => re.test(lines[i]))) {
+      end = i;
+      break;
+    }
   }
-  found.sort((a, b) => a.line - b.line);
+  return lines
+    .slice(start + 1, end)
+    .join("\n")
+    .replace(/^\s*-{3,}\s*$/gm, "")
+    .trim();
+}
 
-  const out: Record<string, string> = {};
-  for (let i = 0; i < found.length; i++) {
-    const cur = found[i];
-    if (cur.key === "__end") continue;
-    const next = found[i + 1];
-    const chunk = lines
-      .slice(cur.line + 1, next ? next.line : lines.length)
-      .join("\n")
-      .replace(/^\s*-{3,}\s*$/gm, "") // retire les séparateurs ---
-      .trim();
-    out[cur.key] = chunk;
-  }
-  return out;
+/** Découpe le corps d'un digest (nouveau format « cartes ») en ses sections. */
+function sliceDigestSections(body: string): DigestSections {
+  const lines = body.split(/\r?\n/);
+  const heading = /^#{1,4}\s/; // toute ligne de titre Markdown
+  const carte = (name: RegExp) =>
+    extractBetween(lines, new RegExp(`^#{1,4}\\s*Carte\\s*[—–-]\\s*${name.source}`, "i"), [
+      heading,
+    ]);
+  return {
+    matiere: extractBetween(lines, /^Matière mobilisée ce cycle/i, [
+      /^\s*Bloc\s*1\b/i,
+      /^\s*-{3,}\s*$/,
+      heading,
+    ]),
+    legende: extractBetween(lines, /^#{1,4}\s*Légende de confiance/i, [heading]),
+    avantVente: carte(/Avant-vente/),
+    convictions: carte(/Convictions/),
+    competences: carte(/Comp[ée]tences/),
+    contenus: carte(/Contenus activables/),
+  };
 }
 
 function escapeHtml(s: string): string {
@@ -843,58 +859,50 @@ function escapeHtml(s: string): string {
     .replace(/>/g, "&gt;");
 }
 
-/** Colore les verdicts [structurel]/[tendance]/[mode]. */
-function colorizeTags(s: string): string {
-  return s
-    .replace(/\[structurel\]/gi, '<span class="tag-structurel">[structurel]</span>')
-    .replace(/\[tendance\]/gi, '<span class="tag-tendance">[tendance]</span>')
-    .replace(/\[mode\]/gi, '<span class="tag-mode">[mode]</span>');
-}
-
-
 /**
- * Rend la section « signaux » : liste numérotée, tags colorés, et tout ce qui
- * suit le premier « — » (la provenance) en italique gris.
+ * Colore les verdicts [mode]/[tendance]/[structurel] dans du HTML déjà rendu,
+ * qu'ils soient nus ou encadrés par <code> (cas du Markdown `[tendance]`).
  */
-function renderSignauxHtml(md: string): string {
-  const items = md
-    .split(/\r?\n/)
-    .map((l) => l.trim())
-    .filter((l) => /^\d+[.)]\s+/.test(l))
-    .map((l) => l.replace(/^\d+[.)]\s+/, ""));
-  if (!items.length) return "";
-  const lis = items
-    .map((raw) => {
-      let text = escapeHtml(raw);
-      const idx = text.indexOf("—");
-      if (idx >= 0) {
-        text = `${text.slice(0, idx)}<span class="signal-note">${text.slice(idx)}</span>`;
-      }
-      text = colorizeTags(text);
-      return `<li>${text}</li>`;
-    })
-    .join("");
-  return `<ol class="signal-list">${lis}</ol>`;
+function colorizeTagsHtml(html: string): string {
+  return html.replace(
+    /(?:<code>)?\s*\[(mode|tendance|structurel)\]\s*(?:<\/code>)?/gi,
+    (_, t: string) => `<span class="tag-${t.toLowerCase()}">[${t.toLowerCase()}]</span>`,
+  );
 }
 
 /**
- * Met en gras les « titres » internes des blocs : une puce dont le texte est un
- * libellé court terminé par « : » (ex. « Problématiques récurrentes : »).
+ * Rend l'encart « Matière mobilisée ce cycle » : une liste de cases ☑/☐ suivie
+ * d'une ligne de conclusion « → … ». (Rendu direct, hors Markdown, pour garder
+ * une case par ligne et griser les briques non mobilisées.)
  */
-function emphasizeLabels(md: string): string {
-  return md
-    .split(/\r?\n/)
-    .map((line) => {
-      const m = line.match(/^(\s*[-*]\s+)([^.:\n*]{2,60}:)(\s.*)?$/);
-      if (!m) return line;
-      return `${m[1]}**${m[2].trim()}**${m[3] ?? ""}`;
-    })
-    .join("\n");
+function renderMatiereHtml(md: string): string {
+  const items: string[] = [];
+  let note = "";
+  for (const raw of md.split(/\r?\n/)) {
+    const l = raw.trim();
+    if (!l) continue;
+    if (/^→/.test(l)) {
+      note = l.replace(/^→\s*/, "");
+      continue;
+    }
+    const m = l.match(/^([☑☐✅❌])\s*(.+)$/);
+    if (!m) continue;
+    const on = /[☑✅]/.test(m[1]);
+    items.push(
+      `<li style="margin:.15rem 0;${on ? "" : "color:#9ca3af;"}">${on ? "☑" : "☐"} ${escapeHtml(
+        m[2],
+      )}</li>`,
+    );
+  }
+  if (!items.length && !note) return "";
+  const list = `<ul style="list-style:none;margin:0;padding:0">${items.join("")}</ul>`;
+  const n = note ? `<p style="margin-top:.5rem;color:#5b6472">${escapeHtml(note)}</p>` : "";
+  return list + n;
 }
 
-/** Pour chaque expertise, charge et rend tous les digests mensuels. */
+/** Pour chaque expertise, charge et rend tous les digests mensuels (format cartes). */
 export async function getExpertiseDigests(): Promise<ExpertiseDigest[]> {
-  const renderBloc = async (s?: string) => (s ? renderMarkdown(emphasizeLabels(s)) : "");
+  const renderCard = async (s: string) => (s ? colorizeTagsHtml(await renderMarkdown(s)) : "");
   const result: ExpertiseDigest[] = [];
   for (const exp of EXPERTISES) {
     const slugs = digestSlugsForFolder(exp.folder);
@@ -903,18 +911,23 @@ export async function getExpertiseDigests(): Promise<ExpertiseDigest[]> {
       const parsed = readRaw(slug);
       if (!parsed) continue;
       const secs = sliceDigestSections(parsed.body);
-      entries.push({
-        month: monthOf(date),
-        date,
-        slug,
-        sections: {
-          signaux: renderSignauxHtml(secs.signaux || ""),
-          bloc1: await renderBloc(secs.bloc1),
-          bloc2: await renderBloc(secs.bloc2),
-          bloc3: await renderBloc(secs.bloc3),
-          bloc4: await renderBloc(secs.bloc4),
-        },
-      });
+      const sections: DigestSections = {
+        matiere: renderMatiereHtml(secs.matiere),
+        legende: await renderCard(secs.legende),
+        avantVente: await renderCard(secs.avantVente),
+        convictions: await renderCard(secs.convictions),
+        competences: await renderCard(secs.competences),
+        contenus: await renderCard(secs.contenus),
+      };
+      // On n'expose que les mois au nouveau format (au moins une carte ou la matière).
+      const hasContent =
+        sections.matiere ||
+        sections.avantVente ||
+        sections.convictions ||
+        sections.competences ||
+        sections.contenus;
+      if (!hasContent) continue;
+      entries.push({ month: monthOf(date), date, slug, sections });
     }
     result.push({
       key: exp.key,
