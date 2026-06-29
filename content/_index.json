@@ -99,9 +99,9 @@
     "path": "Veille Agentique Tribe Produit/01-Matière-brute/Newsletters-pré-digérées/2026-06/2026-06-27_thesetups_15cf.md",
     "modified": "2026-06-27T08:06:57Z"
   },
-  "veille-agentique-tribe-produit-01-matiere-brute-notes-pad-retraitees-2026-05-synthese-deman-13d15818": {
-    "path": "Veille Agentique Tribe Produit/01-Matière-brute/Notes-PAD-retraitées/2026-05/Synthese-demande-2026-05.md",
-    "modified": "2026-06-28T20:52:53Z"
+  "veille-agentique-tribe-produit-01-matiere-brute-newsletters-pre-digerees-2026-06-2026-06-29-fa91d3d6": {
+    "path": "Veille Agentique Tribe Produit/01-Matière-brute/Newsletters-pré-digérées/2026-06/2026-06-29_contact_4062.md",
+    "modified": "2026-06-29T06:04:01Z"
   },
   "veille-agentique-tribe-produit-01-matiere-brute-notes-pad-retraitees-2026-06-synthese-deman-a2036bcd": {
     "path": "Veille Agentique Tribe Produit/01-Matière-brute/Notes-PAD-retraitées/2026-06/Synthese-demande-2026-06.md",
@@ -235,6 +235,10 @@
     "path": "Veille Agentique Tribe Produit/01-Matière-brute/Veille-concurrentielle/2026-06/2026-06-28_artefact_130013.md",
     "modified": "2026-06-28T13:01:11Z"
   },
+  "veille-agentique-tribe-produit-01-matiere-brute-veille-concurrentielle-2026-06-2026-06-29co-61bea3f4": {
+    "path": "Veille Agentique Tribe Produit/01-Matière-brute/Veille-concurrentielle/2026-06/2026-06-29_converteo_programme-fidelite-luxe-strategies.md",
+    "modified": "2026-06-29T07:04:57Z"
+  },
   "veille-agentique-tribe-produit-01-matiere-brute-veille-concurrentielle-2026-t2-snapshot-con-f94f3b71": {
     "path": "Veille Agentique Tribe Produit/01-Matière-brute/Veille-concurrentielle/2026-T2/Snapshot-concurrentiel-T2-2026.md",
     "modified": "2026-06-26T23:28:53Z"
@@ -291,49 +295,25 @@
     "path": "Veille Agentique Tribe Produit/01-Matière-brute/Prompt-relance-trimestrielle-veille-concurrence-et-emploi.md",
     "modified": "2026-06-14T23:37:22Z"
   },
-  "veille-agentique-tribe-produit-02-digests-par-expertise-data-pm-2026-05-format-b-datapm-2026-05": {
-    "path": "Veille Agentique Tribe Produit/02-Digests-par-expertise/Data-PM/2026-05/Format-B-datapm-2026-05.md",
-    "modified": "2026-06-28T20:56:41Z"
-  },
   "veille-agentique-tribe-produit-02-digests-par-expertise-data-pm-2026-06-format-b-datapm-2026-06": {
     "path": "Veille Agentique Tribe Produit/02-Digests-par-expertise/Data-PM/2026-06/Format-B-datapm-2026-06.md",
     "modified": "2026-06-28T21:04:17Z"
-  },
-  "veille-agentique-tribe-produit-02-digests-par-expertise-pmm-2026-05-format-b-pmm-2026-05": {
-    "path": "Veille Agentique Tribe Produit/02-Digests-par-expertise/PMM/2026-05/Format-B-pmm-2026-05.md",
-    "modified": "2026-06-28T20:55:41Z"
   },
   "veille-agentique-tribe-produit-02-digests-par-expertise-pmm-2026-06-format-b-pmm-2026-06": {
     "path": "Veille Agentique Tribe Produit/02-Digests-par-expertise/PMM/2026-06/Format-B-pmm-2026-06.md",
     "modified": "2026-06-28T21:03:22Z"
   },
-  "veille-agentique-tribe-produit-02-digests-par-expertise-product-ai-2026-05-format-b-product-9b54b3d6": {
-    "path": "Veille Agentique Tribe Produit/02-Digests-par-expertise/Product-AI/2026-05/Format-B-productai-2026-05.md",
-    "modified": "2026-06-28T20:55:01Z"
-  },
   "veille-agentique-tribe-produit-02-digests-par-expertise-product-ai-2026-06-format-b-product-a2169226": {
     "path": "Veille Agentique Tribe Produit/02-Digests-par-expertise/Product-AI/2026-06/Format-B-productai-2026-06.md",
     "modified": "2026-06-28T21:02:32Z"
-  },
-  "veille-agentique-tribe-produit-02-digests-par-expertise-product-management-2026-05-format-b-5e370294": {
-    "path": "Veille Agentique Tribe Produit/02-Digests-par-expertise/Product-Management/2026-05/Format-B-pm-2026-05.md",
-    "modified": "2026-06-28T20:54:42Z"
   },
   "veille-agentique-tribe-produit-02-digests-par-expertise-product-management-2026-06-format-b-c8bfa2dd": {
     "path": "Veille Agentique Tribe Produit/02-Digests-par-expertise/Product-Management/2026-06/Format-B-pm-2026-06.md",
     "modified": "2026-06-28T21:02:07Z"
   },
-  "veille-agentique-tribe-produit-02-digests-par-expertise-product-ops-2026-05-format-b-produc-363dad3b": {
-    "path": "Veille Agentique Tribe Produit/02-Digests-par-expertise/Product-Ops/2026-05/Format-B-productops-2026-05.md",
-    "modified": "2026-06-28T20:55:21Z"
-  },
   "veille-agentique-tribe-produit-02-digests-par-expertise-product-ops-2026-06-format-b-produc-54d2d67e": {
     "path": "Veille Agentique Tribe Produit/02-Digests-par-expertise/Product-Ops/2026-06/Format-B-productops-2026-06.md",
     "modified": "2026-06-28T21:02:50Z"
-  },
-  "veille-agentique-tribe-produit-02-digests-par-expertise-qa-2026-05-format-b-qa-2026-05": {
-    "path": "Veille Agentique Tribe Produit/02-Digests-par-expertise/QA/2026-05/Format-B-qa-2026-05.md",
-    "modified": "2026-06-28T20:56:16Z"
   },
   "veille-agentique-tribe-produit-02-digests-par-expertise-qa-2026-06-format-b-qa-2026-06": {
     "path": "Veille Agentique Tribe Produit/02-Digests-par-expertise/QA/2026-06/Format-B-qa-2026-06.md",
@@ -362,5 +342,149 @@
   "veille-agentique-tribe-produit-04-convictions-expertises-convictions-qa": {
     "path": "Veille Agentique Tribe Produit/04-Convictions-Expertises/Convictions-qa.md",
     "modified": "2026-06-27T22:07:05Z"
+  },
+  "veille-agentique-tribe-produit-referentiel-technique-00personasobservatoirereference": {
+    "path": "Veille Agentique Tribe Produit/Référentiel technique/00_Personas_Observatoire_REFERENCE.md",
+    "modified": "2026-06-29T11:20:06Z"
+  },
+  "veille-agentique-tribe-produit-referentiel-technique-00-comment-ca-marche": {
+    "path": "Veille Agentique Tribe Produit/Référentiel technique/00-Comment-ca-marche.md",
+    "modified": "2026-06-29T11:20:06Z"
+  },
+  "veille-agentique-tribe-produit-referentiel-technique-contrat-dashboard-data": {
+    "path": "Veille Agentique Tribe Produit/Référentiel technique/Contrat-dashboard-data.md",
+    "modified": "2026-06-29T11:20:07Z"
+  },
+  "veille-agentique-tribe-produit-referentiel-technique-convictions-exp": {
+    "path": "Veille Agentique Tribe Produit/Référentiel technique/Convictions-_EXP_.md",
+    "modified": "2026-06-29T11:20:07Z"
+  },
+  "veille-agentique-tribe-produit-referentiel-technique-description-du-projet": {
+    "path": "Veille Agentique Tribe Produit/Référentiel technique/Description-du-projet.md",
+    "modified": "2026-06-29T11:20:07Z"
+  },
+  "veille-agentique-tribe-produit-referentiel-technique-fiche-agent-captation-concurrence": {
+    "path": "Veille Agentique Tribe Produit/Référentiel technique/Fiche-Agent-captation-concurrence.md",
+    "modified": "2026-06-29T11:20:07Z"
+  },
+  "veille-agentique-tribe-produit-referentiel-technique-fiche-agent-format-a": {
+    "path": "Veille Agentique Tribe Produit/Référentiel technique/Fiche-Agent-Format-A.md",
+    "modified": "2026-06-29T11:20:08Z"
+  },
+  "veille-agentique-tribe-produit-referentiel-technique-fiche-agent-snapshot-concurrentiel": {
+    "path": "Veille Agentique Tribe Produit/Référentiel technique/Fiche-Agent-Snapshot-concurrentiel.md",
+    "modified": "2026-06-29T11:20:08Z"
+  },
+  "veille-agentique-tribe-produit-referentiel-technique-fiche-agent-snapshot-emploi": {
+    "path": "Veille Agentique Tribe Produit/Référentiel technique/Fiche-Agent-Snapshot-emploi.md",
+    "modified": "2026-06-29T11:20:08Z"
+  },
+  "veille-agentique-tribe-produit-referentiel-technique-fiche-assembleur-format-b": {
+    "path": "Veille Agentique Tribe Produit/Référentiel technique/Fiche-Assembleur-Format-B.md",
+    "modified": "2026-06-29T11:20:08Z"
+  },
+  "veille-agentique-tribe-produit-referentiel-technique-fiche-assembleur-snapshot-concurrentiel": {
+    "path": "Veille Agentique Tribe Produit/Référentiel technique/Fiche-Assembleur-Snapshot-concurrentiel.md",
+    "modified": "2026-06-29T11:20:08Z"
+  },
+  "veille-agentique-tribe-produit-referentiel-technique-fiche-assembleur-snapshot-emploi": {
+    "path": "Veille Agentique Tribe Produit/Référentiel technique/Fiche-Assembleur-Snapshot-emploi.md",
+    "modified": "2026-06-29T11:20:08Z"
+  },
+  "veille-agentique-tribe-produit-referentiel-technique-fiche-canal-b-google-alerts": {
+    "path": "Veille Agentique Tribe Produit/Référentiel technique/Fiche-Canal-B-Google-Alerts.md",
+    "modified": "2026-06-29T11:20:08Z"
+  },
+  "veille-agentique-tribe-produit-referentiel-technique-fiche-captation-emploi-cowork": {
+    "path": "Veille Agentique Tribe Produit/Référentiel technique/Fiche-Captation-emploi-Cowork.md",
+    "modified": "2026-06-29T11:20:08Z"
+  },
+  "veille-agentique-tribe-produit-referentiel-technique-fiche-flux-newsletters-format-a": {
+    "path": "Veille Agentique Tribe Produit/Référentiel technique/Fiche-Flux-Newsletters-Format-A.md",
+    "modified": "2026-06-29T11:20:09Z"
+  },
+  "veille-agentique-tribe-produit-referentiel-technique-fiche-flux-rss-concurrence": {
+    "path": "Veille Agentique Tribe Produit/Référentiel technique/Fiche-Flux-RSS-concurrence.md",
+    "modified": "2026-06-29T11:20:09Z"
+  },
+  "veille-agentique-tribe-produit-referentiel-technique-fiche-flux-veille-concurrence-email": {
+    "path": "Veille Agentique Tribe Produit/Référentiel technique/Fiche-Flux-Veille-concurrence-Email.md",
+    "modified": "2026-06-29T11:20:09Z"
+  },
+  "veille-agentique-tribe-produit-referentiel-technique-fiche-generation-digest-format-b": {
+    "path": "Veille Agentique Tribe Produit/Référentiel technique/Fiche-Generation-digest-Format-B.md",
+    "modified": "2026-06-29T11:20:09Z"
+  },
+  "veille-agentique-tribe-produit-referentiel-technique-fiche-indexeur-dashboard": {
+    "path": "Veille Agentique Tribe Produit/Référentiel technique/Fiche-Indexeur-Dashboard.md",
+    "modified": "2026-06-29T11:20:09Z"
+  },
+  "veille-agentique-tribe-produit-referentiel-technique-fiche-pipeline-boond": {
+    "path": "Veille Agentique Tribe Produit/Référentiel technique/Fiche-Pipeline-Boond.md",
+    "modified": "2026-06-29T11:20:09Z"
+  },
+  "veille-agentique-tribe-produit-referentiel-technique-fiche-predigest-newsletters": {
+    "path": "Veille Agentique Tribe Produit/Référentiel technique/Fiche-Predigest-newsletters.md",
+    "modified": "2026-06-29T11:20:09Z"
+  },
+  "veille-agentique-tribe-produit-referentiel-technique-fiche-transverse-patterns-power-automate": {
+    "path": "Veille Agentique Tribe Produit/Référentiel technique/Fiche-Transverse-Patterns-Power-Automate.md",
+    "modified": "2026-06-29T11:20:09Z"
+  },
+  "veille-agentique-tribe-produit-referentiel-technique-fiche-transverse-reference": {
+    "path": "Veille Agentique Tribe Produit/Référentiel technique/Fiche-Transverse-Reference.md",
+    "modified": "2026-06-29T11:20:09Z"
+  },
+  "veille-agentique-tribe-produit-referentiel-technique-format-veille-concurrentielle-v3": {
+    "path": "Veille Agentique Tribe Produit/Référentiel technique/Format-veille-concurrentielle-v3.md",
+    "modified": "2026-06-29T11:20:09Z"
+  },
+  "veille-agentique-tribe-produit-referentiel-technique-format-veille-emploi": {
+    "path": "Veille Agentique Tribe Produit/Référentiel technique/Format-veille-emploi.md",
+    "modified": "2026-06-29T11:20:09Z"
+  },
+  "veille-agentique-tribe-produit-referentiel-technique-grille-validation-format-b": {
+    "path": "Veille Agentique Tribe Produit/Référentiel technique/Grille-validation-Format-B.md",
+    "modified": "2026-06-29T11:20:10Z"
+  },
+  "veille-agentique-tribe-produit-referentiel-technique-index-referentiel-technique": {
+    "path": "Veille Agentique Tribe Produit/Référentiel technique/Index-Référentiel-technique.md",
+    "modified": "2026-06-29T11:20:10Z"
+  },
+  "veille-agentique-tribe-produit-referentiel-technique-prompt-agent-annotateur": {
+    "path": "Veille Agentique Tribe Produit/Référentiel technique/Prompt-agent-annotateur.md",
+    "modified": "2026-06-29T11:20:10Z"
+  },
+  "veille-agentique-tribe-produit-referentiel-technique-prompt-agent-format-b-copilot": {
+    "path": "Veille Agentique Tribe Produit/Référentiel technique/Prompt-agent-Format-B-Copilot.md",
+    "modified": "2026-06-29T11:20:10Z"
+  },
+  "veille-agentique-tribe-produit-referentiel-technique-prompt-captation-emploi-cowork": {
+    "path": "Veille Agentique Tribe Produit/Référentiel technique/Prompt-captation-emploi-Cowork.md",
+    "modified": "2026-06-29T11:20:10Z"
+  },
+  "veille-agentique-tribe-produit-referentiel-technique-prompt-pre-digest-state-of-x": {
+    "path": "Veille Agentique Tribe Produit/Référentiel technique/Prompt-pre-digest-State-of-X.md",
+    "modified": "2026-06-29T11:20:10Z"
+  },
+  "veille-agentique-tribe-produit-referentiel-technique-spec-decompte-deterministe": {
+    "path": "Veille Agentique Tribe Produit/Référentiel technique/Spec-decompte-deterministe.md",
+    "modified": "2026-06-29T11:20:10Z"
+  },
+  "veille-agentique-tribe-produit-referentiel-technique-spec-flux-veille-concurrentielle": {
+    "path": "Veille Agentique Tribe Produit/Référentiel technique/Spec-flux-veille-concurrentielle.md",
+    "modified": "2026-06-29T11:20:10Z"
+  },
+  "veille-agentique-tribe-produit-referentiel-technique-specs-systeme-veille": {
+    "path": "Veille Agentique Tribe Produit/Référentiel technique/SPECS-Systeme-Veille.md",
+    "modified": "2026-06-29T11:20:11Z"
+  },
+  "veille-agentique-tribe-produit-referentiel-technique-template-digest-par-expertise": {
+    "path": "Veille Agentique Tribe Produit/Référentiel technique/Template-Digest-par-expertise.md",
+    "modified": "2026-06-29T11:20:11Z"
+  },
+  "veille-agentique-tribe-produit-referentiel-technique-to-do": {
+    "path": "Veille Agentique Tribe Produit/Référentiel technique/To-Do.md",
+    "modified": "2026-06-29T11:20:11Z"
   }
 }
