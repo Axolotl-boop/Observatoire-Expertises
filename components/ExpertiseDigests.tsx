@@ -91,7 +91,7 @@ function Block({
           >
             {meta.label}
           </span>
-          <h3 className="font-title text-[17px] font-medium leading-snug tracking-[-0.01em] text-marine">
+          <h3 className="font-title text-[17px] font-semibold leading-snug text-marine">
             {title}
           </h3>
         </span>

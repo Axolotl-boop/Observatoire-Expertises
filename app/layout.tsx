@@ -2,12 +2,19 @@ import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
 
-const geomanist = localFont({
-  src: "./fonts/GeomanistBook.ttf",
-  variable: "--font-geomanist",
+// Inter variable : police de travail (corps, titres de cartes, UI).
+// Vraies graisses 100–900 → plus de faux-gras synthétique sur les titres,
+// dessin optimisé écran pour les contenus denses.
+const inter = localFont({
+  src: [
+    { path: "./fonts/InterVariable.woff2", style: "normal", weight: "100 900" },
+    { path: "./fonts/InterVariable-Italic.woff2", style: "italic", weight: "100 900" },
+  ],
+  variable: "--font-inter",
   display: "swap",
 });
 
+// Publica : accent de marque, réservé aux moments d'affichage (wordmark, accroche).
 const publica = localFont({
   src: "./fonts/Publica.otf",
   variable: "--font-publica",
@@ -26,7 +33,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="fr" className={`${geomanist.variable} ${publica.variable}`}>
+    <html lang="fr" className={`${inter.variable} ${publica.variable}`}>
       <body className="min-h-screen flex flex-col">{children}</body>
     </html>
   );

@@ -21,7 +21,7 @@ export default function AppLayout({
         <div className="mx-auto flex max-w-5xl flex-wrap items-center justify-between gap-3 px-4 pt-4 pb-3">
           <Link href="/" className="flex items-center gap-2.5">
             <span className="text-3xl">🔭</span>
-            <span className="font-title text-xl font-bold text-marine sm:text-2xl">
+            <span className="font-display text-xl font-bold text-marine sm:text-2xl">
               Observatoire des Expertises
             </span>
           </Link>
