@@ -7,12 +7,37 @@ import type { ExpertiseDigest } from "@/lib/content";
 import { track } from "@/lib/track";
 
 type BlockKey = "avantVente" | "convictions" | "competences" | "contenus";
-const DIGEST_BLOCKS: { key: BlockKey; title: string }[] = [
-  { key: "avantVente", title: "Problématiques récurrentes & Offres" },
-  { key: "convictions", title: "Convictions à challenger" },
-  { key: "competences", title: "Compétences recherchées" },
-  { key: "contenus", title: "Contenus de notoriété suggérés" },
+type PersonaKey = "commerce" | "referent" | "formation" | "marketing";
+
+/**
+ * Chaque bloc du digest sert un rôle (persona) et une intention différents.
+ * On l'affiche explicitement pour casser l'uniformité « 4 cartes identiques »
+ * et permettre de pondérer la lecture selon le profil.
+ */
+const DIGEST_BLOCKS: {
+  key: BlockKey;
+  title: string;
+  persona: PersonaKey;
+}[] = [
+  { key: "avantVente", title: "Problématiques récurrentes & Offres", persona: "commerce" },
+  { key: "convictions", title: "Convictions à challenger", persona: "referent" },
+  { key: "competences", title: "Compétences recherchées", persona: "formation" },
+  { key: "contenus", title: "Contenus de notoriété suggérés", persona: "marketing" },
 ];
+
+/** Libellé + couleurs de charte par persona (tag de carte + bord de la carte mise en avant). */
+const PERSONA_META: Record<
+  PersonaKey,
+  { label: string; tag: string; border: string }
+> = {
+  commerce: { label: "Commerce", tag: "bg-glace text-electrique", border: "border-electrique" },
+  referent: { label: "Référent", tag: "bg-lilas text-violet", border: "border-violet" },
+  formation: { label: "Formation & Staffing", tag: "bg-jadeclair text-foret", border: "border-jade" },
+  marketing: { label: "Marketing", tag: "bg-creme text-braise", border: "border-braise" },
+};
+
+/** Ordre d'affichage du sélecteur « Lecture par rôle ». */
+const PERSONAS: PersonaKey[] = ["commerce", "referent", "formation", "marketing"];
 
 function monthLabel(key: string): string {
   const m = key.match(/^(\d{4})-(\d{2})$/);
@@ -25,21 +50,27 @@ function monthLabel(key: string): string {
 function Block({
   title,
   html,
+  persona,
   open,
   onToggle,
-  accent,
+  emphasis,
 }: {
   title: string;
   html?: string;
+  persona: PersonaKey;
   open: boolean;
   onToggle: () => void;
-  accent?: boolean;
+  emphasis: "primary" | "muted" | "normal";
 }) {
+  const meta = PERSONA_META[persona];
   return (
     <div
       className={[
-        "rounded-xl border",
-        accent ? "border-lavande bg-glace" : "border-gray-200 bg-white",
+        "rounded-xl bg-white transition-opacity",
+        emphasis === "primary"
+          ? `border-2 ${meta.border} shadow-sm`
+          : "border border-gray-200",
+        emphasis === "muted" ? "opacity-70 hover:opacity-100" : "",
       ].join(" ")}
     >
       <button
@@ -49,12 +80,24 @@ function Block({
           onToggle();
         }}
         aria-expanded={open}
-        className="flex w-full items-center justify-between gap-2 p-5 text-left"
+        className="flex w-full items-start justify-between gap-2 p-5 text-left"
       >
-        <h3 className="font-title font-semibold text-marine">{title}</h3>
+        <span className="flex flex-col gap-1.5">
+          <span
+            className={[
+              "inline-flex w-fit items-center rounded-full px-2 py-0.5 font-title text-[11px] font-medium",
+              meta.tag,
+            ].join(" ")}
+          >
+            {meta.label}
+          </span>
+          <h3 className="font-title text-[17px] font-medium leading-snug tracking-[-0.01em] text-marine">
+            {title}
+          </h3>
+        </span>
         <svg
           className={[
-            "h-5 w-5 shrink-0 text-gray-400 transition-transform",
+            "mt-0.5 h-5 w-5 shrink-0 text-gray-400 transition-transform",
             open ? "rotate-180" : "",
           ].join(" ")}
           viewBox="0 0 20 20"
@@ -72,16 +115,11 @@ function Block({
         {html ? (
           <div className={open ? "" : "relative max-h-24 overflow-hidden"}>
             <div
-              className="prose prose-sm prose-slate max-w-none prose-strong:text-marine"
+              className="prose prose-sm prose-slate max-w-none leading-relaxed prose-headings:font-title prose-headings:font-medium prose-headings:text-marine prose-strong:font-semibold prose-strong:text-marine prose-li:my-1.5"
               dangerouslySetInnerHTML={{ __html: html }}
             />
             {!open && (
-              <div
-                className={[
-                  "pointer-events-none absolute inset-x-0 bottom-0 h-12 bg-gradient-to-t",
-                  accent ? "from-glace" : "from-white",
-                ].join(" ")}
-              />
+              <div className="pointer-events-none absolute inset-x-0 bottom-0 h-12 bg-gradient-to-t from-white" />
             )}
           </div>
         ) : (
@@ -97,11 +135,26 @@ export default function ExpertiseDigests({ digests }: { digests: ExpertiseDigest
   const [active, setActive] = useState<string>(firstAvailable?.key ?? "");
   const [month, setMonth] = useState<string>("");
   const [openMap, setOpenMap] = useState<Partial<Record<BlockKey, boolean>>>({});
+  // null = « Tout afficher » ; sinon, le persona dont la carte est mise en avant.
+  const [persona, setPersona] = useState<PersonaKey | null>(null);
 
   const current = digests.find((d) => d.key === active);
   const months = current?.entries.map((e) => e.month) ?? [];
   const selectedMonth = months.includes(month) ? month : months[0];
   const entry = current?.entries.find((e) => e.month === selectedMonth);
+
+  // Carte prioritaire du persona sélectionné, et les autres (atténuées).
+  const primaryKey = persona
+    ? DIGEST_BLOCKS.find((b) => b.persona === persona)?.key
+    : undefined;
+  const primaryBlock = DIGEST_BLOCKS.find((b) => b.key === primaryKey);
+  const otherBlocks = DIGEST_BLOCKS.filter((b) => b.key !== primaryKey);
+
+  // Ouverte si l'utilisateur l'a explicitement basculée ; sinon, ouverte par
+  // défaut quand c'est la carte mise en avant du persona.
+  const isOpen = (key: BlockKey) => openMap[key] ?? key === primaryKey;
+  const toggle = (key: BlockKey) =>
+    setOpenMap((m) => ({ ...m, [key]: !isOpen(key) }));
 
   return (
     <section className="mb-12">
@@ -151,35 +204,94 @@ export default function ExpertiseDigests({ digests }: { digests: ExpertiseDigest
           {/* Bloc Hero : les signaux importants du mois */}
           {entry.sections.signaux && (
             <div className="mb-4 rounded-2xl border border-marine bg-marine p-6 text-white shadow-sm">
-              <h3 className="mb-4 font-title text-lg font-bold text-lavande">
+              <h3 className="mb-4 font-title text-lg font-semibold text-lavande">
                 Les signaux importants du mois
               </h3>
               <div
-                className="prose prose-invert max-w-none text-[15.5px] leading-relaxed prose-p:my-2 prose-strong:text-white prose-li:my-3 prose-li:pl-1 prose-li:marker:text-lavande prose-li:marker:content-['▸']"
+                className="prose prose-invert max-w-none text-[15.5px] leading-relaxed prose-p:my-2 prose-strong:font-semibold prose-strong:text-white prose-li:my-3 prose-li:pl-1 prose-li:marker:text-lavande prose-li:marker:content-['▸']"
                 dangerouslySetInnerHTML={{ __html: entry.sections.signaux }}
               />
             </div>
           )}
 
-          {/* Les 4 blocs, ouverture indépendante par bloc */}
-          <div className="mt-4 grid items-start gap-4 md:grid-cols-2">
-            {DIGEST_BLOCKS.map((block) => (
-              <Block
-                key={block.key}
-                title={block.title}
-                html={entry.sections[block.key]}
-                open={!!openMap[block.key]}
-                onToggle={() =>
-                  setOpenMap((m) => ({ ...m, [block.key]: !m[block.key] }))
-                }
-              />
+          {/* Sélecteur « Lecture par rôle » : pondère et hiérarchise les 4 cartes */}
+          <div className="mb-4 flex flex-wrap items-center gap-2">
+            <span className="mr-1 font-title text-sm font-medium text-marine">
+              Lecture par rôle&nbsp;:
+            </span>
+            <Chip
+              size="sm"
+              active={persona === null}
+              onClick={() => {
+                setPersona(null);
+                track("filter", "Observatoire · persona:tout");
+              }}
+            >
+              Tout afficher
+            </Chip>
+            {PERSONAS.map((p) => (
+              <Chip
+                key={p}
+                size="sm"
+                active={persona === p}
+                onClick={() => {
+                  setPersona(p);
+                  track("filter", `Observatoire · persona:${p}`);
+                }}
+              >
+                {PERSONA_META[p].label}
+              </Chip>
             ))}
           </div>
+
+          {/* Les 4 blocs. En « Tout afficher » : grille égalitaire 2 colonnes.
+              Avec un persona : la carte pertinente passe pleine largeur et
+              dépliée, les autres restent atténuées en grille. */}
+          {persona && primaryBlock ? (
+            <div className="space-y-4">
+              <Block
+                key={primaryBlock.key}
+                title={primaryBlock.title}
+                persona={primaryBlock.persona}
+                html={entry.sections[primaryBlock.key]}
+                open={isOpen(primaryBlock.key)}
+                onToggle={() => toggle(primaryBlock.key)}
+                emphasis="primary"
+              />
+              <div className="grid items-start gap-4 md:grid-cols-2">
+                {otherBlocks.map((block) => (
+                  <Block
+                    key={block.key}
+                    title={block.title}
+                    persona={block.persona}
+                    html={entry.sections[block.key]}
+                    open={isOpen(block.key)}
+                    onToggle={() => toggle(block.key)}
+                    emphasis="muted"
+                  />
+                ))}
+              </div>
+            </div>
+          ) : (
+            <div className="grid items-start gap-4 md:grid-cols-2">
+              {DIGEST_BLOCKS.map((block) => (
+                <Block
+                  key={block.key}
+                  title={block.title}
+                  persona={block.persona}
+                  html={entry.sections[block.key]}
+                  open={isOpen(block.key)}
+                  onToggle={() => toggle(block.key)}
+                  emphasis="normal"
+                />
+              ))}
+            </div>
+          )}
 
           {/* Encart de bas de page : matière mobilisée ce cycle */}
           {entry.sections.matiere && (
             <div className="mt-4 rounded-xl border border-lavande bg-glace p-5">
-              <h3 className="mb-2 font-title font-semibold text-marine">
+              <h3 className="mb-2 font-title font-medium text-marine">
                 Matière mobilisée ce cycle
               </h3>
               <div

@@ -33,6 +33,7 @@ export default function AppLayout({
         {/* Sous-navigation */}
         <nav className="border-t border-gray-100 bg-glace/60">
           <div className="mx-auto flex max-w-5xl flex-wrap gap-x-6 gap-y-1 px-4 py-2 text-sm">
+            <NavLink href="/">🔭 L&apos;Observatoire</NavLink>
             <NavLink href="/kiosque">🗞️ Le kiosque à journaux</NavLink>
             <NavLink href="/pouls">🩺 Le pouls du marché</NavLink>
             <NavLink href="/concurrence">💥 Concurrence</NavLink>
