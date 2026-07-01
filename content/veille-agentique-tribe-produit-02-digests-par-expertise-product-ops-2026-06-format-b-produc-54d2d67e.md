@@ -16,30 +16,30 @@
 
 ## Bloc 1 — Problématiques récurrentes & Offres
 
-### 1. Absence de demande explicite Product Ops en régie/conseil
-- **Description** : Aucune opportunité Product Ops détectée dans la demande régie ou conseil ce mois, malgré la montée de Product AI et Product Management. Le rôle reste absent des besoins exprimés par les clients, alors que la littérature marché et concurrentielle le positionne comme levier d’orchestration et de gouvernance.
-- **Sources** : Synthèse PAD juin 2026, Snapshot emploi T2-2026 · `[tendance]`
-- **Offre activable** : Positionner Product Ops comme réponse à la saturation des équipes PM/AI, en argumentant sur l’orchestration du jugement et la gouvernance des flux IA.
+### 1. Déplacement du goulot vers la gouvernance du jugement et l’orchestration produit
+- **Description** : Les organisations constatent que l’IA a levé de nombreuses contraintes techniques, mais le principal point de blocage se déplace désormais vers la capacité à orchestrer le jugement, la priorisation et la gouvernance produit. Les équipes Product Ops sont sollicitées pour structurer la prise de décision, la curation des features et la gestion du flux d’information, plutôt que pour l’outillage ou la delivery pure.
+- **Sources** : Newsletters 2026-06 (signal dominant, convergent 10+ sources), Snapshot concurrentiel T2-2026 (Axe 1, Converteo, Hubvisory, Thiga), Synthèse PAD (demande de séniorité élevée, enjeux roadmap/analytics) · `[tendance]`
+- **Offre activable** : Positionner Product Ops comme fonction d’orchestration du jugement et de la gouvernance, avec des missions de cadrage, de structuration des flux décisionnels et d’accompagnement à la prise de décision collective.
 
-### 2. Gouvernance de l’adoption IA : urgence organisationnelle, pas technique
-- **Description** : Les organisations font face à une adoption IA non structurée, généralisée mais sans gouvernance ni formation formelle. La demande implicite porte sur la structuration de l’adoption, la désignation de référents et la diffusion de bonnes pratiques.
-- **Sources** : Newsletters 2026-06, Snapshot concurrentiel T2-2026 (Converteo, Hubvisory), State of X 2026 · `[tendance]`
-- **Offre activable** : Accompagnement à la gouvernance de l’adoption IA (rituels, référents, formation immersive), en s’appuyant sur les modèles d’AI Enablement et de Product Ops comme fonctions dédiées.
+### 2. Maturité data et gouvernance IA : angle mort de la fonction Product Ops
+- **Description** : La question de la maturité data et de la gouvernance IA émerge comme un angle mort reconnu dans la communauté Product Ops. Les équipes peinent à structurer la collecte, la consolidation et l’exploitation des données pour piloter efficacement les produits, alors que l’IA multiplie les artefacts et les flux d’information.
+- **Sources** : Newsletters 2026-06 (« Product Ops a-t-elle un problème data ? »), Snapshot concurrentiel T2-2026 (Axe 2, offre Converteo sur gouvernance IA, absence d’offre PM sur ce sujet), Synthèse PAD (demande analytics/KPI, audit de maturité produit) · `[tendance]`
+- **Offre activable** : Développer des offres d’audit de maturité data/IA, de structuration des workflows data et de gouvernance IA, en ciblant les organisations en phase d’industrialisation IA.
 
-### 3. Déplacement du goulot d’étranglement vers la fonction produit/ops
-- **Description** : L’IA lève les contraintes engineering, déplaçant le goulot vers la décision, la priorisation et la curation. Les équipes témoignent d’une surcharge sur la fonction produit/ops, qui devient le point de tension organisationnel.
-- **Sources** : Newsletters 2026-06, Snapshot concurrentiel T2-2026 (Converteo, Thiga), State of X 2026 · `[structurel]` candidat — à corroborer
-- **Offre activable** : Diagnostic et accompagnement sur la priorisation, la curation et la gouvernance du jugement produit, en s’appuyant sur des outils et rituels Product Ops.
+### 3. Adoption IA : défi organisationnel et conduite du changement sous-estimée
+- **Description** : L’adoption de l’IA est perçue comme un enjeu organisationnel majeur, non technique. Les initiatives d’acculturation, de formation et de change management sont souvent sacrifiées au profit de la démonstration d’outils, ce qui freine l’appropriation réelle et génère de la résistance.
+- **Sources** : Newsletters 2026-06 (multiples signaux sur la gouvernance de l’adoption IA, AI Week Amplitude, limites de la formation descendante), Synthèse PAD (missions conseil sur acculturation IA produit, coaching/formation), Snapshot concurrentiel (Axe 1, repositionnement agentique) · `[tendance]`
+- **Offre activable** : Proposer des formats immersifs d’acculturation IA, des missions de conduite du changement et de coaching collectif, en insistant sur l’alignement des rituels et la création de conditions d’adoption authentique.
 
-### 4. Angle mort data dans Product Ops
-- **Description** : La maturité data reste un angle mort de la fonction Product Ops, même chez les praticiens avancés. Les workflows IA/Data sont peu outillés et la literacy data est insuffisante pour garantir la qualité des décisions.
-- **Sources** : Newsletters 2026-06, Snapshot emploi T2-2026, State of X 2026 · `[tendance]`
-- **Offre activable** : Audit et montée en compétence data pour Product Ops, structuration de pipelines data et formation à la literacy data.
+### 4. Industrialisation des process produit et reporting exécutif
+- **Description** : Les organisations recherchent des profils capables d’industrialiser les process produit (roadmap, OKR, discovery, expérimentation) et d’assurer un reporting de haut niveau auprès des directions. La séniorité et l’expérience préalable en Product Ops/PM sont des prérequis.
+- **Sources** : Snapshot emploi Product Ops T2-2026 (compétences, séniorité, reporting exécutif), Synthèse PAD (demande lead/principal/head, vocabulaire roadmap/delivery/analytics), State of X 2026 (montée du senior leadership) · `[tendance]`
+- **Offre activable** : Structurer une offre de Product Ops senior, orientée industrialisation des process et pilotage exécutif, avec un accent sur la formation et le mentoring des équipes.
 
-### 5. Conduite du changement humain : le vrai défi Product Ops
-- **Description** : Les équipes Product Ops identifient la conduite du changement humain comme leur principal angle mort, devant le design de process ou l’outillage. La surcharge d’incertitude (IA, layoffs, ambiguïté stratégique) accentue la difficulté à embarquer les équipes.
-- **Sources** : Newsletters 2026-06, Snapshot concurrentiel T2-2026, State of X 2026 · `[tendance]`
-- **Offre activable** : Coaching et facilitation sur la conduite du changement, avec un focus sur l’activation situationnelle et la gestion de l’incertitude.
+### 5. Flou taxonomique et frontières mouvantes du rôle Product Ops
+- **Description** : Le rôle Product Ops reste mal défini sur le marché français : intitulés variés, frontières poreuses avec le PM, absence de reconnaissance dans les nomenclatures métiers. Les employeurs peinent à formaliser le périmètre et la valeur ajoutée du poste.
+- **Sources** : Snapshot emploi Product Ops T2-2026 (intitulés hybrides, absence dans APEC/Seyos/Noé), Newsletters 2026-06 (diversité des postures et missions Product Ops), Snapshot concurrentiel (absence de positionnement sectoriel ou international des cabinets PM sur Product Ops) · `[tendance]`
+- **Offre activable** : Accompagner les organisations dans la définition et la structuration du rôle Product Ops, en proposant des diagnostics de maturité et des référentiels de compétences adaptés à leur contexte.
 
 ---
 
@@ -51,60 +51,60 @@ Registre des convictions non renseigné pour cette expertise ce cycle — aucune
 
 ## Bloc 3 — Compétences recherchées
 
-### 1. Expérience préalable PM et/ou Product Operations (2-7+ ans)
-- **Sources** : Snapshot emploi T2-2026 (WTTJ, Indeed), Newsletters 2026-06 · `[tendance]`
-- **Pour le catalogue** : Formation avancée Product Ops pour profils confirmés, modules de transition PM → Ops.
+### 1. Expérience préalable en Product Ops ou Product Management (2 à 7+ ans)
+- **Sources** : Snapshot emploi Product Ops T2-2026 (exigence convergente sur plusieurs annonces), Synthèse PAD (séniorité lead/principal/head) · `[tendance]`
+- **Pour le catalogue** : Renforcer les parcours de formation avancée Product Ops, avec modules spécifiques pour profils confirmés et seniors.
 
-### 2. Industrialisation des process produit (roadmap, OKRs, discovery, expérimentation)
-- **Sources** : Snapshot emploi T2-2026 (AI6, Mistral), Newsletters 2026-06 · `[tendance]`
-- **Pour le catalogue** : Parcours sur l’industrialisation des process produit, outillage et rituels Product Ops.
+### 2. Industrialisation des process produit (roadmap, OKR, discovery, expérimentation)
+- **Sources** : Snapshot emploi Product Ops T2-2026 (présence dans les annonces), Synthèse PAD (vocabulaire roadmap/delivery/analytics), State of X 2026 (consolidation des outils, focus outcome business) · `[tendance]`
+- **Pour le catalogue** : Développer des formations sur l’industrialisation des process produit, incluant la mise en place d’OKR, la gestion de la roadmap et la discovery continue.
 
-### 3. Gouvernance IA et orchestration d’agents
-- **Sources** : Newsletters 2026-06 (AI Enablement, orchestration agents), Snapshot concurrentiel T2-2026 (Converteo, Hubvisory), State of X 2026 · `[tendance]`
-- **Pour le catalogue** : Formation à la gouvernance IA, protocoles agentiques, monitoring et MCP.
+### 3. Gouvernance IA et literacy data
+- **Sources** : Newsletters 2026-06 (gouvernance IA, literacy data, model routing), State of X 2026 (adoption IA, défi n°1 des PM), Snapshot concurrentiel (Axe 2, offre gouvernance IA) · `[tendance]`
+- **Pour le catalogue** : Créer des modules sur la gouvernance IA, la gestion des workflows data et la literacy data pour Product Ops.
 
-### 4. Literacy data et structuration de pipelines
-- **Sources** : Newsletters 2026-06, Snapshot emploi T2-2026, State of X 2026 · `[tendance]`
-- **Pour le catalogue** : Modules sur la literacy data, structuration de pipelines data pour Product Ops.
+### 4. Reporting exécutif et pilotage stratégique
+- **Sources** : Snapshot emploi Product Ops T2-2026 (exposition reporting exécutif), Synthèse PAD (audit de maturité, coaching/formation), State of X 2026 (montée du senior leadership) · `[mode]`
+- **Pour le catalogue** : Intégrer des ateliers de pilotage stratégique et de reporting exécutif dans les parcours Product Ops.
 
-### 5. Conduite du changement et facilitation organisationnelle
-- **Sources** : Newsletters 2026-06, Snapshot concurrentiel T2-2026, State of X 2026 · `[tendance]`
-- **Pour le catalogue** : Ateliers de facilitation, coaching à la conduite du changement, gestion de l’incertitude.
+### 5. Change management et acculturation IA
+- **Sources** : Newsletters 2026-06 (adoption IA, limites de la formation descendante, AI Week), Synthèse PAD (missions conseil acculturation IA), Snapshot concurrentiel (Axe 1, repositionnement agentique) · `[tendance]`
+- **Pour le catalogue** : Proposer des formations et accompagnements sur la conduite du changement et l’acculturation IA, avec des formats immersifs et expérientiels.
 
 ---
 
 ## Bloc 4 — Contenus de notoriété suggérés
 
-### 1. « Product Ops : du process à l’orchestration du jugement »
-- **Pourquoi le traiter** : Sujet central du repositionnement de la fonction, peu couvert en profondeur, forte demande implicite sur la gouvernance du jugement et la curation.
-- **Sources** : Newsletters 2026-06, Snapshot concurrentiel T2-2026, State of X 2026 · `[tendance]`
-- **Angle & format** : Décryptage des nouveaux rôles Product Ops dans l’ère IA, cas concrets d’orchestration — article ou webinar.
+### 1. « Gouvernance IA et Product Ops : structurer la prise de décision à l’ère des agents »
+- **Pourquoi le traiter** : Sujet en forte montée, peu couvert par les cabinets PM, enjeu récurrent dans la demande client et la littérature marché.
+- **Sources** : Newsletters 2026-06 (déplacement du goulot, gouvernance IA), Snapshot concurrentiel (Axe 1 et 2, trou côté PM), State of X 2026 (adoption IA, ownership décision) · `[tendance]`
+- **Angle & format** : Décrypter les nouveaux enjeux de gouvernance IA pour Product Ops, avec cas concrets et retours d’expérience — article ou webinar.
 
-### 2. « Gouvernance de l’adoption IA : rituels, référents, et AI Enablement »
-- **Pourquoi le traiter** : Demande organisationnelle forte, peu de ressources pratiques sur la structuration de l’adoption IA.
-- **Sources** : Newsletters 2026-06, Snapshot concurrentiel T2-2026, State of X 2026 · `[tendance]`
-- **Angle & format** : Guide pratique, retours d’expérience, modèles de rituels — article ou toolkit téléchargeable.
+### 2. « Product Ops et maturité data : sortir de l’angle mort »
+- **Pourquoi le traiter** : La maturité data est identifiée comme un point faible structurel, peu traité dans les offres et la littérature, alors que la demande client s’intensifie.
+- **Sources** : Newsletters 2026-06 (« Product Ops a-t-elle un problème data ? »), Snapshot concurrentiel (Axe 2), Synthèse PAD (audit de maturité) · `[tendance]`
+- **Angle & format** : Explorer les méthodes et outils pour structurer la data dans les équipes produit — post LinkedIn ou guide pratique.
 
-### 3. « Data literacy pour Product Ops : du mythe à la pratique »
-- **Pourquoi le traiter** : Angle mort identifié, peu de contenus adaptés à la réalité Product Ops, enjeu clé pour la montée en maturité.
-- **Sources** : Newsletters 2026-06, Snapshot emploi T2-2026, State of X 2026 · `[tendance]`
-- **Angle & format** : Série d’articles pédagogiques, cas d’usage, checklists.
+### 3. « Acculturation IA : pourquoi le change management est le vrai défi »
+- **Pourquoi le traiter** : Les formats classiques de formation IA montrent leurs limites, la conduite du changement devient centrale pour l’adoption réelle.
+- **Sources** : Newsletters 2026-06 (AI Week, limites formation descendante), Synthèse PAD (missions conseil acculturation IA), State of X 2026 (adoption IA, défi organisationnel) · `[tendance]`
+- **Angle & format** : Témoignages et retours d’expérience sur des dispositifs immersifs d’acculturation IA — podcast ou table ronde.
 
-### 4. « Conduite du changement humain en Product Ops : méthodes et pièges »
-- **Pourquoi le traiter** : Problématique récurrente, peu de méthodologies éprouvées partagées, forte attente sur la gestion de l’incertitude.
-- **Sources** : Newsletters 2026-06, Snapshot concurrentiel T2-2026, State of X 2026 · `[tendance]`
-- **Angle & format** : Podcast ou table ronde avec praticiens, partage d’échecs et de réussites.
+### 4. « Définir et structurer le rôle Product Ops : référentiels et diagnostics »
+- **Pourquoi le traiter** : Le flou sur le périmètre et la valeur du rôle freine la structuration des équipes et la montée en maturité.
+- **Sources** : Snapshot emploi Product Ops T2-2026 (intitulés hybrides, absence dans les nomenclatures), Newsletters 2026-06 (diversité des postures) · `[tendance]`
+- **Angle & format** : Proposer un référentiel de compétences et des outils de diagnostic pour clarifier le rôle — article ou toolkit téléchargeable.
 
-### 5. « MCP et protocoles agentiques : la nouvelle stack Product Ops »
-- **Pourquoi le traiter** : Sujet technique émergent, peu vulgarisé, enjeu d’industrialisation et d’interopérabilité.
-- **Sources** : Newsletters 2026-06, State of X 2026 · `[tendance]`
-- **Angle & format** : Article technique, schémas d’architecture, tutoriel vidéo.
+### 5. « Orchestration du jugement : le nouveau terrain de jeu Product Ops »
+- **Pourquoi le traiter** : Le déplacement du goulot vers la décision et la curation est le signal dominant du cycle, mais peu de contenus outillent ce sujet.
+- **Sources** : Newsletters 2026-06 (signal dominant, convergent), Snapshot concurrentiel (Axe 1), State of X 2026 (ownership décision, outcome business) · `[tendance]`
+- **Angle & format** : Décrypter les pratiques d’orchestration du jugement, avec exemples d’outils et de rituels — article ou atelier interactif.
 
 ---
 
 ## Les signaux importants du mois
 
-- Le déplacement du goulot d’étranglement vers la fonction produit/ops s’accélère, sous l’effet de l’IA qui lève les contraintes engineering mais surcharge la décision et la gouvernance.
-- L’adoption IA est massive mais non structurée : la gouvernance, la formation immersive et la désignation de référents deviennent des urgences organisationnelles.
-- Product Ops reste absent de la demande explicite clients ce mois, mais s’impose dans le discours marché et concurrentiel comme levier d’orchestration, de curation et de conduite du changement.
+- Le déplacement du goulot organisationnel vers la gouvernance du jugement et la décision produit s’impose comme le signal dominant, avec une convergence forte entre marché, demande client et concurrence.
+- La maturité data et la gouvernance IA sont des angles morts reconnus de la fonction Product Ops, peu couverts par les offres actuelles mais de plus en plus demandés.
+- L’adoption de l’IA est freinée par un déficit de conduite du changement et d’acculturation authentique, alors que la formation descendante montre ses limites ; les formats immersifs et expérientiels émergent comme leviers d’appropriation.
 
