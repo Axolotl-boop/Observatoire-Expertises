@@ -13,7 +13,7 @@ export default function KiosquePage() {
   return (
     <div>
       <div className="mb-8">
-        <h1 className="font-title text-2xl font-bold text-marine">
+        <h1 className="font-display text-2xl font-semibold tracking-[-0.01em] text-marine">
           🗞️ Le kiosque à journaux
         </h1>
         <p className="mt-2 text-gray-600">

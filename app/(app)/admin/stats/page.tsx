@@ -63,7 +63,7 @@ export default async function StatsPage() {
     <div>
       <div className="mb-8 flex flex-wrap items-start justify-between gap-3">
         <div>
-          <h1 className="font-title text-2xl font-bold text-marine">📊 Statistiques d'usage</h1>
+          <h1 className="font-display text-2xl font-semibold tracking-[-0.01em] text-marine">📊 Statistiques d&apos;usage</h1>
           <p className="mt-2 text-gray-600">Monitoring de l'utilisation du portail.</p>
         </div>
         <div className="flex flex-wrap gap-2">

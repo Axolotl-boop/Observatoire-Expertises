@@ -21,7 +21,7 @@ export default function AppLayout({
         <div className="mx-auto flex max-w-5xl flex-wrap items-center justify-between gap-3 px-4 pt-4 pb-3">
           <Link href="/" className="flex items-center gap-2.5">
             <span className="text-3xl">🔭</span>
-            <span className="font-title text-xl font-bold text-marine sm:text-2xl">
+            <span className="font-display text-xl font-bold text-marine sm:text-2xl">
               Observatoire des Expertises
             </span>
           </Link>
@@ -32,7 +32,8 @@ export default function AppLayout({
         </div>
         {/* Sous-navigation */}
         <nav className="border-t border-gray-100 bg-glace/60">
-          <div className="mx-auto flex max-w-5xl flex-wrap gap-x-6 gap-y-1 px-4 py-2 text-sm">
+          <div className="mx-auto flex max-w-5xl flex-wrap items-center gap-x-6 gap-y-1.5 px-4 py-2 text-sm">
+            <NavLink href="/" solid>🔭 L&apos;Observatoire</NavLink>
             <NavLink href="/kiosque">🗞️ Le kiosque à journaux</NavLink>
             <NavLink href="/pouls">🩺 Le pouls du marché</NavLink>
             <NavLink href="/concurrence">💥 Concurrence</NavLink>
