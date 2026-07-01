@@ -13,7 +13,9 @@ export default async function ConcurrencePage() {
   return (
     <div>
       <div className="mb-8">
-        <h1 className="font-title text-2xl font-bold text-marine">💥 Concurrence</h1>
+        <h1 className="font-display text-2xl font-semibold tracking-[-0.01em] text-marine">
+          💥 Concurrence
+        </h1>
         <p className="mt-2 text-gray-600">
           Ce que font les autres cabinets, suivi en continu.
         </p>

@@ -7,22 +7,22 @@ import type { ExpertiseDigest } from "@/lib/content";
 import { track } from "@/lib/track";
 
 type BlockKey = "avantVente" | "convictions" | "competences" | "contenus";
-type PersonaKey = "commerce" | "referent" | "formation" | "marketing";
+type PersonaKey = "business" | "expertise" | "excellence" | "notoriete";
 
 /**
- * Chaque bloc du digest sert un rôle (persona) et une intention différents.
+ * Chaque bloc du digest sert un enjeu (persona) et une intention différents.
  * On l'affiche explicitement pour casser l'uniformité « 4 cartes identiques »
- * et permettre de pondérer la lecture selon le profil.
+ * et permettre de pondérer la lecture selon l'angle recherché.
  */
 const DIGEST_BLOCKS: {
   key: BlockKey;
   title: string;
   persona: PersonaKey;
 }[] = [
-  { key: "avantVente", title: "Problématiques récurrentes & Offres", persona: "commerce" },
-  { key: "convictions", title: "Convictions à challenger", persona: "referent" },
-  { key: "competences", title: "Compétences recherchées", persona: "formation" },
-  { key: "contenus", title: "Contenus de notoriété suggérés", persona: "marketing" },
+  { key: "avantVente", title: "Problématiques récurrentes & Offres", persona: "business" },
+  { key: "convictions", title: "Convictions à challenger", persona: "expertise" },
+  { key: "competences", title: "Compétences recherchées", persona: "excellence" },
+  { key: "contenus", title: "Contenus de notoriété suggérés", persona: "notoriete" },
 ];
 
 /** Libellé + couleurs de charte par persona (tag de carte + bord de la carte mise en avant). */
@@ -30,14 +30,14 @@ const PERSONA_META: Record<
   PersonaKey,
   { label: string; tag: string; border: string }
 > = {
-  commerce: { label: "Commerce", tag: "bg-glace text-electrique", border: "border-electrique" },
-  referent: { label: "Référent", tag: "bg-lilas text-violet", border: "border-violet" },
-  formation: { label: "Formation & Staffing", tag: "bg-jadeclair text-foret", border: "border-jade" },
-  marketing: { label: "Marketing", tag: "bg-creme text-braise", border: "border-braise" },
+  business: { label: "Business", tag: "bg-glace text-electrique", border: "border-electrique" },
+  expertise: { label: "Expertise", tag: "bg-lilas text-violet", border: "border-violet" },
+  excellence: { label: "Excellence", tag: "bg-jadeclair text-foret", border: "border-jade" },
+  notoriete: { label: "Notoriété", tag: "bg-creme text-braise", border: "border-braise" },
 };
 
-/** Ordre d'affichage du sélecteur « Lecture par rôle ». */
-const PERSONAS: PersonaKey[] = ["commerce", "referent", "formation", "marketing"];
+/** Ordre d'affichage du sélecteur « Lecture par angle » (= ordre des cartes). */
+const PERSONAS: PersonaKey[] = ["business", "expertise", "excellence", "notoriete"];
 
 function monthLabel(key: string): string {
   const m = key.match(/^(\d{4})-(\d{2})$/);
@@ -217,7 +217,7 @@ export default function ExpertiseDigests({ digests }: { digests: ExpertiseDigest
           {/* Sélecteur « Lecture par rôle » : pondère et hiérarchise les 4 cartes */}
           <div className="mb-4 flex flex-wrap items-center gap-2">
             <span className="mr-1 font-title text-sm font-medium text-marine">
-              Lecture par rôle&nbsp;:
+              Lecture par angle&nbsp;:
             </span>
             <Chip
               size="sm"
