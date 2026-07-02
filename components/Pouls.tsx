@@ -76,7 +76,7 @@ export default function Pouls({ months }: { months: PadMonth[] }) {
         <div>
           {/* Bandeau principal : les grands signaux du mois */}
           <div className="mb-4 rounded-xl border border-lavande bg-glace p-5">
-            <h2 className="mb-2 font-title text-lg font-bold text-marine">
+            <h2 className="mb-2 font-title text-lg font-semibold text-marine">
               Les grands signaux du mois
             </h2>
             {current.signauxHtml ? (
@@ -85,20 +85,20 @@ export default function Pouls({ months }: { months: PadMonth[] }) {
                 dangerouslySetInnerHTML={{ __html: current.signauxHtml }}
               />
             ) : (
-              <p className="text-sm text-gray-400">Section non disponible.</p>
+              <p className="text-sm text-gray-500">Section non disponible.</p>
             )}
           </div>
 
           {/* Deux graphes : mix par expertise & profils/séniorité */}
           <div className="grid gap-4 md:grid-cols-2">
             <div className="rounded-xl border border-gray-200 bg-white p-5">
-              <h2 className="mb-4 font-title text-lg font-bold text-marine">
+              <h2 className="mb-4 font-title text-lg font-semibold text-marine">
                 Mix par expertise
               </h2>
               {current.mix.rows.length > 0 ? (
                 <BarChart rows={current.mix.rows} color="#0042ff" />
               ) : (
-                <p className="text-sm text-gray-400">Données non disponibles.</p>
+                <p className="text-sm text-gray-500">Données non disponibles.</p>
               )}
               {current.mix.conclusionHtml && (
                 <div
@@ -109,13 +109,13 @@ export default function Pouls({ months }: { months: PadMonth[] }) {
             </div>
 
             <div className="rounded-xl border border-gray-200 bg-white p-5">
-              <h2 className="mb-4 font-title text-lg font-bold text-marine">
+              <h2 className="mb-4 font-title text-lg font-semibold text-marine">
                 Profils et séniorité
               </h2>
               {current.profils.rows.length > 0 ? (
                 <BarChart rows={current.profils.rows} color="#6abfa3" />
               ) : (
-                <p className="text-sm text-gray-400">Données non disponibles.</p>
+                <p className="text-sm text-gray-500">Données non disponibles.</p>
               )}
               {current.profils.conclusionHtml && (
                 <div

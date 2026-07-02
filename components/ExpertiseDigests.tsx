@@ -3,6 +3,7 @@
 import { useState } from "react";
 import Chip from "@/components/Chip";
 import ConfidenceLegend from "@/components/ConfidenceLegend";
+import Disclosure from "@/components/Disclosure";
 import type { ExpertiseDigest } from "@/lib/content";
 import { track } from "@/lib/track";
 
@@ -63,25 +64,24 @@ function Block({
   emphasis: "primary" | "muted" | "normal";
 }) {
   const meta = PERSONA_META[persona];
+  const container = [
+    "rounded-xl bg-white",
+    emphasis === "primary"
+      ? `border-2 ${meta.border} shadow-sm`
+      : "border border-gray-200",
+    emphasis === "muted" ? "opacity-70 hover:opacity-100" : "",
+  ].join(" ");
+
   return (
-    <div
-      className={[
-        "rounded-xl bg-white transition-opacity",
-        emphasis === "primary"
-          ? `border-2 ${meta.border} shadow-sm`
-          : "border border-gray-200",
-        emphasis === "muted" ? "opacity-70 hover:opacity-100" : "",
-      ].join(" ")}
-    >
-      <button
-        type="button"
-        onClick={() => {
-          if (!open) track("digest_expand", title);
-          onToggle();
-        }}
-        aria-expanded={open}
-        className="flex w-full items-start justify-between gap-2 p-5 text-left"
-      >
+    <Disclosure
+      open={open}
+      onToggle={() => {
+        if (!open) track("digest_expand", title);
+        onToggle();
+      }}
+      html={html}
+      containerClassName={container}
+      header={
         <span className="flex flex-col gap-1.5">
           <span
             className={[
@@ -95,38 +95,8 @@ function Block({
             {title}
           </h3>
         </span>
-        <svg
-          className={[
-            "mt-0.5 h-5 w-5 shrink-0 text-gray-400 transition-transform",
-            open ? "rotate-180" : "",
-          ].join(" ")}
-          viewBox="0 0 20 20"
-          fill="currentColor"
-          aria-hidden="true"
-        >
-          <path
-            fillRule="evenodd"
-            d="M5.23 7.21a.75.75 0 011.06.02L10 11.17l3.71-3.94a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z"
-            clipRule="evenodd"
-          />
-        </svg>
-      </button>
-      <div className="px-5 pb-5">
-        {html ? (
-          <div className={open ? "" : "relative max-h-24 overflow-hidden"}>
-            <div
-              className="prose prose-sm prose-slate max-w-none leading-relaxed prose-headings:font-title prose-headings:font-medium prose-headings:text-marine prose-strong:font-semibold prose-strong:text-marine prose-li:my-1.5"
-              dangerouslySetInnerHTML={{ __html: html }}
-            />
-            {!open && (
-              <div className="pointer-events-none absolute inset-x-0 bottom-0 h-12 bg-gradient-to-t from-white" />
-            )}
-          </div>
-        ) : (
-          <p className="text-sm text-gray-500">Section non disponible.</p>
-        )}
-      </div>
-    </div>
+      }
+    />
   );
 }
 
@@ -155,6 +125,8 @@ export default function ExpertiseDigests({ digests }: { digests: ExpertiseDigest
   const isOpen = (key: BlockKey) => openMap[key] ?? key === primaryKey;
   const toggle = (key: BlockKey) =>
     setOpenMap((m) => ({ ...m, [key]: !isOpen(key) }));
+  const setAll = (value: boolean) =>
+    setOpenMap(Object.fromEntries(DIGEST_BLOCKS.map((b) => [b.key, value])));
 
   return (
     <section className="mb-12">
@@ -214,34 +186,53 @@ export default function ExpertiseDigests({ digests }: { digests: ExpertiseDigest
             </div>
           )}
 
-          {/* Sélecteur « Lecture par rôle » : pondère et hiérarchise les 4 cartes */}
-          <div className="mb-4 flex flex-wrap items-center gap-2">
-            <span className="mr-1 font-title text-sm font-medium text-marine">
-              Lecture par angle&nbsp;:
-            </span>
-            <Chip
-              size="sm"
-              active={persona === null}
-              onClick={() => {
-                setPersona(null);
-                track("filter", "Observatoire · persona:tout");
-              }}
-            >
-              Tout afficher
-            </Chip>
-            {PERSONAS.map((p) => (
+          {/* Sélecteur « Lecture par angle » (pondère les 4 cartes) + déplier/replier tout */}
+          <div className="mb-4 flex flex-wrap items-center justify-between gap-x-4 gap-y-2">
+            <div className="flex flex-wrap items-center gap-2">
+              <span className="mr-1 font-title text-sm font-medium text-marine">
+                Lecture par angle&nbsp;:
+              </span>
               <Chip
-                key={p}
                 size="sm"
-                active={persona === p}
+                active={persona === null}
                 onClick={() => {
-                  setPersona(p);
-                  track("filter", `Observatoire · persona:${p}`);
+                  setPersona(null);
+                  track("filter", "Observatoire · persona:tout");
                 }}
               >
-                {PERSONA_META[p].label}
+                Tout afficher
               </Chip>
-            ))}
+              {PERSONAS.map((p) => (
+                <Chip
+                  key={p}
+                  size="sm"
+                  active={persona === p}
+                  onClick={() => {
+                    setPersona(p);
+                    track("filter", `Observatoire · persona:${p}`);
+                  }}
+                >
+                  {PERSONA_META[p].label}
+                </Chip>
+              ))}
+            </div>
+            <div className="flex items-center gap-2 text-sm">
+              <button
+                type="button"
+                onClick={() => setAll(true)}
+                className="font-medium text-electrique hover:underline"
+              >
+                Tout déplier
+              </button>
+              <span className="text-gray-300" aria-hidden="true">·</span>
+              <button
+                type="button"
+                onClick={() => setAll(false)}
+                className="font-medium text-electrique hover:underline"
+              >
+                Tout replier
+              </button>
+            </div>
           </div>
 
           {/* Les 4 blocs. En « Tout afficher » : grille égalitaire 2 colonnes.

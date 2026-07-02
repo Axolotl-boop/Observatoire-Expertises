@@ -2,100 +2,34 @@
 
 import { useState } from "react";
 import Chip from "@/components/Chip";
+import Disclosure from "@/components/Disclosure";
+import SnapshotDownload from "@/components/SnapshotDownload";
 import type { ConcurrenceQuarter } from "@/lib/content";
-import { track } from "@/lib/track";
 
 function quarterLabel(q: string): string {
   const m = q.match(/^(\d{4})-T([1-4])$/i);
   return m ? `T${m[2]} ${m[1]}` : q;
 }
 
-function downloadMd(filename: string, content: string) {
-  const blob = new Blob([content], { type: "text/markdown;charset=utf-8" });
-  const url = URL.createObjectURL(blob);
-  const a = document.createElement("a");
-  a.href = url;
-  a.download = filename;
-  document.body.appendChild(a);
-  a.click();
-  a.remove();
-  URL.revokeObjectURL(url);
-}
-
-function Collapsible({ title, html }: { title: string; html: string }) {
-  const [open, setOpen] = useState(false);
-  return (
-    <div className="rounded-xl border border-gray-200 bg-white">
-      <button
-        type="button"
-        onClick={() => setOpen((v) => !v)}
-        aria-expanded={open}
-        className="flex w-full items-center justify-between gap-2 p-5 text-left"
-      >
-        <h3 className="font-title font-semibold text-marine">{title}</h3>
-        <svg
-          className={[
-            "h-5 w-5 shrink-0 text-gray-400 transition-transform",
-            open ? "rotate-180" : "",
-          ].join(" ")}
-          viewBox="0 0 20 20"
-          fill="currentColor"
-          aria-hidden="true"
-        >
-          <path
-            fillRule="evenodd"
-            d="M5.23 7.21a.75.75 0 011.06.02L10 11.17l3.71-3.94a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z"
-            clipRule="evenodd"
-          />
-        </svg>
-      </button>
-      <div className="px-5 pb-5">
-        <div className={open ? "" : "relative max-h-24 overflow-hidden"}>
-          <div
-            className="prose prose-sm prose-slate max-w-none prose-strong:text-marine"
-            dangerouslySetInnerHTML={{ __html: html }}
-          />
-          {!open && (
-            <div className="pointer-events-none absolute inset-x-0 bottom-0 h-12 bg-gradient-to-t from-white" />
-          )}
-        </div>
-      </div>
-    </div>
-  );
-}
-
 export default function Concurrence({ quarters }: { quarters: ConcurrenceQuarter[] }) {
   const keys = quarters.map((q) => q.quarter);
   const [quarter, setQuarter] = useState<string>(() => keys[0] ?? "");
+  // Ouverture par axe (clé = titre de l'axe), centralisée pour « tout déplier/replier ».
+  const [openMap, setOpenMap] = useState<Record<string, boolean>>({});
   const current = quarters.find((q) => q.quarter === quarter) ?? quarters[0];
+
+  const setAll = (value: boolean) =>
+    setOpenMap(Object.fromEntries((current?.axes ?? []).map((a) => [a.title, value])));
 
   return (
     <div>
-      {/* Filtre par trimestre + téléchargement */}
-      <div className="mb-6 flex flex-wrap items-center justify-between gap-3">
-        <div className="flex flex-wrap gap-2">
-          {keys.map((q) => (
-            <Chip
-              key={q}
-              active={q === current?.quarter}
-              onClick={() => setQuarter(q)}
-            >
-              {quarterLabel(q)}
-            </Chip>
-          ))}
-        </div>
-        {current && (
-          <button
-            type="button"
-            onClick={() => {
-              track("download", current.filename);
-              downloadMd(current.filename, current.raw);
-            }}
-            className="text-sm font-medium text-electrique hover:underline"
-          >
-            ⬇ Télécharger le snapshot (.md)
-          </button>
-        )}
+      {/* Filtre par trimestre */}
+      <div className="mb-4 flex flex-wrap gap-2">
+        {keys.map((q) => (
+          <Chip key={q} active={q === current?.quarter} onClick={() => setQuarter(q)}>
+            {quarterLabel(q)}
+          </Chip>
+        ))}
       </div>
 
       {!current ? (
@@ -103,11 +37,47 @@ export default function Concurrence({ quarters }: { quarters: ConcurrenceQuarter
           Aucune donnée pour ce trimestre.
         </div>
       ) : (
-        <div className="space-y-4">
-          {current.axes.map((axis) => (
-            <Collapsible key={axis.title} title={axis.title} html={axis.html} />
-          ))}
-        </div>
+        <>
+          {/* Barre d'outils : déplier/replier tout (gauche) · télécharger (droite) */}
+          <div className="mb-3 flex flex-wrap items-center justify-between gap-3 text-sm">
+            <div className="flex items-center gap-2">
+              <button
+                type="button"
+                onClick={() => setAll(true)}
+                className="font-medium text-electrique hover:underline"
+              >
+                Tout déplier
+              </button>
+              <span className="text-gray-300" aria-hidden="true">·</span>
+              <button
+                type="button"
+                onClick={() => setAll(false)}
+                className="font-medium text-electrique hover:underline"
+              >
+                Tout replier
+              </button>
+            </div>
+            <SnapshotDownload filename={current.filename} content={current.raw} />
+          </div>
+
+          <div className="space-y-4">
+            {current.axes.map((axis) => (
+              <Disclosure
+                key={axis.title}
+                open={!!openMap[axis.title]}
+                onToggle={() =>
+                  setOpenMap((m) => ({ ...m, [axis.title]: !m[axis.title] }))
+                }
+                html={axis.html}
+                header={
+                  <h3 className="font-title text-[17px] font-semibold leading-snug text-marine">
+                    {axis.title}
+                  </h3>
+                }
+              />
+            ))}
+          </div>
+        </>
       )}
     </div>
   );
