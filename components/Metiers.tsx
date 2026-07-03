@@ -2,7 +2,10 @@
 
 import { useMemo, useState } from "react";
 import Chip from "@/components/Chip";
+import ConfidenceLegend from "@/components/ConfidenceLegend";
+import SnapshotDownload from "@/components/SnapshotDownload";
 import type { EmploiQuarter, SynthRow } from "@/lib/content";
+import { TAG_TOOLTIP, tagKeyOf } from "@/lib/tags";
 import { track } from "@/lib/track";
 
 function quarterLabel(q: string): string {
@@ -10,32 +13,25 @@ function quarterLabel(q: string): string {
   return m ? `T${m[2]} ${m[1]}` : q;
 }
 
-function downloadMd(filename: string, content: string) {
-  const blob = new Blob([content], { type: "text/markdown;charset=utf-8" });
-  const url = URL.createObjectURL(blob);
-  const a = document.createElement("a");
-  a.href = url;
-  a.download = filename;
-  document.body.appendChild(a);
-  a.click();
-  a.remove();
-  URL.revokeObjectURL(url);
-}
-
 function Verdict({ value }: { value?: string }) {
   const v = (value ?? "").replace(/`/g, "").trim();
-  if (/\[structurel\]/i.test(v)) return <span className="tagpill tagpill-structurel">{v}</span>;
-  if (/\[tendance\]/i.test(v)) return <span className="tagpill tagpill-tendance">{v}</span>;
-  if (/\[mode\]/i.test(v)) return <span className="tagpill tagpill-mode">{v}</span>;
-  return <span className="text-gray-400">{v || "—"}</span>;
+  const k = tagKeyOf(v);
+  if (k) {
+    return (
+      <span className={`tagpill tagpill-${k}`} title={TAG_TOOLTIP[k]}>
+        {v}
+      </span>
+    );
+  }
+  return <span className="text-gray-500">{v || "—"}</span>;
 }
 
 function SynthTable({ title, rows }: { title: string; rows: SynthRow[] }) {
   return (
     <div className="rounded-xl border border-gray-200 bg-white p-5">
-      <h2 className="mb-3 font-title text-lg font-bold text-marine">{title}</h2>
+      <h2 className="mb-3 font-title text-lg font-semibold text-marine">{title}</h2>
       {rows.length === 0 ? (
-        <p className="text-sm text-gray-400">Aucune donnée ce trimestre.</p>
+        <p className="text-sm text-gray-500">Aucune donnée ce trimestre.</p>
       ) : (
         <div className="overflow-x-auto">
           <table className="w-full border-collapse text-sm">
@@ -131,17 +127,11 @@ export default function Metiers({ quarters }: { quarters: EmploiQuarter[] }) {
       ) : (
         <div className="mt-6">
           <div className="mb-4 flex justify-end">
-            <button
-              type="button"
-              onClick={() => {
-                track("download", exp.filename);
-                downloadMd(exp.filename, exp.raw);
-              }}
-              className="text-sm font-medium text-electrique hover:underline"
-            >
-              ⬇ Télécharger le snapshot (.md)
-            </button>
+            <SnapshotDownload filename={exp.filename} content={exp.raw} />
           </div>
+
+          {/* Clé de lecture des pastilles Verdict (mode / tendance / structurel) */}
+          <ConfidenceLegend />
 
           <div className="space-y-4">
             <SynthTable title="Compétences" rows={exp.competences} />

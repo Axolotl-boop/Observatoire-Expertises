@@ -74,7 +74,7 @@ export default async function EntryPage({
             )}
           </div>
         )}
-        <h1 className="mt-3 text-3xl font-bold text-gray-900">{entry.title}</h1>
+        <h1 className="mt-3 text-3xl font-semibold tracking-[-0.01em] text-marine">{entry.title}</h1>
         {entry.date && (
           <p className="mt-2 text-sm text-gray-500">{formatDate(entry.date)}</p>
         )}

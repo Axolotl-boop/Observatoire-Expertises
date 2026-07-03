@@ -7,6 +7,7 @@ import remarkGfm from "remark-gfm";
 import remarkRehype from "remark-rehype";
 import rehypeSanitize from "rehype-sanitize";
 import rehypeStringify from "rehype-stringify";
+import { TAG_TOOLTIP, type TagKey } from "./tags";
 
 /** Dossier où sont déposés les .md synchronisés depuis SharePoint. */
 export const CONTENT_DIR = path.join(process.cwd(), "content");
@@ -887,8 +888,10 @@ function colorizeTagsHtml(html: string): string {
   return html.replace(
     /(?:<code>)?\s*\[(mode|tendance|structurel)\]\s*(?:<\/code>)?/gi,
     (_, t: string) => {
-      const k = t.toLowerCase();
-      return `<span class="tagpill tagpill-${k}">[${k}]</span>`;
+      const k = t.toLowerCase() as TagKey;
+      // `title` : infobulle explicative pour rendre la pastille auto-explicite,
+      // même hors de la page qui affiche la légende complète.
+      return `<span class="tagpill tagpill-${k}" title="${TAG_TOOLTIP[k]}">[${k}]</span>`;
     },
   );
 }

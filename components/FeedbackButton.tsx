@@ -100,7 +100,7 @@ export default function FeedbackButton() {
             className="w-full max-w-md rounded-2xl bg-white p-6 shadow-xl"
           >
             <div className="mb-1 flex items-start justify-between gap-3">
-              <h2 id="feedback-title" className="font-title text-lg font-bold text-marine">
+              <h2 id="feedback-title" className="font-title text-lg font-semibold text-marine">
                 Votre feedback
               </h2>
               <button

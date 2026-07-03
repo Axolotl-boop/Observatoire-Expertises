@@ -107,7 +107,7 @@ export default function Kiosque({ newsletters }: { newsletters: Newsletter[] }) 
             className="mb-6 rounded-xl border border-gray-200 bg-white p-5"
             style={{ borderTopColor: accentOf(opened.source), borderTopWidth: 4 }}
           >
-            <h2 className="font-title text-xl font-bold text-marine">
+            <h2 className="font-title text-xl font-semibold text-marine">
               {displayName(opened.source)}
               <span className="ml-2 text-sm font-normal text-gray-500">
                 {opened.items.length} édition{opened.items.length > 1 ? "s" : ""}
@@ -173,7 +173,7 @@ export default function Kiosque({ newsletters }: { newsletters: Newsletter[] }) 
                           {group.items.length} édition{group.items.length > 1 ? "s" : ""}
                         </span>
                       </div>
-                      <h2 className="mt-3 font-title text-lg font-bold text-marine">
+                      <h2 className="mt-3 font-title text-lg font-semibold text-marine">
                         {displayName(group.source)}
                       </h2>
                       {info?.description && (
