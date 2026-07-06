@@ -11,9 +11,16 @@ on:
 permissions:
   contents: write
 
+# Empêche deux synchros de se chevaucher (conflits sur le git push) : une
+# nouvelle exécution attend la fin de la précédente au lieu de tourner en //.
+concurrency:
+  group: sharepoint-sync
+  cancel-in-progress: false
+
 jobs:
   sync:
     runs-on: ubuntu-latest
+    timeout-minutes: 10
     env:
       RESEND_API_KEY: ${{ secrets.RESEND_API_KEY }}
     steps:
@@ -23,7 +30,7 @@ jobs:
       - name: Setup Node
         uses: actions/setup-node@v4
         with:
-          node-version: "20"
+          node-version: "22"
 
       - name: Synchroniser depuis SharePoint
         env:
