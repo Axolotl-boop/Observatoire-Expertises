@@ -7,8 +7,12 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint",
+    "lint": "eslint .",
+    "typecheck": "tsc --noEmit",
     "sync": "node scripts/sync-sharepoint.mjs"
+  },
+  "engines": {
+    "node": "22.x"
   },
   "dependencies": {
     "@neondatabase/serverless": "^1.1.0",
@@ -27,12 +31,15 @@
     "unified": "^11.0.5"
   },
   "devDependencies": {
+    "@eslint/eslintrc": "^3.2.0",
     "@tailwindcss/postcss": "^4.0.0",
     "@tailwindcss/typography": "^0.5.16",
     "@types/node": "^22.10.7",
     "@types/nodemailer": "^6.4.24",
     "@types/react": "^19.0.7",
     "@types/react-dom": "^19.0.3",
+    "eslint": "^9.18.0",
+    "eslint-config-next": "^15.1.6",
     "tailwindcss": "^4.0.0",
     "typescript": "^5.7.3"
   }

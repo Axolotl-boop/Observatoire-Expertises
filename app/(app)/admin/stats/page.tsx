@@ -39,7 +39,7 @@ export default async function StatsPage() {
   if (!dbEnabled) {
     return (
       <div className="rounded-lg border border-dashed border-gray-300 bg-white p-10 text-gray-600">
-        La base de données n'est pas configurée (variable <code>DATABASE_URL</code> manquante).
+        La base de données n&apos;est pas configurée (variable <code>DATABASE_URL</code> manquante).
         Voir <code>ANALYTICS.md</code>.
       </div>
     );
@@ -64,7 +64,7 @@ export default async function StatsPage() {
       <div className="mb-8 flex flex-wrap items-start justify-between gap-3">
         <div>
           <h1 className="font-display text-2xl font-semibold tracking-[-0.01em] text-marine">📊 Statistiques d&apos;usage</h1>
-          <p className="mt-2 text-gray-600">Monitoring de l'utilisation du portail.</p>
+          <p className="mt-2 text-gray-600">Monitoring de l&apos;utilisation du portail.</p>
         </div>
         <div className="flex flex-wrap gap-2">
           <a
@@ -106,7 +106,7 @@ export default async function StatsPage() {
       {/* Funnel (30 derniers jours) */}
       <section className="mb-8 rounded-xl border border-gray-200 bg-white p-5">
         <h2 className="mb-4 font-title text-lg font-bold text-marine">
-          Parcours d'usage (30 derniers jours)
+          Parcours d&apos;usage (30 derniers jours)
         </h2>
         <div className="space-y-1.5">
           {[
