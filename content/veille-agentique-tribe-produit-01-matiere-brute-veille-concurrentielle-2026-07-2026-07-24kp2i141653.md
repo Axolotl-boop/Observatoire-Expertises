@@ -1,0 +1,5 @@
+**Cabinet :** kp2i
+**Surface :** recrutement
+**Signal :** kp2i ouvre simultanément deux postes à Paris — un Chef de Projet QMS Senior et un Développeur PHP React / IA. Le premier indique une montée en charge sur des missions de gestion de la qualité (systèmes QMS), probablement dans un secteur réglementé (industrie, santé, pharma). Le second révèle un investissement dans les capacités techniques internes, avec une composante IA explicitement mentionnée dans l'intitulé — signal à surveiller pour qualifier si l'IA est un levier de delivery ou un axe d'offre en construction.
+**Tag :** [tendance]
+**Biais / sponsoring :** offres d'emploi publiques — informations factuelles, mais aucun contexte stratégique déclaré ; la lecture reste partielle sans croisement avec d'autres signaux (PAD, références clients, prises de parole).
