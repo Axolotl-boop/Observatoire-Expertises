@@ -1,0 +1,75 @@
+@import "tailwindcss";
+@plugin "@tailwindcss/typography";
+
+/* Palette de la charte graphique */
+@theme {
+  /* Identité & navigation */
+  --color-marine: #002882;
+  --color-electrique: #0042ff;
+  /* Action & énergie */
+  --color-orange: #f98f03;
+  --color-braise: #e8572a;
+  /* IA & innovation */
+  --color-violet: #380066;
+  --color-lilas: #e6d9f5;
+  --color-lavande: #c8d6ff;
+  /* Humain & impact */
+  --color-jade: #6abfa3;
+  --color-foret: #1a4d3e;
+  --color-jadeclair: #e8f7f2;
+  /* Fonds & neutralité */
+  --color-creme: #fbf2e9;
+  --color-glace: #f2f5ff;
+  /* Premium & prestige */
+  --color-petrole: #0e2a3a;
+  --color-terre: #7a2a0e;
+  /* Fonctionnelles */
+  --color-succes: #1db954;
+  --color-alerte: #e53935;
+  --color-avert: #f59e0b;
+  --color-desactive: #a0a0b0;
+
+  /* Polices (les variables --font-* sont injectées par next/font/local).
+     Inter = corps, titres & UI (vraies graisses, lisibilité texte dense).
+     Publica = accent de marque, via la classe `font-display` uniquement. */
+  --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  --font-title: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  --font-display: var(--font-publica), ui-sans-serif, system-ui, sans-serif;
+}
+
+html {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+body {
+  background: var(--color-glace);
+  color: #1a1d23;
+  font-family: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  /* Inter : chiffres tabulaires homogènes + ligatures contextuelles soignées. */
+  font-feature-settings: "cv05", "ss01";
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.font-title {
+  font-family: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  letter-spacing: -0.011em;
+}
+
+/* Accent de marque : wordmark & accroches, en grand uniquement. */
+.font-display {
+  font-family: var(--font-display);
+}
+
+/* Focus clavier visible et cohérent avec la charte (souris non affectée) */
+:where(a, button, [role="button"], input, textarea, select):focus-visible {
+  outline: 2px solid var(--color-electrique);
+  outline-offset: 2px;
+  border-radius: 6px;
+}

@@ -1,0 +1,257 @@
+#!/usr/bin/env node
+/**
+ * Synchronise les newsletters pré-digérées (.md) d'une bibliothèque de documents
+ * SharePoint vers le dossier `content/` du dépôt, via Microsoft Graph.
+ *
+ * Authentification : flux "client credentials" (app registration Entra ID).
+ * Permission Graph requise : Sites.Read.All (application) avec consentement admin.
+ *
+ * Variables d'environnement attendues :
+ *   TENANT_ID          ID du tenant Entra ID
+ *   CLIENT_ID          ID de l'application (app registration)
+ *   CLIENT_SECRET      secret client de l'application
+ *   SHAREPOINT_HOST    ex: contoso.sharepoint.com
+ *   SHAREPOINT_SITE    chemin du site, ex: /sites/MonSite
+ *   SHAREPOINT_DRIVE   (optionnel) nom de la bibliothèque, défaut: "Documents"
+ *   SHAREPOINT_FOLDER  (optionnel) sous-dossier à parcourir, ex: "Agents IA"
+ *   SHAREPOINT_FILTER  (optionnel) ne garder que les chemins contenant cette
+ *                      chaîne, défaut: "Newsletters-pré-digérées/"
+ */
+
+import fs from "node:fs";
+import path from "node:path";
+import crypto from "node:crypto";
+
+const {
+  TENANT_ID,
+  CLIENT_ID,
+  CLIENT_SECRET,
+  SHAREPOINT_HOST,
+  SHAREPOINT_SITE,
+  SHAREPOINT_DRIVE = "Documents",
+  SHAREPOINT_FOLDER = "",
+  // Ce site ne publie que le kiosque : on ne descend que les fichiers du dossier
+  // des newsletters pré-digérées. On cible le dossier exact et non la sous-chaîne
+  // « Newsletter », qui attraperait aussi les fiches du référentiel technique.
+  SHAREPOINT_FILTER = "Newsletters-pré-digérées/",
+} = process.env;
+
+const GRAPH = "https://graph.microsoft.com/v1.0";
+const CONTENT_DIR = path.join(process.cwd(), "content");
+
+// Nettoyage des valeurs : un copier-coller dans les secrets GitHub introduit
+// souvent un espace, un retour à la ligne, un "https://" ou un "/" final.
+function normalizeHost(v) {
+  return (v || "")
+    .trim()
+    .replace(/^https?:\/\//i, "") // retire le protocole éventuel
+    .replace(/\/.*$/, ""); // retire tout chemin éventuel
+}
+function normalizeSite(v) {
+  let s = (v || "").trim();
+  if (s && !s.startsWith("/")) s = `/${s}`; // doit commencer par /sites/... ou /teams/...
+  return s.replace(/\/+$/, ""); // retire le(s) / final(aux)
+}
+const HOST = normalizeHost(SHAREPOINT_HOST);
+const SITE = normalizeSite(SHAREPOINT_SITE);
+
+function requireEnv() {
+  const missing = [
+    "TENANT_ID",
+    "CLIENT_ID",
+    "CLIENT_SECRET",
+    "SHAREPOINT_HOST",
+    "SHAREPOINT_SITE",
+  ].filter((k) => !process.env[k]);
+  if (missing.length) {
+    console.error(`Variables d'environnement manquantes : ${missing.join(", ")}`);
+    process.exit(1);
+  }
+}
+
+async function getToken() {
+  const url = `https://login.microsoftonline.com/${TENANT_ID}/oauth2/v2.0/token`;
+  const body = new URLSearchParams({
+    client_id: CLIENT_ID,
+    client_secret: CLIENT_SECRET,
+    scope: "https://graph.microsoft.com/.default",
+    grant_type: "client_credentials",
+  });
+  const res = await fetch(url, { method: "POST", body });
+  if (!res.ok) throw new Error(`Échec d'authentification: ${res.status} ${await res.text()}`);
+  const json = await res.json();
+  return json.access_token;
+}
+
+async function graph(token, urlPath) {
+  const res = await fetch(urlPath.startsWith("http") ? urlPath : `${GRAPH}${urlPath}`, {
+    headers: { Authorization: `Bearer ${token}` },
+  });
+  if (!res.ok) throw new Error(`Graph ${urlPath} -> ${res.status} ${await res.text()}`);
+  return res.json();
+}
+
+// Déduit le domaine SharePoint canonique du tenant à partir du jeton lui-même
+// (webUrl du site racine). C'est insensible aux fautes de frappe dans le secret
+// SHAREPOINT_HOST ; ce dernier ne sert plus que de repli si la déduction échoue.
+async function resolveHost(token) {
+  try {
+    const root = await graph(token, `/sites/root?$select=webUrl`);
+    const host = new URL(root.webUrl).hostname;
+    if (HOST && host.toLowerCase() !== HOST.toLowerCase()) {
+      console.warn(
+        `ℹ️ Domaine déduit du jeton : ${host} (le secret SHAREPOINT_HOST="${HOST}" est ignoré).`,
+      );
+    }
+    return host;
+  } catch {
+    return HOST; // repli sur la valeur fournie
+  }
+}
+
+async function getSiteId(token) {
+  const host = await resolveHost(token);
+  const data = await graph(token, `/sites/${host}:${SITE}`);
+  return data.id;
+}
+
+async function getDriveId(token, siteId) {
+  const data = await graph(token, `/sites/${siteId}/drives`);
+  const drive = data.value.find((d) => d.name === SHAREPOINT_DRIVE) || data.value[0];
+  if (!drive) throw new Error("Aucune bibliothèque de documents trouvée.");
+  return drive.id;
+}
+
+/** Parcourt récursivement un dossier et renvoie tous les fichiers .md. */
+async function listMarkdown(token, driveId, folderPath) {
+  const base = folderPath
+    ? `/drives/${driveId}/root:/${encodeURI(folderPath)}:/children`
+    : `/drives/${driveId}/root/children`;
+  const files = [];
+  let next = base;
+  while (next) {
+    const page = await graph(token, next);
+    for (const item of page.value) {
+      if (item.folder) {
+        const childPath = folderPath ? `${folderPath}/${item.name}` : item.name;
+        files.push(...(await listMarkdown(token, driveId, childPath)));
+      } else if (item.name.toLowerCase().endsWith(".md")) {
+        // On mémorise le sous-dossier d'origine pour éviter les collisions de noms.
+        item.__folder = folderPath;
+        files.push(item);
+      }
+    }
+    next = page["@odata.nextLink"] || null;
+  }
+  return files;
+}
+
+async function downloadFile(item) {
+  const url = item["@microsoft.graph.downloadUrl"];
+  const res = await fetch(url);
+  if (!res.ok) throw new Error(`Téléchargement échoué pour ${item.name}: ${res.status}`);
+  return res.text();
+}
+
+/** Nettoie un nom de fichier pour en faire un slug d'URL sûr. */
+function safeName(name) {
+  return name
+    .normalize("NFD")
+    .replace(/[̀-ͯ]/g, "")
+    .replace(/[^a-zA-Z0-9.\- ]/g, "")
+    .trim()
+    .replace(/\s+/g, "-")
+    .toLowerCase();
+}
+
+// Longueur max d'un slug. Un chemin SharePoint profond produit des noms trop
+// longs pour le système de fichiers (ENAMETOOLONG au build). On tronque en
+// gardant l'unicité grâce à un court hash du nom complet.
+const MAX_SLUG = 100;
+function shortenBase(base) {
+  if (base.length <= MAX_SLUG) return base;
+  const hash = crypto.createHash("sha1").update(base).digest("hex").slice(0, 8);
+  return `${base.slice(0, MAX_SLUG - 9)}-${hash}`;
+}
+
+async function main() {
+  requireEnv();
+  console.log("Authentification Microsoft Graph…");
+  const token = await getToken();
+  const siteId = await getSiteId(token);
+  const driveId = await getDriveId(token, siteId);
+
+  console.log("Listing des fichiers .md…");
+  const all = await listMarkdown(token, driveId, SHAREPOINT_FOLDER);
+  // Les accents peuvent arriver en forme décomposée (NFD) selon le client qui a
+  // créé le dossier : on normalise des deux côtés avant de comparer.
+  const needle = SHAREPOINT_FILTER.normalize("NFC");
+  const files = needle
+    ? all.filter((item) =>
+        `${item.__folder || ""}/${item.name}`.normalize("NFC").includes(needle),
+      )
+    : all;
+  console.log(
+    `${all.length} fichier(s) .md trouvé(s), ${files.length} retenu(s)` +
+      (needle ? ` (filtre « ${SHAREPOINT_FILTER} »).` : "."),
+  );
+  if (needle && files.length === 0) {
+    // Un dossier renommé côté SharePoint viderait silencieusement le site :
+    // mieux vaut échouer et garder le contenu déjà commité.
+    console.error(
+      `Aucun fichier ne correspond au filtre « ${SHAREPOINT_FILTER} ». ` +
+        "Le dossier a-t-il été renommé ? Synchronisation interrompue.",
+    );
+    process.exit(1);
+  }
+
+  fs.mkdirSync(CONTENT_DIR, { recursive: true });
+
+  // On repart d'un dossier propre pour refléter exactement SharePoint.
+  for (const existing of fs.readdirSync(CONTENT_DIR)) {
+    if (existing.toLowerCase().endsWith(".md")) {
+      fs.rmSync(path.join(CONTENT_DIR, existing));
+    }
+  }
+
+  // Index reliant chaque slug à son chemin SharePoint d'origine. Le slug étant
+  // tronqué, ce chemin est la seule source fiable pour déduire catégorie/date/titre.
+  const index = {};
+
+  for (const item of files) {
+    const content = await downloadFile(item);
+    // Chemin relatif au dossier configuré, pour garder un identifiant unique
+    // même si deux sous-dossiers contiennent un fichier du même nom.
+    let rel = item.__folder || "";
+    if (SHAREPOINT_FOLDER && rel.startsWith(SHAREPOINT_FOLDER)) {
+      rel = rel.slice(SHAREPOINT_FOLDER.length).replace(/^\/+/, "");
+    }
+    const relPath = rel ? `${rel}/${item.name}` : item.name;
+    const base = safeName(relPath.replace(/\//g, "-")).replace(/\.md$/i, "");
+    const slug = shortenBase(base);
+    const outName = `${slug}.md`;
+    fs.writeFileSync(path.join(CONTENT_DIR, outName), content, "utf8");
+    index[slug] = { path: relPath, modified: item.lastModifiedDateTime || null };
+    console.log(`  ✓ ${relPath} -> content/${outName}`);
+  }
+
+  fs.writeFileSync(
+    path.join(CONTENT_DIR, "_index.json"),
+    `${JSON.stringify(index, null, 2)}\n`,
+    "utf8",
+  );
+
+  // Horodatage du passage de synchro (pour l'indicateur de fraîcheur).
+  fs.writeFileSync(
+    path.join(CONTENT_DIR, "_meta.json"),
+    `${JSON.stringify({ syncedAt: new Date().toISOString() }, null, 2)}\n`,
+    "utf8",
+  );
+
+  console.log("Synchronisation terminée.");
+}
+
+main().catch((err) => {
+  console.error(err);
+  process.exit(1);
+});
