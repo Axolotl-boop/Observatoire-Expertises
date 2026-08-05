@@ -6,15 +6,23 @@ updates:
     schedule:
       interval: weekly
     open-pull-requests-limit: 5
+    # Les groupes ne regroupent QUE les montées mineures/patch : sûres à
+    # fusionner en lot. Les versions majeures (souvent cassantes, ex. ESLint
+    # 9→10 + TypeScript 5→7) sont exclues des groupes et arrivent donc en PR
+    # individuelles, à examiner et fusionner une par une.
     groups:
       react:
         patterns: ["react", "react-dom", "@types/react", "@types/react-dom"]
+        update-types: ["minor", "patch"]
       next:
         patterns: ["next", "eslint-config-next", "next-auth"]
+        update-types: ["minor", "patch"]
       remark-rehype:
         patterns: ["remark*", "rehype*", "unified"]
+        update-types: ["minor", "patch"]
       dev-tooling:
         patterns: ["eslint*", "@eslint/*", "typescript", "@types/*"]
+        update-types: ["minor", "patch"]
 
   # Actions GitHub : garde le pipeline à jour (et corrigé côté sécurité).
   - package-ecosystem: github-actions
