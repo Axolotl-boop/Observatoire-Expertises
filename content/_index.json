@@ -283,13 +283,21 @@
     "path": "Veille Agentique Tribe Produit/01-Matière-brute/Newsletters-pré-digérées/2026-08/2026-08-06_bytebytego_a752.md",
     "modified": "2026-08-06T15:49:55Z"
   },
+  "veille-agentique-tribe-produit-01-matiere-brute-newsletters-pre-digerees-2026-08-2026-08-08-94fcddca": {
+    "path": "Veille Agentique Tribe Produit/01-Matière-brute/Newsletters-pré-digérées/2026-08/2026-08-08_cutlefish_45ed.md",
+    "modified": "2026-08-08T00:36:17Z"
+  },
   "veille-agentique-tribe-produit-01-matiere-brute-notes-pad-retraitees-2026-06-synthese-deman-a2036bcd": {
     "path": "Veille Agentique Tribe Produit/01-Matière-brute/Notes-PAD-retraitées/2026-06/Synthese-demande-2026-06.md",
     "modified": "2026-06-28T20:52:25Z"
   },
   "veille-agentique-tribe-produit-01-matiere-brute-notes-pad-retraitees-2026-07-synthese-deman-6066c258": {
     "path": "Veille Agentique Tribe Produit/01-Matière-brute/Notes-PAD-retraitées/2026-07/Synthese-demande-2026-07.md",
-    "modified": "2026-07-07T10:33:35Z"
+    "modified": "2026-08-07T15:38:33Z"
+  },
+  "veille-agentique-tribe-produit-01-matiere-brute-notes-pad-retraitees-2026-08-synthese-deman-9186a37c": {
+    "path": "Veille Agentique Tribe Produit/01-Matière-brute/Notes-PAD-retraitées/2026-08/Synthese-demande-2026-08.md",
+    "modified": "2026-08-07T15:29:52Z"
   },
   "veille-agentique-tribe-produit-01-matiere-brute-notes-pad-retraitees-synthese-demande-boots-1bba8a8b": {
     "path": "Veille Agentique Tribe Produit/01-Matière-brute/Notes-PAD-retraitées/Synthese-demande-bootstrap-2026-06.md",
@@ -782,6 +790,14 @@
   "veille-agentique-tribe-produit-01-matiere-brute-veille-concurrentielle-2026-08-2026-08-06ar-21307409": {
     "path": "Veille Agentique Tribe Produit/01-Matière-brute/Veille-concurrentielle/2026-08/2026-08-06_artefact_130030.md",
     "modified": "2026-08-06T13:01:43Z"
+  },
+  "veille-agentique-tribe-produit-01-matiere-brute-veille-concurrentielle-2026-08-2026-08-07ar-6223abe1": {
+    "path": "Veille Agentique Tribe Produit/01-Matière-brute/Veille-concurrentielle/2026-08/2026-08-07_artefact_131242.md",
+    "modified": "2026-08-07T13:13:25Z"
+  },
+  "veille-agentique-tribe-produit-01-matiere-brute-veille-concurrentielle-2026-08-2026-08-07hu-8662855b": {
+    "path": "Veille Agentique Tribe Produit/01-Matière-brute/Veille-concurrentielle/2026-08/2026-08-07_hubvisory_141841.md",
+    "modified": "2026-08-07T14:19:18Z"
   },
   "veille-agentique-tribe-produit-01-matiere-brute-veille-concurrentielle-2026-t2-snapshot-con-f94f3b71": {
     "path": "Veille Agentique Tribe Produit/01-Matière-brute/Veille-concurrentielle/2026-T2/Snapshot-concurrentiel-T2-2026.md",

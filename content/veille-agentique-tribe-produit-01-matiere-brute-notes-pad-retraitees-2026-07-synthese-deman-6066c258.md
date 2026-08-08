@@ -1,72 +1,88 @@
-# Synthèse de la demande — 07/2026
+# Synthèse de la demande réelle — 07/2026
 
-*Brique propriétaire `Notes-PAD-retraitées` — la demande réelle, dérivée du pipe commercial Boond.*
+> Source : delta du pipe Boond, opportunités détectées entre le 02/07/2026 et le 31/07/2026.
+> **Fichier produit hors pipeline** (rattrapage manuel du run raté du 1er août) — agrégats recalculés sur le même moteur, rédaction non issue de l'agent `cr1c3_SynthsedemandeBoond`. La forme peut différer des synthèses des autres mois.
+> Périmètre : agrégats uniquement. Aucune opportunité nominative.
 
-| | |
+## Volume et nature
+
+**28 opportunités détectées**, réparties sur **18 clients distincts** — dont 7 clients porteurs de plusieurs opportunités sur le mois (jusqu'à 3).
+
+| Nature | Volume |
 |---|---|
-| **Source** | Pipe commercial Boond (delta mensuel) |
-| **Période** | détections du mois : 07/2026 |
-| **Volume** | 4 opportunités · 4 clients distincts |
-| **Méthode** | filtre par date de détection · agrégats par script · lecture du sous-ensemble conseil |
-| **Garde-fous** | Anonymisé. Classification par expertise **approximative**. **Brouillon à relire** avant validation. |
+| Immersion (régie / AT) | 25 |
+| Conseil (fullstack, coaching & formation, forfait) | 3 |
+| Autre | 0 |
 
-> **À relire avant diffusion.** Synthèse générée automatiquement à partir du pipe. Elle rapporte la demande, elle ne décide pas de l'offre — le croisement et le jugement se font au Format B.
+Le déséquilibre est massif : **89 % de la demande détectée en juillet est de la régie**. C'est le signal le plus net du mois, et le plus inconfortable — il faut le lire avec la conversion.
 
----
+## Conversion
 
-## 1. Vue d'ensemble
+| | Gagné | Perdu / abandonné | Encore actif | Taux de transfo |
+|---|---|---|---|---|
+| Régie | 2 | 3 | 20 | 40 % |
+| Conseil | 1 | 1 | 1 | 50 % |
 
-Le delta de juillet 2026 est très petit : **4 opportunités détectées, toutes en régie, sur 4 clients distincts**. Il n'y a aucune opportunité de conseil ce mois-ci.
+**Ces taux ne sont pas exploitables tels quels.** Trois décisions en régie, deux en conseil : sur un mois isolé, l'intervalle de confiance couvre à peu près tout. Vingt opportunités sur vingt-cinq sont encore ouvertes, donc le vrai taux de juillet ne sera connu qu'en septembre ou octobre. À traiter comme un compteur d'avancement, pas comme un indicateur de performance.
 
-Sur les 4 opportunités de régie : **3 sont à l'état « actif »** (c'est-à-dire en cours, non résolues — ce qui est normal pour des détections fraîches) et **1 est perdue ou abandonnée**. Le taux de transformation affiché (0 %) n'a aucune signification sur un échantillon mensuel de cette taille : les opportunités viennent d'être détectées et n'ont pas eu le temps de se résoudre. **La conversion ne pourra être lue qu'à la re-synthèse trimestrielle.**
+État du pipe à date : 7 en P1 (bouillant), 12 en P2 (chaud), 2 détectées, 3 gagnées, 4 perdues.
 
----
+## Mentions par expertise
 
-## 2. La demande de régie
+Heuristique regex multi-label sur titre + description — **une opportunité compte pour plusieurs expertises**, et une mention n'est pas un classement validé.
 
-L'échantillon est trop petit (4 opportunités) pour dégager des tendances robustes. Les signaux disponibles sont les suivants :
+| Expertise | Mentions |
+|---|---|
+| Product Management | 21 |
+| QA | 12 |
+| Product AI | 11 |
+| Product Ops | 5 |
+| PMM | 2 |
+| Data PM | 1 |
 
-- **Expertise détectée** : 1 mention de **Product Management**. Toutes les autres dimensions d'expertise (Product AI, Data PM, QA, PMM, Product Ops) sont à zéro mention.
-- **Séniorité** : 1 mention de profil **Head / Directeur**. Aucune mention sur les autres niveaux (junior, confirmé, senior, lead, principal, coach).
-- **Vocabulaire métier** : aucun mot-clé du référentiel (agile/scrum, Jira/Confluence, OKR, discovery, delivery, roadmap, analytics/KPI, UX/design, B2B, B2C, SaaS, plateforme) n'est détecté ce mois-ci.
+Deux choses à retenir. **QA arrive deuxième**, devant Product AI — porté par des demandes explicitement outillées (automatisation, frameworks de test, UAT). Et **Product AI est presque toujours co-mentionné avec Product Management** plutôt que seul : l'IA arrive comme qualificatif d'un poste produit, pas comme un besoin autonome. C'est la lecture qui compte pour l'offre.
 
-**Lecture** : avec 4 lignes et un seul signal d'expertise, il est impossible de caractériser un profil-type de demande. Les chiffres sont reportés tels quels, sans extrapolation.
+Data PM et PMM sont sous le seuil d'interprétation. Une mention ne dit rien.
 
----
+## Séniorité demandée
 
-## 3. La demande de conseil
+| Niveau | Mentions |
+|---|---|
+| head / dir | 7 |
+| senior | 6 |
+| lead | 5 |
+| confirmé | 4 |
+| coach | 2 |
+| junior | 1 |
+| principal | 1 |
 
-**Aucune opportunité de conseil détectée ce mois-ci.** Le champ `conseilDescriptions` est vide. Cette section n'a pas matière à être développée.
+Le tropisme haut de gamme se confirme : **13 mentions lead ou au-dessus contre 1 junior**. Cohérent avec le signal de fond déjà tracé au SPECS (la valeur se déplace vers le jugement), mais attention — c'est un mois, et les libellés d'opportunité sont rédigés par les PAD, qui ont un intérêt à qualifier haut.
 
----
+## Vocabulaire dominant
 
-## 4. Concurrents cités
+delivery (9) · analytics/KPI (9) · roadmap (8) · discovery (6) · UX/design (6) · plateforme (6) · agile/scrum (5) · Jira/Confluence (5) · OKR (5)
 
-**Aucun concurrent cité dans les descriptions ce mois-ci.**
+**Delivery devance discovery de 50 %.** Sur un pipe majoritairement régie, ce n'est pas surprenant, mais ça mérite d'être mis en regard du discours du marché, qui reste très orienté discovery. L'écart entre ce qu'on vend et ce dont on parle est un croisement à instruire au Format B, pas une conclusion.
 
-*Rappel de méthode : la présence d'un concurrent dans les descriptions signifie qu'il gravite dans notre orbite commerciale sur ces opportunités — ce n'est pas un score de confrontations gagnées ou perdues.*
+## Concurrents cités
 
----
+Octo (5) · Thiga (1) · Capgemini (1)
 
-## 5. Signaux saillants pour le croisement
+**Octo se détache nettement** — cinq mentions sur 28 opportunités, seul cabinet à apparaître de façon répétée. À noter : Octo ne figure pas dans la watch-list concurrentielle des 12. Signal faible, un seul mois, mais qui mérite d'être confronté au snapshot concurrentiel T3.
 
-Compte tenu de la taille très réduite du delta (4 opportunités, 0 conseil, vocabulaire quasi absent), **les signaux sont insuffisants pour alimenter un croisement robuste avec les newsletters**. Deux observations minimales, à prendre avec prudence :
+## Demande conseil — les trois du mois
 
-- **Signal 1 — Posture senior en régie** : la seule mention de séniorité pointe sur un niveau Head/Directeur. À confirmer sur un volume plus important avant d'en tirer une lecture sur la demande de profils expérimentés.
-- **Signal 2 — Silence du conseil** : l'absence totale d'opportunités conseil sur ce delta peut signifier un mois creux, un décalage de détection, ou une réalité structurelle — impossible à trancher sur un seul mois.
+Trop peu pour un pattern, assez pour trois observations :
 
----
+- Un **audit outils & process qualité** en environnement SAP international, avec un dispositif UAT porté par des Business Process Owners métier. P1, en cours. C'est du conseil QA structurant, pas du renfort — le type de demande où notre positionnement se joue.
+- Un **coaching PM sur la discovery** en e-commerce post-migration, avec un besoin explicitement formulé comme « pas d'approche data à date ». Perdu. Format court demandé (une à deux sessions) : le décalage entre le format attendu et notre offre mérite d'être regardé.
+- Un **forfait de refonte** avec du PO embarqué. Gagné.
 
-## 6. Garde-fous & limites
+Un audit perdu et un coaching perdu sur trois, avec un forfait gagné : rien de généralisable, mais la demande conseil qui arrive est plutôt de l'audit et du cadrage que de l'exécution.
 
-- **Échantillon très petit** : 4 opportunités. Toute lecture tendancielle est fragile et non généralisable.
-- **Classification par expertise approximative** : les mentions sont extraites par mots-clés ; une opportunité mal rédigée dans Boond peut être mal classée ou non classée.
-- **QA potentiellement gonflé par « recette »** : non applicable ici (0 mention QA), mais à garder en tête pour les mois suivants.
-- **Concurrents** : présence dans notre orbite uniquement — pas un score de confrontations.
-- **Pas de dimension secteur / taille** : ces données sont absentes de la source et ne sont pas inférées.
-- **Conversion mensuelle non significative** : le taux de transformation affiché (0 %) ne reflète pas la réalité commerciale sur un delta si récent. Lire la conversion au trimestriel.
-- **Vocabulaire métier nul** : l'absence de mots-clés ne signifie pas nécessairement que ces dimensions sont absentes des missions — les descriptions peuvent simplement ne pas utiliser les termes du référentiel.
+## Limites de cette synthèse
 
----
-
-*Synthèse mensuelle auto — à relire. Re-synthèse complète trimestrielle pour rattraper conversions et pertes.*
+- Un mois isolé. Aucun de ces chiffres ne soutient un `[structurel]` seul.
+- Les taux de conversion portent sur 3 et 2 décisions respectivement — non significatifs.
+- Les mentions d'expertise sont une heuristique par expressions régulières : multi-label, sensible au vocabulaire des PAD, et indicative seulement.
+- Le pipe reflète ce que les PAD saisissent, pas la demande du marché. Un biais de saisie se lit ici comme un signal.
