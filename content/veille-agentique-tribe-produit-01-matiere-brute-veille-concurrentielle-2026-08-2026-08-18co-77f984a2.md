@@ -1,0 +1,5 @@
+**Cabinet :** Converteo
+**Surface :** recrutement
+**Signal :** Deux recrutements en CDI simultanés — un Consultant Senior Web Analytics (signal de densification sur un cœur de métier établi) et, surtout, un **AI Product Manager**, avec un positionnement RH qui intègre désormais le terme **« Agentique »** aux côtés de Data et IA. L'apparition de ce label dans le discours de recrutement indique que Converteo structure une ligne de delivery autour de l'IA agentique, au-delà du conseil data classique.
+**Tag :** [tendance]
+**Biais / sponsoring :** offres publiées sur jobboards (Hellowork, iAgora) — signal concret et vérifiable, mais le périmètre réel du poste AI PM reste à qualifier (delivery, avant-vente, offre packagée ?). Positionnement « Agentique » auto-déclaré dans la description corporate ; à croiser avec d'éventuels recrutements similaires ou références clients au snapshot.
