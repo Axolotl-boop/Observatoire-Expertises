@@ -1,0 +1,5 @@
+Cabinet : **Hubvisory**
+Surface : **recrutement**
+Signal : Hubvisory ouvre un poste de Senior Data Product Manager avec une stack technique étendue (MLOps, dataviz) **et une composante gouvernance data explicite** (RGPD, IA Act). Le signal n'est pas le recrutement d'un PM classique : l'inscription de l'IA Act dans le profil recherché indique que le cabinet monte en compétence sur la conformité réglementaire IA côté produit — un axe qui sort du delivery pur pour toucher la gouvernance.
+Tag : **[tendance]** *(recrutement = fait concret ; le mouvement vers la gouvernance data / conformité IA est observable mais pas encore irréversible à partir d'une seule offre)*
+Biais / sponsoring : offre publiée en propre par Hubvisory ; auto-déclaré. À croiser avec d'autres signaux recrutement ou prise de parole sur le même axe pour confirmer la direction.
