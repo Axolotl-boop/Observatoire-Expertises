@@ -435,6 +435,10 @@
     "path": "Veille Agentique Tribe Produit/01-Matière-brute/Newsletters-pré-digérées/2026-09/2026-09-05_cutlefish_68ac.md",
     "modified": "2026-09-05T21:37:33Z"
   },
+  "veille-agentique-tribe-produit-01-matiere-brute-newsletters-pre-digerees-2026-09-2026-09-07-668b74c4": {
+    "path": "Veille Agentique Tribe Produit/01-Matière-brute/Newsletters-pré-digérées/2026-09/2026-09-07_contact_55cc.md",
+    "modified": "2026-09-07T06:03:32Z"
+  },
   "veille-agentique-tribe-produit-01-matiere-brute-notes-pad-retraitees-2026-06-synthese-deman-a2036bcd": {
     "path": "Veille Agentique Tribe Produit/01-Matière-brute/Notes-PAD-retraitées/2026-06/Synthese-demande-2026-06.md",
     "modified": "2026-06-28T20:52:25Z"
@@ -1230,6 +1234,18 @@
   "veille-agentique-tribe-produit-01-matiere-brute-veille-concurrentielle-2026-09-2026-09-05qe-19c8ef30": {
     "path": "Veille Agentique Tribe Produit/01-Matière-brute/Veille-concurrentielle/2026-09/2026-09-05_qestit_131957.md",
     "modified": "2026-09-05T13:20:29Z"
+  },
+  "veille-agentique-tribe-produit-01-matiere-brute-veille-concurrentielle-2026-09-2026-09-06ar-c6080633": {
+    "path": "Veille Agentique Tribe Produit/01-Matière-brute/Veille-concurrentielle/2026-09/2026-09-06_artefact_131107.md",
+    "modified": "2026-09-06T13:11:55Z"
+  },
+  "veille-agentique-tribe-produit-01-matiere-brute-veille-concurrentielle-2026-09-2026-09-06co-fbb0d7d3": {
+    "path": "Veille Agentique Tribe Produit/01-Matière-brute/Veille-concurrentielle/2026-09/2026-09-06_converteo_130707.md",
+    "modified": "2026-09-06T13:07:48Z"
+  },
+  "veille-agentique-tribe-produit-01-matiere-brute-veille-concurrentielle-2026-09-2026-09-07co-b0ec3ecf": {
+    "path": "Veille Agentique Tribe Produit/01-Matière-brute/Veille-concurrentielle/2026-09/2026-09-07_converteo_analyser-feedbacks-utilisateurs-ia.md",
+    "modified": "2026-09-07T07:18:09Z"
   },
   "veille-agentique-tribe-produit-01-matiere-brute-veille-concurrentielle-2026-t2-snapshot-con-f94f3b71": {
     "path": "Veille Agentique Tribe Produit/01-Matière-brute/Veille-concurrentielle/2026-T2/Snapshot-concurrentiel-T2-2026.md",
