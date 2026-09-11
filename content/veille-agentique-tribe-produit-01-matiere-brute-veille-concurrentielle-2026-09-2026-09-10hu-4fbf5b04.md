@@ -1,0 +1,5 @@
+**Cabinet :** Hubvisory
+**Surface :** recrutement
+**Signal :** Trois recrutements simultanés en CDI à Paris — PM généraliste, AI Product Manager et PO E-Commerce — signalent une montée en charge sur plusieurs axes : densification du delivery classique, ouverture d'une piste explicitement dédiée à l'IA produit, et ancrage e-commerce. La coexistence PM / AI PM comme profils distincts indique que Hubvisory structure formellement une offre IA, au-delà du simple label marketing ; le self-positioning affiché dans l'annonce (« cabinet de référence en Product Management & IA en France ») renforce la revendication de leadership sur ce segment.
+**Tag :** [tendance]
+**Biais / sponsoring :** Annonces publiées par le cabinet lui-même — posture auto-déclarée sur le leadership IA ; à croiser avec les références clients et la réalité des missions pour confirmer la profondeur de l'ancrage IA.
