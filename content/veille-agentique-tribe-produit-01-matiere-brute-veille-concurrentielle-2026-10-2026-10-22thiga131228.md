@@ -1,0 +1,5 @@
+**Cabinet : Thiga**
+**Surface : prise de parole**
+**Signal :** Thiga avance une thèse de praticien sur les limites de l'agentic coding : efficace en greenfield (page blanche), il serait beaucoup plus délicat à manier sur du brownfield (produits legacy, dette accumulée). Ce cadrage « ça marche ici, pas là » positionne le cabinet comme voix expérimentée et nuancée sur un sujet encore très en ébullition — en opposition implicite aux discours euphoriques sur l'IA générative appliquée au code.
+**Tag : [mode]** — la thèse porte sur un vocabulaire très en vogue (agentic coding), sans fait concret (offre, recrutement, donnée) qui permettrait de monter à [tendance].
+**Biais / sponsoring :** contenu auto-publié sur LinkedIn, discours vitrine ; le post est tronqué dans l'alerte, la thèse complète et les éventuels appels à l'action ne sont pas visibles.
