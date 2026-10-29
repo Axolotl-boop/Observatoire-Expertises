@@ -1,0 +1,5 @@
+**Cabinet :** Artefact
+**Surface :** recrutement
+**Signal :** Trois ouvertures simultanées sur des profils complémentaires : un UX/AI Designer au sein d'Artefact 3000 (division Creative & Data du groupe), un Senior Consultant Digital & Data Marketing à Paris, et un Lead Data Engineer (Pipelines, IA & Cloud) à Londres. Le mouvement couvre à la fois le pôle créativité-IA, le conseil data marketing et l'infrastructure data cloud — ce qui suggère une montée en charge coordonnée sur ces trois axes, y compris hors de France.
+**Tag :** [tendance]
+**Biais / sponsoring :** Offres publiées en propre par le cabinet ; signaux auto-déclarés, à croiser avec le PAD et les données d'emploi au prochain snapshot. Le quatrième item de l'alerte (discussion OpenAI Community) ne concerne pas le cabinet Artefact — bruit d'alerte à ignorer.
